@@ -1,70 +1,75 @@
+# Site Settings
+baseurl: "/Grape-Academic-Theme"
 
-# File excludes
-exclude:
-- README.md
-- Gemfile
-- Gemfile.lock
+# Features Setting
+# Turn subpages on or off
+publications: True
+presentations: True
+blog: True
 
-# Set plugins
-plugins:
-- jekyll-sitemap
-- jekyll-mentions
-- jekyll-paginate
-- jekyll-seo-tag
-- jekyll-redirect-from
-- jekyll-feed
-- jekyll-commonmark
-- jekyll-include-cache
-- jemoji
-- jekyll-remote-theme
+# Language of the website
+lang: en
 
-# Site settings
-url: 'https://hhyyni.github.io/'
-baseurl: ''
-title: 'My website'
-description: 'This is my new website'
-permalink: /:categories/:title/
-logo: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
+# Search engine optimization settings
+title: Grape Academic Theme
+tagline: A jekyll theme for academic portfolios
+description: The demonstration page for the Grape Academic Theme, a jekyll theme for academic portfolios based on the Grape Theme.
+author: Christoph Jabs (chrjabs)
+twitter:
+  username: chrjabs
+  card: A jekyll theme for academic portfolios
+logo: /assets/img/smile.png
+social:
+  name: Christoph Jabs
+  links:
+    - https://twitter.com/chrjabs
+    - https://github.com/chrjabs
+locale: en_GB
+
+# Page Settings
+theme_settings:
+  title: HyunjuKim
+  education_title: EDUCATION
+  experiences_title: EXPERIENCES & INTERNSHIP
+  interests_title: RESEARCH INTERESTS
+  skills_title: SKILLS
+  awards_title: AWARDS & SCHOLARSHIPS
+  mentorings_title: Mentoring
+  projects_title: PROJECTS
+  hobbies_title: HOBBIES
+  recentpubs_title: RECENT PUBLICATIONS
 
 # Pagination
 paginate: 5
-paginate_path: blog/page:num
+paginate_path: "blog/page:num"
 
-# Header nav
-navigation_header:
-- title: Home
-  url: /
-- title: About
-  url: /about/
-- title: Blog
-  url: /blog/
+# Build Settings
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins: ['jekyll-paginate', 'jekyll/scholar', 'jekyll-seo-tag']
+bootstrap:
+  assets: true
 
-# Footer nav
-navigation_footer:
-- title: Back to top
-  url: "#top"
+# Bibliography settings
+scholar:
+  bibliography: publications.bib
+  bibliography_template: pubstemplate
+  style: apa
+  locale: en
+  last_name: Kim
+  first_name: [Hyunju, H.]
+  sort_by: year,month
+  order: descending,ascending
 
-# Collections
-collections:
-  posts:
-    title: Posts
-    output: true
-    description: "My thoughts and ideas"
-    feature_text: |
-      Welcome to my blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website] # Filter out certain bibtex entry keywords used internally from the bib output
 
-# Collection settings
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post # Set the default layout for posts
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: page # Set the default layout for pages
+academicons:
+  version: "1.9.1"
+  integrity: "sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg="
+fontawesome:
+  version: "5.15.4"
+  integrity: "sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4="
+jquery:
+  version: "3.6.0"
+  integrity: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="

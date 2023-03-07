@@ -1,0 +1,57 @@
+image: assets/img/hyunju.jpg
+username: Hyunju Kim
+description: I am a M.S. student in the [Kim Jaechul Graduate School of AI at KAIST](https://gsai.kaist.ac.kr/) and am advised by [Prof. Kijung Shin](https://kijungs.github.io/#about) ([Data Mining Lab](https://sites.google.com/view/kaistdata/home)). I'm mainly interested in graph data mining, graph algorithms and combinatorics. Previously, I recieved B.S in [Mathematics at POSTECH](https://math.postech.ac.kr/main-english/). 
+webpage: https://hhyy0401.github.io
+education: # Remove for hiding the experience section
+  - start: 2018-02
+    end: 2022-02
+    education : B.S. in Mathematics at POSTECH (summa cum laude, GPA 3.96/4.3)
+  - start: 2022-02
+    end: 
+    education : M.S. in Artificial intelligence at KAIST
+experiences:
+  - (2019.07) Internship at SETsystem
+  - (2020.01) Winter session on Seoul National Univerisity
+  - (2020.06-08) Internship at SK Hynix (Team Data Science) 
+  - (2020.09) Participated as a representative of science quiz mathematics at POSTECH-KAIST Science War.
+  - (2021.03-2021.12) Internship at KAIST AI (Data Mining Lab)
+mentorings:
+  - SMP(Student Mentoring Program) mentor of "applied linear algebra (MATH203)" (5 semesters)
+  - SMP mentor of "Analysis I (MATH301)" (1 semester)
+  - SMP mentor of "Programming and Problem Solving (CSED101)" (1 semester)
+  - RC (Residential College) tutor of "applied linear algebra (MATH203)" (3 times)
+  - Mentor for several educational volunteering programs
+interests: # Remove for hiding the interests section
+  - graph data mining / network analysis
+  - graph algorithms
+  - combinatorics / graph theory
+skills: # Remove for hiding the skills section
+  - C++ / C
+  - python / pytorch
+  - linear algebra / combinatorics
+hobbies: # Remove for hiding the skills section
+  - play classical instruments; oboe (guest player at several university amateur orchestras)
+  - watch classical concerts (9th Seoul Philharmonic Orchestra Onlien Supporters)
+  - watch musicals (favorites- "Marie Curie")
+social:
+  email: hyunju.kim@kaist.ac.kr  # Full email address, e.g. "sample@google.com"
+  orcid: 
+  scholar: 
+  publons: 
+  research_gate: 
+  dblp:  # Full URL
+  semantic_scholar:  # Full URL
+  linkedin:  # Full URL 
+  github: hhyy0401
+  gitlab: 
+  bitbucket: 
+  google_plus:
+  mastodon: 
+  twitter: 
+  youtube:
+  facebook:
+  instagram:
+awards: # Remove for hiding the awards section
+  - (2020-2022) The Presidential Science Scholarship for juniors
+  - (2021.01) UGRP- Excellence Award
+  - (2022.02) PROUD POSTECHIAN with the highest honor
