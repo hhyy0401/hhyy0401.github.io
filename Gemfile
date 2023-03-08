@@ -9,7 +9,7 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 group :jekyll_plugins do
   gem "jekyll-email-protect"
-  gem "jekyll-scholar", '~> 7.0'
+  gem "jekyll-scholar", '~> 7.2'
   gem "jekyll-paginate"
   gem "jekyll-seo-tag"
 end
