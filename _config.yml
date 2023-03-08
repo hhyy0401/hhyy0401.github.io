@@ -1,5 +1,5 @@
 # Site Settings
-baseurl: "/Grape-Academic-Theme"
+baseurl: ""
 
 # Features Setting
 # Turn subpages on or off
@@ -11,7 +11,7 @@ blog: True
 lang: en
 
 # Search engine optimization settings
-title: Grape Academic Theme
+title: Hyunju Kim
 tagline: A jekyll theme for academic portfolios
 description: The demonstration page for the Grape Academic Theme, a jekyll theme for academic portfolios based on the Grape Theme.
 author: Christoph Jabs (chrjabs)
@@ -30,13 +30,13 @@ locale: en_GB
 theme_settings:
   title: HyunjuKim
   education_title: EDUCATION
-  experiences_title: EXPERIENCES & INTERNSHIP
+  experiences_title: INTERNSHIP
   interests_title: RESEARCH INTERESTS
   skills_title: SKILLS
   awards_title: AWARDS & SCHOLARSHIPS
   mentorings_title: Mentoring
   projects_title: PROJECTS
-  hobbies_title: HOBBIES
+  hobbies_title: EXTRACURRICULAR ACTIVITIES
   recentpubs_title: RECENT PUBLICATIONS
 
 # Pagination
@@ -73,3 +73,4 @@ fontawesome:
 jquery:
   version: "3.6.0"
   integrity: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+
