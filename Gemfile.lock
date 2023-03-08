@@ -97,6 +97,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   grape-academic-theme!
+  jekyll (~> 4.3)
   jekyll-email-protect
   jekyll-paginate
   jekyll-scholar
