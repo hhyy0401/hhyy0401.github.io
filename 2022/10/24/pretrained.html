@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Strategies for pre-trained GNNs | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Strategies for pre-trained GNNs" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[abstract]" />
+<meta property="og:description" content="[abstract]" />
+<link rel="canonical" href="http://localhost:4000/2022/10/24/pretrained.html" />
+<meta property="og:url" content="http://localhost:4000/2022/10/24/pretrained.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-24T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Strategies for pre-trained GNNs" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-10-24T00:00:00+09:00","datePublished":"2022-10-24T00:00:00+09:00","description":"[abstract]","headline":"Strategies for pre-trained GNNs","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/10/24/pretrained.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/10/24/pretrained.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Strategies for pre-trained GNNs</h1>
+    <p class="subtitle">W. Hj et al. / 2020 / ICLR</p>
+    <p class="meta">
+      October 24, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[abstract]</p>
+
+<ul>
+  <li>GNN에서도 pre-training이 효과적인가</li>
+  <li>pre-training GNN에 대한 새로운 self-supervised method 개발
+    <ul>
+      <li>individual node 단위에서 학습</li>
+      <li>entire graph에서 학습</li>
+    </ul>
+  </li>
+  <li>분류 문제에서 multiple graph를 pre-train함
+    <ul>
+      <li>naive approach는 성능 개선을 보여주지 못함</li>
+      <li>우리의 approach는 성능 개선을 보여줌</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>Introduction
+    <ul>
+      <li>pre-training is useful</li>
+    </ul>
+    <ul>
+      <li>task-specific labeled data can be extremely scarse (chemistry, biology)</li>
+      <li>real world graph data에는 가끔씩 out-of-distribution samples가 있음
+    - application to graph is hard</li>
+      <li>requires domain expertise to select examples and target labels (correlated with the downstream task of interest)</li>
+      <li>otw, harm generalization → negative transfer
+    - contributions</li>
+      <li>conduct investigation of strategies</li>
+      <li>develop effective pre-training strategy for GNNs
+        <ul>
+          <li>capture domain-specific knowledge about nodes → graph-level knowledge</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/pretrained/Untitled.png" alt="Untitled" /></p>
+
+    <ul>
+      <li>a.i: node-level: node끼리 cluster</li>
+      <li>a.ii: graph-level: graph끼리 cluster</li>
+    </ul>
+  </li>
+  <li>
+    <p>preliminaries of GNNs</p>
+
+    <p><img src="/assets/img/pretrained/Untitled%201.png" alt="Untitled" /></p>
+  </li>
+</ol>
+
+<p><img src="/assets/img/pretrained/Untitled%202.png" alt="Untitled" /></p>
+
+<ol>
+  <li>Strategies for pre-training GNNs</li>
+</ol>
+
+<p><strong>3.1 Node-level pre-training</strong></p>
+
+<p><img src="/assets/img/pretrained/Untitled%203.png" alt="Untitled" /></p>
+
+<ul>
+  <li>use unlabled data to capture domain-specific knowledge
+    <ol>
+      <li><strong>context prediction</strong>
+        <ul>
+          <li>
+            <p>structure</p>
+
+            <p>(1) k-hop neighbors</p>
+
+            <p>(2) context graph: subgraphs between r1-hops and r2-hops (r1&lt;K)</p>
+
+            <p>⇒ with b and c, we know how neighborhood and context graphs are connected with each other</p>
+          </li>
+          <li>encoding method (context → fixed vector)
+            <ul>
+              <li>context graphs → fixed-length vectors</li>
+              <li>use auxiliary GNN (context GNN)</li>
+            </ul>
+          </li>
+          <li>learning via negative sampling
+            <ul>
+              <li>
+                <p>목표: neighborhood와 context graph의 node가 같은 node인지</p>
+
+                <p><img src="/assets/img/pretrained/Untitled%204.png" alt="Untitled" /></p>
+
+                <ul>
+                  <li>v’=v, G’=G : positive neighborhood-positive pair</li>
+                  <li>randomly sample v’ from random G’: negative neighborhood-context pair</li>
+                  <li>sampling ratio: one nagative: one positive</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>attribute masking</strong>
+        <ul>
+          <li>input node/edge attributes are randomly masked ⇒ predict</li>
+          <li>example
+            <ul>
+              <li>molecular graph: node attributes (atom type)</li>
+              <li>PPI: edge attributes (interactions)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>3.2 Graph-Level pre-training</p>
+
+<ul>
+  <li>method : making predition about
+    <ol>
+      <li>domain-specific attributes
+        <ul>
+          <li>properties of molecules (supervised tasks)</li>
+          <li>naive performing may be fail → may be unrelated to the downstream task</li>
+          <li>regularize GNN at the level of individual nodes via node-level pre-training methods</li>
+        </ul>
+      </li>
+      <li><strong>graph structure</strong>
+        <ul>
+          <li>task: graph edit distance, structure similarity</li>
+          <li>graph distance values → difficult problem… ⇒ left this future work</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>3.3 Overview</p>
+
+<p>[pre-training]</p>
+
+<ul>
+  <li>step1: node-level self-supervised pre-training</li>
+  <li>step2: graph-level multi-task supervised pre-training</li>
+</ul>
+
+<p>[fine-tuning]</p>
+
+<ul>
+  <li>linear classifiers to predict graph labels</li>
+</ul>
+
+<ol>
+  <li>experiments</li>
+</ol>
+
+<p>5.1 datasets</p>
+
+<ul>
+  <li>data splitting
+    <ul>
+      <li>molecules: scaffold split → solve out-of-distribution generalization</li>
+      <li>biology: species split</li>
+    </ul>
+
+    <p>[result]</p>
+  </li>
+</ul>
+
+<p><img src="/assets/img/pretrained/Untitled%205.png" alt="Untitled" /></p>
+
+<p>[apply to graph NAS]</p>
+
+<ul>
+  <li>node level: attribute masking</li>
+  <li>graph level: graph edit distance</li>
+  <li>fine tuning</li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

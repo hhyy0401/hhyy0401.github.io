@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>MOTIVO - fast motif counting via succinct color coding and adaptive sampling | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="MOTIVO - fast motif counting via succinct color coding and adaptive sampling" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="randomized color coding algorithms for estimating graph motif counts" />
+<meta property="og:description" content="randomized color coding algorithms for estimating graph motif counts" />
+<link rel="canonical" href="http://localhost:4000/2022/04/04/MOTIVO.html" />
+<meta property="og:url" content="http://localhost:4000/2022/04/04/MOTIVO.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-04T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="MOTIVO - fast motif counting via succinct color coding and adaptive sampling" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-04-04T00:00:00+09:00","datePublished":"2022-04-04T00:00:00+09:00","description":"randomized color coding algorithms for estimating graph motif counts","headline":"MOTIVO - fast motif counting via succinct color coding and adaptive sampling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/04/04/MOTIVO.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/04/04/MOTIVO.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">MOTIVO - fast motif counting via succinct color coding and adaptive sampling</h1>
+    <p class="subtitle">M. Bressan et al. / 2019 / VLDB</p>
+    <p class="meta">
+      April 4, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <p>randomized color coding algorithms for estimating graph motif counts</p>
+
+<ol>
+  <li>Introduction
+    <ul>
+      <li>Graphlets, motifs: inuced subgraphs</li>
+      <li>approximate counting</li>
+      <li><strong>goal: size가 5~6인 motif도 counting하는 practical algorithm 개발</strong></li>
+      <li>ongoing research (sampling)
+        <ul>
+          <li>random walk - inefficient</li>
+          <li>CC algorithm - use color coding technique
+            <ol>
+              <li>build an abstract “urn(바구니)” which conatins a sub population of all the k-trees of G</li>
+              <li>task of sampling k-graphlets -(reduced)→ sampling k-trees from the urn</li>
+            </ol>
+
+            <p>⇒ Therefore, 1. build-up phase, 2. sampling phase.</p>
+          </li>
+        </ul>
+
+        <p>→ CC algorithm outperforms random walk</p>
+      </li>
+      <li>What problems CC have?
+        <ol>
+          <li>time and space limit</li>
+          <li>taking s samples gives additive 1/s- approximation ⇒ 1/s 이상의 fraction을 가진 motif만 count 가능</li>
+        </ol>
+      </li>
+      <li>contributions of the paper
+        <ol>
+          <li>따라서 이 논문에서는 color coding 기법을 사용하여 단점을 극복하고자 함. How?
+            <ol>
+              <li><strong>하나의 machine word로 up to 16개의 node를 가진 colored rooted trees를 표현하는 simple color coding data structure을 소개하고자 함 (build phase)</strong></li>
+              <li><strong>large graph에서는, biased coloring trick을 제시하고자 함 (space-time trade-off)</strong></li>
+              <li>describe set of architectural and implementation optimizations</li>
+            </ol>
+          </li>
+          <li>for the sampling phase
+            <ul>
+              <li>가장 frequent한 motif를 estimate하고, urn에서 제거. 이를 반복</li>
+              <li>small relative error가 있을 수 있음</li>
+            </ul>
+
+            <p>⇒ AGS: adative graphlet sampling 알고리즘 제시</p>
+          </li>
+        </ol>
+      </li>
+      <li><strong>result of the work: MOTIVO</strong>
+        <ul>
+          <li>scalable, takes little time</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>1.1 Related work</p>
+
+<ul>
+  <li>ESCAPE: used for computing ground-truth counts here</li>
+  <li>sampling path or random walk: only counts frequencies</li>
+  <li>CC: not fittable for k&gt;7</li>
+  <li>clique counting algorithm [16]: only for cliques</li>
+</ul>
+
+<ol>
+  <li>Color coding and CC
+    <ul>
+      <li>detect paths and trees</li>
+      <li>consists of a build-up phases and a sampling phase</li>
+    </ul>
+  </li>
+</ol>
+
+<p>2.1 The build-up phase</p>
+
+<ul>
+  <li><strong>goal: build a treelet count table (abstract urn, used for sampling)</strong></li>
+  <li>steps
+    <ol>
+      <li>do coloring of G</li>
+      <li>look at treelets of G that are colorful (non-induced copies)</li>
+      <li>for each v, initialize $c(T_c, v)=1$, where T is the trivial treelet on 1 node and $C={{c_v}}$.</li>
+      <li>count $c(T_C, v)$ via dynamic programming
+        <ul>
+          <li>Theorem 1.1: build-up takes time $O(a^k m)$ and space $O(a^kn)$.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>2.2 The sampling phase</p>
+
+<ul>
+  <li>goal: sample colorful graphlet copies using treelet count table from the build-up phase</li>
+  <li>multi-stage
+    <ol>
+      <li>draw a node and $T_C$.</li>
+      <li>decompose $T_C$ and recursively sample a copy of $T_{C’}’$ and so on.</li>
+      <li>combine</li>
+    </ol>
+
+    <p>⇒ This gives a colorful copy of T drawn uniformly at random from G</p>
+
+    <ul>
+      <li>Using $E[x_i]=c_i\sigma_i/t$ where $\sigma_i$: number of spanning trees in $H_i$, t: total number of colorful k-treelets (both can be computed quickly), let $\hat{c_i}=t\sigma_i^{-1}x_i$. (unbiased)</li>
+    </ul>
+  </li>
+  <li>
+    <p>How to estimate <strong>the number of total (uncolored) copies</strong> $g_i$ of $H_i$?</p>
+
+    <p>⇒ $p_k$=possibility that a fixed subset of k nodes in G becomes colorful</p>
+
+    <p>⇒ $E[c_i]=p_kg_i$, so that $\hat{g_i}=c_i/p_k$. (unbiased)</p>
+  </li>
+</ul>
+
+<ol>
+  <li>Speeding up color coding
+    <ul>
+      <li>data structures</li>
+    </ul>
+  </li>
+</ol>
+
+<p>3.1 Succint data structures</p>
+
+<ul>
+  <li>a hash table maps the pointer of each $T_C$ to the count $c(T_C, v)$.</li>
+  <li>The internals of CC
+    <ul>
+      <li>
+        <p>check-and-merge step: for every u~v, counts c(T’, v) and c(T’’, u) in the hash tables of v and u, check their intersection is emty, and merge</p>
+
+        <p>→ takes 30%~70% of build-up phase</p>
+      </li>
+    </ul>
+  </li>
+  <li>Motivo’s treelet
+    <ul>
+      <li>encode T → binary string $s_T$
+        <ul>
+          <li>perform DFS starting from r and i-th bit becomes 0 or 1</li>
+          <li>merging T: concantenating 1, $s_{T’’}$, $s_{T’}$.</li>
+        </ul>
+      </li>
+      <li>so we can get followings easily:
+        <ul>
+          <li>getsize()</li>
+          <li>merge(T’, T’’)</li>
+          <li>decomp(T)</li>
+          <li>sub(T)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Graph differentiable architecture search with structure learning | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Graph differentiable architecture search with structure learning" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[abstract]" />
+<meta property="og:description" content="[abstract]" />
+<link rel="canonical" href="http://localhost:4000/2022/06/06/diffGNN.html" />
+<meta property="og:url" content="http://localhost:4000/2022/06/06/diffGNN.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-06T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Graph differentiable architecture search with structure learning" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-06-06T00:00:00+09:00","datePublished":"2022-06-06T00:00:00+09:00","description":"[abstract]","headline":"Graph differentiable architecture search with structure learning","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/06/06/diffGNN.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/06/06/diffGNN.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Graph differentiable architecture search with structure learning</h1>
+    <p class="subtitle">Y. Qin et al. / 2021 / NeurIPS</p>
+    <p class="meta">
+      June 6, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[abstract]</p>
+
+<ul>
+  <li>
+    <p>existing works: fails to answer “HOW Nas is able to select the desired GNN architectures”</p>
+
+    <p>⇒ firstly answer to this</p>
+  </li>
+  <li>conduct theoretical analysis and measurement study</li>
+  <li>discover gradient based NAS: suboptimal (noises hidden in graph)</li>
+  <li>propose GASSO: SOTA</li>
+</ul>
+
+<ol>
+  <li>Introduction
+    <ul>
+      <li>Paper focuses on gradient based architecture search approach</li>
+      <li>DARTS on GNN</li>
+    </ul>
+    <ul>
+      <li>evaluate the usefulness of information hidden in node features and graph structure w.r.t target task → automatically select appropriate operations</li>
+      <li>deteriorated by noises inside the graphs → suboptimal architectures
+    - 해결법: GASSO</li>
+      <li>adaptive noise reduction
+    - contributions
+        <ol>
+          <li>이론적으로 어떻게 graph neural architecture search가 desired GNN architecture을 선택하는지 최초로 탐색</li>
+          <li>실험으로 measurement study 설계</li>
+        </ol>
+        <ol>
+          <li>gradient based graph architecture search는 graph의 유용한 정보에 기반하여 operation 선택 가능</li>
+          <li>graph feature의 noise는 architecture serach performance 감소시킴
+            <ol>
+              <li>GASSO 제안
+     - search optimal architectures through a joint optimization scheme
+     - SOTA</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="/assets/img/diffGNN/Untitled.png" alt="Untitled" /></p>
+
+<p>[2. Related Work]</p>
+
+<p>[2.1 GNN]</p>
+
+<ul>
+  <li>GCN: noise와 attack에 취약 ⇒ How to denoise and defend graph adversarial attacks?</li>
+</ul>
+
+<p>[2.2 (Graph) NAS]</p>
+
+<ul>
+  <li>relationship between
+    <ul>
+      <li>NAS methods</li>
+      <li>GNN denoising ability</li>
+    </ul>
+
+    <p>has not been noticed</p>
+  </li>
+</ul>
+
+<p>[3. Exploring Architecture Search for Graph]</p>
+
+<p>[3.1 Preliminaries: Differentiable Architecture Search]</p>
+
+<ul>
+  <li>use DARTS
+    <ul>
+      <li>represent NA as DAG
+        <ul>
+          <li>input: source</li>
+          <li>output: sink</li>
+          <li>edge: operation (GCN layer, linear layer)</li>
+        </ul>
+      </li>
+      <li>search which operation should be selected, how nodes in DAG should connected</li>
+      <li>two phases
+        <ol>
+          <li>searching phase
+            <ul>
+              <li>super network constructed</li>
+              <li>all possible operations at all possible positions are contained in it</li>
+              <li>
+                <p>uses GD based methods</p>
+
+                <p><img src="/assets/img/diffGNN/Untitled%201.png" alt="Untitled" /></p>
+              </li>
+            </ul>
+          </li>
+          <li>evaluation phase
+            <ul>
+              <li>new network based on the designed architecture  is constructed</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>[3.2 Theoretical Analysis of Architecture Parameters]</p>
+
+<ul>
+  <li>DARTS behavior on graph task
+    <ol>
+      <li>how does graph NAS select its desired architectures?</li>
+      <li>how optimal are the architectures selected by GNAS?</li>
+    </ol>
+  </li>
+  <li>
+    <p>Answer of 1 above: focus on mixed operation in DARTS</p>
+
+    <p><img src="/assets/img/diffGNN/Untitled%202.png" alt="Untitled" /></p>
+
+    <p>→ DARTS judges different candidate operations by a score (weighted sum of logits)</p>
+
+    <p>ex) If $y_k=0$, weight is positive, data with bad prediction have larger weights</p>
+
+    <p>→ DARTS는 hard data에서 prediction을 correct 할 수 있는 operations 선호</p>
+  </li>
+</ul>
+
+<p>[3.3 Synthetic Graph Experiment Setting]</p>
+
+<ul>
+  <li>600 nodes with 10 types, 60 nodes per type which follows Gaussian $\mathcal{N}(\mu_i, \sigma_1)$ where $\mu_i$ follows $\mathcal{N}(0, \sigma_2)$.
+    <ul>
+      <li>$\beta=\sigma_2/\sigma_1$: difficulty of classifying nodes by their features</li>
+    </ul>
+  </li>
+  <li>$p_1$: generating edge between two intra-group nodes, $p_2$: that of inter-group nodes
+    <ul>
+      <li>$\delta=p_1/p_2$: difficulty of classifying nodes by message passing scheme</li>
+    </ul>
+  </li>
+  <li>only consider one target node, connected with only two classes of nodes (one for the node)</li>
+</ul>
+
+<p><img src="/assets/img/diffGNN/Untitled%203.png" alt="Untitled" /></p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>when $\beta$ increases,</td>
+          <td>D</td>
+          <td>increases, prob. of choosing linear increases</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>when $\delta$ increases, prob. of choosing GCN increases</li>
+</ul>
+
+<p>[3.4 Operation Selection]</p>
+
+<ul>
+  <li>
+    <p>how $\delta$ and $\beta$ influnce DARTS?</p>
+
+    <p>⇒ generate synthetic graph by controlling variables</p>
+
+    <p><img src="/assets/img/diffGNN/Untitled%204.png" alt="Untitled" /></p>
+  </li>
+  <li>
+    <p>for different graphs, DARTS suggests using different operations</p>
+
+    <p>ex1) For more structure information (large $\delta$) and less feature information (small $\beta$), DARTS tends to select typical message passing operatins like GIN.</p>
+
+    <p>ex2) In the opposite cases, DARTS likely to select linear, skip-connect to prevent message passing</p>
+  </li>
+  <li>GNN: information extractor for node classification</li>
+  <li>operations in the search space: different ability to extract information from node feature and graph structure
+    <ul>
+      <li>GCN: extract from graph structure, reduce of the node’s feature</li>
+      <li>linear: only uses the feature and ignore graph structure</li>
+    </ul>
+
+    <p>⇒ DARTS: find optimal information extractor to help correct the prediction of the super network</p>
+
+    <p><img src="/assets/img/diffGNN/Untitled%205.png" alt="Untitled" /></p>
+
+    <p>⇒ two experiment results are similar: DARTS judges the relative amount of two types of information</p>
+  </li>
+  <li>DARTS may have denoising ability, but unstable → explore how accurate DARTS selects operations?</li>
+</ul>
+
+<p>[3.5 Accuracy of Operation Selection]</p>
+
+<ul>
+  <li>DARTS may not be able to accurately select the optimal architecture with the original graph</li>
+  <li>DARTS may have overconfidence and cause over-fitting</li>
+</ul>
+
+<p>⇒ DARTS cannot design the optimal architecture due to certain noise in the original graph → have to denoise graph structure</p>
+
+<p>[4. Joint optimization of graph architecture and structure]</p>
+
+<p>[4.1 Differentiable graph structure]</p>
+
+<ul>
+  <li>
+    <p>noise</p>
+
+    <p>ex) reasons of citation differ</p>
+  </li>
+  <li>
+    <p>apply differentiable graph structure</p>
+    <ul>
+      <li>restrict weight is in (0, 1) during message passing</li>
+      <li>$G_p=normalize(sigmoid(G))$where G is the parameter
+        <ul>
+          <li>normalize function: includes adding self-loops(fixed). only changes weight of normal edges</li>
+          <li>benefit
+            <ol>
+              <li>distinguish helpfulness of edges and aggregate more useful information</li>
+              <li>use gradient based methoes to optimize the structure</li>
+            </ol>
+
+            <p>⇒ differentiable graph structure fits most of GNNS by replacing adjacency matrix → $G_p$.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>[4.2 Learning by Hidden Feature Smoothness Constraint]</p>
+
+<ul>
+  <li>assumption: first-order proximity</li>
+  <li>more links between intra-group nodes and fewer links between inter-group nodes → high node classification accuracy</li>
+  <li>We use hidden feature H for node classification</li>
+  <li>
+    <p>To minimize connections betwen inter-group nodes, use hidden feature smoothness as a regularizer</p>
+
+    <p><img src="/assets/img/diffGNN/Untitled%206.png" alt="Untitled" /></p>
+
+    <ul>
+      <li>$\lambda$: hyperparameter to contol the contribution of the hidden feature smoothness</li>
+      <li>$G_{o, ij}$: initialization</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[4.3 Training Procedure]</p>
+
+<p><img src="/assets/img/diffGNN/Untitled%207.png" alt="Untitled" /></p>
+
+<ul>
+  <li>W, A, G: need to be optimized</li>
+  <li>하나씩 update</li>
+</ul>
+
+<p>[5. Experiments]</p>
+
+<p><img src="/assets/img/diffGNN/Untitled%208.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/diffGNN/Untitled%209.png" alt="Untitled" /></p>
+
+<p>[5.2 Abalation studies]</p>
+
+<ul>
+  <li>GASSO first parts of variants - graph structure learning model
+    <ul>
+      <li>V1: remove structure learing part → pure DARTS</li>
+      <li>V2: hidden feature smoothness → original feature smoothness</li>
+      <li>V3: hidden feature smoothness → one-hot predicted label smoothness</li>
+      <li>V4: directly calculate edge weight based on similarities between nodes</li>
+    </ul>
+  </li>
+  <li>GASSO second parts of variants - neural architecture search model
+    <ul>
+      <li>V5: do not update the neural architecture</li>
+      <li>V6: fix GCN as the architecture</li>
+      <li>V7: fix GAT as the architecture</li>
+    </ul>
+  </li>
+  <li>GASSO third part- optimization scheme
+    <ul>
+      <li>V8: split training NA and graph structure
+        <ul>
+          <li>train the graph structure for first half epoch</li>
+          <li>train NA for the second half</li>
+        </ul>
+      </li>
+      <li>V9: order changed with V8</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[5.3 Denoising Analysis]</p>
+
+<p><img src="/assets/img/diffGNN/Untitled%2010.png" alt="Untitled" /></p>
+
+<p>[6. Conclusion]</p>
+
+<ul>
+  <li>gradient based graph architecture search can select proper operations according to the usefulness of information inside the graph, and may suffer from noises in graph features and structures.</li>
+  <li>propose GASSO</li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

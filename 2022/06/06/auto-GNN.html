@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Auto-GNN - Neural architecture search of graph neural networks | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Auto-GNN - Neural architecture search of graph neural networks" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="auto-GNN" />
+<meta property="og:description" content="auto-GNN" />
+<link rel="canonical" href="http://localhost:4000/2022/06/06/auto-GNN.html" />
+<meta property="og:url" content="http://localhost:4000/2022/06/06/auto-GNN.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-06T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Auto-GNN - Neural architecture search of graph neural networks" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-06-06T00:00:00+09:00","datePublished":"2022-06-06T00:00:00+09:00","description":"auto-GNN","headline":"Auto-GNN - Neural architecture search of graph neural networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/06/06/auto-GNN.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/06/06/auto-GNN.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Auto-GNN - Neural architecture search of graph neural networks</h1>
+    <p class="subtitle">K. Zhou et al. / 2022</p>
+    <p class="meta">
+      June 6, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <h1 id="auto-gnn">auto-GNN</h1>
+
+<p>[Abstract]</p>
+
+<p>{문제점}</p>
+
+<ul>
+  <li>
+    <p>적합한 GNN architecture을 고르기 위해 사람의 작업이 필요함</p>
+
+    <p>→ GNN 성능이 graph convolutional components (aggregate function, hidden dimension) 에 영향을 많이 받기 때문</p>
+  </li>
+  <li>
+    <p>NAS는 효울적인 deep architecture을 발견함</p>
+
+    <p>→ GNN에는 부적합했음</p>
+
+    <ol>
+      <li>NAS search space와 GNN search space가 다름</li>
+      <li>representation learning capacity가 architecture motification에 따라 달라짐</li>
+      <li>parameter sharing 같은 NAS technique들이 GNN에 unstable함</li>
+    </ol>
+  </li>
+</ul>
+
+<p>{해결방법}</p>
+
+<p>⇒ predefined search space에서 optimal GNN architecture을 찾는 <strong>AGNN frame work</strong> 개발</p>
+
+<ul>
+  <li>homogeneous architecture는 parameter share 가능</li>
+</ul>
+
+<p>⇒ 현재 handcraft 모델과 전통적인 search methods보다 성능이 뛰어남</p>
+
+<p>[1. Introduction]</p>
+
+<ul>
+  <li>Graph attention networks: protein-protein interactions</li>
+  <li>GraphSage: sensitive to hidden dimension</li>
+  <li>
+    <p>NAS: find optimal neural architecture in the <strong>predefined search space</strong> performance on a <strong>given task</strong></p>
+
+    <p>⇒ outperformed: image classification, semantic image segmentation, image generation</p>
+
+    <p>⇒ <strong>(paper’s) TASK:</strong> node classification</p>
+  </li>
+  <li>problem of GNN on NAS
+    <ol>
+      <li>
+        <p>difference of search space</p>
+
+        <p>→ CNN convolution operation: kernel size</p>
+
+        <p>→ message-passing based graph convolution: sequence of action (aggregation et. al.)</p>
+      </li>
+      <li>
+        <p>traditional controller is inefficient to discover GNN architecture</p>
+
+        <p>→ representation learning capacity of GNN architecture varies with architecture modification</p>
+      </li>
+      <li>
+        <p>widely-used techniques in NAS (ex. parameter sharing) not suitable to GNN architecture</p>
+      </li>
+    </ol>
+  </li>
+  <li>solution: automated neural architecture search problem 제안
+    <ol>
+      <li>define search space of GNN architecture and explore</li>
+      <li>constrain parameter sharing among heterogeneous GNN architectures</li>
+    </ol>
+  </li>
+</ul>
+
+<p>[2. Problem statement]</p>
+
+<p><img src="/assets/img/autoGNN//Untitled.png" alt="Untitled" /></p>
+
+<ul>
+  <li>F: search space (based on graph convlutions)</li>
+  <li>D: training set, validation set</li>
+  <li>M: evaluation metric (f1 score, accuracy for node classification)</li>
+  <li>f*: optimal GNN structure</li>
+  <li>f, L: loss function</li>
+  <li>theta*: parameter learned</li>
+</ul>
+
+<p>{AGNN}</p>
+
+<p><img src="/assets/img/autoGNN//Untitled%201.png" alt="Untitled" /></p>
+
+<ul>
+  <li>update each RNN encoder independently to learn the affect of specific action class to model performance.</li>
+  <li>weight only shared with homogeneous architectures</li>
+  <li>update with offspring vs reuse the old one</li>
+</ul>
+
+<p>[3. Search space]</p>
+
+<ul>
+  <li>layers of message-passing based graph convolutions으로 구성</li>
+  <li>
+    <p>k-th layer:</p>
+
+    <p><img src="/assets/img/autoGNN//Untitled%202.png" alt="Untitled" /></p>
+
+    <ul>
+      <li>W: trainable matrix</li>
+      <li>a: attention coefficient obtained from the additional attention layer</li>
+    </ul>
+  </li>
+</ul>
+
+<p>⇒ search space를 6개의 action class로 decompose</p>
+
+<ol>
+  <li>hidden dimension: x(k-1) → W(k) -(map)→ d-dimensional space {4, 8, …, 256}</li>
+  <li>attention function: focus on relevant neighbors to improve the representive learning of node embedding</li>
+  <li>attention head: multi-head-beneficial {1, 2, …, 16}</li>
+  <li>aggregate function: {summation, mean, maxpooling}</li>
+  <li>combine function: Wx, h - node, neighbors differentiable function can enhance node representation learning. {Identity, MLP-2layer perceptron with 128 dimensions}</li>
+  <li>activation function: {Sigmoid, Tanh, ReLU, Linear, Softplus, LeakyReLU, ReLU6, ELU}</li>
+</ol>
+
+<p><img src="/assets/img/autoGNN//Untitled%203.png" alt="Untitled" /></p>
+
+<p>→ GNN architecture: string of length 6n (n: number of graph convolutional layers)</p>
+
+<p>→ each layer: cardinality of six action classes = 7<em>7</em>6<em>3</em>2*8=14112</p>
+
+<p>[4. Reinforce Conservative Controller]</p>
+
+<ul>
+  <li>traditinal RL-based NAS
+    <ul>
+      <li>RNN applied to specify variable-length NA</li>
+      <li>generate a new candidate architecture</li>
+      <li>validating new architecture → scalar reward</li>
+    </ul>
+  </li>
+</ul>
+
+<p>⇒ proposed “RCNAS” consists of</p>
+
+<ol>
+  <li>conservative explorer -exploitation</li>
+  <li>architecture modifier</li>
+  <li>reinforcement learning trainer</li>
+</ol>
+
+<p>[4.1 Conservative Explorer]</p>
+
+<ul>
+  <li>maintain best NA found so far</li>
+  <li>offspring architecture outperforma its parent → update best NA</li>
+  <li>OW, reuse to generate the next offspring architecture</li>
+  <li>multiple starting points → avoid trapping in local min</li>
+</ul>
+
+<p>[4.2 Guidied Architecture Modifier]</p>
+
+<ul>
+  <li>
+    <p>modify best architecture via selecting and mutating</p>
+
+    <p>{step}</p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>For each class, an independent RNN encoder decides a sequence of new actions</p>
+
+    <p>1) subarchitecture of length 5n is generated by removing n actions of concerned class</p>
+
+    <p>2) subarchitecture string -(input)→ RNN encoder</p>
+
+    <p>3) RNN encoder outputs the candidate action</p>
+  </li>
+  <li>An action guider receives the decision entropy and selects the action classes to be modified
+    <ul>
+      <li>Pi: output of softmax classifier of hidden state hi</li>
+      <li>decision entropy of class c:</li>
+    </ul>
+
+    <p><img src="/assets/img/autoGNN//Untitled%204.png" alt="Untitled" /></p>
+  </li>
+  <li>An architecture modification generates the final offspring architecture</li>
+</ol>
+
+<p>[4.3 Reinforcement Learning Trainer]</p>
+
+<ul>
+  <li>use REINFORCE rule of policy gradient to update parameters $\theta_c$ for RNN encoder of class $c\in C$.</li>
+  <li>
+    <p>Update rule:</p>
+
+    <p><img src="/assets/img/autoGNN//Untitled%205.png" alt="Untitled" /></p>
+
+    <p>where a_i: action of class c, Rc: reward for taking c</p>
+  </li>
+</ul>
+
+<p>[5. Constrained Parameter Sharing]</p>
+
+<ul>
+  <li>two NA are heterogeneous = have different shapes of trainable weight or output statistics (sigmoid: [0,1], linear: [-inf, +inf]</li>
+  <li>three constraints (ancestor and offspring architecture)
+    <ol>
+      <li>graph convolutional layer의 input, output tensors의 same shape을 가짐</li>
+      <li>same attention function and activation function</li>
+      <li>BN과 SC의 parameter은 공유되지 않음 (train with a few epochs)</li>
+    </ol>
+
+    <p><img src="/assets/img/autoGNN//Untitled%206.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[6. Experiment]</p>
+
+<ul>
+  <li>
+    <p>find optimal GNN architecture given node classification task</p>
+
+    <p>Q1: AGNN과 SOTA handcrafted architecture 비교</p>
+
+    <p>Q2: RCNAS controller과 다른 search method 비교</p>
+
+    <p>Q3: constrained strategy가 weight을 효율적으로 공유하는지</p>
+
+    <p>Q4: architecture modification 스케일이 RCNAS controller의 search efficiency에 영향을 미치는지</p>
+  </li>
+</ul>
+
+<p>[6.1 Datasets]</p>
+
+<p><img src="/assets/img/autoGNN//Untitled%207.png" alt="Untitled" /></p>
+
+<ul>
+  <li>consider both transductive and inductive learning settings for the node classification task
+    <ul>
+      <li>transductive: training process에서 validiation과 test set의 node label 제외하고 complete graph structure과 node feature 사용 가능</li>
+      <li>inductive learning: (같은 세팅에서) graph structure과 node feature에 대한 정보 없음</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[6.2 Baseline Methods]</p>
+
+<ul>
+  <li>include Chebyshev, GCN, GraphSAGE, GAT, LGCN</li>
+  <li>NAS approach: based on reinforcement learning and random search</li>
+</ul>
+
+<p>[Experiment]</p>
+
+<p><img src="/assets/img/autoGNN//Untitled%208.png" alt="Untitled" /></p>
+
+<p>(이하 생략)</p>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Neural Architecture Performance Prediction Using Graph Neural Networks | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Neural Architecture Performance Prediction Using Graph Neural Networks" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[Abstract]" />
+<meta property="og:description" content="[Abstract]" />
+<link rel="canonical" href="http://localhost:4000/2022/06/06/NAPGNN.html" />
+<meta property="og:url" content="http://localhost:4000/2022/06/06/NAPGNN.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-06T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Neural Architecture Performance Prediction Using Graph Neural Networks" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-06-06T00:00:00+09:00","datePublished":"2022-06-06T00:00:00+09:00","description":"[Abstract]","headline":"Neural Architecture Performance Prediction Using Graph Neural Networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/06/06/NAPGNN.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/06/06/NAPGNN.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Neural Architecture Performance Prediction Using Graph Neural Networks</h1>
+    <p class="subtitle">J. Lukasik et al. / 2020 / DAGM GCPR</p>
+    <p class="meta">
+      June 6, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[Abstract]</p>
+
+<ul>
+  <li>propose a surrogate model for neural architecture performance prediction built upon GNN</li>
+</ul>
+
+<p>[1. Introduction]</p>
+
+<p>{problem}</p>
+
+<ul>
+  <li>NAS-Bench-101: enables to experiment with classical data-based methods
+    <ul>
+      <li>high computational cost</li>
+      <li>all architectures have to be evaluated (practical restrictions)</li>
+    </ul>
+
+    <p>⇒ calls for accurate surrogate models that enables to extrapolate (i.e. zero shot prediction)</p>
+  </li>
+</ul>
+
+<p>{proposed}</p>
+
+<ol>
+  <li>takle the task of learning to predict the accuracy of convolutional nerual networks in a supervised way</li>
+  <li>evaluate our proposed model on two different zero shot prediction scenarios and show its ability</li>
+</ol>
+
+<ul>
+  <li>NAs for CV: DAGs로 표현 가능 ⇒ surrogate model on GNN은 강력함 ⇒ 노드를 continuous spaces에 embed 가능</li>
+  <li>DGMG: capture the structure of graph. NAs를 feature representation에 embed 가능</li>
+</ul>
+
+<p>[2.3 Performance Predictor for Neural Architectures]</p>
+
+<ul>
+  <li>limited</li>
+</ul>
+
+<p>[2.4 GNN]</p>
+
+<ul>
+  <li>discrete nature of graph → can’t trivially be optimized in differentiable learning methods that act on continuous spaces</li>
+  <li>breakthroughs: CV, NLP, recommender systems, chemistry and others</li>
+  <li>continuous method: GNN -handle graphs chactererizing neural architectures from the NAS-bench 101</li>
+</ul>
+
+<p>[3. The Graph Encoder]</p>
+
+<ul>
+  <li>GNN-based model: encode discrete graph space of NAS-Bench-101 → continuous vector space</li>
+  <li>single GNN iteration:  2-step procedure
+    <ol>
+      <li>node: send messages to neighbors</li>
+      <li>node: aggregates incoming messages</li>
+    </ol>
+  </li>
+</ul>
+
+<p>[3.1 Node-level propagation]</p>
+
+<ul>
+  <li>Progating information = iterative message-passing process</li>
+  <li>For NAS-Bench-101 graphs, add reverse message module (3), (4)</li>
+</ul>
+
+<p><img src="/assets/img/NAPGNN/Untitled.png" alt="Untitled" /></p>
+
+<ul>
+  <li>aggregation function: sum</li>
+  <li>To increase capacity of model
+    <ol>
+      <li>apply multiple rounds of propagation</li>
+      <li>use different oset of parameters</li>
+    </ol>
+
+    <p><img src="/assets/img/NAPGNN/Untitled%201.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[3.2 Graph-Level Aggregation]</p>
+
+<ul>
+  <li>After final round of message-passing: node embeddings h -(aggregate)→ single graph embeeding $h_G$.</li>
+</ul>
+
+<p>[4. Model Details]</p>
+
+<p>[4.1 Message]</p>
+
+<ul>
+  <li>message module $M^{(t)}$</li>
+</ul>
+
+<p><img src="/assets/img/NAPGNN/Untitled%202.png" alt="Untitled" /></p>
+
+<p>[4.2 Update]</p>
+
+<ul>
+  <li>update module $U^{(t)}$ in a single GRU cell</li>
+</ul>
+
+<p><img src="/assets/img/NAPGNN/Untitled%203.png" alt="Untitled" /></p>
+
+<p>[4.3 Aggregation]</p>
+
+<ul>
+  <li>two rounds of propagation → aggregate the node embeddings into a single graph embedding
+    <ol>
+      <li>linear layer transforms the node embeddings to the required graph embedding $d_g$.</li>
+      <li>another linear layer combined with a sigmoid handles each node’s fraction in the graph embedding</li>
+    </ol>
+
+    <p><img src="/assets/img/NAPGNN/Untitled%204.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[5. The NAS-Bench-101 Dataset]</p>
+
+<ul>
+  <li>CIFAR-10-classification set</li>
+</ul>
+
+<p>[6. Experiments]</p>
+
+<ol>
+  <li>evaluate the performance prediction ability of the proposed GNN in the traditional supervised setting</li>
+  <li>conduct zero shot prediction experiments in order to show the performance of the proposed model for unseen graph structures during training</li>
+  <li>compare result with Tang et al.</li>
+</ol>
+
+<p><img src="/assets/img/NAPGNN/Untitled%205.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/NAPGNN/Untitled%206.png" alt="Untitled" /></p>
+
+<ul>
+  <li>task of predicting the validation accuracy of structurally unknown graph types, i.e. zero shot prediction. (1. train on graph of length 2~7 and test on 7 / 2. train on graph of length 2~6 and test on 6)</li>
+</ul>
+
+<p><img src="/assets/img/NAPGNN/Untitled%207.png" alt="Untitled" /></p>
+
+<p>[7. Conclusion]</p>
+
+<ul>
+  <li>The GNN encoder is a powerful tool regarding supervised performance prediction and also especially in the zero-shot setup.</li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

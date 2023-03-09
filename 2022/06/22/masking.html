@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Node masking | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Node masking" />
+<meta name="author" content="P. Mishra" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[1. Introduction]" />
+<meta property="og:description" content="[1. Introduction]" />
+<link rel="canonical" href="http://localhost:4000/2022/06/22/masking.html" />
+<meta property="og:url" content="http://localhost:4000/2022/06/22/masking.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-22T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Node masking" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@P. Mishra" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"P. Mishra"},"dateModified":"2022-06-22T00:00:00+09:00","datePublished":"2022-06-22T00:00:00+09:00","description":"[1. Introduction]","headline":"Node masking","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/06/22/masking.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"P. Mishra"},"url":"http://localhost:4000/2022/06/22/masking.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Node masking</h1>
+    <p class="subtitle">H. Zhao et al. / 2020</p>
+    <p class="meta">
+      June 22, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[1. Introduction]</p>
+
+<ol>
+  <li>transductive learning: node &amp; edge가 training~prediction phase에서 그대로 남아있음 (access 가능). unseen node와 edge 처리 못함</li>
+  <li>inductive learning: 그래프 일부에서만 학습하고, 그 모델을 unseen node or deges를 예측하는 데 사용</li>
+</ol>
+
+<p><img src="/assets/img/masking/Untitled.png" alt="Untitled" /></p>
+
+<ul>
+  <li>Paradigm: spectral architecture on undirected graph in transductive settings → spatial ones that can apply inductively to arbitrary graphs</li>
+</ul>
+
+<p>{contribution}</p>
+
+<ol>
+  <li>discuss some theoretical tools to better visualize the operations performed by spatial GNNs</li>
+  <li>analyze the inner workings of the SOTA spatial architecture,s specifically aggregation-based GNNs</li>
+  <li>propose simple technique: Node masking</li>
+</ol>
+
+<p>[2. A brief history of GNNs]</p>
+
+<p><img src="/assets/img/masking/Untitled%201.png" alt="Untitled" /></p>
+
+<p>[2.1 Spectral GNNs] - message passing</p>
+
+<ul>
+  <li>learns spectral filters regard to Laplcian → lack of scalibility</li>
+  <li>ChebNet, GCN</li>
+</ul>
+
+<p>[2.2 Spatial GNNs]</p>
+
+<ul>
+  <li>defines the convolution operation directly on the structure of the graph</li>
+  <li>sampling-based: GraphSAGE</li>
+  <li>aggregation-based(Generally SOTA): GAT, GIN(maximally powerful)</li>
+</ul>
+
+<p>[4. Analysis of Aggreagation-based GNNs]</p>
+
+<p><img src="/assets/img/masking/Untitled%202.png" alt="Untitled" /></p>
+
+<p>[5. Node masking]</p>
+
+<p><img src="/assets/img/masking/Untitled%203.png" alt="Untitled" /></p>
+
+<ul>
+  <li>node masking of GAT and GIN (respectively)</li>
+</ul>
+
+<p><img src="/assets/img/masking/Untitled%204.png" alt="Untitled" /></p>
+
+<p>[5.2 Node masking vs Dropout techniques]</p>
+
+<ul>
+  <li>dropedge: randomly drops a subset of edges from the graph in every training epoch</li>
+  <li>in our experiment, node masking이 dropedge보다 효과 좋음</li>
+</ul>
+
+<p>[6.3 Experimental setting]</p>
+
+<ul>
+  <li>pytorch, 2-layer GIN</li>
+  <li>simple GAT (SGAT)</li>
+  <li>if node mask active → in every training epoch, randomly sample a Bernolli select function over the nodes in the training set</li>
+  <li>transductive- make entire graph</li>
+  <li>inductive- make avalibale at training time the graph G formed by nodes in the train set + edges among them</li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

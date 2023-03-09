@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Bridging the Gap between Sample-based and One-shot Neural Architecture Search with BONAS | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Bridging the Gap between Sample-based and One-shot Neural Architecture Search with BONAS" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="BONAS" />
+<meta property="og:description" content="BONAS" />
+<link rel="canonical" href="http://localhost:4000/2022/05/18/BONAS.html" />
+<meta property="og:url" content="http://localhost:4000/2022/05/18/BONAS.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-18T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Bridging the Gap between Sample-based and One-shot Neural Architecture Search with BONAS" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-05-18T00:00:00+09:00","datePublished":"2022-05-18T00:00:00+09:00","description":"BONAS","headline":"Bridging the Gap between Sample-based and One-shot Neural Architecture Search with BONAS","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/05/18/BONAS.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/05/18/BONAS.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Bridging the Gap between Sample-based and One-shot Neural Architecture Search with BONAS</h1>
+    <p class="subtitle">H. Shi et al. / 2020 / NeurIPS</p>
+    <p class="meta">
+      May 18, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <h1 id="bonas">BONAS</h1>
+
+<p>BO - <a href="https://brunch.co.kr/@tristanmhhd/19">https://brunch.co.kr/@tristanmhhd/19</a></p>
+
+<p><a href="https://wooono.tistory.com/102">https://wooono.tistory.com/102</a></p>
+
+<p>[Abstract]</p>
+
+<p>estimation strategy:</p>
+
+<ul>
+  <li>one-shot &lt; sample-based: more reliable</li>
+</ul>
+
+<p>⇒ BONAS: accelerate, keeps reliability</p>
+
+<p>[overview of BONAS]</p>
+
+<p><img src="/assets/img/BONAS/Untitled.png" alt="Untitled" /></p>
+
+<ul>
+  <li>searching for competitive architectures is difficult ⇒ <strong>BO</strong> handles this issue by explicitly considering exploitation and exploration</li>
+  <li>In BO, a commonly used surrogate model is <strong>GP</strong>
+    <ul>
+      <li>prob 1: cubically with the number of samples)</li>
+      <li>prob 2: requires well-designed kernel (open issue)</li>
+      <li>one-shot methods: weight-sharing is performed on the whole space of sub-networks. → not good idea</li>
+    </ul>
+
+    <p>⇒ costly in NAS</p>
+  </li>
+  <li>query phase: traditional approach of fully training neural architectures is costly</li>
+</ul>
+
+<p><strong>⇒ solution : BONAS - sample-based NAS algorithm combined with weight-sharing</strong></p>
+
+<ul>
+  <li>search phase: use GCN to <strong>produce embeddings</strong> for NA (avoid to define GP’s kernel function, replace GP → novel Bayesian sigmoid regressor)</li>
+  <li>query phase: construct a super-network from candidate architectures → train by uniform sampling → candidates are queried simultaneously based on the learned weight of the super-network</li>
+</ul>
+
+<p>⇒ BONAS outperforms SOTA methods</p>
+
+<p>[algorithm]</p>
+
+<p><img src="/assets/img/BONAS/Untitled%201.png" alt="Untitled" /></p>
+
+<p>Q: three main points of BO in <strong>Algorithm 1</strong></p>
+
+<ol>
+  <li>represent architecture</li>
+  <li>find good candidates with surrogate model (high acuisition score)</li>
+  <li>query  the selected candidates</li>
+</ol>
+
+<p>⇒ rather full training in each query (cost), adopt weight-sharing paradigm to query a batch of promising architecture together <em>(비슷한 것끼리 weight sharing?)</em></p>
+
+<p>⇒ design a surrogate model combining <strong>GCN embedding extractor and Bayesian sigmoid regressor</strong></p>
+
+<p>[BO: surrogate model, acquisition function]</p>
+
+<ul>
+  <li>surrogate model: GCN embedding extractor + BSR → get mean and variance</li>
+  <li>acquisition function: UCB</li>
+</ul>
+
+<ol>
+  <li>GCN embedding extractor
+    <ul>
+      <li>NAS-Bench-101: stacking multiple repeated cells</li>
+    </ul>
+
+    <p><img src="/assets/img/BONAS/Untitled%202.png" alt="Untitled" /></p>
+
+    <ul>
+      <li>MLP or LSTM used to encode networks, but GCN is better</li>
+      <li>global node: to get the embedding of the whole graph</li>
+    </ul>
+
+    <p>In experiment,</p>
+
+    <ul>
+      <li>use single-hidden-layer network with sigmoid function, prediction: [0,1]</li>
+      <li>regressor is trained by minimizing square loss</li>
+    </ul>
+
+    <p><strong>⇒ We get embedding of a graph(cell) by GCN!</strong></p>
+  </li>
+  <li>Bayesian Sigmoid Regression(BSR)
+    <ul>
+      <li>We’re interested in <strong>UCB (Upper Confidence Bound)</strong> of BO.</li>
+      <li>compute the mean and variance of architecure’s performance</li>
+      <li>
+        <p>Since final layer of GCN predictor contains a sigmoid, instead of fitting true performance t, estimate the value before sigmoid. y=logit(t) ⇒ nonlinear regression → linear regression</p>
+
+        <p><img src="/assets/img/BONAS/Untitled%203.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>GCN: squared loss → BSR: exponentially weighted loss (emphasis on model with higher accuracies)</p>
+
+        <p><img src="/assets/img/BONAS/Untitled%204.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>For candidate network (A, X), BO has to evaluate its acquisition score. For UCB, the mean of logit(t) and variance of <strong>logit(t)</strong> are:</p>
+
+        <p><img src="/assets/img/BONAS/Untitled%205.png" alt="Untitled" /></p>
+
+        <p><img src="/assets/img/BONAS/Untitled%206.png" alt="Untitled" /></p>
+
+        <ul>
+          <li>Then, we can convert those to predict mean and variace of <strong>“t”</strong> by</li>
+        </ul>
+
+        <p><img src="/assets/img/BONAS/Untitled%207.png" alt="Untitled" /></p>
+
+        <ul>
+          <li>Then, we can approximate E[t] and Var[t] by using $\Phi(\lambda x)$ for some $\lambda$ and $\Phi$.</li>
+        </ul>
+
+        <p><img src="/assets/img/BONAS/Untitled%208.png" alt="Untitled" /></p>
+
+        <ul>
+          <li>Then we can put E[t] and Var[t] into UCB score and use this to select the next architecture sample from the pool.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>[Efficient Estimation]</p>
+
+<ul>
+  <li>NAS: select architecture in each iteration for full training ⇒ expensive</li>
+  <li>BONAS: select in each BO iteration a batch of k architectures ${(A_i, X_i)}_{i=1}^k$ with the top-k UCB scores → train them together as a super-network by weight sharing</li>
+</ul>
+
+<p>{advantage of weight sharing of super-network}</p>
+
+<ol>
+  <li>feasible to train each architecture fairly</li>
+  <li>super-network is promising candidate because of their high UCB scores</li>
+</ol>
+
+<p>{step}</p>
+
+<ol>
+  <li>
+    <p>construct the super-network using logical OR operation</p>
+
+    <p><img src="/assets/img/BONAS/Untitled%209.png" alt="Untitled" /></p>
+  </li>
+  <li>
+    <p>super-network is then trained by uniformly sampling from the architectures</p>
+    <ol>
+      <li>one sub-network is randomly sampled from the super-network</li>
+      <li>only the corresponding (forward, backward propagtion) paths are activited)</li>
+      <li>evaluate each sub-network by only forwarding data along the corresponding paths in the super-network</li>
+    </ol>
+  </li>
+</ol>
+
+<p>[Summary of Algorithm]</p>
+
+<ol>
+  <li>Get embedding of each graph by GCN embedding extractor</li>
+  <li>For each search iteration, a pool C of candidates are sampled from A by EA (each candidate’s embeding is obtained in 1.). For each candidate, compute UCB by BSR</li>
+  <li>Candidates with the top-k UCB scores are selected(super-network) and queried using weight sharing</li>
+  <li>evaluteed model and their performance values are added to D</li>
+  <li>GCN predictor and BSR are updated using the enlarged D</li>
+</ol>
+
+<p>[Experiments]</p>
+
+<ul>
+  <li>
+    <p>dateset</p>
+
+    <p>[convlutional achitectures]</p>
+
+    <ul>
+      <li>NAS-Bench-101: 423K</li>
+      <li>NAS-Bench-201: 15K architectures, using different search space</li>
+    </ul>
+
+    <p>[Others]</p>
+
+    <ul>
+      <li>LSTM-12K (containing 12K LSTM models trained on the Penn TreeBank dataset)</li>
+    </ul>
+  </li>
+  <li>
+    <p>comparison: compare with existing MLP and LSTM preditors, and the meta NN - our GCN has four hidden layers with 64 units each</p>
+    <ul>
+      <li>square loss</li>
+      <li>Adam optimizer</li>
+      <li>0.001 learning rate</li>
+      <li>mini-batch of size 128</li>
+      <li>8.5:1.5:0.5</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[closed domain search]</p>
+
+<ul>
+  <li>compare with SOTA sample-based NAS baselines
+    <ul>
+      <li>random search, regularized evolution, NASBOT, NAO, LaNAS, BANANAS</li>
+    </ul>
+
+    <p><img src="/assets/img/BONAS/Untitled%2010.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[open domain search]</p>
+
+<ul>
+  <li>perforam NAS on NASNet search space using CIFAR-10 data set</li>
+  <li>allow 4 blocks inside a cell</li>
+  <li>k=100 models are merged to a super-networ, and trained for 100 epochs</li>
+  <li>compare with SOTA
+    <ul>
+      <li>sample-based NAS algorithms: NASNet, AmoebaNet, PNASNet, NAO, LaNet, BANANAS</li>
+      <li>one-shot: ENAS, DARTS, BayesNAS, ASNG-NAS</li>
+      <li>A, B, C, D: different numbers of evaluated samples</li>
+    </ul>
+
+    <p><img src="/assets/img/BONAS/Untitled%2011.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[transfer learning]</p>
+
+<ul>
+  <li>transfer the architectures learned from CIFAR-10 to ImageNet.</li>
+  <li>
+    <p>Use BONAS-B/C/D</p>
+
+    <p><img src="/assets/img/BONAS/Untitled%2012.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[Ablation Study]</p>
+
+<ul>
+  <li>study BONSA variants (5-a)
+    <ul>
+      <li>BONAS_random: EA sampling → random sapling</li>
+      <li>BO_LSTM_EA: GCN predictor → LSTM</li>
+      <li>BO_MLP_EA: GCN predictor → MLP</li>
+      <li>GCN_EA: removes Bayesian sigmoid regression and uses GCN output directly</li>
+    </ul>
+
+    <p>⇒ BONAS outperforms others</p>
+  </li>
+  <li>proposed weight loss vs traditional square loss (5-b)</li>
+  <li>verify the robustness of BONAS model (5-c)</li>
+</ul>
+
+<p><img src="/assets/img/BONAS/Untitled%2013.png" alt="Untitled" /></p>
+
+<p>[closed domain search]</p>
+
+<ul>
+  <li>compare with SOTA sample-based NAS baselines
+    <ul>
+      <li>random search, regularized evolution, NASBOT, NAO, LaNAS, BANANAS</li>
+    </ul>
+
+    <p><img src="/assets/img/BONAS/Untitled%2010.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[open domain search]</p>
+
+<ul>
+  <li>perforam NAS on NASNet search space using CIFAR-10 data set</li>
+  <li>allow 4 blocks inside a cell</li>
+  <li>k=100 models are merged to a super-networ, and trained for 100 epochs</li>
+  <li>compare with SOTA
+    <ul>
+      <li>sample-based NAS algorithms: NASNet, AmoebaNet, PNASNet, NAO, LaNet, BANANAS</li>
+      <li>one-shot: ENAS, DARTS, BayesNAS, ASNG-NAS</li>
+      <li>A, B, C, D: different numbers of evaluated samples</li>
+    </ul>
+
+    <p><img src="/assets/img/BONAS/Untitled%2011.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[transfer learning]</p>
+
+<ul>
+  <li>transfer the architectures learned from CIFAR-10 to ImageNet.</li>
+  <li>
+    <p>Use BONAS-B/C/D</p>
+
+    <p><img src="/assets/img/BONAS/Untitled%2012.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[Ablation Study]</p>
+
+<ul>
+  <li>study BONSA variants (5-a)
+    <ul>
+      <li>BONAS_random: EA sampling → random sapling</li>
+      <li>BO_LSTM_EA: GCN predictor → LSTM</li>
+      <li>BO_MLP_EA: GCN predictor → MLP</li>
+      <li>GCN_EA: removes Bayesian sigmoid regression and uses GCN output directly</li>
+    </ul>
+
+    <p>⇒ BONAS outperforms others</p>
+  </li>
+  <li>proposed weight loss vs traditional square loss (5-b)</li>
+  <li>verify the robustness of BONAS model (5-c)</li>
+</ul>
+
+<p><img src="/assets/img/BONAS/Untitled%2013.png" alt="Untitled" /></p>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

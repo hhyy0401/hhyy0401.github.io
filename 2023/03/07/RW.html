@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>A General Framework for Estimating Graphlet Statistics via Random Walk | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="A General Framework for Estimating Graphlet Statistics via Random Walk" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[abstract]" />
+<meta property="og:description" content="[abstract]" />
+<link rel="canonical" href="http://localhost:4000/2023/03/07/RW.html" />
+<meta property="og:url" content="http://localhost:4000/2023/03/07/RW.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-07T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A General Framework for Estimating Graphlet Statistics via Random Walk" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2023-03-07T00:00:00+09:00","datePublished":"2023-03-07T00:00:00+09:00","description":"[abstract]","headline":"A General Framework for Estimating Graphlet Statistics via Random Walk","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/03/07/RW.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2023/03/07/RW.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">A General Framework for Estimating Graphlet Statistics via Random Walk</h1>
+    <p class="subtitle">X. Chen et al. / 2016 / VLDB</p>
+    <p class="meta">
+      March 7, 2023
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[abstract]</p>
+
+<ul>
+  <li>propose a framewalk to estimate graphlet statistics of “any size”</li>
+  <li>analytic bound of the sample size (Chernoff-Hoeffding) to guarantee convergence</li>
+</ul>
+
+<p>[1. introduction]</p>
+
+<ul>
+  <li>estimating graphlets is more complicated than estimating local structures (e.g. degree distribution)</li>
+</ul>
+
+<p>[1.1 Related Works and Existing Problems]</p>
+
+<ol>
+  <li>memory-based graphs : wedge sampling
+    <ul>
+      <li>need access to the whole graph</li>
+    </ul>
+  </li>
+  <li>streaming graphs
+    <ul>
+      <li>access each edge at least once</li>
+    </ul>
+  </li>
+  <li>restricted accessed graphs : SRW, <strong>PSRW</strong>, MSS
+    <ul>
+      <li>random walk based methods</li>
+    </ul>
+  </li>
+</ol>
+
+<p>[1.2 Our contributions]</p>
+
+<ol>
+  <li>novel framework
+    <ul>
+      <li>no assumption on the graph structures</li>
+      <li>propose a new and general frameworks which subsumes PSRW</li>
+    </ul>
+  </li>
+  <li>efficient optimization techniques
+    <ul>
+      <li>corresponding state sampling (CSS)</li>
+      <li>non-backtracking random walk</li>
+    </ul>
+  </li>
+</ol>
+
+<p>[2.1 Notations and Definitions]</p>
+
+<ul>
+  <li>$G^{(d)}=(H^{(d)}, R^{(d)})$: d-node subgraph relationship graph</li>
+  <li>$H^{(d)}$: the set of all d-node connected induced subgraphs of G</li>
+  <li>For $s_i, s_j\in H^{(d)}$, if they share d-1 common nodes in G, there is an edge. Denote the set of these edges as $R^{(d)}$.</li>
+  <li>For d=1, define $G^{(1)}=G$ (and the same for H, R)</li>
+</ul>
+
+<p>⇒ constructing $G^{(d)}$ requires compuational cost. no need to construct it using random-walk technique</p>
+
+<p>⇒ The number of distinct graphlets grows exponentially with the numbeer of vertices in the graphlets</p>
+
+<p>⇒ <strong>problem definition</strong>: estimate “concentration of graphlets”</p>
+
+<p>[2.2 Random walk and Markov Chain]</p>
+
+<ul>
+  <li>A simple random walk (SRW)
+    <ul>
+      <li>random walk : a finite and time-reversible Markov chain with state space V
+        <ul>
+          <li>${X_t}$: Markov chain representing the visited nodes of the random walk on G</li>
+          <li>P: transition probability defined as $P(i,j)=1/d_i$ if $(i,j)\in E$ and 0 otherwise.</li>
+        </ul>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>unique stationary distribution $\pi$  where $\pi(v)=d_v/2</td>
+              <td>E</td>
+              <td>$ ⇒ correct bias</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+  <li>Strong Law of Large Numbers (SLLN)</li>
+</ul>
+
+<p><img src="/assets/img/RW/Untitled.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/RW/Untitled%201.png" alt="Untitled" /></p>
+
+<p>⇒ By SLLN, $\hat{\mu}_n$ converges to $\mu$ .</p>
+
+<ul>
+  <li>
+    <p>Mixing time : the numbeer of steps it takes for a random walk to approach its stationary distribution</p>
+
+    <p><img src="/assets/img/RW/Untitled%202.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[3.1 Basic Idea]</p>
+
+<ul>
+  <li>d는 hyperparameter로, $G^{(d)}$와 $l=k-d+1$ consecutive steps를 결정</li>
+  <li>각 $X_i (i\geq l)$ 스텝마다 $l-1$ 개의 전 스텝을 기억</li>
+</ul>
+
+<p>[3.2 Expanded Markov Chain]</p>
+
+<ul>
+  <li>Each $l$ consecutive steps are considered as a state $X^{(l)}=(X_1, \cdots, X_l)$ of the expanded Markov chain</li>
+  <li>state space $M^{(l)} = {(X_1, \cdots, X_l): X_i\in N, 1\leq i\leq l \text{ s.t. } (X_i, X_{i+1})\in R^{(d)} \;\forall 1\leq i\leq l-1}$</li>
+  <li>bias occurs
+    <ol>
+      <li>states in the expanded Markov chain do not have eqal stational probabilities</li>
+      <li>a graphlet samples corresponds to several states</li>
+    </ol>
+  </li>
+</ul>
+
+<p><img src="/assets/img/RW/Untitled%203.png" alt="Untitled" /></p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>state corresponding coefficient $\alpha_i^k =</td>
+          <td>C(s)</td>
+          <td>$ where $C(s)={X^{(l)}</td>
+          <td>s(X^{(l)})=s, X^{(l)}\in M^{(l)}}$.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>if states in $M^{(l)}$ are uniformly sampled, then the probability of getting a subgraph isomorphic to $g_i^k$ is $\alpha_i^kC_i^k/</td>
+          <td>M^{(l)}</td>
+          <td>$.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>$\alpha_i^k$= twice the number of Hamiltonian paths</li>
+</ul>
+
+<p>[3.3 Unbiased Estimator]</p>
+
+<ul>
+  <li>$h_i^k(X^{(l)})=1{s(X^{(l)})= g_i^k}$.</li>
+  <li>$\sum_{X^{(l)}\in M^{(l)}} h_i^k(X^{(l)})=\alpha_i^kC_i^k$.</li>
+</ul>
+
+<p><img src="/assets/img/RW/Untitled%204.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/RW/Untitled%205.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/RW/Untitled%206.png" alt="Untitled" /></p>
+
+<p>[4.1 Corresponding State Sampling (CSS)]</p>
+
+<p><img src="/assets/img/RW/Untitled%207.png" alt="Untitled" /></p>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

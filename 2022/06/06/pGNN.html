@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Policy GNN - Aggregation Optimization for Graph Neural Networks | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Policy GNN - Aggregation Optimization for Graph Neural Networks" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[Abstract]" />
+<meta property="og:description" content="[Abstract]" />
+<link rel="canonical" href="http://localhost:4000/2022/06/06/pGNN.html" />
+<meta property="og:url" content="http://localhost:4000/2022/06/06/pGNN.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-06T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Policy GNN - Aggregation Optimization for Graph Neural Networks" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-06-06T00:00:00+09:00","datePublished":"2022-06-06T00:00:00+09:00","description":"[Abstract]","headline":"Policy GNN - Aggregation Optimization for Graph Neural Networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/06/06/pGNN.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/06/06/pGNN.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Policy GNN - Aggregation Optimization for Graph Neural Networks</h1>
+    <p class="subtitle">K. Lai et al. / 2020 / KDD</p>
+    <p class="meta">
+      June 6, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[Abstract]</p>
+
+<ul>
+  <li>propose to explicitly sample diverse iterations of aggregation for different nodes to boost the performance of GNNs</li>
+  <li>propose Policy-GNN, a meta-policy framework that models the sampling procedure and message passing of GNNs into a combined learning process.</li>
+  <li>Policy-GNN adaptively determines the number of aggregations for each node and uses meta-policy (trained with RL)</li>
+</ul>
+
+<p>[1. Introduction]</p>
+
+<ul>
+  <li>key techniques behind applications: graph representation learning (extract information into low-dim vector representations)</li>
+  <li>previous studies of advancing GNNs
+    <ol>
+      <li>
+        <p>sampling strategies: batch sampling, importance sampling</p>
+
+        <p>→ cause information loss, sub-optimal performance</p>
+      </li>
+      <li>
+        <p>novel message passing functions like pooling layers, multi-head attentions</p>
+
+        <p>→ studied oversmoothing problem</p>
+
+        <ul>
+          <li>solution: skip-connection. (sub-optimal)</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>advocate explicitly sampling diverse iterations of aggregation for different nodes</p>
+
+    <p>⇒ different nodes require different iters of aggregation to fully capture the structural information</p>
+
+    <p><img src="/assets/img/pGNN/Untitled.png" alt="Untitled" /></p>
+
+    <ul>
+      <li>nontrival
+        <ol>
+          <li>real-world graphs are complex (suitable iters of aggregation for each node?)</li>
+          <li>how to train?</li>
+        </ol>
+      </li>
+    </ul>
+
+    <p>⇒ propose Policy-GNN: meta-policy framework to model the complex aggregation strategy</p>
+
+    <ol>
+      <li>formulate graph representation learning as MDP
+        <ul>
+          <li>MDP iteratively samples the number of hops of current nodes and neighboring nodes with a meta-policy and trains GNNs by aggregating the information of nodes within the sampled hops</li>
+          <li>integrates the sampling procedures and message passing into a combined learning process</li>
+        </ul>
+      </li>
+      <li>showcase an instance of our framework by implementing it with deep Q-learning (DQN) and GCN</li>
+    </ol>
+  </li>
+  <li>contributions
+    <ol>
+      <li>introduce diverse aggregation → boost performance of GNN</li>
+      <li>formulate GNN training problem → MDP, propose meta-policy framework that uses RL to adaptively optimize the aggregation strategy</li>
+      <li>
+        <p>develop a practical instance of our framework based on DQN and GCN: outperformances SOTA</p>
+
+        <p>→ code: <a href="https://github.com/datamllab/Policy-GNN">https://github.com/datamllab/Policy-GNN</a></p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>[2. Preliminaries]</p>
+
+<p>[2.1 Problem definition]</p>
+
+<ul>
+  <li>GRL: embed graph into low-dimensional vector spaces</li>
+  <li>goal: given an arbitrary graph neural network algorithm, jointly learn a meta-policy $\tilde{\pi}: v\in V \rightarrow \text{[number of iterations of aggregation]}$ with the GNN</li>
+</ul>
+
+<p>[2.2 Learning Graph Representations with Deep Neural Networks]</p>
+
+<ul>
+  <li>3 steps of learning GNN
+    <ol>
+      <li>initialization</li>
+      <li>neighborhood detection</li>
+      <li>information aggregation
+        <ul>
+          <li>several functions</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>{example}</p>
+
+    <ol>
+      <li>
+        <p>GCN</p>
+
+        <p><img src="/assets/img/pGNN/Untitled%201.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>GAT</p>
+        <ul>
+          <li>substitue $\tilde{A}$ with self-attention scores(importance of aggregation from u to v)</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>⇒ GCN is expesnve when G becomes larger</p>
+
+    <ol>
+      <li>Local sampling (GraphSAGE)
+        <ul>
+          <li>aggregates a fixed number of directed neighbors</li>
+        </ul>
+      </li>
+      <li>Global sampling (FastGCN)
+        <ul>
+          <li>introduce an importance sampling among all of nodes</li>
+          <li>capture global information of the graph</li>
+        </ul>
+      </li>
+      <li>Policy GNN
+        <ol>
+          <li>local sampling → MDP</li>
+          <li>global information through training a meta-policy to make decisions on k-hop aggregations</li>
+        </ol>
+
+        <p>⇒ first build upon GCN (but can exten to others)</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<p>[2.3 Sequential Decision Modeling with Markov Decision Process]</p>
+
+<ul>
+  <li>M: MDP, quintuple (S, A, P_T, R, $\gamma$)
+    <ul>
+      <li>S: finite set of states</li>
+      <li>A: finite set of actions</li>
+      <li>P_T: S<em>A</em>S → R+ : state transition probability function</li>
+      <li>R: immediate reward function</li>
+      <li>r: discount factor</li>
+    </ul>
+
+    <p>⇒ aim: find a policy $\pi: S\rightarrow A$ to maximize $E_{\pi}[\sum_{t=0}^{\infty} \gamma^t r_t]$</p>
+  </li>
+</ul>
+
+<p>[2.4 Solving Markov Decision Process with Deep Reinforcement Learning]</p>
+
+<ul>
+  <li>Deep reinforcement learning: a family of algorithms that solve that MDP with deep neural networks</li>
+  <li>consider model-free deep reinforcement learning</li>
+  <li>
+    <p>DQN uses DNN to approximate state-action values:</p>
+
+    <p><img src="/assets/img/pGNN/Untitled%202.png" alt="Untitled" /></p>
+
+    <p>{two techniques}</p>
+
+    <ol>
+      <li>replay buffer to reuse past experiences</li>
+      <li>separate target network that is periodically updated</li>
+    </ol>
+  </li>
+</ul>
+
+<p>⇒ We employ DQN(deep reinforcement learning) to solve The MDP</p>
+
+<p><img src="/assets/img/pGNN/Untitled%203.png" alt="Untitled" /></p>
+
+<p>[3. Methodology]</p>
+
+<ul>
+  <li>two components of framework
+    <ol>
+      <li>meta-policy module: node attributes → iterations</li>
+      <li>GNN: exploits meta-policy to learn the graph representations</li>
+    </ol>
+
+    <p><img src="/assets/img/pGNN/Untitled%204.png" alt="Untitled" /></p>
+  </li>
+  <li>combining two modules, formulate the graph representation learning as MDP
+    <ul>
+      <li>meta-policy treats node attributes as state, map state into action</li>
+      <li>sample next state from the k-hop neighbors, where k is the output of Meta-policy(action)</li>
+      <li>GNN module select a pre-built k-layer GNN architeccture to learn the node representations and obtains a reward signal for updating Meta-policy</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[3.1 Aggregation Optimization with Deep Reinforcement Learning]</p>
+
+<ul>
+  <li>how to define S, A, R?</li>
+</ul>
+
+<p>{proposed aggregation process}</p>
+
+<ol>
+  <li>select a start node, obtain its attributes as the current state $s_t$.</li>
+  <li>generate an action from $a_t$ from $\pi(s_t)$ (number of hops for current node)</li>
+  <li>sample the next node from $a_t$-hop neighborhood and obtain its attributes as the next state $s_{t+1}$.</li>
+</ol>
+
+<p>⇒ To optimize above MDP, we use deep reinforcement learning algorithms (Q-learning)</p>
+
+<p><img src="/assets/img/pGNN/Untitled%205.png" alt="Untitled" /></p>
+
+<ul>
+  <li>rightmost: baseline for each timestep t</li>
+  <li>M: evaluation metric of a specific task</li>
+  <li>b: hyperparameter to define the window size</li>
+  <li>$\lambda$: hyperparameter to decide the strength of reward signal</li>
+  <li>M(s, a): performance of the task</li>
+</ul>
+
+<p>⇒ With this equation, we train Q function optimizing DQN equation above. Also, apply epsilon-greedy policy to obtain our policy function $\tilde{\pi}$.</p>
+
+<p><img src="/assets/img/pGNN/Untitled%206.png" alt="Untitled" /></p>
+
+<p>[3.2 Graph representation learning with Meta-policy]</p>
+
+<ul>
+  <li>recent efforts on skip-connection: “implicitly” learns an aggregation strategy</li>
+  <li>proposed framework: “explicitly” aggregates the information, also include skip-connection
+    <ul>
+      <li>
+        <p>aggregates $a_t$ layers for each node attributes $s_t$ at timestep t.</p>
+
+        <p><img src="/assets/img/pGNN/Untitled%207.png" alt="Untitled" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>[3.3 Accelerating Policy-GNN with Buffer Mechanism and Parameter Sharing]</p>
+
+<p><img src="/assets/img/pGNN/Untitled%208.png" alt="Untitled" /></p>
+
+<ul>
+  <li>
+    <p>main problem of policy-GNN: training efficiency since reconstructing GNNs at every timestep is time-consuming, #parameters may be large</p>
+
+    <p>{solution}</p>
+
+    <ul>
+      <li>parameter sharing</li>
+      <li>buffer mechanism for GRL
+        <ul>
+          <li>for each timestep, store [a batch of nodes’ attributes and a batch of actions] into the action buffer and check if the buffer reached the batch size</li>
+          <li>if full, construct GNN with selected layers and train GNN</li>
+          <li>after training, clear buffer</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>[4. Experiment]</p>
+
+<p>Q1. Policy-GNN vs SOTA GRL</p>
+
+<p>Q2. distribution of the number of layers?</p>
+
+<p>Q3. iteration is important?</p>
+
+<p>[4.1 Datasets]</p>
+
+<p><img src="/assets/img/pGNN/Untitled%209.png" alt="Untitled" /></p>
+
+<p>[4.2 Baselines]</p>
+
+<ul>
+  <li>Network Embedding: DeepWalk, Node2vec (both via random walk sampling)</li>
+  <li>Static-GNNs: Chebyshev, GCN, GraphSAGE, FastGCN, GAT, LGCN</li>
+  <li>NAS-GNN: GraphNAS, AGNN</li>
+  <li>Random Policy (make decision with RL)</li>
+</ul>
+
+<p><img src="/assets/img/pGNN/Untitled%2010.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/pGNN/Untitled%2011.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/pGNN/Untitled%2012.png" alt="Untitled" /></p>
+
+<p>[5. Conclusion]</p>
+
+<ul>
+  <li>policy-GNN outperforms SOTA performance</li>
+  <li>limitations
+    <ul>
+      <li>training efficiency</li>
+      <li>apply different RL algorithms and advanced aggregation functions</li>
+      <li>combine meta-policy with NAS to jointly optimize the neural architecture and the aggregation strategy</li>
+    </ul>
+  </li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>

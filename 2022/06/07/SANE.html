@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Search to aggregate neighborhood for graph neural network | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Search to aggregate neighborhood for graph neural network" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[abstract]" />
+<meta property="og:description" content="[abstract]" />
+<link rel="canonical" href="http://localhost:4000/2022/06/07/SANE.html" />
+<meta property="og:url" content="http://localhost:4000/2022/06/07/SANE.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-07T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Search to aggregate neighborhood for graph neural network" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2022-06-07T00:00:00+09:00","datePublished":"2022-06-07T00:00:00+09:00","description":"[abstract]","headline":"Search to aggregate neighborhood for graph neural network","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/06/07/SANE.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2022/06/07/SANE.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Search to aggregate neighborhood for graph neural network</h1>
+    <p class="subtitle">H. Zhao et al. / 2021 / ICDE</p>
+    <p class="meta">
+      June 7, 2022
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[abstract]</p>
+
+<ul>
+  <li>propose Search to Aggregate NEighborhood (SANE)
+    <ul>
+      <li>automatically design data-specific GNN structures</li>
+    </ul>
+  </li>
+  <li>propose differentiable search algorithms</li>
+</ul>
+
+<p>[1. Introduction]</p>
+
+<ul>
+  <li>problem of GNN
+    <ul>
+      <li>모든 task에서 best performance를 내는 single model 없음</li>
+      <li>같은 task, 다른 dataset에서의 optimal model이 없음</li>
+    </ul>
+  </li>
+  <li>
+    <p>현재: neighbors의 hiden feature를 aggregate하기 위해 같은 aggregation function으로 multiple layer을 stack한 모델</p>
+
+    <p>⇒ different combinations of aggregation functions 이 성능을 향상시킬 수 있음 (dubbed architecture challenge)</p>
+  </li>
+  <li>NAS approcah for GNN
+    <ul>
+      <li>example: GraphNAS, Auto-GNN: tackle the architeucture challenge</li>
+      <li>approach: design the search space
+        <ul>
+          <li>contains all hyperparameters related to GNN models (GraphNAS와 Auto-GNN)
+            <ul>
+              <li>문제1: GeniePath나JK-Network 포함하고 있지 않음 → best performance 보장 x</li>
+              <li>문제2: architecture search process가 too expensive</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>본질적인 문제: extremely expensive due to the trial-and-error nature (dubbed computational challenge)</li>
+    </ul>
+  </li>
+  <li>propose novel NAS framework, which tries to search to aggregate Neighborhood(SANE) for automatic architecture search in GNN</li>
+  <li>contribution
+    <ul>
+      <li>propose SANE framework based on NAS (emulate more human-designed GNN architectures)</li>
+      <li>for computational challenge, propse differentiable architecture search algorithm
+        <ul>
+          <li>trial-and-error based NAS approcah에 비교하여 효율적임</li>
+          <li>first differentitable NAS approach for GNN</li>
+          <li>applicable</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/SANE/Untitled.png" alt="Untitled" /></p>
+
+<p>[3. The proposed framework]</p>
+
+<p>[A. The search space design]</p>
+
+<ul>
+  <li>condition for search space
+    <ul>
+      <li>large and expressive enough (emulate various existing GNN models)</li>
+      <li>small and compact (compuational resources)</li>
+    </ul>
+  </li>
+  <li>components
+    <ul>
+      <li>
+        <p>node aggregators: $\mathcal{O}_n$ below (11)</p>
+
+        <p><img src="/assets/img/SANE/Untitled%201.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>layer aggregators: $\mathcal{O}_l$ above (3) + $\mathcal{O}_s$ (skip-connection) above (2)</p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/SANE/Untitled%202.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[B. Differentiable Architecture Search]</p>
+
+<ul>
+  <li>
+    <p>how to represent the search space of SANE as a supernet (DAG in Figure 1(c))</p>
+
+    <p>1) continuous relaxation of the search space</p>
+
+    <ul>
+      <li>Assume we use K-layer GNN with JK-Network as backbone</li>
+      <li>Supernet has K+3 nodes, where each node $x^l$ is a latent representation (ex. input features of node, embeddings in the intermediate layers)</li>
+      <li>each edge associated with an operation $o^{ij}$ (ex. GAT aggreagtor)</li>
+      <li>One input node, one output node, one node representing all skipped intermediate layers ⇒ K+3 node in total</li>
+      <li>task: find proper operation on each edge ⇒ discrete search space에서는 힘듦</li>
+      <li>
+        <p>softmax 를 사용하여 relax</p>
+
+        <p><img src="/assets/img/SANE/Untitled%203.png" alt="Untitled" /></p>
+      </li>
+      <li>$\bar{o}_n, \bar{o}_s, \bar{o}_l$: mixed operations from On, Ol, Os</li>
+      <li>
+        <p>neighborhood aggregation process by SANE</p>
+
+        <p><img src="/assets/img/SANE/Untitled%204.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>the mbedding of last layer</p>
+
+        <p><img src="/assets/img/SANE/Untitled%205.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>after obtain final representation of $z_v$, inject it to different types of loss epending on the given task. i.e. SANE-to solve a bi-level optimization problem:</p>
+
+        <p><img src="/assets/img/SANE/Untitled%206.png" alt="Untitled" /></p>
+      </li>
+    </ul>
+
+    <p>⇒ the task of architecture search by SANE=learn three continuous variables $\alpha_n$, $\alpha_s$, $\alpha_l$.</p>
+
+    <p>2) optimization by gradient descent</p>
+
+    <p><img src="/assets/img/SANE/Untitled%207.png" alt="Untitled" /></p>
+
+    <ul>
+      <li>instead of obtaining the optimized $w^*(\alpha)$, need to approximate it by adapting w using only a single training step</li>
+      <li>retain top-k strongest operations</li>
+      <li>
+        <p>in the experient, k=1 for simplicity.</p>
+
+        <p><img src="/assets/img/SANE/Untitled%208.png" alt="Untitled" /></p>
+      </li>
+    </ul>
+
+    <p><img src="/assets/img/SANE/Untitled%209.png" alt="Untitled" /></p>
+
+    <p>3) Comparison with Existing NAS methods</p>
+
+    <ul>
+      <li>SANE not include parameters like hidden embedding size, number of attention heads (hyperparameters of GNN models)</li>
+      <li>focus on”aggregation functions”</li>
+    </ul>
+
+    <p><img src="/assets/img/SANE/Untitled%2010.png" alt="Untitled" /></p>
+
+    <p>[4. Experiment]</p>
+
+    <p><img src="/assets/img/SANE/Untitled%2011.png" alt="Untitled" /></p>
+
+    <p><img src="/assets/img/SANE/Untitled%2012.png" alt="Untitled" /></p>
+
+    <p><img src="/assets/img/SANE/Untitled%2013.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[5. Conclusion]</p>
+
+<ul>
+  <li>propose SANE for graph NAS</li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
