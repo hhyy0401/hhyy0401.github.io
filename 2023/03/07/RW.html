@@ -99,24 +99,24 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
   $$
   \everymath{\displaystyle}</p>
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>A General Framework for Estimating Graphlet Statistics via Random Walk | Hyunju Kim</title>
+<title>Strategies for pre-trained GNNs | Hyunju Kim</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="A General Framework for Estimating Graphlet Statistics via Random Walk" />
+<meta property="og:title" content="Strategies for pre-trained GNNs" />
 <meta name="author" content="Hyunju Kim" />
 <meta property="og:locale" content="en_GB" />
-<meta name="description" content="[abstract]" />
-<meta property="og:description" content="[abstract]" />
+<meta name="description" content="A General Framework for Estimating Graphlet Statistics via Random Walk" />
+<meta property="og:description" content="A General Framework for Estimating Graphlet Statistics via Random Walk" />
 <link rel="canonical" href="http://localhost:4000/2023/03/07/RW.html" />
 <meta property="og:url" content="http://localhost:4000/2023/03/07/RW.html" />
 <meta property="og:site_name" content="Hyunju Kim" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-03-07T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="A General Framework for Estimating Graphlet Statistics via Random Walk" />
+<meta property="twitter:title" content="Strategies for pre-trained GNNs" />
 <meta name="twitter:site" content="@chrjabs" />
 <meta name="twitter:creator" content="@Hyunju Kim" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2023-03-07T00:00:00+09:00","datePublished":"2023-03-07T00:00:00+09:00","description":"[abstract]","headline":"A General Framework for Estimating Graphlet Statistics via Random Walk","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/03/07/RW.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2023/03/07/RW.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2023-03-07T00:00:00+09:00","datePublished":"2023-03-07T00:00:00+09:00","description":"A General Framework for Estimating Graphlet Statistics via Random Walk","headline":"Strategies for pre-trained GNNs","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/03/07/RW.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2023/03/07/RW.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -160,14 +160,16 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </section>
 <div id="post">
   <section class="post-header">
-    <h1 class="title">A General Framework for Estimating Graphlet Statistics via Random Walk</h1>
+    <h1 class="title">Strategies for pre-trained GNNs</h1>
     <p class="subtitle">X. Chen et al. / 2016 / VLDB</p>
     <p class="meta">
       March 7, 2023
     </p>
   </section>
   <section class="post-content">
-    <p>[abstract]</p>
+    <h1 id="a-general-framework-for-estimating-graphlet-statistics-via-random-walk">A General Framework for Estimating Graphlet Statistics via Random Walk</h1>
+
+<p>[abstract]</p>
 
 <ul>
   <li>propose a framewalk to estimate graphlet statistics of “any size”</li>
@@ -239,7 +241,7 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     <ul>
       <li>random walk : a finite and time-reversible Markov chain with state space V
         <ul>
-          <li>$\set{X_t}$: Markov chain representing the visited nodes of the random walk on G</li>
+          <li>${X_t}$: Markov chain representing the visited nodes of the random walk on G</li>
           <li>P: transition probability defined as $P(i,j)=1/d_i$ if $(i,j)\in E$ and 0 otherwise.</li>
         </ul>
       </li>
@@ -268,25 +270,32 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 <ul>
   <li>d는 hyperparameter로, $G^{(d)}$와 $l=k-d+1$ consecutive steps를 결정</li>
   <li>각 $X_i (i\geq l)$ 스텝마다 $l-1$ 개의 전 스텝을 기억</li>
+  <li>$G^{(d)}$에서 random walk 시행 후 $X^{(l)}=(X_{i-l+1}, \dots, X_i)$로 induced 된 subgraph를 고려</li>
+  <li>만약 induced subgraph의 크기가 k미만이면, 다시 l consecutive step을 찾음</li>
 </ul>
 
 <p>[3.2 Expanded Markov Chain]</p>
 
 <ul>
   <li>Each $l$ consecutive steps are considered as a state $X^{(l)}=(X_1, \cdots, X_l)$ of the expanded Markov chain</li>
-  <li>state space $M^{(l)} = \set{(X_1, \cdots, X_l): X_i\in N, 1\leq i\leq l \text{ s.t. } (X_i, X_{i+1})\in R^{(d)} \;\forall 1\leq i\leq l-1 }$</li>
-  <li>bias occurs
-    <ol>
-      <li>states in the expanded Markov chain do not have eqal stational probabilities</li>
-      <li>a graphlet samples corresponds to several states</li>
-    </ol>
+  <li><strong>state space</strong> $M^{(l)} = \set{(X_1, \cdots, X_l): X_i\in N, 1\leq i\leq l \text{ s.t. } (X_i, X_{i+1})\in R^{(d)} \;\forall 1\leq i\leq l-1}$ (”expanded” MC)</li>
+  <li>define expanded MC for convenience of deriving unbiased estimator
+    <ul>
+      <li>bias causes from two aspects
+        <ol>
+          <li>states in the expanded Markov chain do not have eqal stational probabilities</li>
+          <li>a graphlet samples corresponds to several states</li>
+        </ol>
+      </li>
+    </ul>
   </li>
 </ul>
 
 <p><img src="/assets/img/RW/Untitled%203.png" alt="Untitled" /></p>
 
 <ul>
-  <li>state corresponding coefficient $\alpha_i^k = \abs{C(s)}$ where $C(s)=\set{X^{(l)}\mid s(X^{(l)})=s, X^{(l)}\in M^{(l)}}$.</li>
+  <li>stationary distribution : $\pi_e$ (stationary distribution of the expandned MC) can be computed by $\pi$ (stationary distribution of the random walk)</li>
+  <li>state corresponding coefficient $\alpha_i^k = \abs{C(s)}$ where $C(s)=\set{X^{(l)}:s(X^{(l)})=s, X^{(l)}\in M^{(l)}}$.</li>
   <li>if states in $M^{(l)}$ are uniformly sampled, then the probability of getting a subgraph isomorphic to $g_i^k$ is $\alpha_i^kC_i^k/\abs{M^{(l)}}$.</li>
   <li>$\alpha_i^k$= twice the number of Hamiltonian paths</li>
 </ul>
@@ -294,7 +303,7 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 <p>[3.3 Unbiased Estimator]</p>
 
 <ul>
-  <li>$h_i^k(X^{(l)})=1\set{s(X^{(l)})= g_i^k}$.</li>
+  <li>$h_i^k(X^{(l)})=1{s(X^{(l)})= g_i^k}$.</li>
   <li>$\sum_{X^{(l)}\in M^{(l)}} h_i^k(X^{(l)})=\alpha_i^kC_i^k$.</li>
 </ul>
 
@@ -307,6 +316,35 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 <p>[4.1 Corresponding State Sampling (CSS)]</p>
 
 <p><img src="/assets/img/RW/Untitled%207.png" alt="Untitled" /></p>
+
+<ul>
+  <li>For X=(u, v, w) and Y=(v, w, u), $\pi_e(X)$ might be differerent with $\pi_e(Y)$</li>
+  <li>
+    <p>To solve this issue, we define “sampling probability” $p(X^{(l)})$</p>
+
+    <p><img src="/assets/img/RW/Untitled%208.png" alt="Untitled" /></p>
+  </li>
+  <li>If substitue $\pi_e$ on line 7 with p, we also get unbiased estimator</li>
+</ul>
+
+<p><img src="/assets/img/RW/Untitled%209.png" alt="Untitled" /></p>
+
+<ul>
+  <li>Vaiance is much more smaller when we use p instead of $\pi_e$</li>
+</ul>
+
+<p>[4.2 Non-backtracking random walk]</p>
+
+<ul>
+  <li>avoid backtracking to the previously visited node</li>
+  <li>define augmented space $\Omega=\set{(i,j): i,j\in H^{(d)}, \text{ s.t. }(i,j)\in R^{(d)}}$ and new transition matrix $P’$</li>
+</ul>
+
+<p><img src="/assets/img/RW/Untitled%2010.png" alt="Untitled" /></p>
+
+<ul>
+  <li>fact: NB-SRW preserves the stationary distribution of the original random walks</li>
+</ul>
 
   </section>
 </div>

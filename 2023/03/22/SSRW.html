@@ -99,23 +99,24 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
   $$
   \everymath{\displaystyle}</p>
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Presentations | Hyunju Kim</title>
+<title>SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk | Hyunju Kim</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Presentations" />
-<meta name="author" content="Christoph Jabs (chrjabs)" />
+<meta property="og:title" content="SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk" />
+<meta name="author" content="Hyunju Kim" />
 <meta property="og:locale" content="en_GB" />
-<meta name="description" content="List of held presentations" />
-<meta property="og:description" content="List of held presentations" />
-<link rel="canonical" href="http://localhost:4000/presentations.html" />
-<meta property="og:url" content="http://localhost:4000/presentations.html" />
+<meta name="description" content="SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk" />
+<meta property="og:description" content="SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk" />
+<link rel="canonical" href="http://localhost:4000/2023/03/22/SSRW.html" />
+<meta property="og:url" content="http://localhost:4000/2023/03/22/SSRW.html" />
 <meta property="og:site_name" content="Hyunju Kim" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-22T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Presentations" />
+<meta property="twitter:title" content="SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk" />
 <meta name="twitter:site" content="@chrjabs" />
-<meta name="twitter:creator" content="@Christoph Jabs (chrjabs)" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Christoph Jabs (chrjabs)"},"description":"List of held presentations","headline":"Presentations","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Christoph Jabs (chrjabs)"},"url":"http://localhost:4000/presentations.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2023-03-22T00:00:00+09:00","datePublished":"2023-03-22T00:00:00+09:00","description":"SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk","headline":"SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/03/22/SSRW.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2023/03/22/SSRW.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -130,6 +131,7 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     <nav>
       <ul>
         
+        <!-- others -->
         <a href="/">
           <li class="btn-nav">Home</li>
         </a>
@@ -138,38 +140,123 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
             <li class="btn-nav">Publications</li>
           </a>
         
-        <li class="current">Presentations</li>
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
         
           <a href="/blog">
-            <li class="btn-nav">Blog</li>
+            <li class="current btn-nav">Blog</li>
           </a>
           <a href="/tags">
             <li class="btn-nav">Tags</li>
           </a>
         
-        <!-- blog -->
         
       </ul>
     </nav>
   </header>
 </section>
-<div id="presentations">
-  <section class="bg"></section>
-  <h1 class="title">Presentations</h1>
-  <ol class="presentations-list">
-    
-      
-      <li>
-        <em class="title">Characterization of Simplicial Complexes by Counting Simplets Beyond Four Nodes</em> at <em class="event">WWW2023</em> <em class="date">(2023.04.12)</em>
-        <p class="comment"><p>This is a promotional video for WWW2023.</p>
-</p>
-        <div class="links">
-            [<a href="https://youtu.be/xIP9lz-UtEI" class="btn btn-sm z-depth-0" role="button">Recording</a>]
-        </div>
-      </li>
-    
-  </ol>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk</h1>
+    <p class="subtitle">C. Yang et al. / 2018 / DASFAA</p>
+    <p class="meta">
+      March 22, 2023
+    </p>
+  </section>
+  <section class="post-content">
+    <h1 id="ssrw---a-scalable-algorithm-for-estimating-graphlet-statistics-based-on-random-walk">SSRW - A Scalable Algorithm for Estimating Graphlet Statistics Based on Random Walk</h1>
+
+<p>[Abstract]</p>
+
+<ul>
+  <li>propose highly scalable algorithm SSRW (Scalable subgraph Sampling via Random Walk)</li>
+  <li>하나의 고정된 노드 대신 기존에 갔던 노드들의 neighbor에서 새로운 노드를 생성함으로써 graphlet을 sample함</li>
+  <li>4,5,6,7 크기의 graphlet까지 counting 완료</li>
+</ul>
+
+<p>[3. The Scalable Subgraph Sampling Algorithm]</p>
+
+<ul>
+  <li>when a random walk get mixing, every node in the <strong>random walk</strong> serves as a starting node and induces a k-subgraph with our sampling strategy</li>
+</ul>
+
+<p>[3.1 Sampling Strategy for k-Subgraphs]</p>
+
+<ul>
+  <li>first choose 2-path</li>
+  <li>for $3\leq t\leq k$, the t-th node $v_t$ is selcted from the neighbors from the previous t-2 nodes (all except for the first one)</li>
+</ul>
+
+<p><img src="/assets/img/SSRW/Untitled.png" alt="Untitled" /></p>
+
+<ul>
+  <li>note: lline 3 is a multiset, not the union (helps to make unbias estimation)</li>
+  <li>Theorem 1: Algorithm 1 generates all k-graphlets in graph G for $k\geq 2$</li>
+</ul>
+
+<p>[3.2 Computation of Repeat Coefficient]</p>
+
+<ul>
+  <li>
+    <p>A k-tuple can be generated through various ways</p>
+
+    <p><img src="/assets/img/SSRW/Untitled%201.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p>[3.3 Unbiased Estimator]</p>
+
+<ul>
+  <li>When a random walk get mixed, the probability of the appearance of node v is P(v)=d(v)/D, where D is the sum of degrees of all nodes in G</li>
+  <li>The sequence $r^{(k)}=(v_1, v_2, \cdots, v_k)$ is genrated with probability</li>
+</ul>
+
+<p><img src="/assets/img/SSRW/Untitled%202.png" alt="Untitled" /></p>
+
+<p><img src="/assets/img/SSRW/Untitled%203.png" alt="Untitled" /></p>
+
+<ul>
+  <li>Theorem 2: The unbiased estimator for $C^k_i$, the count of graphlet $g_i^k$, is $\hat{C}<em>i^k=\frac{1}{n\alpha_i^k}\sum</em>{i=1}^n \frac{L(r^{(k)}, g_i^k)}{P(r^{(k)})}$</li>
+</ul>
+
+<p><img src="/assets/img/SSRW/Untitled%204.png" alt="Untitled" /></p>
+
+<p>⇒ can get counts</p>
+
+  </section>
 </div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
 
 <!-- Footer -->
 <footer>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+        packages: {'[+]': ['physics']},
+        macros: {
+          bm: ["{\\boldsymbol #1}",1],
+        }
+      },
+      loader: {
+        load: ["input/tex", "output/chtml", '[tex]/physics']
+      },
+    };
+</script>
+<script id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<p style="display: none;">$$
+  \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+  \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+  \newcommand{\N}{\mathbb{N}}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\Q}{\mathbb{Q}}
+  \newcommand{\C}{\mathbb{C}}
+  \renewcommand{\L}{\mathcal{L}}
+  \newcommand{\x}{\times}
+  \newcommand{\contra}{\scalebox{1.5}{$\lightning$}}
+  \newcommand{\inner}[2]{\left\langle #1 , #2 \right\rangle}
+  \newcommand{\st}{\text{ such that }}
+  \newcommand{\for}{\text{ for }}
+  \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}}
+  \newcommand{\setcond}[2]{\Setcond{#1}{#2}}
+  \newcommand{\seq}[1]{ \left\langle #1 \right\rangle}
+  \newcommand{\Set}[1]{ \left\{ #1 \right\}}
+  \newcommand{\set}[1]{ \Set{#1} }
+  \newcommand{\sgn}{\text{sign}}
+  \newcommand{\halfline}{\vspace{0.5em}}
+  \newcommand{\diag}{\text{diag}}
+
+  \newcommand{\legn}[2]{\left(\frac{#1}{#2}\right)} 
+  \newcommand{\ord}{\text{ord}}
+  \newcommand{\di}{\mathrel{|}} 
+  \newcommand{\gen}[1] 
+  \newcommand{\irr}{\mathrm{irr }}
+  \renewcommand{\deg}{\mathrm{deg }}
+  \newcommand{\nsgeq}{\trianglelefteq}
+  \newcommand{\nsg}{\triangleleft}
+  
+  \newcommand{\argmin}{\mathrm{argmin}}
+  \newcommand{\argmax}{\mathrm{argmax}}
+  \newcommand{\minimize}{\mathrm{minimize}}
+  \newcommand{\maximize}{\mathrm{maximize}}
+  \newcommand{\subto}{\mathrm{subject\ to}}
+  \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+  \newcommand{\ReLU}{\mathrm{ReLU}}
+  
+  \newcommand{\E}{\mathsf{E}}
+  \newcommand{\V}{\mathsf{Var}}
+  \newcommand{\Corr}{\mathsf{Corr}}
+  \newcommand{\Cov}{\mathsf{Cov}}
+  \newcommand{\covariance}[1]{\Cov\left(#1\right)}
+  \newcommand{\variance}[1]{\V\left[#1\right]}
+  \newcommand{\variancewith}[1]{\V\left[#1\right]}
+  \newcommand{\expect}[1]{\E\left[#1\right]}
+  \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+  \renewcommand{\P}{\mathsf{P}}
+  \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
+  \newcommand{\gdist}[2]{\mathcal{N}\left(#1, #2\right)}
+  \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+  $$
+  \everymath{\displaystyle}</p>
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>GUISE - Uniform Sampling of Graphlets for Large Graph Analysis | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="GUISE - Uniform Sampling of Graphlets for Large Graph Analysis" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="GUISE - Uniform Sampling of Graphlets for Large Graph Analysis" />
+<meta property="og:description" content="GUISE - Uniform Sampling of Graphlets for Large Graph Analysis" />
+<link rel="canonical" href="http://localhost:4000/2023/03/20/GUISE.html" />
+<meta property="og:url" content="http://localhost:4000/2023/03/20/GUISE.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-20T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GUISE - Uniform Sampling of Graphlets for Large Graph Analysis" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2023-03-20T00:00:00+09:00","datePublished":"2023-03-20T00:00:00+09:00","description":"GUISE - Uniform Sampling of Graphlets for Large Graph Analysis","headline":"GUISE - Uniform Sampling of Graphlets for Large Graph Analysis","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/03/20/GUISE.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2023/03/20/GUISE.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">GUISE - Uniform Sampling of Graphlets for Large Graph Analysis</h1>
+    <p class="subtitle">M. Bhuiyan et al. / 2012 / ICDM</p>
+    <p class="meta">
+      March 20, 2023
+    </p>
+  </section>
+  <section class="post-content">
+    <h1 id="guise---uniform-sampling-of-graphlets-for-large-graph-analysis">GUISE - Uniform Sampling of Graphlets for Large Graph Analysis</h1>
+
+<ul>
+  <li>This paper deals with GFD (graphlet frequency distribution).</li>
+  <li>Propose MCMC sampling method for constructing approx GFD.</li>
+</ul>
+
+<p>[1. Introduction]</p>
+
+<ul>
+  <li>key challenge for obtaining GFD : excessive computational cost</li>
+  <li>graphlet-size “five” is the best considering cost-benefit trade off</li>
+  <li>Existing tool regard to GFD (exact counting) GraphCrunch2 fails to count in real datas</li>
+  <li>exact counting is required for a few scenarios
+    <ul>
+      <li>desining graph kernels</li>
+      <li>resconstruct the counts from the count of a specific one graphlet</li>
+    </ul>
+  </li>
+  <li>contribution
+    <ul>
+      <li>propose GUISE: construct graphlet frequency distribution (use MCMC)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[2. Background]</p>
+
+<ul>
+  <li>GFD
+    <ul>
+      <li>$log(\frac{f(i)+1}{\sum_{i=1}^{29} f(i)+29 })$ where f(i) is the frequency of graphlet $g_i$</li>
+      <li>deal with graphlets of size 3,4 and 5</li>
+    </ul>
+  </li>
+  <li>Markov chains
+    <ul>
+      <li>random variable X has a range of values (states) that are defined in a state space S</li>
+      <li>$X_t$ : X at (discrete) time t</li>
+      <li>the random variable is called Markov process if the transition probabilities between a pair of states in S depends only on the current value(state) of X</li>
+      <li>The matrix of transition probabilities (state i → state j) : T(i, j)
+        <ul>
+          <li>each entry is between 0 and 1</li>
+          <li>for a fixed i, the sum of T(i, j) is equal to 1</li>
+        </ul>
+      </li>
+      <li>said to reach stationary distribution $\pi$  when $\pi = \pi T$ (eigenvalue)</li>
+      <li>said to reversible when $\pi(i)T(i,j)=\pi(j)T(j,i)$ (sufficient condition for $\pi$ to be a stationary distribution of the Markov chain)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[3. Method]</p>
+
+<p>[A. Uniform samplming of graphlets for GFD construction]</p>
+
+<ul>
+  <li>the number of all graphlets : $\abs{S}$</li>
+  <li>choose each graphlet with the probability : $1/\abs{S}$</li>
+  <li>want to sample a graphlet uniformly without explicitly enumerating all the embeddings of all graphlets ⇒ solution : MCMC algorithms</li>
+  <li>MCMC : perform a random walk on the sample space with a locally computable transition probability matrix in such as a manner that the stationary distribution of the random walk aligns with the desired probability distribution</li>
+  <li>construction GFD by GUISE
+    <ul>
+      <li>keeps one counter for each of the graphlets (a total of 29 counters all initialized to 1)</li>
+      <li>calls the sampler repeatedly for a large number of iterations</li>
+    </ul>
+  </li>
+  <li>Lemma 1: When the size of the sample set approaches to infinity, GUISE returns the correct GFD for a graph</li>
+</ul>
+
+<p>[B. MCMC algorithm for Uniform Sampling of a Graphlet]</p>
+
+<p>⇒ MCMC는 마르코프 체인에 기반한 확률 분포로부터 원하는 분포의 <strong>정적 분포를 갖는 표본을 추출</strong>하는 알고리즘의 한 종류이다</p>
+
+<ul>
+  <li>neighboring graphlets: For a k-graphlet, all the graphlets of size k-1, k, k+1 having k-1, k-1, k nodes in common, respectively, are its neighboring graph</li>
+  <li>define the sample space, the state transition process, the transition probability matrix, desired probability distribution</li>
+  <li>states : embeddings of any 3-, 4-, 5- graphlets</li>
+  <li>time T, state S → walks to one of neighboroing states with the probability that is defined by an appropriate state transition probability matrix T</li>
+  <li>add vertex → (k-1)- to k- graphlet</li>
+  <li>delete vertex → k- to (k-1)- graphlet</li>
+  <li>replace vertex → k- to k- graphlet</li>
+  <li>transition probability T of graphlet p and q that are not neighbors of each other : 0</li>
+  <li>for uniform sampling, the stationary distribiution : [1/m, .., 1/m] where $m=\abs{S}$
+    <ul>
+      <li>to make this, symmetric transition probability might be helpful</li>
+      <li>set T(p, q) and T(q, p) : = min(1/d(p), 1/d(q))
+        <ul>
+          <li>if the sum of row entries is not 1, allocate the remaining probability as a self-loop to the resident state</li>
+        </ul>
+      </li>
+      <li>symmetric transition probability matrix == doubly stochastic matrix</li>
+    </ul>
+  </li>
+  <li><strong>Lemma 2: An ergodic random walk achieves a uniform stationary distribution iff transition probability matrix is doubly stochastic</strong></li>
+  <li><strong>Lemma 3: The random walk that GUISE (self-loop) uses is ergodic</strong></li>
+  <li>mixing time : since social network graphs have small diameter, the diameter of transition graph is small, so the mixing time of random walk is small → converge very fast</li>
+</ul>
+
+<p>[C. pseudo-code]</p>
+
+<p><img src="/assets/img/GUISE/Untitled.png" alt="Untitled" /></p>
+
+<ul>
+  <li>choose $g_y$ with the probability of $1/\abs{d_{g_x}}$</li>
+  <li>accept with the probability of $min(\abs{d_{g_x}}/\abs{d_{g_y}}, 1)$</li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
