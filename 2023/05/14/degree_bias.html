@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+        packages: {'[+]': ['physics']},
+        macros: {
+          bm: ["{\\boldsymbol #1}",1],
+        }
+      },
+      loader: {
+        load: ["input/tex", "output/chtml", '[tex]/physics']
+      },
+    };
+</script>
+<script id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<p style="display: none;">$$
+  \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+  \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+  \newcommand{\N}{\mathbb{N}}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\Q}{\mathbb{Q}}
+  \newcommand{\C}{\mathbb{C}}
+  \renewcommand{\L}{\mathcal{L}}
+  \newcommand{\x}{\times}
+  \newcommand{\contra}{\scalebox{1.5}{$\lightning$}}
+  \newcommand{\inner}[2]{\left\langle #1 , #2 \right\rangle}
+  \newcommand{\st}{\text{ such that }}
+  \newcommand{\for}{\text{ for }}
+  \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}}
+  \newcommand{\setcond}[2]{\Setcond{#1}{#2}}
+  \newcommand{\seq}[1]{ \left\langle #1 \right\rangle}
+  \newcommand{\Set}[1]{ \left\{ #1 \right\}}
+  \newcommand{\set}[1]{ \Set{#1} }
+  \newcommand{\sgn}{\text{sign}}
+  \newcommand{\halfline}{\vspace{0.5em}}
+  \newcommand{\diag}{\text{diag}}
+
+  \newcommand{\legn}[2]{\left(\frac{#1}{#2}\right)} 
+  \newcommand{\ord}{\text{ord}}
+  \newcommand{\di}{\mathrel{|}} 
+  \newcommand{\gen}[1] 
+  \newcommand{\irr}{\mathrm{irr }}
+  \renewcommand{\deg}{\mathrm{deg }}
+  \newcommand{\nsgeq}{\trianglelefteq}
+  \newcommand{\nsg}{\triangleleft}
+  
+  \newcommand{\argmin}{\mathrm{argmin}}
+  \newcommand{\argmax}{\mathrm{argmax}}
+  \newcommand{\minimize}{\mathrm{minimize}}
+  \newcommand{\maximize}{\mathrm{maximize}}
+  \newcommand{\subto}{\mathrm{subject\ to}}
+  \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+  \newcommand{\ReLU}{\mathrm{ReLU}}
+  
+  \newcommand{\E}{\mathsf{E}}
+  \newcommand{\V}{\mathsf{Var}}
+  \newcommand{\Corr}{\mathsf{Corr}}
+  \newcommand{\Cov}{\mathsf{Cov}}
+  \newcommand{\covariance}[1]{\Cov\left(#1\right)}
+  \newcommand{\variance}[1]{\V\left[#1\right]}
+  \newcommand{\variancewith}[1]{\V\left[#1\right]}
+  \newcommand{\expect}[1]{\E\left[#1\right]}
+  \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+  \renewcommand{\P}{\mathsf{P}}
+  \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
+  \newcommand{\gdist}[2]{\mathcal{N}\left(#1, #2\right)}
+  \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+  $$
+  \everymath{\displaystyle}</p>
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Toward degree bias in embedding-based knowledge graph completion | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Toward degree bias in embedding-based knowledge graph completion" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[Abstract]" />
+<meta property="og:description" content="[Abstract]" />
+<link rel="canonical" href="http://localhost:4000/2023/05/14/degree_bias.html" />
+<meta property="og:url" content="http://localhost:4000/2023/05/14/degree_bias.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-14T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Toward degree bias in embedding-based knowledge graph completion" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2023-05-14T00:00:00+09:00","datePublished":"2023-05-14T00:00:00+09:00","description":"[Abstract]","headline":"Toward degree bias in embedding-based knowledge graph completion","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/05/14/degree_bias.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2023/05/14/degree_bias.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Toward degree bias in embedding-based knowledge graph completion</h1>
+    <p class="subtitle">Harry Shomer et al. / 2023 / WWWW</p>
+    <p class="meta">
+      May 14, 2023
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[Abstract]</p>
+
+<ul>
+  <li>
+    <p>fundamental task for KGs = KGC</p>
+
+    <p>⇒ predict unseen edges</p>
+
+    <ul>
+      <li>concern: degree bias
+        <ul>
+          <li>poor representations for lower-degree nodes
+            <ol>
+              <li>validate the existence of degree bias</li>
+              <li>identify the key factor to degree bias</li>
+              <li>novel data augmentation model, KG-Mixup to generate synthetic triples to mitigate such bias</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/img/degree_bias/Untitled.png" alt="Untitled" /></p>
+
+<p>[1. Introduction]</p>
+
+<ul>
+  <li>KG: each edge represents a single fact (h, r, t)
+    <ul>
+      <li>h, t, r: head, tail, relation</li>
+    </ul>
+  </li>
+  <li>problems: degree bias
+    <ul>
+      <li>
+        <p>validation: graph classification, link prediction tasks for homogeneous graphs</p>
+
+        <p>⇒ However, KGs are naturally heterogeneous</p>
+      </li>
+    </ul>
+  </li>
+  <li>questions: whether degree bias exists in KGs and how it affects the model performance in the context of KGC?</li>
+  <li>in-degree of entity t: #triples where t is the tail entity</li>
+  <li>tail-relation degree: #triples where t and r co-occur</li>
+  <li>when predicting t, #triples where entity t and relation r co-occur as an entity-relation pair correlates significantly with performance
+    <ul>
+      <li>ex) for figure 1, it is hard to predict “Germany”, which has a tail-relation degree of one</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[2. Related Work]</p>
+
+<ul>
+  <li>KG embedding: TransEm, ConvE, R-GCN</li>
+  <li>Imbalanaced / Long-Tail Learning (class distribution is highly uneven): SMOTE</li>
+  <li>Degree bias
+    <ul>
+      <li>some works dealt with degree bias in KGs, proposing debaising methos that utilizes random graphs</li>
+      <li>no work that focuses on how the intersection of entity and relation degree bias effects embedding-based KGC</li>
+    </ul>
+  </li>
+  <li>data augmentation for graphs
+    <ul>
+      <li>few for augmenting KGs</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[3. Preliminary Study]</p>
+
+<ul>
+  <li>embedding method : ConvE, TuckER</li>
+  <li>embedding for a node v, a relation r</li>
+  <li>focus on predicting the tail entity (since its equivalent)</li>
+</ul>
+
+<p>(1) Does degree bias exist?</p>
+
+<p>(2) Which factor in a triple is related to such bias?</p>
+
+<p>[3.1 Entity Degree Analysis]</p>
+
+<ul>
+  <li>measure: mean reciprocal rank (MPR)</li>
+</ul>
+
+<p>(1) tails’ degree has a larger impact on test performance than head’s</p>
+
+<p>(2) tail in-degree features are more distinguishing and apparent relationship with performance than the tail out-degree</p>
+
+<p><img src="/assets/img/degree_bias/Untitled%201.png" alt="Untitled" /></p>
+
+<p>[3.2 Entity-Relation Degree Analysis]</p>
+
+<ul>
+  <li>how both relation and etities in a triple together impact the KGC performance?</li>
+  <li>definitions
+    <ul>
+      <li>
+        <p>the relation-specific degree:</p>
+
+        <p><img src="/assets/img/degree_bias/Untitled%202.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>the tail-relation degree</p>
+
+        <p><img src="/assets/img/degree_bias/Untitled%203.png" alt="Untitled" /></p>
+      </li>
+      <li>
+        <p>other-tail relation degree</p>
+
+        <p><img src="/assets/img/degree_bias/Untitled%204.png" alt="Untitled" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>While both (tail-relation, other-tail relation) correlate with performance, the performance when the other-tail-relation degree in the range [0,3) is quite high</p>
+
+    <p>⇒ Which one is the dominant factor?</p>
+
+    <p>⇒ Tail-relation (small variance on Figure 2(c))</p>
+  </li>
+  <li>difference between prior studies
+    <ul>
+      <li>This paper focuses on “frequency among entity-relation pairs” while other concentrate on just degree</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[4. The proposed method]</p>
+
+<ul>
+  <li>propose method for improving the KGC performance of triples with low tail-relation degrees (KG-Mixup)
+    <ul>
+      <li>augmenting the low tail-relation degree triples during training with synethetic samples</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[4.1 General Problem]</p>
+
+<ul>
+  <li>create synthetic triples for those entity-relations pairs with a low tail-relation degree
+    <ul>
+      <li>n: the upper bound for tail-relation degree</li>
+      <li>k: #synthetic amples</li>
+    </ul>
+
+    <p><img src="/assets/img/degree_bias/Untitled%205.png" alt="Untitled" /></p>
+  </li>
+  <li>challenges
+    <ul>
+      <li>diversity of synthetic samples</li>
+      <li>computational costs</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[4.2 KG-Mixup]</p>
+
+<p><img src="/assets/img/degree_bias/Untitled%206.png" alt="Untitled" /></p>
+
+<ul>
+  <li>tackles
+    <ul>
+      <li>nonexistence of a label of each triple ⇒ consider t1 as a label</li>
+      <li>mixing criteria ⇒ mix other triples that share the same tail and distinct h,r</li>
+      <li>
+        <p>how to mix?</p>
+
+        <p><img src="/assets/img/degree_bias/Untitled%207.png" alt="Untitled" /></p>
+      </li>
+    </ul>
+
+    <p>[4.3 KG-Mixup Algorithm for KGC]</p>
+
+    <p><img src="/assets/img/degree_bias/Untitled%208.png" alt="Untitled" /></p>
+
+    <ul>
+      <li>loss on KG triples and synthetic samples</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[4.4 Algorithmic Complexity]</p>
+
+<ul>
+  <li>$O(N<em>\abs{E}</em>O(f))$</li>
+</ul>
+
+<p>[5. Regularizing effect of KG-Mixup]</p>
+
+<p><img src="/assets/img/degree_bias/Untitled%209.png" alt="Untitled" /></p>
+
+<p>[6. Experiments]</p>
+
+<ul>
+  <li>baseline
+    <ul>
+      <li>over-sampling</li>
+      <li>loss re-weighting: assign a higher loss ti triples with a low tail-relation deree</li>
+      <li>focal loss: a higher weight to misclassified samples</li>
+    </ul>
+  </li>
+</ul>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
