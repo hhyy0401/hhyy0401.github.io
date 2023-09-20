@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Favicon code from realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8b51a3">
+<meta name="msapplication-TileColor" content="#563d7c">
+<meta name="theme-color" content="#ffffff">
+
+  <!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [ ['$$', '$$'], ['\\[', '\\]'], ['\\(', '\\)']],
+        packages: {'[+]': ['physics']},
+        macros: {
+          bm: ["{\\boldsymbol #1}",1],
+        }
+      },
+      loader: {
+        load: ["input/tex", "output/chtml", '[tex]/physics']
+      },
+    };
+</script>
+<script id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<p style="display: none;">$$
+  \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+  \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+  \newcommand{\N}{\mathbb{N}}
+  \newcommand{\R}{\mathbb{R}}
+  \newcommand{\Z}{\mathbb{Z}}
+  \newcommand{\Q}{\mathbb{Q}}
+  \newcommand{\C}{\mathbb{C}}
+  \renewcommand{\L}{\mathcal{L}}
+  \newcommand{\x}{\times}
+  \newcommand{\contra}{\scalebox{1.5}{$\lightning$}}
+  \newcommand{\inner}[2]{\left\langle #1 , #2 \right\rangle}
+  \newcommand{\st}{\text{ such that }}
+  \newcommand{\for}{\text{ for }}
+  \newcommand{\Setcond}[2]{ \left\{\, #1 \mid #2 \, \right\}}
+  \newcommand{\setcond}[2]{\Setcond{#1}{#2}}
+  \newcommand{\seq}[1]{ \left\langle #1 \right\rangle}
+  \newcommand{\Set}[1]{ \left\{ #1 \right\}}
+  \newcommand{\set}[1]{ \Set{#1} }
+  \newcommand{\sgn}{\text{sign}}
+  \newcommand{\halfline}{\vspace{0.5em}}
+  \newcommand{\diag}{\text{diag}}
+
+  \newcommand{\legn}[2]{\left(\frac{#1}{#2}\right)} 
+  \newcommand{\ord}{\text{ord}}
+  \newcommand{\di}{\mathrel{|}} 
+  \newcommand{\gen}[1] 
+  \newcommand{\irr}{\mathrm{irr }}
+  \renewcommand{\deg}{\mathrm{deg }}
+  \newcommand{\nsgeq}{\trianglelefteq}
+  \newcommand{\nsg}{\triangleleft}
+  
+  \newcommand{\argmin}{\mathrm{argmin}}
+  \newcommand{\argmax}{\mathrm{argmax}}
+  \newcommand{\minimize}{\mathrm{minimize}}
+  \newcommand{\maximize}{\mathrm{maximize}}
+  \newcommand{\subto}{\mathrm{subject\ to}}
+  \newcommand{\DKL}[2]{D_{\mathrm{KL}}\left(#1 \di\di #2\right)}
+  \newcommand{\ReLU}{\mathrm{ReLU}}
+  
+  \newcommand{\E}{\mathsf{E}}
+  \newcommand{\V}{\mathsf{Var}}
+  \newcommand{\Corr}{\mathsf{Corr}}
+  \newcommand{\Cov}{\mathsf{Cov}}
+  \newcommand{\covariance}[1]{\Cov\left(#1\right)}
+  \newcommand{\variance}[1]{\V\left[#1\right]}
+  \newcommand{\variancewith}[1]{\V\left[#1\right]}
+  \newcommand{\expect}[1]{\E\left[#1\right]}
+  \newcommand{\expectwith}[2]{\E_{#1}\left[#2\right]}
+  \renewcommand{\P}{\mathsf{P}}
+  \newcommand{\uniform}[2]{\mathrm{Uniform}\left(#1 \dots #2\right)}
+  \newcommand{\gdist}[2]{\mathcal{N}\left(#1, #2\right)}
+  \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+  $$
+  \everymath{\displaystyle}</p>
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Privacy-Preserving Graph Machine Learning from Data to Computation - A Survey | Hyunju Kim</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Privacy-Preserving Graph Machine Learning from Data to Computation - A Survey" />
+<meta name="author" content="Hyunju Kim" />
+<meta property="og:locale" content="en_GB" />
+<meta name="description" content="[Abstract]" />
+<meta property="og:description" content="[Abstract]" />
+<link rel="canonical" href="http://localhost:4000/2023/07/26/privacy.html" />
+<meta property="og:url" content="http://localhost:4000/2023/07/26/privacy.html" />
+<meta property="og:site_name" content="Hyunju Kim" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-26T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Privacy-Preserving Graph Machine Learning from Data to Computation - A Survey" />
+<meta name="twitter:site" content="@chrjabs" />
+<meta name="twitter:creator" content="@Hyunju Kim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Hyunju Kim"},"dateModified":"2023-07-26T00:00:00+09:00","datePublished":"2023-07-26T00:00:00+09:00","description":"[Abstract]","headline":"Privacy-Preserving Graph Machine Learning from Data to Computation - A Survey","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2023/07/26/privacy.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/smile.png"},"name":"Hyunju Kim"},"url":"http://localhost:4000/2023/07/26/privacy.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    
+
+<section id="header-nav">
+  <header>
+    <nav>
+      <ul>
+        
+        <!-- others -->
+        <a href="/">
+          <li class="btn-nav">Home</li>
+        </a>
+        
+          <a href="/publications">
+            <li class="btn-nav">Publications</li>
+          </a>
+        
+        
+          <a href="/presentations">
+            <li class="btn-nav">Presentations</li>
+          </a>
+        
+        
+          <a href="/blog">
+            <li class="current btn-nav">Blog</li>
+          </a>
+          <a href="/tags">
+            <li class="btn-nav">Tags</li>
+          </a>
+        
+        
+      </ul>
+    </nav>
+  </header>
+</section>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Privacy-Preserving Graph Machine Learning from Data to Computation - A Survey</h1>
+    <p class="subtitle">Dongqi Fu et al. / 2023 / KDD Newsletter</p>
+    <p class="meta">
+      July 26, 2023
+    </p>
+  </section>
+  <section class="post-content">
+    <p>[Abstract]</p>
+
+<ul>
+  <li>generating privacy-preserving graph data</li>
+  <li>transmitting privacy-preserved information</li>
+</ul>
+
+<p>[1. Introduction]</p>
+
+<p>focus on</p>
+
+<ol>
+  <li>privacy-preserving graph data
+    <ul>
+      <li>
+        <p>how can we protect (mask, hide, perturb) sensitive information from node identify disclosure and link re-identification?</p>
+
+        <p><img src="/assets/img/privacy//Untitled.png" alt="Untitled" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>graph data privacy-preserving computation</p>
+
+    <p><img src="/assets/img/privacy//Untitled%201.png" alt="Untitled" /></p>
+  </li>
+</ol>
+
+<p>[2. Privacy-Preserving Graph Data]</p>
+
+<p><img src="/assets/img/privacy//Untitled%202.png" alt="Untitled" /></p>
+
+<p>[2.1 Privacy Attackers on Graphs]</p>
+
+<ul>
+  <li>aim of attackers: (1) whether edges exist (2) reveal true identities of targeted users</li>
+</ul>
+
+<p>2.1.1. Category of Attackers</p>
+
+<ul>
+  <li>active attackers
+    <ul>
+      <li>k 노드를 가지는 subgraph H를 만들어서 G에 넣은다음 s.t. $\abs{H\cap G}=b$, 나중에 G’로 published 됐을 때 G’ 안의 H를 찾고 b 개의 노드를 판명한다.</li>
+      <li>original graph에 published 되기 전에 접근함</li>
+    </ul>
+  </li>
+  <li>passive attackers
+    <ul>
+      <li>creation 대신 observation에 의존함</li>
+      <li>“node A는 degree가 2 이상”와 같은 external information 이용</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2.1.2. Goal of Attackers</p>
+
+<ul>
+  <li>diclosure of node identity: where is node A?</li>
+  <li>link re-identification: determine private edges (not published) containing such as disease records
+    <ul>
+      <li>besides existence, we can infer weight or type of links</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[2.2 Background Knowledge for Passive Attacks]</p>
+
+<p>2.2.1 Background Knowledge for Node Identity Disclosure</p>
+
+<ul>
+  <li>it helps them to detect “uniqueness” of victims</li>
+  <li>target node의 background knowledge H를 알면, candidates를 줄일 수 있다</li>
+  <li>method
+    <ul>
+      <li>vertex refinement queries
+        <ul>
+          <li>H0(x): node x의 label</li>
+          <li>H1(x): node x의 degree</li>
+          <li>Hi(x): multiset of Hi-1(x) queries on 1-hop neighbors of node x</li>
+        </ul>
+
+        <p><img src="/assets/img/privacy//Untitled%203.png" alt="Untitled" /></p>
+      </li>
+      <li>subgraph queries
+        <ul>
+          <li>existence of a subgraph</li>
+          <li>more general, flexible</li>
+          <li>note that different searching strategies can result in different subgraph structures</li>
+        </ul>
+      </li>
+      <li>hub finger print queries
+        <ul>
+          <li>hub: node of a high degree and a high betweeness centrality</li>
+          <li>hub fingerprint: node’s connection to hubs</li>
+        </ul>
+      </li>
+      <li>neighborhood relationship queries
+        <ul>
+          <li>rely on isomorphism of the ego-graph</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>2.2.2. Background Knowledge for Link Re-Identification]</p>
+
+<ul>
+  <li>Method
+    <ul>
+      <li>link prediction probablistic model
+        <ul>
+          <li>다른 종류의 background information이 probabilistic model을 만드는데 leverage 될 수 있다 (e.g node attributes, existing relationships, structural properties, inferred relationships)
+            <ul>
+              <li>mathematically, the existence of a sentsitive relation of node i and node j as: $P(e_{ij}^s;O)$ where $e^s_{ij}$: sensitive relationship, O: a set of observations</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Randomization-based Posterior Probability</p>
+
+        <p><img src="/assets/img/privacy//Untitled%204.png" alt="Untitled" /></p>
+
+        <ul>
+          <li>attacker applies randomization mechanism on G’ N times to get a sequence of G’s, and utilize that information</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>[2.3. Privacy-Preserving Mechanisms]</p>
+
+<p>2.3.1. Protection Mechanism Designed for Node Identity Disclosure</p>
+
+<ul>
+  <li>k-degree anonymization
+    <ul>
+      <li>target node x는 적어도 k-1의 node와 같은 degree를 share한다</li>
+      <li>degree distribution d → new distribution d’ (instanced by L1 distance)</li>
+      <li>construct G’ following d’</li>
+    </ul>
+
+    <p><em>Towards identity anonymization on graphs (KDD’08)</em></p>
+  </li>
+  <li>k-degree anonymization in temporal graphs
+    <ul>
+      <li>ensure temporal degree sequence of each node is indistinguishable from that of at least k-1 other nodes</li>
+      <li>degree matrix D → D’</li>
+    </ul>
+  </li>
+  <li>k-degree anonymization in knowledge graphs
+    <ul>
+      <li>k-anonymity of the same attributes and degree</li>
+      <li>node feature와 degree에 따라 node를 clusters로 partition</li>
+    </ul>
+  </li>
+  <li>k-neighborhood anonymization
+    <ul>
+      <li>when an attacker knows background knowledge about neighborhood relationships</li>
+      <li>k-anonymity of neighborhood structure</li>
+      <li>use DFS search → vector → greedily make N(v) and N(u) same → construct G’</li>
+    </ul>
+  </li>
+  <li>k-automorphism anonymization
+    <ul>
+      <li>prevent from subgraph queries</li>
+      <li>G and G’ is k-automorphic
+        <ul>
+          <li>at least k-different matches in G’ for a subgraph query</li>
+        </ul>
+      </li>
+      <li>KM algorithm</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2.3.2 Protection Mechanism Designed for Link Re-Identification</p>
+
+<ul>
+  <li>Intact Edges
+    <ul>
+      <li>remove all s type edges</li>
+    </ul>
+  </li>
+  <li>Partial-edge removal
+    <ul>
+      <li>remove part of sensitive edges
+        <ul>
+          <li>criteria: whether their existence contributes to the exposure of sensitive links</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Cluster-edge anonymization
+    <ul>
+      <li>partition G into clusters</li>
+      <li>remove edges inintra-clusters</li>
+      <li>preserve inter-cluster</li>
+      <li>can be interpreted as k-degree anonymization</li>
+    </ul>
+  </li>
+  <li>Cluster-edge anonymization with constraints
+    <ul>
+      <li>advanced version of above</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2.3.3. General Privacy Protection Mechanisms</p>
+
+<ul>
+  <li>Graph Summarization</li>
+  <li>Switching-based Graph Generation
+    <ul>
+      <li>configuration model</li>
+      <li>preserve degree distribution</li>
+      <li>largely preserve original graph features (eigenvalues of adjacency matrix, Laplacian matrix)</li>
+    </ul>
+  </li>
+  <li>Spectral Add/Del and Spectral Switch
+    <ul>
+      <li>repeats adding and deleting edges</li>
+      <li>random switch</li>
+      <li>overall degree distribution not change</li>
+      <li>develop method that preserves largest aigenvalue of A and second smallest eigenvalue of L=D-A</li>
+    </ul>
+  </li>
+  <li>RandomWalk-Mod
+    <ul>
+      <li>copy each edge in G to G’ while guaranteeing the degree distribution of G’ is unchanged</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Differential Privacy</strong></p>
+
+<p><img src="/assets/img/privacy//Untitled%205.png" alt="Untitled" /></p>
+
+<p>M: permutation</p>
+
+<ul>
+  <li>It also categorizes to edge-level and node-level differential privacy</li>
+</ul>
+
+<p><img src="/assets/img/privacy//Untitled%206.png" alt="Untitled" /></p>
+
+<p>[2.4. Other Aspects of Graph Anonymization]</p>
+
+<ul>
+  <li>기존
+    <ul>
+      <li>익명화 그래프 G’를 published 하는 대신, some non-trivial statistics를 랜덤화하고 이것을 relase하고 있음</li>
+      <li>중요한 graph parameter를 보존하고 있음 (e.g. eigenvalue)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[2.5. Challenges and Future Opportunities]</p>
+
+<p>2.5.1 preserving privacy for temporal graphs</p>
+
+<ul>
+  <li>기존 연구는 static graph를 주로 다루지만, 실생활 그래프는 거의 evolve함</li>
+</ul>
+
+<p>2.5.2 preserving privacy for heterogeneous graphs</p>
+
+<ul>
+  <li>대부분 background knowledge는 structural queries를 사용</li>
+  <li>node와 edge feature이 많은 경우, leaking sensitive information의 위험성을 증가시킴</li>
+</ul>
+
+<p>⇒ 어떤 feature information이 heterogeneous와 time-eovolving graphs에서 중요할 것이고, 숨겨져야 하느냐</p>
+
+<p>⇒ 이걸 위한 method는?</p>
+
+<p>[3. Graph data Privacy-Preserving Computation]</p>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2023
+    <a href=""></a>.
+    Powered by Jekyll with
+    <a href="https://github.com/chrjabs/Grape-Academic-Theme">Grape Academic Theme</a>.
+  </div>
+</footer>
+
+  </div>
+</body>
+
+</html>
