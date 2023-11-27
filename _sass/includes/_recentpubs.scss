@@ -1,0 +1,21 @@
+#recentpubs {
+  position: relative;
+  overflow: hidden;
+  .recentpubs-wrap {
+    @extend %page-padding;
+    padding-top: 50px!important;
+    margin-bottom: 55px;
+    p.title {
+      color: $theme-dark;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    a.btn{
+      font-size: 0.9rem;
+    }
+    font-size: 0.9rem;
+  }
+  .bibliography {
+    margin-top: 1rem;
+  }
+}

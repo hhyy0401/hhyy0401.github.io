@@ -1,0 +1,138 @@
+- project :
+    print: True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal: True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url: https://github.com/hhyy0401/NAS_logit_ensemble # Full URL
+    image:
+      path: "logits.png" # path: assets/project/
+      alt: "A screenshot of the portfolio page"
+    date: 'Nov. 2023' #05/2022 &ndash; Developing
+    title: Performance Prediction of Neural Architectures via Pre-training using Logits
+    summary: Utilize logits of each logit to predict performance of neural architectures. 
+    description: Code and Datasets
+    contents: 
+      - title: 1. Impact & Significance
+        description: <li>Sort images in terms of entropy</li>
+          <li>Pre-train each predictor that estimates logits of a given image</li>
+          <li>Fine-tune to estimate performance of each architecture</li>
+      - title: 2. Results
+        description: <li>Korea Software Congress 2023</li>
+         <li>Korea Software Copyright C‐2023‐047128</li>
+      - title: 3. Role
+        description: <li>Develop on algorithms</li>
+
+- project :
+    print: True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal: True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url: https://github.com/hhyy0401/CODA # Full URL
+    image:
+      path: "dhg.png" # path: assets/project/
+      alt: "A screenshot of the portfolio page"
+    date: 'Nov. 2023' #05/2022 &ndash; Developing
+    title: Four-set Hypergraphlets for Characterization of Directed Hypergraphs
+    summary: CODA is the algorithm for counting directed hypergraphlets on directed hypergraphs. 
+    description: Code, Datasets, and Appendix
+    contents: 
+      - title: 1. Impact & Significance
+        description: <li>Define novel local patterns on directed hypergraphs (a.k.a. directed hypergraphlets)</li>
+          <li>Design efficient algorithms, named CODA-E(xact), CODA-A(dvanced)</li>
+          <li>Suggest applications such as clustering, classification, and temporal analysis</li>
+      - title: 2. Results
+        description: <li>Preprints</li>
+      - title: 3. Role
+        description: <li>Develop on algorithms</li>
+          <li>Overall writing (with co-first author)</li>
+
+- project :
+    print: True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal: True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url: https://github.com/hhyy0401/SC3 # Full URL
+    image:
+      path: "simplets.png" # path: assets/project/
+      alt: "A screenshot of the portfolio page"
+    date: 'Oct. 2022' #05/2022 &ndash; Developing
+    title: SC3 - Simplet Counting Using Color Coding
+    summary: SC3 is the algorithm for counting simplets of size 4 and 5 based on Color Coding method where simplets are isomorphic classes of connected induced subcomplexes.
+    description: Code, Datasets, and Appendix
+    contents: 
+      - title: 1. Impact & Significance
+        description: <li>First to count simplets especially of five nodes</li>
+          <li>Develop a fast and approximate algorithm</li>
+          <li>Real data analysis (Characterization)</li>
+      - title: 2. Results
+        description: <li>Accepted to WWW2023</li>
+      - title: 3. Role
+        description: <li>The first author</li> 
+          <li>Develop the algorithm</li>
+          <li>Implement code (C++) (supported by the second author)</li> 
+          <li>Perform experiments & applications</li> 
+          <li>Overall writing (supported by the third author)</li> 
+- project :
+    print: True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal: True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url: https://github.com/hhyy0401/MathMaterials # Full URL
+    date: 2020-2021 #05/2022 &ndash; Developing
+    title: Supplementary materials of Applied Linear Algebra (MATH201), General Topology (MATH321)
+    description: Self-produced Mathematical Materials for preparing SMP, RC tutoring and exams (made by LATEX)
+- project :
+    print: True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal: True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url: https://github.com/hhyy0401/IMEN472 # Full URL
+    image:
+      path: "imen.png" # path: assets/project/
+      alt: "A screenshot of the portfolio page"
+    date: 'Jun. 2021' #05/2022 &ndash; Developing
+    title: Identifying Fraudulent Products in "Secondhand Trading Website"
+    summary: Identifying Fraudulent Products in "Secondhand Trading Website" via Crawling and Machine Learning (with 1 additional teammate). 
+    description: Term Project of IMEN472 - Statistical Data Mining
+    contents: 
+    - title: 1. Impact & Significance
+      description: <li>Develop tool for discriminating fraudulent products with high accuracy</li>
+    - title: 2. Results
+      description: <li>A++, Use as a best practice in next year's class</li>
+    - title: 3. Role
+      description: <li>Implement code for real-time crawling</li> 
+        <li>Data pre-processing</li> 
+        <li>Analysis</li> 
+    #contents: 
+    #    - title: 1. Portfolio Page
+    #      image:
+    #        path: portfolio.png
+    #        alt: "A screenshot of the portfolio page"
+    #      description: <li>Concise portfolio page</li>
+    #        <li>Recent publications</li>
+    #        <li>Projects</li>
+    #    - title: 2. Optional Blog Functionality
+    #      image:
+    #        path: home.png
+    #        alt: "A screenshot of the blog page"
+    #      description: <li>Responsive Layout</li>
+    #        <li>Tags</li> 
+    #        <li>Pagination</li>
+    #    - title: 3. Tags Page
+    #      image:
+    #        path: tags.png
+    #        alt: "A screenshot of the tags page"
+    #      description: <li>Responsive Layout</li> 
+    #        <li>Tags</li> 
+
+- project :
+    print: True # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    modal: True # If 'True' is selected, modal can open in 'portfolio.html'. 
+    url: https://github.com/hhyy0401/UGRP # Full URL
+    image:
+      path: "ugrp.png" # path: assets/project/
+      alt: "A screenshot of the portfolio page"
+    date: 'Jan. 2021' #05/2022 &ndash; Developing
+    title: Personality Prediction AI and App Development
+    summary: Analysis of Impression Using AI and App Development (with 4 additional teammates). 
+    description: Code and Report of UGRP 
+    contents: 
+      - title: 1. Impact & Significance
+        description: <li>Develop and attempt an impression analysis method that many companies have tried (hot topic)</li>
+          <li>Classify a person's MBTI with our trained models</li>
+          <li>Deploy a web to give people the fun of matching MBTI and collect new data through it</li>
+      - title: 2. Results
+        description: <li>Excellence Award</li>
+      - title: 3. Role
+        description: <li>Develop a web content (front-engineer) that can infer personality</li>
+          <li>Analysis and writing</li>

@@ -1,0 +1,8 @@
+{% if site.data.profile.experiences %}
+  <p class="title">{{ site.theme_settings.experiences_title }}</p>
+  <ul class="experiences-list">
+    {% for experience in site.data.profile.experiences %}
+    <li class="experience">{{ experience }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
