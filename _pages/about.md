@@ -29,7 +29,7 @@ latest_posts:
 ---
 
 I am a Ph.D. student in [Computational Science & Engineering](https://cse.gatech.edu/) at
-[Georgia Institute of Technology](https://www.gatech.edu/), advised by [Prof. Nabil Imam](https://nabilimam.github.io/).
+[Georgia Institute of Technology](https://www.gatech.edu/), advised by [Prof. Nabil Imam](https://sites.google.com/cornell.edu/nabil-imam/).
 
 My research interests lie in **Computational Neuroscience** and **Graph Data Mining & Graph Algorithms**.
 
