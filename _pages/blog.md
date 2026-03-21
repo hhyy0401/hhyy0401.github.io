@@ -115,7 +115,7 @@ The encore from nearly my last performance before moving to the US.
 An unforgettable and precious memory -
 performing with my favorite people in my favorite ensemble.
 
-<div style="max-width: 560px; aspect-ratio: 9/16;">
+<div style="max-width: 360px; aspect-ratio: 9/16;">
 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JQYK1McKo9o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
