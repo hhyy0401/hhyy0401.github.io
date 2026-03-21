@@ -13,7 +13,7 @@ cv:
   sections:
     Education:
       - institution: Georgia Institute of Technology
-        location: "Atlanta, GA"
+        location: "Atlanta, GA\nUS"
         area: Computational Science & Engineering
         studyType: Ph.D. Student
         start_date: 2024
@@ -57,7 +57,7 @@ cv:
         end_date: present
         highlights:
           - "Develop graph generation methods using both AI-driven approaches and rule-based algorithms."
-          - "Design brain-inspired models by leveraging neural data visualization mechanisms [P1, P2]."
+          - 'Design brain-inspired models by leveraging neural data visualization mechanisms <a href="/publications/#kim2026geometric_constraints" class="cv-cite">P1</a> <a href="/publications/#kim2026geometric_fc" class="cv-cite">P2</a>.'
 
       - company: Algorithm, Analysis, and Application of Higher-Order Structures
         position: ""
@@ -66,7 +66,7 @@ cv:
         end_date: 2024
         highlights:
           - "Designed scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs) in simplicial complexes, hypergraphs, and directed hypergraphs."
-          - 'Developed sampling-based estimation methods with provable accuracy guarantees [C1, J1, J2, J3]. <a href="https://github.com/hhyy0401/SC3" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/CODA" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/simplet_counting" target="_blank"><i class="fa-brands fa-github"></i></a>'
+          - 'Developed sampling-based estimation methods with provable accuracy guarantees <a href="/publications/#kim2023sc3" class="cv-cite">C1</a> <a href="/publications/#lee2023hypergraph_motifs" class="cv-cite">J1</a> <a href="/publications/#kim2024simplet_sampling" class="cv-cite">J2</a> <a href="/publications/#moon2026hypergraphlets" class="cv-cite">J3</a>. <a href="https://github.com/hhyy0401/SC3" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/CODA" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/simplet_counting" target="_blank"><i class="fa-brands fa-github"></i></a>'
 
       - company: Development of a Null Model for GNN Incorporating Node Features
         position: ""
@@ -83,7 +83,7 @@ cv:
         end_date: 2023
         highlights:
           - 'Neural architecture performance prediction method using flow-aware Graph Transformer. <a href="https://github.com/hhyy0401/NAS_logit_ensemble" target="_blank"><i class="fa-brands fa-github"></i></a>'
-          - "Registered two Korea Copyrights for Software (C-2022-055775, C-2023-047128). Patent filed: KR 10-2024-0047575 (filed 2024) [C2]."
+          - 'Registered two Korea Copyrights for Software (C-2022-055775, C-2023-047128). Patent filed: KR 10-2024-0047575 (filed 2024) <a href="/publications/#hwang2024flowerformer" class="cv-cite">C2</a>.'
           - "Supported by IITP grant funded by the Korea government (MSIT)."
 
     Industry Experiences:
@@ -107,7 +107,7 @@ cv:
         start_date: 2019
         end_date: 2019
 
-    Awards:
+    Awards & Honors:
       - company: Korea Foundation for Advanced Studies (KFAS) Scholarship
         position: ""
         location: "KFAS"
@@ -163,7 +163,7 @@ cv:
         start_date: 2023
         end_date: 2023
         highlights:
-          - "Mentee: J.H. Lee → [C3]. Excellence Award."
+          - 'Mentee: J.H. Lee → <a href="/publications/#lee2025diffim" class="cv-cite">C3</a>. Excellence Award.'
 
       - company: ""
         position: "Lab Mentor"
@@ -171,7 +171,7 @@ cv:
         start_date: 2022
         end_date: 2023
         highlights:
-          - "Mentee: S.B. Yoon → [J1]"
+          - 'Mentee: S.B. Yoon → <a href="/publications/#lee2023hypergraph_motifs" class="cv-cite">J1</a>'
 
       - company: ""
         position: "Teaching Mentor & Tutor"
