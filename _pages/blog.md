@@ -35,14 +35,14 @@ I also enjoy cycling around Atlanta's BeltLine trail on weekends as a way to rec
 <div class="col-sm-8 mt-3 mt-md-0" markdown="1">
 
 I love travelling and exploring new cultures, food, and landscapes.
-So far I've visited **15 countries** across 4 continents.
+So far I've visited **16 countries** across 4 continents.
 Some highlights include driving across the American Southwest,
 exploring temples in Japan, biking through the Netherlands,
 and revisiting European concert halls where I performed as a child.
 
 **Countries visited** (most recent first):
-USA, Mexico, Japan, Netherlands, France, Spain, Malaysia, Australia,
-Hungary, Czech Republic, Austria, Germany, Switzerland, Slovakia, South Korea.
+USA, Mexico (Cancun), Japan, Netherlands, France, Spain, China (Shanghai),
+Malaysia, Australia, Hungary, Czech Republic, Austria, Germany, Switzerland, Slovakia, South Korea.
 
 </div>
 <div class="col-sm-4 mt-3 mt-md-0">
@@ -71,11 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   [
-    ["USA", 37.09, -95.71], ["Mexico", 23.63, -102.55], ["Japan", 36.20, 138.25],
+    ["USA", 37.09, -95.71], ["Mexico (Cancun)", 21.16, -86.85], ["Japan", 36.20, 138.25],
     ["Netherlands", 52.13, 5.29], ["France", 46.23, 2.21], ["Spain", 40.46, -3.75],
-    ["Malaysia", 4.21, 101.98], ["Australia", -25.27, 133.78], ["Hungary", 47.16, 19.50],
-    ["Czech Republic", 49.82, 15.47], ["Austria", 47.52, 14.55], ["Germany", 51.17, 10.45],
-    ["Switzerland", 46.82, 8.23], ["Slovakia", 48.67, 19.70], ["South Korea", 35.91, 127.77]
+    ["China (Shanghai)", 31.23, 121.47], ["Malaysia", 4.21, 101.98], ["Australia", -25.27, 133.78],
+    ["Hungary", 47.16, 19.50], ["Czech Republic", 49.82, 15.47], ["Austria", 47.52, 14.55],
+    ["Germany", 51.17, 10.45], ["Switzerland", 46.82, 8.23], ["Slovakia", 48.67, 19.70],
+    ["South Korea", 35.91, 127.77]
   ].forEach(function (c) {
     L.marker([c[1], c[2]], { icon: pin }).addTo(map).bindPopup("<b>" + c[0] + "</b>");
   });

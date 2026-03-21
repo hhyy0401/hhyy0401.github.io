@@ -4,7 +4,8 @@ title: "NAS Performance Prediction"
 description: "Performance prediction of neural architectures using semi-supervised learning [C2]"
 importance: 5
 category: research
-date_range: "2022--2023"
+date_range: "2022-2023"
+img: assets/img/projects/logits.png
 venue: "KAIST"
 github: "https://github.com/hhyy0401/NAS_logit_ensemble"
 ---

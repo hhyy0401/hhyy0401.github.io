@@ -4,7 +4,7 @@ title: "EEG Analysis"
 description: "EEG analysis for cognitive and clinical modeling"
 importance: 2
 category: research
-date_range: "2024--"
+date_range: "2024-"
 venue: "Georgia Tech"
 ---
 

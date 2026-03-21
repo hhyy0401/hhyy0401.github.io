@@ -4,7 +4,8 @@ title: "Personality Prediction AI"
 description: "UGRP Excellence Award - Personality prediction AI and app development"
 importance: 9
 category: course
-date_range: "2020--2021"
+date_range: "2020-2021"
+img: assets/img/projects/ugrp.png
 venue: "POSTECH"
 github: "https://github.com/hhyy0401/UGRP"
 ---

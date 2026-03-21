@@ -4,7 +4,8 @@ title: "Higher-Order Structures"
 description: "Algorithm, analysis, and application of higher-order structures [C1, J1, J2, J3]"
 importance: 3
 category: research
-date_range: "2022--2024"
+date_range: "2022-2024"
+img: assets/img/projects/simplets.png
 venue: "KAIST"
 github: "https://github.com/hhyy0401/SC3"
 ---
