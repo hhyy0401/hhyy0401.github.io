@@ -9,24 +9,46 @@ description:
 
 ## Running / Swimming / Cycling
 
+<div class="row mt-3">
+<div class="col-sm-4 mt-3 mt-md-0">
 {% include figure.liquid loading="eager" path="assets/img/running.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="col-sm-8 mt-3 mt-md-0" markdown="1">
 
-I'm passionate about endurance sports.
+I'm passionate about endurance sports -- running, swimming, and cycling.
 My half marathon personal best is **2:04:22**.
 
-I also love swimming -- one of my favorite places on campus is the
-**Georgia Tech Aquatic Center**, home of the 1996 Atlanta Olympic swimming events,
-featuring 50m pools and a diving well. It's where I love to swim laps!
+One of my favorite places on campus is the **Georgia Tech Aquatic Center** --
+home of the 1996 Atlanta Olympic swimming events, featuring 50m pools and a diving well.
+It's where I love to swim laps between research sessions!
+
+I also enjoy cycling around Atlanta's BeltLine trail on weekends as a way to recharge.
+
+</div>
+</div>
 
 ---
 
 ## Travelling
 
-{% include figure.liquid loading="eager" path="assets/img/travel.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+<div class="row mt-3">
+<div class="col-sm-8 mt-3 mt-md-0" markdown="1">
 
-I love travelling and exploring new places. Countries I've visited (most recent first):
+I love travelling and exploring new cultures, food, and landscapes.
+So far I've visited **15 countries** across 4 continents.
+Some highlights include driving across the American Southwest,
+exploring temples in Japan, biking through the Netherlands,
+and revisiting European concert halls where I performed as a child.
+
+**Countries visited** (most recent first):
 USA, Mexico, Japan, Netherlands, France, Spain, Malaysia, Australia,
-Hungary, Czech Republic, Austria, Germany, Switzerland, Slovakia, and South Korea.
+Hungary, Czech Republic, Austria, Germany, Switzerland, Slovakia, South Korea.
+
+</div>
+<div class="col-sm-4 mt-3 mt-md-0">
+{% include figure.liquid loading="eager" path="assets/img/travel.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+</div>
 
 <div id="travel-map" style="width: 100%; height: 420px; border-radius: 12px; overflow: hidden; margin: 1rem 0;"></div>
 
@@ -64,11 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ## Baseball
 
+<div class="row mt-3">
+<div class="col-sm-4 mt-3 mt-md-0">
 {% include figure.liquid loading="eager" path="assets/img/baseball.jpeg" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="col-sm-8 mt-3 mt-md-0" markdown="1">
 
-I'm a passionate baseball fan!
-- **KBO**: Kia Tigers
-- **MLB**: Atlanta Braves -- nothing beats watching a game at Truist Park!
+I'm a passionate baseball fan who follows both Korean and American baseball.
+
+In the **KBO**, I root for the **Kia Tigers** -- my hometown team that I've supported since childhood.
+
+In the **MLB**, living in Atlanta made it natural to become a **Braves** fan.
+Nothing beats watching a game at Truist Park on a warm summer evening with friends!
+
+</div>
+</div>
 
 ---
 
