@@ -15,11 +15,11 @@ description:
 </div>
 <div class="col-sm-8 mt-3 mt-md-0" markdown="1">
 
-I'm passionate about endurance sports -- running, swimming, and cycling.
+I'm passionate about endurance sports - running, swimming, and cycling.
 My half marathon personal best is **2:04:22**.
 
-One of my favorite places on campus is the **Georgia Tech Aquatic Center** --
-home of the 1996 Atlanta Olympic swimming events, featuring 50m pools and a diving well.
+One of my favorite places on campus is the **Georgia Tech Aquatic Center** -
+home of the 1996 Atlanta Olympic swimming events, featuring a 50m-length, 3m-depth pool.
 It's where I love to swim laps between research sessions!
 
 I also enjoy cycling around Atlanta's BeltLine trail on weekends as a way to recharge.
@@ -31,9 +31,6 @@ I also enjoy cycling around Atlanta's BeltLine trail on weekends as a way to rec
 
 ## Travelling
 
-<div class="row mt-3">
-<div class="col-sm-8 mt-3 mt-md-0" markdown="1">
-
 I love travelling and exploring new cultures, food, and landscapes.
 So far I've visited **16 countries** across 4 continents.
 I enjoy the vast nature and the unique culture and history of each country.
@@ -42,13 +39,7 @@ I enjoy the vast nature and the unique culture and history of each country.
 USA, Mexico (Cancun), Japan, Netherlands, France, Spain, China (Shanghai),
 Malaysia, Australia, Hungary, Czech Republic, Austria, Germany, Switzerland, Slovakia, South Korea.
 
-</div>
-<div class="col-sm-4 mt-3 mt-md-0">
-{% include figure.liquid loading="eager" path="assets/img/travel.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-</div>
-</div>
-
-<div id="travel-map" style="width: 100%; height: 420px; border-radius: 12px; overflow: hidden; margin: 1rem 0;"></div>
+<div id="travel-map" style="width: 100%; height: 420px; border-radius: 12px; overflow: hidden; margin: 0.5rem 0;"></div>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
@@ -81,6 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<div class="row mt-2">
+<div class="col-sm-4">
+{% include figure.liquid loading="eager" path="assets/img/travel.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+</div>
+
 ---
 
 ## Baseball
@@ -93,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 I'm a passionate baseball fan who follows both Korean and American baseball.
 
-In the **KBO**, I root for the **Kia Tigers** -- my hometown team that I've supported since childhood.
+In the **KBO**, I root for the **Kia Tigers** - my hometown team that I've supported since childhood.
 
 In the **MLB**, living in Atlanta made it natural to become a **Braves** fan.
 Nothing beats watching a game at Truist Park on a warm summer evening with friends!
@@ -112,12 +109,13 @@ and won a gold medal at the Honam Arts Festival at age 13.
 ### Last Performance in Korea (Feb. 2024)
 
 The encore from nearly my last performance before moving to the US.
-An unforgettable and precious memory --
+An unforgettable and precious memory -
 performing with my favorite people in my favorite ensemble.
 
-<div class="col-sm-8">
-<video controls class="img-fluid rounded z-depth-1" style="max-width: 100%;">
-<source src="{{ 'assets/video/oboe_encore.mp4' | relative_url }}" type="video/mp4">
+<div style="max-width: 560px;">
+<video controls playsinline preload="metadata" class="img-fluid rounded z-depth-1" style="width: 100%;">
+<source src="/assets/video/oboe_encore.mp4" type="video/mp4">
+Your browser does not support the video tag.
 </video>
 </div>
 
@@ -128,7 +126,7 @@ performing with my favorite people in my favorite ensemble.
 
 ### Favorite Pieces
 
-**Symphonies**: Dvorak No. 9 (2nd mvt), Sibelius No. 2, Mahler No. 3 (6th mvt), Mahler No. 6 (2nd mvt), R. Strauss *Eine Alpensinfonie*, Tchaikovsky No. 6 (1st mvt)
+**Symphonies**: Dvorak No. 9 (2nd mvt), Sibelius No. 2, Mahler No. 3 (6th mvt), Mahler No. 6 (2nd mvt), R. Strauss *Eine Alpensinfonie*, Tchaikovsky No. 6 (1st mvt), Holst *The Planets*
 
 **Concertos**: Beethoven "Emperor" (2nd mvt), Chopin Piano Concerto No. 1 & 2 (2nd mvt)
 
@@ -138,13 +136,13 @@ performing with my favorite people in my favorite ensemble.
 
 | Ensemble | Repertoire | Venue |
 |---|---|---|
-| Yeodo Elementary School Orchestra | Rienzi Overture, Zigeunerweisen, Dvorak No. 9, Ruslan and Ludmilla | Jeollanam-do Student Cultural Center, Slovak Radio Hall, World Trade Center Patria Hall, Lukaskirche, Rudolfinum Dvorak Hall, Musikverein, Mozarteum Grosser Saal |
+| Yeodo Elementary School Orchestra | Rienzi Overture, Zigeunerweisen, Dvorak No. 9, Ruslan and Ludmilla | Slovak Radio Hall, World Trade Center Patria Hall, Lukaskirche, Rudolfinum Dvorak Hall, Musikverein, Mozarteum Grosser Saal |
 
 </div>
 </details>
 
 <details>
-<summary><strong>Performance History: 2012--2014 Middle School (1st Oboe)</strong></summary>
+<summary><strong>Performance History: 2012-2014 Middle School (1st Oboe)</strong></summary>
 <div markdown="1">
 
 | Ensemble | Repertoire | Venue |
@@ -158,7 +156,7 @@ performing with my favorite people in my favorite ensemble.
 </details>
 
 <details>
-<summary><strong>Performance History: 2018--2021 University (POSTECH)</strong></summary>
+<summary><strong>Performance History: 2018-2021 University (POSTECH)</strong></summary>
 <div markdown="1">
 
 | Ensemble | Repertoire | Part |
@@ -177,7 +175,7 @@ performing with my favorite people in my favorite ensemble.
 </details>
 
 <details>
-<summary><strong>Performance History: 2022-- After Moving to Seoul (* = guest player)</strong></summary>
+<summary><strong>Performance History: 2022- After Moving to Seoul (* = guest player)</strong></summary>
 <div markdown="1">
 
 | Ensemble | Repertoire | Part | Venue |

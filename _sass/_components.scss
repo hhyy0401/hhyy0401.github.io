@@ -138,7 +138,7 @@ ul.task-list input[type="checkbox"] {
   .card {
     height: 100%;
     border: 1px solid var(--global-divider-color);
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     overflow: hidden;
     transition: box-shadow 0.2s;
 
@@ -157,6 +157,7 @@ ul.task-list input[type="checkbox"] {
     }
 
     .card-title {
+      font-family: 'Lora', Georgia, serif;
       font-size: 1rem;
       font-weight: 600;
     }

@@ -141,35 +141,45 @@ cv:
         summary: "Full Tuition (2018-2020)"
 
     Professional Service & Teaching:
-      - company: Reviewer
-        position: "AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
-        location: Academic Service
+      - company: Academic Service
+        position: "Reviewer"
+        location: ""
         start_date: 2025
         end_date: present
+        highlights:
+          - "AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
 
-      - company: URP Teaching Assistant
-        position: "KAIST. Mentee: J.H. Lee -> [C3]. Excellence Award."
-        location: Daejeon, Republic of Korea
+      - company: KAIST
+        position: "URP Teaching Assistant"
+        location: "Daejeon, Republic of Korea"
         start_date: 2023
         end_date: 2023
+        highlights:
+          - "Mentee: J.H. Lee. Excellence Award."
 
-      - company: Lab Mentor
-        position: "KAIST. Mentee: S.B. Yoon -> [J1]"
-        location: Daejeon, Republic of Korea
+      - company: KAIST
+        position: "Lab Mentor"
+        location: "Daejeon, Republic of Korea"
         start_date: 2022
         end_date: 2023
+        highlights:
+          - "Mentee: S.B. Yoon"
 
-      - company: Teaching Mentor & Tutor
-        position: "POSTECH. Applied Linear Algebra, Analysis I, Programming and Problem Solving (7 semesters)"
-        location: Pohang, Republic of Korea
+      - company: POSTECH
+        position: "Teaching Mentor & Tutor"
+        location: "Pohang, Republic of Korea"
         start_date: 2019
         end_date: 2021
+        highlights:
+          - "Applied Linear Algebra, Analysis I, Programming and Problem Solving (7 semesters)"
 
-      - company: Educational Volunteering Mentor
-        position: "POSTECH Online Mentoring & Korea Scholarship Foundation Summer Camp"
-        location: Pohang, Republic of Korea
+      - company: POSTECH
+        position: "Educational Volunteering Mentor"
+        location: "Pohang, Republic of Korea"
         start_date: 2019
         end_date: 2020
+        highlights:
+          - "Online Mentoring & Korea Scholarship Foundation Summer Camp"
 
     Skills:
       - name: Programming
