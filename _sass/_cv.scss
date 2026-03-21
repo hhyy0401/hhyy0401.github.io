@@ -45,14 +45,16 @@ a.btncv:hover {
 p.location {
   font-size: 0.7rem;
   white-space: normal;
-  padding-left: 0.6rem;
-  text-indent: -0.6rem;
+  padding-left: 1rem;
+  text-indent: -1rem;
+  margin-bottom: 0;
 }
 
 i.iconlocation {
   color: var(--global-theme-color);
   font-size: 0.8rem;
-  margin-left: 0.3rem;
+  margin-left: 0;
+  margin-right: 0.1rem;
 }
 
 i.iconinstitution {
@@ -89,6 +91,13 @@ div.container-links {
 .date-column {
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
+  max-width: 110px;
+}
+
+/* Reduce spacing between CV entries */
+.list-group-flush .list-group-item {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 
 /*****************************

@@ -45,20 +45,15 @@
 
       .abbr {
         margin-bottom: 0.5rem;
+        padding-right: 0.5rem;
+        min-width: auto;
 
-        abbr {
+        .pub-label {
           display: inline-block;
-          background-color: var(--global-theme-color);
-          margin-bottom: 0.5rem;
-          color: white;
-
-          a {
-            color: white;
-
-            &:hover {
-              text-decoration: none;
-            }
-          }
+          font-weight: bold;
+          font-size: 0.9rem;
+          color: var(--global-text-color);
+          white-space: nowrap;
         }
 
         .award {

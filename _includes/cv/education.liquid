@@ -8,7 +8,7 @@
   {% for entry in entries %}
     <li class="list-group-item">
       <div class="row align-items-start">
-        <div class="col-xs-2 col-sm-2 col-md-2 text-left date-column">
+        <div class="col-auto text-left date-column">
           {% capture start_date %}
             {% if entry.start_date %}{{ entry.start_date }}{% elsif entry.startDate %}{{ entry.startDate }}{% endif %}
           {% endcapture %}
@@ -40,7 +40,7 @@
                 <tr>
                   <td>
                     <p class="location" style="text-align: left;">
-                      <i class="fa-solid fa-location-dot iconlocation" style="margin-right: 0.2rem;"></i>{{ location | strip | newline_to_br }}
+                      <i class="fa-solid fa-location-dot iconlocation"></i>{{ location | strip | newline_to_br }}
                     </p>
                   </td>
                 </tr>
@@ -48,7 +48,7 @@
             </tbody>
           </table>
         </div>
-        <div class="col-xs-10 col-sm-10 col-md-10 mt-0">
+        <div class="col mt-0">
           {% capture study_type %}
             {% if entry.studyType %}{{ entry.studyType }}{% elsif entry.degree %}{{ entry.degree }}{% endif %}
           {% endcapture %}

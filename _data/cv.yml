@@ -13,7 +13,7 @@ cv:
   sections:
     Education:
       - institution: Georgia Institute of Technology
-        location: "Atlanta\nGA\nUnited States"
+        location: "Atlanta, GA"
         area: Computational Science & Engineering
         studyType: Ph.D. Student
         start_date: 2024
@@ -22,7 +22,7 @@ cv:
           - "Advisor: Nabil Imam"
 
       - institution: KAIST (Korea Advanced Institute of Science and Technology)
-        location: "Daejeon\nSouth Korea"
+        location: "Daejeon\nKorea"
         area: Artificial Intelligence
         studyType: M.S.
         start_date: 2022
@@ -31,7 +31,7 @@ cv:
           - "Advisor: Kijung Shin"
 
       - institution: POSTECH (Pohang University of Science and Technology)
-        location: "Pohang\nSouth Korea"
+        location: "Pohang\nKorea"
         area: Mathematics
         studyType: B.S.
         start_date: 2018
@@ -83,13 +83,13 @@ cv:
         end_date: 2023
         highlights:
           - 'Neural architecture performance prediction method using flow-aware Graph Transformer. <a href="https://github.com/hhyy0401/NAS_logit_ensemble" target="_blank"><i class="fa-brands fa-github"></i></a>'
-          - "Registered two South Korea Copyrights for Software (C-2022-055775, C-2023-047128). Patent filed: KR 10-2024-0047575 (filed 2024) [C2]."
+          - "Registered two Korea Copyrights for Software (C-2022-055775, C-2023-047128). Patent filed: KR 10-2024-0047575 (filed 2024) [C2]."
           - "Supported by IITP grant funded by the Korea government (MSIT)."
 
     Industry Experiences:
       - company: Dynamic Stream Triangle Counting Algorithms
         position: "Data Mining Lab, KAIST AI"
-        location: "Seoul\nSouth Korea"
+        location: "Seoul\nKorea"
         start_date: 2021
         end_date: 2021
         highlights:
@@ -97,41 +97,56 @@ cv:
 
       - company: Discrimination of Defective Semiconductors using GNN
         position: "Data Science Team, SK Hynix"
-        location: "Icheon\nSouth Korea"
+        location: "Icheon\nKorea"
         start_date: 2020
         end_date: 2020
 
       - company: "Ship Detection: Differentiating True Lines from Noise using CNN"
         position: "SETsystem"
-        location: "Seoul\nSouth Korea"
+        location: "Seoul\nKorea"
         start_date: 2019
         end_date: 2019
 
     Awards:
-      - title: Korea Foundation for Advanced Studies (KFAS) Scholarship
-        date: 2024-2029
+      - company: Korea Foundation for Advanced Studies (KFAS) Scholarship
+        position: ""
         location: "KFAS"
-        summary: "Field of Computer Science"
+        start_date: 2024
+        end_date: 2029
+        highlights:
+          - "Field of Computer Science"
 
-      - title: The PROUD POSTECHIAN MEMBER with the Highest Honor
-        date: 2022
+      - company: The PROUD POSTECHIAN MEMBER with the Highest Honor
+        position: ""
         location: "POSTECH"
-        summary: "Excellence Award (~$400)"
+        start_date: 2022
+        end_date: 2022
+        highlights:
+          - "Excellence Award (~$400)"
 
-      - title: UGRP (Undergraduate Group Research Program)
-        date: 2021
+      - company: UGRP (Undergraduate Group Research Program)
+        position: ""
         location: "POSTECH"
-        summary: "Excellence Award (~$4,000)"
+        start_date: 2021
+        end_date: 2021
+        highlights:
+          - "Excellence Award (~$4,000)"
 
-      - title: Presidential Science Scholarship
-        date: 2020-2022
-        location: "South Korea"
-        summary: "Full Tuition + Extra Fee (~$8,000)"
+      - company: Presidential Science Scholarship
+        position: ""
+        location: "Korea"
+        start_date: 2020
+        end_date: 2022
+        highlights:
+          - "Full Tuition + Extra Fee (~$8,000)"
 
-      - title: Jigok Scholarship
-        date: 2018-2020
+      - company: Jigok Scholarship
+        position: ""
         location: "POSTECH"
-        summary: "Full Tuition"
+        start_date: 2018
+        end_date: 2020
+        highlights:
+          - "Full Tuition"
 
     Professional Service & Teaching:
       - company: ""
