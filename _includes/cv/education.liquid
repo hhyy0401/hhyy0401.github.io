@@ -55,19 +55,15 @@
 
           {% if entry.url %}
             <h6 class="title font-weight-bold ml-1 ml-md-4" style="margin-bottom: 0.15rem;">
-              <a href="{{ entry.url }}">{{ study_type }}</a>
+              <a href="{{ entry.url }}">{{ study_type }}{% if entry.area %} in {{ entry.area }}{% endif %}</a>
             </h6>
           {% elsif study_type != '' %}
-            <h6 class="title font-weight-bold ml-1 ml-md-4" style="margin-bottom: 0.15rem;">{{ study_type }}</h6>
+            <h6 class="title font-weight-bold ml-1 ml-md-4" style="margin-bottom: 0.15rem;">{{ study_type }}{% if entry.area %} in {{ entry.area }}{% endif %}</h6>
           {% endif %}
 
           {% if entry.institution %}
-            <div class="ml-1 ml-md-4" style="font-size: 0.9rem;">{{ entry.institution }}</div>
-          {% endif %}
-
-          {% if entry.area %}
             <div class="ml-1 ml-md-4" style="font-size: 0.9rem;">
-              {{ entry.area }}{% if entry.highlights.size > 0 %}{% assign first_hl = entry.highlights | first %}{% if first_hl contains 'Advisor' %} ({{ first_hl }}){% endif %}{% endif %}
+              {{ entry.institution }}{% if entry.highlights.size > 0 %}{% assign first_hl = entry.highlights | first %}{% if first_hl contains 'Advisor' %} ({{ first_hl }}){% endif %}{% endif %}
             </div>
           {% endif %}
 

@@ -45,13 +45,14 @@ a.btncv:hover {
 p.location {
   font-size: 0.7rem;
   white-space: normal;
-  padding-left: 1rem;
-  text-indent: -1rem;
+  padding-left: 0.6rem;
+  text-indent: -0.6rem;
 }
 
 i.iconlocation {
   color: var(--global-theme-color);
   font-size: 0.8rem;
+  margin-left: 0.3rem;
 }
 
 i.iconinstitution {
