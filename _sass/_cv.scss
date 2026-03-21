@@ -45,16 +45,16 @@ a.btncv:hover {
 p.location {
   font-size: 0.7rem;
   white-space: normal;
-  padding-left: 1rem;
-  text-indent: -1rem;
+  padding-left: 0.85rem;
+  text-indent: -0.85rem;
   margin-bottom: 0;
 }
 
 i.iconlocation {
   color: var(--global-theme-color);
   font-size: 0.8rem;
-  margin-left: 0;
-  margin-right: 0.1rem;
+  margin-left: 0.2rem;
+  margin-right: 0;
 }
 
 i.iconinstitution {
@@ -89,7 +89,7 @@ div.container-links {
 
 /* Date column spacing */
 .date-column {
-  padding-top: 0.3rem;
+  padding-top: 0;
   padding-bottom: 0.3rem;
   max-width: 110px;
 }
@@ -98,6 +98,16 @@ div.container-links {
 .list-group-flush .list-group-item {
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
+}
+
+/* Top-align section tags and titles */
+.card .row.align-items-start {
+  align-items: flex-start !important;
+}
+
+h6.title {
+  margin-top: 0;
+  margin-bottom: 0.15rem;
 }
 
 /*****************************

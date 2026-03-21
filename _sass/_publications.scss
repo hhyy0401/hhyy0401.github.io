@@ -43,17 +43,25 @@
         display: inline-block;
       }
 
+      .row {
+        flex-wrap: nowrap;
+      }
+
       .abbr {
-        margin-bottom: 0.5rem;
-        padding-right: 0.5rem;
+        margin-bottom: 0.2rem;
+        padding-right: 0.15rem;
         min-width: auto;
 
         .pub-label {
           display: inline-block;
           font-weight: bold;
-          font-size: 0.9rem;
-          color: var(--global-text-color);
+          font-size: 0.75rem;
+          color: white;
           white-space: nowrap;
+          background-color: var(--global-theme-color);
+          border-radius: 0.3rem;
+          padding: 0.2rem 0.45rem;
+          text-align: center;
         }
 
         .award {
@@ -96,16 +104,18 @@
 
       .links {
         a.btn {
-          color: var(--global-text-color);
-          border: 1px solid var(--global-text-color);
+          color: var(--global-theme-color);
+          border: 1px solid var(--global-theme-color);
           padding-left: 1rem;
           padding-right: 1rem;
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
           margin-left: 0;
+          transition: all 0.2s ease;
 
           &:hover {
-            color: var(--global-theme-color);
+            color: white;
+            background-color: var(--global-theme-color);
             border-color: var(--global-theme-color);
           }
         }
@@ -181,10 +191,16 @@
     font-size: 0.75rem;
     padding: 0.15rem 0.5rem;
     border-radius: 0.25rem;
-    border: 2px solid var(--global-theme-color);
+    border: 1px solid var(--global-theme-color);
     color: var(--global-theme-color);
     background: transparent;
     margin-right: 0.25rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: white;
+      background-color: var(--global-theme-color);
+    }
   }
 }
 

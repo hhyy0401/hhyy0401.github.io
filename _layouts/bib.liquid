@@ -4,7 +4,7 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col-auto abbr">
       {%- if entry.abbr -%}
-        <span class="pub-label">[{{ entry.abbr }}]</span>
+        <span class="pub-label">{{ entry.abbr }}</span>
       {% endif %}
       {% if entry.preview %}
         {% if entry.preview contains '://' %}

@@ -50,10 +50,12 @@
           {% capture position_title %}
             {% if entry.position %}{{ entry.position }}{% endif %}
           {% endcapture %}
+          {% assign position_title = position_title | strip %}
 
           {% capture company_name %}
             {% if entry.name %}{{ entry.name }}{% elsif entry.company %}{{ entry.company }}{% elsif entry.organization %}{{ entry.organization }}{% endif %}
           {% endcapture %}
+          {% assign company_name = company_name | strip %}
 
           {% if position_title != '' and company_name != '' %}
             <h6 class="title font-weight-bold ml-1 ml-md-4" style="margin-bottom: 0.15rem;">{{ position_title }}</h6>

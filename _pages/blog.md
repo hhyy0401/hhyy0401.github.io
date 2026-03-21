@@ -7,7 +7,7 @@ nav_order: 5
 description:
 ---
 
-## Running & Swimming & Cycling
+## 🏃‍♀️ Running & 🏊‍♀️ Swimming & 🚴‍♀️ Cycling
 
 <div class="row mt-3">
 <div class="col-sm-4 mt-3 mt-md-0">
@@ -29,7 +29,7 @@ Growing up in Yeosu, a beautiful coastal city in southern Korea, I loved cycling
 
 ---
 
-## Travelling
+## ✈️ Travelling
 
 <div class="row mt-3">
 <div class="col-sm-8 mt-3 mt-md-0" markdown="1">
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ---
 
-## Baseball
+## ⚾ Baseball
 
 <div class="row mt-3">
 <div class="col-sm-4 mt-3 mt-md-0">
@@ -103,13 +103,13 @@ Nothing beats watching a game at Truist Park on a warm summer evening with frien
 
 ---
 
-## Amateur Oboist & Classical Music Enthusiast
+## 🎵 Amateur Oboist & Classical Music Enthusiast
 
 I am an amateur oboist and a devoted classical music enthusiast.
 I have experience playing oboe in several leading halls in Europe (e.g. Musikverein),
 and won a gold medal at the Honam Arts Festival at age 13.
 
-### Last Performance in Korea (Feb. 2024)
+### 🎬 Last Performance in Korea (Feb. 2024)
 
 The encore from nearly my last performance before moving to the US.
 An unforgettable and precious memory -
@@ -119,12 +119,12 @@ performing with my favorite people in my favorite ensemble.
 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JQYK1McKo9o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-### Instruments
+### 🎶 Instruments
 
 - **Oboe / English Horn** (from 2007, high level, active amateur guest player)
 - **Viola** (from 2018, intermediate)
 
-### Favorite Pieces
+### 💜 Favorite Pieces
 
 **Symphonies**: Dvorak No. 9 (2nd mvt), Sibelius No. 2, Mahler No. 3 (6th mvt), Mahler No. 6 (2nd mvt), R. Strauss *Eine Alpensinfonie*, Tchaikovsky No. 6 (1st mvt), Holst *The Planets*
 
