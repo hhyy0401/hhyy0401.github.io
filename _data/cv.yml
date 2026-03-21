@@ -12,7 +12,7 @@ cv:
   sections:
     Education:
       - institution: Georgia Institute of Technology
-        location: "Atlanta, GA,\nUnited States"
+        location: "Atlanta\nGA, United States"
         area: Computational Science & Engineering
         studyType: Ph.D. Student
         start_date: 2024
@@ -21,7 +21,7 @@ cv:
           - "Advisor: Nabil Imam"
 
       - institution: KAIST (Korea Advanced Institute of Science and Technology)
-        location: "Daejeon,\nRepublic of Korea"
+        location: "Daejeon\nRepublic of Korea"
         area: Artificial Intelligence
         studyType: M.S.
         start_date: 2022
@@ -30,13 +30,14 @@ cv:
           - "Advisor: Kijung Shin"
 
       - institution: POSTECH (Pohang University of Science and Technology)
-        location: "Pohang,\nRepublic of Korea"
+        location: "Pohang\nRepublic of Korea"
         area: Mathematics
         studyType: B.S.
         start_date: 2018
         end_date: 2022
         highlights:
-          - "Summa cum laude. GPA 3.96/4.3, Major GPA 4.02/4.3 (ranked 1st)"
+          - "Summa cum laude"
+          - "GPA 3.96/4.3, Major GPA 4.02/4.3 (ranked 1st)"
 
     Research Experiences:
       - company: EEG Analysis for Cognitive and Clinical Modeling
@@ -48,7 +49,7 @@ cv:
           - "Drift-Diffusion Model (DDM) analysis of EEG signals for characterizing decision-making processes."
           - "EEG-based disease prediction leveraging neural biomarkers and deep learning methods."
 
-      - company: fMRI-driven Graph Modeling of Visual Cortex
+      - company: fMRI-driven Graph Modeling of Self-Organization Mechanisms in the Visual Cortex
         position: ""
         location: Georgia Tech
         start_date: 2024
@@ -57,92 +58,89 @@ cv:
           - "Develop graph generation methods using both AI-driven approaches and rule-based algorithms."
           - "Design brain-inspired models by leveraging neural data visualization mechanisms [P1, P2]."
 
-      - company: Higher-Order Structures in Graphs
+      - company: Algorithm, Analysis, and Application of Higher-Order Structures
         position: ""
         location: KAIST
         start_date: 2022
         end_date: 2024
         highlights:
-          - "Scalable algorithms for counting simplets, hypergraphlets, motifs [C1, J1, J2, J3]."
+          - "Designed scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs) in simplicial complexes, hypergraphs, and directed hypergraphs."
+          - "Developed sampling-based estimation methods with provable accuracy guarantees [C1, J1, J2, J3]."
 
-      - company: GNN Null Model
+      - company: Development of a Null Model for GNN Incorporating Node Features
         position: ""
         location: KAIST
         start_date: 2023
         end_date: 2023
         highlights:
-          - "Null model maintaining performance rankings while anonymizing users' information."
+          - "Developed a null model maintaining performance rankings aligned with the original network while anonymizing users' information."
 
-      - company: NAS Performance Prediction
+      - company: Performance Prediction of Architectures using Semi-Supervised Learning
         position: ""
         location: KAIST
         start_date: 2022
         end_date: 2023
         highlights:
-          - "Flow-aware Graph Transformer for neural architecture performance prediction [C2]."
-          - "Software Copyrights (C-2022-055775, C-2023-047128). Patent pending: KR 10-2024-0047575."
+          - "Neural architecture performance prediction method using flow-aware Graph Transformer."
+          - "Registered two South Korea Copyrights for Software (C-2022-055775, C-2023-047128). Patent filed: KR 10-2024-0047575 (filed 2024) [C2]."
+          - "Supported by IITP grant funded by the Korea government (MSIT)."
 
     Industry Experiences:
       - company: Dynamic Stream Triangle Counting Algorithms
-        position: ""
-        location: "Data Mining Lab,\nKAIST AI"
+        position: "Data Mining Lab, KAIST AI"
+        location: "Seoul\nRepublic of Korea"
         start_date: 2021
         end_date: 2021
         highlights:
           - "Advisor: Kijung Shin"
 
       - company: Discrimination of Defective Semiconductors using GNN
-        position: ""
-        location: "SK Hynix,\nData Science Team"
+        position: "Data Science Team, SK Hynix"
+        location: "Icheon\nRepublic of Korea"
         start_date: 2020
         end_date: 2020
 
       - company: "Ship Detection: Differentiating True Lines from Noise using CNN"
-        position: ""
-        location: SETsystem
+        position: "SETsystem"
+        location: "Seoul\nRepublic of Korea"
         start_date: 2019
         end_date: 2019
 
     Awards:
       - title: KFAS Scholarship
-        authors:
-          - "Korea Foundation for Advanced Studies"
         date: 2024
         awarder: KFAS
+        location: "Korea Foundation for Advanced Studies"
         summary: "Field of Computer Science (2024-2029)"
 
       - title: The PROUD POSTECHIAN MEMBER with the Highest Honor
-        authors:
-          - "POSTECH"
         date: 2022
         awarder: POSTECH
+        location: "POSTECH"
         summary: "Excellence Award (~$400)"
 
       - title: UGRP (Undergraduate Group Research Program)
-        authors:
-          - "POSTECH"
         date: 2021
         awarder: POSTECH
+        location: "POSTECH"
         summary: "Excellence Award (~$4,000)"
 
       - title: Presidential Science Scholarship
-        authors:
-          - "Republic of Korea"
         date: 2020
         awarder: Republic of Korea
+        location: "Republic of Korea"
         summary: "Full Tuition + Extra Fee (~$8,000) (2020-2022)"
 
       - title: Jigok Scholarship
-        authors:
-          - "POSTECH"
         date: 2018
         awarder: POSTECH
+        location: "POSTECH"
         summary: "Full Tuition (2018-2020)"
 
     Professional Service & Teaching:
       - company: ""
         position: "Reviewer"
-        location: ""
+        location: "Georgia Tech"
         start_date: 2025
         end_date: present
         highlights:
@@ -154,7 +152,7 @@ cv:
         start_date: 2023
         end_date: 2023
         highlights:
-          - "Mentee: J.H. Lee. Excellence Award."
+          - "Mentee: J.H. Lee → [C3]. Excellence Award."
 
       - company: ""
         position: "Lab Mentor"
@@ -162,7 +160,7 @@ cv:
         start_date: 2022
         end_date: 2023
         highlights:
-          - "Mentee: S.B. Yoon"
+          - "Mentee: S.B. Yoon → [J1]"
 
       - company: ""
         position: "Teaching Mentor & Tutor"

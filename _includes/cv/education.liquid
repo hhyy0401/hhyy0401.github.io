@@ -8,7 +8,7 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
   {% for entry in entries %}
     <li class="list-group-item">
-      <div class="row">
+      <div class="row align-items-start">
         <div class="col-xs-2 col-sm-2 col-md-2 text-left date-column">
           {% capture start_date %}
             {% if entry.start_date %}{{ entry.start_date }}{% elsif entry.startDate %}{{ entry.startDate }}{% endif %}
@@ -43,7 +43,7 @@
                   <td>
                     <p class="location" style="text-align: left;">
                       <i class="fa-solid fa-location-dot iconlocation"></i>
-                      {{ location | replace: ', ', ',<br>' }}
+                      {{ location | newline_to_br | replace: ', ', ',<br>' }}
                     </p>
                   </td>
                 </tr>

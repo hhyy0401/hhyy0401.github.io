@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-06-01 00:00:00-0500
+date: 2024-08-01 00:00:00-0500
 inline: true
 related_posts: false
 ---
 
-FlowerFormer accepted at **CVPR 2024**. Simplet counting paper published in **The VLDB Journal**. Hypergraphlets paper published in **TKDE**.
+Started Ph.D. at **Georgia Institute of Technology** in Computational Science & Engineering!

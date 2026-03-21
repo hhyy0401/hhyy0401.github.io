@@ -1,5 +1,6 @@
 {% comment %}
   Unified awards entry renderer for both formats
+  Updated: supports location tag display
 {% endcomment %}
 
 <ul class="card-text font-weight-light list-group list-group-flush">
@@ -11,7 +12,7 @@
         {% endcapture %}
 
         {% if start_date != '' %}
-          <div class="col-xs-2 col-sm-2 col-md-2 text-center">
+          <div class="col-xs-2 col-sm-2 col-md-2 text-left date-column">
             <table class="table-cv">
               <tbody>
                 <tr>
@@ -21,6 +22,19 @@
                     </span>
                   </td>
                 </tr>
+                {% capture location %}
+                  {% if entry.location %}{{ entry.location }}{% endif %}
+                {% endcapture %}
+                {% if location != '' %}
+                  <tr>
+                    <td>
+                      <p class="location" style="text-align: left;">
+                        <i class="fa-solid fa-location-dot iconlocation"></i>
+                        {{ location | replace: ', ', ',<br>' }}
+                      </p>
+                    </td>
+                  </tr>
+                {% endif %}
               </tbody>
             </table>
           </div>
@@ -33,12 +47,8 @@
               <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
             {% endif %}
 
-            {% if entry.awarder %}
-              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ entry.awarder }}</h6>
-            {% endif %}
-
             {% if entry.summary %}
-              <p class="ml-1 ml-md-4">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+              <p class="ml-1 ml-md-4" style="margin-bottom: 0;">{{ entry.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
             {% endif %}
           </div>
         {% else %}
@@ -49,10 +59,6 @@
               </h6>
             {% elsif entry.title %}
               <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
-            {% endif %}
-
-            {% if entry.awarder %}
-              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ entry.awarder }}</h6>
             {% endif %}
 
             {% if entry.summary %}
