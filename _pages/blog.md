@@ -36,9 +36,7 @@ I also enjoy cycling around Atlanta's BeltLine trail on weekends as a way to rec
 
 I love travelling and exploring new cultures, food, and landscapes.
 So far I've visited **16 countries** across 4 continents.
-Some highlights include driving across the American Southwest,
-exploring temples in Japan, biking through the Netherlands,
-and revisiting European concert halls where I performed as a child.
+I enjoy the vast nature and the unique culture and history of each country.
 
 **Countries visited** (most recent first):
 USA, Mexico (Cancun), Japan, Netherlands, France, Spain, China (Shanghai),
@@ -117,7 +115,11 @@ The encore from nearly my last performance before moving to the US.
 An unforgettable and precious memory --
 performing with my favorite people in my favorite ensemble.
 
-{% include video.liquid path="assets/video/oboe_encore.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=false %}
+<div class="col-sm-8">
+<video controls class="img-fluid rounded z-depth-1" style="max-width: 100%;">
+<source src="{{ 'assets/video/oboe_encore.mp4' | relative_url }}" type="video/mp4">
+</video>
+</div>
 
 ### Instruments
 
@@ -126,9 +128,9 @@ performing with my favorite people in my favorite ensemble.
 
 ### Favorite Pieces
 
-**Symphonies**: Dvorak No. 9, Sibelius No. 2, Tchaikovsky No. 6
+**Symphonies**: Dvorak No. 9 (2nd mvt), Sibelius No. 2, Mahler No. 3 (6th mvt), Mahler No. 6 (2nd mvt), R. Strauss *Eine Alpensinfonie*, Tchaikovsky No. 6 (1st mvt)
 
-**Concertos**: Beethoven "Emperor", Tchaikovsky Violin Concerto, Dvorak Cello Concerto
+**Concertos**: Beethoven "Emperor" (2nd mvt), Chopin Piano Concerto No. 1 & 2 (2nd mvt)
 
 <details>
 <summary><strong>Performance History: 2011 European Tour (1st Oboe)</strong></summary>
