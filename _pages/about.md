@@ -41,5 +41,5 @@ In graph data mining, I design algorithms and AI models for analyzing large-scal
 Previously, I received my M.S. in [Artificial Intelligence at KAIST](https://gsai.kaist.ac.kr/),
 advised by [Prof. Kijung Shin](https://kijungs.github.io/#about)
 ([Data Mining Lab](https://sites.google.com/view/kaistdata/home)),
-and my B.S. in [Mathematics at POSTECH](https://math.postech.ac.kr/main-english/)
+and my B.S. in [Mathematics at POSTECH](https://math.postech.ac.kr/en/)
 (_summa cum laude_, ranked 1st in the Department of Mathematics).
