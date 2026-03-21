@@ -173,6 +173,55 @@ cv:
         highlights:
           - "Online Mentoring & Korea Scholarship Foundation Summer Camp"
 
+    Miscellaneous:
+      - company: Identifying Fraudulent Products in Secondhand Trading Websites
+        position: ""
+        location: POSTECH
+        start_date: 2021-03
+        end_date: 2021-06
+        highlights:
+          - 'IMEN472 Statistical Data Mining term project (1st place, model case). Implemented web crawlers, machine learning algorithms and performed statistical analysis. <a href="https://github.com/hhyy0401/UGRP" target="_blank"><i class="fa-brands fa-github"></i></a>'
+
+      - company: Personality Prediction AI and App Development
+        position: ""
+        location: POSTECH
+        start_date: 2020-04
+        end_date: 2021-01
+        highlights:
+          - 'UGRP Excellence Award (Advisor: Jaesik Park). Developed and distributed an app platform based on a DL-based model with high accuracy. <a href="https://github.com/hhyy0401/IMEN472" target="_blank"><i class="fa-brands fa-github"></i></a>'
+
+      - company: "Korean I-Corps Program: Team Lutra"
+        position: ""
+        location: POSTECH
+        start_date: 2021-09
+        end_date: 2021-10
+        highlights:
+          - "Korean I-Corps program for supporting preliminary startups. Development of a Personalized Restaurant and Cafe Recommendation Web Service."
+
+      - company: Winner of POSTECH-KAIST Science War
+        position: ""
+        location: POSTECH
+        start_date: 2020-09
+        end_date: 2020-09
+        highlights:
+          - "Science Quiz Session. Mathematics representative."
+
+      - company: Leadership Experiences
+        position: ""
+        location: POSTECH
+        start_date: 2020-02
+        end_date: 2021-12
+        highlights:
+          - "The student council of the Department of Mathematics (Head of Academic Affairs & Public Relations). Orchestra club HanUlRim (President & Conductor, Feb. 2020 - Dec. 2020)."
+
+      - company: Amateur Oboist & Classical Music Enthusiast
+        position: ""
+        location: ""
+        start_date: ""
+        end_date: ""
+        highlights:
+          - "Guest player of several university orchestras (e.g., Sogang Univ., Sungkyunkwan Univ., Medical School Union, etc.). Principal oboe player of Yeodo Elementary School Orchestra European tour for promoting International Exposition Yeosu Korea 2012 (Venues: Musikverein, Mozarteum Grosser Saal, Slovak Radio Hall, World Trade Center Patria Hall, Rudolfinum Dvorak Hall, Lukaskirche). 9th Online Supporters of Seoul Philharmonic Orchestra."
+
     Skills:
       - name: Programming
         level: Master
