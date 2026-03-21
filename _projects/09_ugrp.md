@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Personality Prediction AI"
-description: "UGRP Excellence Award - Personality prediction AI and app development"
+description: "Analysis of impression using AI and app development. Classify a person's MBTI with trained models. Deployed a web to give people the fun of matching MBTI and collect new data."
 importance: 9
 category: course
 date_range: "2020-2021"
@@ -12,6 +12,8 @@ github: "https://github.com/hhyy0401/UGRP"
 
 **POSTECH** | Apr. 2020 -- Jan. 2021
 
-DL-based personality (MBTI) prediction model. Web app platform.
+Analysis of impression using AI and app development. Classify a person's MBTI with trained models. Deployed a web to give people the fun of matching MBTI and collect new data.
+
+- **UGRP Excellence Award**
 
 [GitHub](https://github.com/hhyy0401/UGRP)

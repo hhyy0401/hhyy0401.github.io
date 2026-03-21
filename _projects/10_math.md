@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Mathematical Materials"
-description: "Supplementary materials for Applied Linear Algebra and General Topology"
+description: "Self-produced mathematical materials for preparing SMP, RC tutoring and exams (made by LaTeX)."
 importance: 10
 category: course
 date_range: "2020-2021"

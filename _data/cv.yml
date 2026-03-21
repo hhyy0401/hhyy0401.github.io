@@ -12,7 +12,7 @@ cv:
   sections:
     Education:
       - institution: Georgia Institute of Technology
-        location: Atlanta, GA, United States
+        location: "Atlanta, GA,\nUnited States"
         area: Computational Science & Engineering
         studyType: Ph.D. Student
         start_date: 2024
@@ -21,7 +21,7 @@ cv:
           - "Advisor: Nabil Imam"
 
       - institution: KAIST (Korea Advanced Institute of Science and Technology)
-        location: Daejeon, Republic of Korea
+        location: "Daejeon,\nRepublic of Korea"
         area: Artificial Intelligence
         studyType: M.S.
         start_date: 2022
@@ -30,7 +30,7 @@ cv:
           - "Advisor: Kijung Shin"
 
       - institution: POSTECH (Pohang University of Science and Technology)
-        location: Pohang, Republic of Korea
+        location: "Pohang,\nRepublic of Korea"
         area: Mathematics
         studyType: B.S.
         start_date: 2018
@@ -40,7 +40,7 @@ cv:
 
     Research Experiences:
       - company: EEG Analysis for Cognitive and Clinical Modeling
-        position: Graduate Research Assistant
+        position: ""
         location: Georgia Tech
         start_date: 2024
         end_date: present
@@ -49,7 +49,7 @@ cv:
           - "EEG-based disease prediction leveraging neural biomarkers and deep learning methods."
 
       - company: fMRI-driven Graph Modeling of Visual Cortex
-        position: Graduate Research Assistant
+        position: ""
         location: Georgia Tech
         start_date: 2024
         end_date: present
@@ -58,7 +58,7 @@ cv:
           - "Design brain-inspired models by leveraging neural data visualization mechanisms [P1, P2]."
 
       - company: Higher-Order Structures in Graphs
-        position: Graduate Research Assistant
+        position: ""
         location: KAIST
         start_date: 2022
         end_date: 2024
@@ -66,7 +66,7 @@ cv:
           - "Scalable algorithms for counting simplets, hypergraphlets, motifs [C1, J1, J2, J3]."
 
       - company: GNN Null Model
-        position: Graduate Research Assistant
+        position: ""
         location: KAIST
         start_date: 2023
         end_date: 2023
@@ -74,42 +74,41 @@ cv:
           - "Null model maintaining performance rankings while anonymizing users' information."
 
       - company: NAS Performance Prediction
-        position: Graduate Research Assistant
+        position: ""
         location: KAIST
         start_date: 2022
         end_date: 2023
         highlights:
           - "Flow-aware Graph Transformer for neural architecture performance prediction [C2]."
-          - "Software Copyrights (C-2022-055775, C-2023-047128). Patent: KR 10-2024-0047575."
+          - "Software Copyrights (C-2022-055775, C-2023-047128). Patent pending: KR 10-2024-0047575."
 
     Industry Experiences:
-      - company: Data Mining Lab, KAIST AI
-        position: Research Intern
-        location: Daejeon, Republic of Korea
+      - company: Dynamic Stream Triangle Counting Algorithms
+        position: ""
+        location: "Data Mining Lab,\nKAIST AI"
         start_date: 2021
         end_date: 2021
-        summary: "Dynamic Stream Triangle Counting Algorithms. Advisor: Kijung Shin"
+        highlights:
+          - "Advisor: Kijung Shin"
 
-      - company: SK Hynix, Data Science Team
-        position: Intern
-        location: Republic of Korea
+      - company: Discrimination of Defective Semiconductors using GNN
+        position: ""
+        location: "SK Hynix,\nData Science Team"
         start_date: 2020
         end_date: 2020
-        summary: "Discrimination of Defective Semiconductors using GNN"
 
-      - company: SETsystem
-        position: Intern
-        location: Republic of Korea
+      - company: "Ship Detection: Differentiating True Lines from Noise using CNN"
+        position: ""
+        location: SETsystem
         start_date: 2019
         end_date: 2019
-        summary: "Ship Detection: Differentiating True Lines from Noise using CNN"
 
     Awards:
-      - title: KFAS Scholarship (Korea Foundation for Advanced Studies)
+      - title: KFAS Scholarship
         authors:
           - "Korea Foundation for Advanced Studies"
         date: 2024
-        awarder: Korea Foundation for Advanced Studies
+        awarder: KFAS
         summary: "Field of Computer Science (2024-2029)"
 
       - title: The PROUD POSTECHIAN MEMBER with the Highest Honor
@@ -141,7 +140,7 @@ cv:
         summary: "Full Tuition (2018-2020)"
 
     Professional Service & Teaching:
-      - company: Academic Service
+      - company: ""
         position: "Reviewer"
         location: ""
         start_date: 2025
@@ -149,33 +148,33 @@ cv:
         highlights:
           - "AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
 
-      - company: KAIST
+      - company: ""
         position: "URP Teaching Assistant"
-        location: "Daejeon, Republic of Korea"
+        location: KAIST
         start_date: 2023
         end_date: 2023
         highlights:
           - "Mentee: J.H. Lee. Excellence Award."
 
-      - company: KAIST
+      - company: ""
         position: "Lab Mentor"
-        location: "Daejeon, Republic of Korea"
+        location: KAIST
         start_date: 2022
         end_date: 2023
         highlights:
           - "Mentee: S.B. Yoon"
 
-      - company: POSTECH
+      - company: ""
         position: "Teaching Mentor & Tutor"
-        location: "Pohang, Republic of Korea"
+        location: POSTECH
         start_date: 2019
         end_date: 2021
         highlights:
           - "Applied Linear Algebra, Analysis I, Programming and Problem Solving (7 semesters)"
 
-      - company: POSTECH
+      - company: ""
         position: "Educational Volunteering Mentor"
-        location: "Pohang, Republic of Korea"
+        location: POSTECH
         start_date: 2019
         end_date: 2020
         highlights:

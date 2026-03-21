@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "CODA"
-description: "Four-set hypergraphlets for characterization of directed hypergraphs"
+description: "Define novel local patterns on directed hypergraphs (directed hypergraphlets). Design efficient algorithms CODA-E(xact), CODA-A(dvanced). Applications: clustering, classification, temporal analysis."
 img: assets/img/projects/dhg.png
 importance: 3
 category: research

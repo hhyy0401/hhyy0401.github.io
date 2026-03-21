@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "NAS Performance Prediction"
-description: "Performance prediction of neural architectures using semi-supervised learning [C2]"
+description: "Utilize logits to predict performance of neural architectures. Sort images by entropy, pre-train predictors, fine-tune for architecture performance estimation."
 importance: 5
 category: research
 date_range: "2022-2023"
@@ -12,6 +12,9 @@ github: "https://github.com/hhyy0401/NAS_logit_ensemble"
 
 **KAIST** | Apr. 2022 -- Dec. 2023
 
-Flow-aware Graph Transformer. Software copyrights. Patent filed. CVPR 2024.
+Utilize logits to predict performance of neural architectures. Sort images by entropy, pre-train predictors, and fine-tune for architecture performance estimation.
 
-[GitHub: NAS_logit_ensemble](https://github.com/hhyy0401/NAS_logit_ensemble) (Korea Software Congress 2023)
+- **Korea Software Congress 2023**
+- Korea Software Copyright C-2023-047128
+
+[GitHub: NAS_logit_ensemble](https://github.com/hhyy0401/NAS_logit_ensemble)
