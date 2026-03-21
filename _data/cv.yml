@@ -12,7 +12,7 @@ cv:
   sections:
     Education:
       - institution: Georgia Institute of Technology
-        location: "Atlanta\nGA, United States"
+        location: "Atlanta\nGA\nUnited States"
         area: Computational Science & Engineering
         studyType: Ph.D. Student
         start_date: 2024
@@ -65,7 +65,7 @@ cv:
         end_date: 2024
         highlights:
           - "Designed scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs) in simplicial complexes, hypergraphs, and directed hypergraphs."
-          - "Developed sampling-based estimation methods with provable accuracy guarantees [C1, J1, J2, J3]."
+          - 'Developed sampling-based estimation methods with provable accuracy guarantees [C1, J1, J2, J3]. <a href="https://github.com/hhyy0401/SC3" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/CODA" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/simplet_counting" target="_blank"><i class="fa-brands fa-github"></i></a>'
 
       - company: Development of a Null Model for GNN Incorporating Node Features
         position: ""
@@ -81,7 +81,7 @@ cv:
         start_date: 2022
         end_date: 2023
         highlights:
-          - "Neural architecture performance prediction method using flow-aware Graph Transformer."
+          - 'Neural architecture performance prediction method using flow-aware Graph Transformer. <a href="https://github.com/hhyy0401/NAS_logit_ensemble" target="_blank"><i class="fa-brands fa-github"></i></a>'
           - "Registered two South Korea Copyrights for Software (C-2022-055775, C-2023-047128). Patent filed: KR 10-2024-0047575 (filed 2024) [C2]."
           - "Supported by IITP grant funded by the Korea government (MSIT)."
 
@@ -107,35 +107,30 @@ cv:
         end_date: 2019
 
     Awards:
-      - title: KFAS Scholarship
-        date: 2024
-        awarder: KFAS
-        location: "Korea Foundation for Advanced Studies"
-        summary: "Field of Computer Science (2024-2029)"
+      - title: Korea Foundation for Advanced Studies (KFAS) Scholarship
+        date: 2024-2029
+        location: "KFAS"
+        summary: "Field of Computer Science"
 
       - title: The PROUD POSTECHIAN MEMBER with the Highest Honor
         date: 2022
-        awarder: POSTECH
         location: "POSTECH"
         summary: "Excellence Award (~$400)"
 
       - title: UGRP (Undergraduate Group Research Program)
         date: 2021
-        awarder: POSTECH
         location: "POSTECH"
         summary: "Excellence Award (~$4,000)"
 
       - title: Presidential Science Scholarship
-        date: 2020
-        awarder: Republic of Korea
+        date: 2020-2022
         location: "Republic of Korea"
-        summary: "Full Tuition + Extra Fee (~$8,000) (2020-2022)"
+        summary: "Full Tuition + Extra Fee (~$8,000)"
 
       - title: Jigok Scholarship
-        date: 2018
-        awarder: POSTECH
+        date: 2018-2020
         location: "POSTECH"
-        summary: "Full Tuition (2018-2020)"
+        summary: "Full Tuition"
 
     Professional Service & Teaching:
       - company: ""

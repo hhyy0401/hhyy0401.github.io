@@ -41,9 +41,8 @@
               {% if location != '' %}
                 <tr>
                   <td>
-                    <p class="location" style="text-align: left;">
-                      <i class="fa-solid fa-location-dot iconlocation"></i>
-                      {{ location | newline_to_br | replace: ', ', ',<br>' }}
+                    <p class="location" style="text-align: left; white-space: normal;">
+                      <i class="fa-solid fa-location-dot iconlocation" style="margin-right: 0.2rem;"></i>{{ location | strip | newline_to_br }}
                     </p>
                   </td>
                 </tr>

@@ -1,6 +1,6 @@
 {% comment %}
   Unified awards entry renderer for both formats
-  Updated: supports location tag display
+  Updated: supports location tag display and date ranges
 {% endcomment %}
 
 <ul class="card-text font-weight-light list-group list-group-flush">
@@ -18,7 +18,7 @@
                 <tr>
                   <td>
                     <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
-                      {{- start_date | split: '-' | slice: 0, 1 | join: '' -}}
+                      {{- start_date | strip -}}
                     </span>
                   </td>
                 </tr>
@@ -28,9 +28,8 @@
                 {% if location != '' %}
                   <tr>
                     <td>
-                      <p class="location" style="text-align: left;">
-                        <i class="fa-solid fa-location-dot iconlocation"></i>
-                        {{ location | replace: ', ', ',<br>' }}
+                      <p class="location" style="text-align: left; white-space: normal;">
+                        <i class="fa-solid fa-location-dot iconlocation" style="margin-right: 0.2rem;"></i>{{ location | strip | newline_to_br }}
                       </p>
                     </td>
                   </tr>
