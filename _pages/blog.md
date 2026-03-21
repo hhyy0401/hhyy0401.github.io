@@ -39,8 +39,8 @@ So far I've visited **16 countries** across 4 continents.
 I enjoy the vast nature and the unique culture and history of each country.
 
 **Countries visited** (most recent first):
-USA, Mexico (Cancun), Japan, Netherlands, France, Spain, China (Shanghai),
-Malaysia, Australia, Hungary, Czech Republic, Austria, Germany, Switzerland, Slovakia, South Korea.
+🇺🇸 USA, 🇲🇽 Mexico (Cancun), 🇯🇵 Japan, 🇳🇱 Netherlands, 🇫🇷 France, 🇪🇸 Spain, 🇨🇳 China (Shanghai),
+🇲🇾 Malaysia, 🇦🇺 Australia, 🇭🇺 Hungary, 🇨🇿 Czech Republic, 🇦🇹 Austria, 🇩🇪 Germany, 🇨🇭 Switzerland, 🇸🇰 Slovakia, 🇰🇷 South Korea.
 
 </div>
 <div class="col-sm-4 mt-3 mt-md-0">
@@ -116,10 +116,7 @@ An unforgettable and precious memory -
 performing with my favorite people in my favorite ensemble.
 
 <div style="max-width: 560px;">
-<video controls playsinline preload="metadata" class="img-fluid rounded z-depth-1" style="width: 100%;">
-<source src="{{ '/assets/video/oboe_encore.mp4' | relative_url }}" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+{% include video.liquid path="assets/video/oboe_encore.mp4" class="img-fluid rounded z-depth-1" controls=true %}
 </div>
 
 ### Instruments

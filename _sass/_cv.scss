@@ -45,6 +45,8 @@ a.btncv:hover {
 p.location {
   font-size: 0.7rem;
   white-space: normal;
+  padding-left: 1rem;
+  text-indent: -1rem;
 }
 
 i.iconlocation {
@@ -80,6 +82,12 @@ div.container-links {
   justify-content: flex-start;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+/* Date column spacing */
+.date-column {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 
 /*****************************
@@ -194,27 +202,3 @@ ul.timeline li::before {
   left: 2px;
   top: -0.5rem;
 }
-
-/*ul.timeline::before {
-     content: "●";
-     font-size: 1em;
-     display: inline-block;
-     margin: 0;
-     padding: 0;
-     position: relative;
-     left: -2px;
-     top: 0.4rem;
-     color: var(--global-text-color);
-}
- ul.timeline::after {
-     content: "●";
-     font-size: 1em;
-     display: inline-block;
-     margin: 0;
-     padding: 0;
-     position: relative;
-     left: -2px;
-     top: -1rem;
-     color: var(--global-text-color);
-}
-*/

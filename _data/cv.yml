@@ -2,6 +2,7 @@ cv:
   name: Hyunju Kim
   email: hkim3239@gatech.edu
   location: Atlanta, GA, United States
+  scholar_userid: dx-hTMUAAAAJ
 
   social_networks:
     - network: GitHub
@@ -21,7 +22,7 @@ cv:
           - "Advisor: Nabil Imam"
 
       - institution: KAIST (Korea Advanced Institute of Science and Technology)
-        location: "Daejeon\nRepublic of Korea"
+        location: "Daejeon\nKorea"
         area: Artificial Intelligence
         studyType: M.S.
         start_date: 2022
@@ -30,7 +31,7 @@ cv:
           - "Advisor: Kijung Shin"
 
       - institution: POSTECH (Pohang University of Science and Technology)
-        location: "Pohang\nRepublic of Korea"
+        location: "Pohang\nKorea"
         area: Mathematics
         studyType: B.S.
         start_date: 2018
@@ -88,7 +89,7 @@ cv:
     Industry Experiences:
       - company: Dynamic Stream Triangle Counting Algorithms
         position: "Data Mining Lab, KAIST AI"
-        location: "Seoul\nRepublic of Korea"
+        location: "Seoul\nKorea"
         start_date: 2021
         end_date: 2021
         highlights:
@@ -96,13 +97,13 @@ cv:
 
       - company: Discrimination of Defective Semiconductors using GNN
         position: "Data Science Team, SK Hynix"
-        location: "Icheon\nRepublic of Korea"
+        location: "Icheon\nKorea"
         start_date: 2020
         end_date: 2020
 
       - company: "Ship Detection: Differentiating True Lines from Noise using CNN"
         position: "SETsystem"
-        location: "Seoul\nRepublic of Korea"
+        location: "Seoul\nKorea"
         start_date: 2019
         end_date: 2019
 
@@ -124,7 +125,7 @@ cv:
 
       - title: Presidential Science Scholarship
         date: 2020-2022
-        location: "Republic of Korea"
+        location: "Korea"
         summary: "Full Tuition + Extra Fee (~$8,000)"
 
       - title: Jigok Scholarship
@@ -216,9 +217,9 @@ cv:
 
       - company: Amateur Oboist & Classical Music Enthusiast
         position: ""
-        location: ""
-        start_date: ""
-        end_date: ""
+        location: "Worldwide"
+        start_date: 2009
+        end_date: present
         highlights:
           - "Guest player of several university orchestras (e.g., Sogang Univ., Sungkyunkwan Univ., Medical School Union, etc.). Principal oboe player of Yeodo Elementary School Orchestra European tour for promoting International Exposition Yeosu Korea 2012 (Venues: Musikverein, Mozarteum Grosser Saal, Slovak Radio Hall, World Trade Center Patria Hall, Rudolfinum Dvorak Hall, Lukaskirche). 9th Online Supporters of Seoul Philharmonic Orchestra."
 

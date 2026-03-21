@@ -128,6 +128,14 @@ layout: default
                   {% endif %}
                 {% endfor %}
               {% endif %}
+              {% if cv.scholar_userid %}
+                <tr>
+                  <td class="p-1 pr-2 font-weight-bold"><b><i class="ai ai-google-scholar"></i> Google Scholar</b></td>
+                  <td class="p-1 pl-2 font-weight-light">
+                    <a href="https://scholar.google.com/citations?user={{ cv.scholar_userid }}" target="_blank">Google Scholar</a>
+                  </td>
+                </tr>
+              {% endif %}
             </table>
           </div>
         {% endif %}
