@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Student, <a href='https://cse.gatech.edu/'>Computational Science & Engineering</a>, <a href='https://www.gatech.edu/'>Georgia Tech</a>
+subtitle: "Ph.D. Student, <a href=\"https://cse.gatech.edu/\">Computational Science & Engineering</a>, <a href=\"https://www.gatech.edu/\">Georgia Tech</a>"
 
 profile:
   align: right
@@ -34,4 +34,4 @@ In computational neuroscience, I apply deep learning to understand neural dynami
 
 In graph data mining, I design algorithms and AI models for analyzing large-scale, complex graph data.
 
-Previously, I received my M.S. in [Artificial Intelligence at KAIST](https://gsai.kaist.ac.kr/), advised by [Prof. Kijung Shin](https://kijungs.github.io/#about) ([Data Mining Lab](https://sites.google.com/view/kaistdata/home)), and my B.S. in [Mathematics at POSTECH](https://math.postech.ac.kr/main-english/) (*summa cum laude*, ranked 1st in the Department of Mathematics).
+Previously, I received my M.S. in [Artificial Intelligence at KAIST](https://gsai.kaist.ac.kr/), advised by [Prof. Kijung Shin](https://kijungs.github.io/#about) ([Data Mining Lab](https://sites.google.com/view/kaistdata/home)), and my B.S. in [Mathematics at POSTECH](https://math.postech.ac.kr/main-english/) (_summa cum laude_, ranked 1st in the Department of Mathematics).
