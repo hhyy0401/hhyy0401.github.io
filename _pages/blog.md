@@ -96,7 +96,7 @@ I'm a passionate baseball fan who follows both Korean and American baseball.
 In the **KBO**, I root for the **Kia Tigers** - my hometown team that I've supported since childhood.
 
 In the **MLB**, living in Atlanta made it natural to become a **Braves** fan.
-Nothing beats watching a game at Truist Park on a warm summer evening with friends!
+I love the unique vibe and style of the Atlanta Braves — especially the Tomahawk Chop!
 
 </div>
 </div>
