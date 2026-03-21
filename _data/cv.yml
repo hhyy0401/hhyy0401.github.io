@@ -1,10 +1,7 @@
 cv:
   name: Hyunju Kim
-  label: Ph.D. Student
   email: hkim3239@gatech.edu
   location: Atlanta, GA, United States
-  image: ""
-  summary: Ph.D. student in Computational Science & Engineering at Georgia Tech, researching computational neuroscience and graph data mining.
 
   social_networks:
     - network: GitHub
@@ -19,7 +16,7 @@ cv:
         area: Computational Science & Engineering
         studyType: Ph.D. Student
         start_date: 2024
-        end_date: ""
+        end_date: present
         highlights:
           - "Advisor: Nabil Imam"
 
@@ -46,7 +43,7 @@ cv:
         position: Graduate Research Assistant
         location: Atlanta, GA, United States
         start_date: 2024
-        end_date: ""
+        end_date: present
         summary: "EEG analysis for cognitive and clinical modeling. Visual cortex self-organization through graph modeling."
 
       - company: KAIST Data Mining Lab
@@ -72,58 +69,72 @@ cv:
 
     Awards:
       - title: KFAS Scholarship (Korea Foundation for Advanced Studies)
+        authors:
+          - "Korea Foundation for Advanced Studies"
         date: 2024
         awarder: Korea Foundation for Advanced Studies
         summary: "Field of Computer Science (2024-2029)"
 
       - title: The PROUD POSTECHIAN MEMBER with the Highest Honor
+        authors:
+          - "POSTECH"
         date: 2022
         awarder: POSTECH
         summary: "Excellence Award"
 
       - title: UGRP (Undergraduate Group Research Program)
+        authors:
+          - "POSTECH"
         date: 2021
         awarder: POSTECH
         summary: "Excellence Award"
 
       - title: Presidential Science Scholarship
+        authors:
+          - "Republic of Korea"
         date: 2020
         awarder: Republic of Korea
         summary: "Full Tuition (2020-2022)"
 
       - title: Jigok Scholarship
+        authors:
+          - "POSTECH"
         date: 2018
         awarder: POSTECH
         summary: "Full Tuition (2018-2020)"
 
     Skills:
       - name: Programming
-        level: ""
+        level: Master
         icon: fa-solid fa-code
         keywords: "C/C++, Python (PyTorch), LaTeX, Julia, R, JavaScript"
 
       - name: Languages
-        level: ""
+        level: Master
         icon: fa-solid fa-language
         keywords: "Korean (native), English (fluent: IELTS 7.5)"
 
     Volunteer:
       - company: Reviewer
         position: "AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
+        location: Academic Service
         start_date: 2025
-        end_date: ""
+        end_date: present
 
       - company: URP Teaching Assistant
         position: "KAIST. Mentee: J.H. Lee. Excellence Award."
+        location: Daejeon, Republic of Korea
         start_date: 2023
         end_date: 2023
 
       - company: Lab Mentor
         position: "KAIST. Mentee: S.B. Yoon"
+        location: Daejeon, Republic of Korea
         start_date: 2022
         end_date: 2023
 
       - company: Teaching Mentor & Tutor
         position: "POSTECH. Applied Linear Algebra, Analysis I, Programming and Problem Solving (7 semesters)"
+        location: Pohang, Republic of Korea
         start_date: 2019
         end_date: 2021
