@@ -38,34 +38,73 @@ cv:
         highlights:
           - "Summa cum laude. GPA 3.96/4.3, Major GPA 4.02/4.3 (ranked 1st)"
 
-    Experience:
-      - company: Georgia Institute of Technology
+    Research Experiences:
+      - company: EEG Analysis for Cognitive and Clinical Modeling
         position: Graduate Research Assistant
-        location: Atlanta, GA, United States
+        location: Georgia Tech
         start_date: 2024
         end_date: present
-        summary: "EEG analysis for cognitive and clinical modeling. Visual cortex self-organization through graph modeling."
+        highlights:
+          - "Drift-Diffusion Model (DDM) analysis of EEG signals for characterizing decision-making processes."
+          - "EEG-based disease prediction leveraging neural biomarkers and deep learning methods."
 
-      - company: KAIST Data Mining Lab
+      - company: fMRI-driven Graph Modeling of Self-Organization Mechanisms in the Visual Cortex
         position: Graduate Research Assistant
-        location: Daejeon, Republic of Korea
+        location: Georgia Tech
+        start_date: 2024
+        end_date: present
+        highlights:
+          - "Develop graph generation methods using both AI-driven approaches and rule-based algorithms."
+          - "Design brain-inspired models by leveraging neural data visualization mechanisms [P1, P2]."
+
+      - company: Algorithm, Analysis, and Application of Higher-Order Structures
+        position: Graduate Research Assistant
+        location: KAIST
         start_date: 2022
         end_date: 2024
-        summary: "Higher-order structure algorithms, NAS performance prediction, GNN null model development."
+        highlights:
+          - "Designed scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs)."
+          - "Developed sampling-based estimation methods with provable accuracy guarantees [C1, J1, J2, J3]."
 
+      - company: Development of a Null Model for GNN Incorporating Node Features
+        position: Graduate Research Assistant
+        location: KAIST
+        start_date: 2023
+        end_date: 2023
+        highlights:
+          - "Developed a null model maintaining performance rankings aligned with the original network while anonymizing users' information."
+
+      - company: Performance Prediction of Architectures using Semi-Supervised Learning
+        position: Graduate Research Assistant
+        location: KAIST
+        start_date: 2022
+        end_date: 2023
+        highlights:
+          - "Neural architecture performance prediction method using flow-aware Graph Transformer."
+          - "Registered two South Korea Copyrights for Software (C-2022-055775, C-2023-047128). Patent filed: KR 10-2024-0047575 [C2]."
+          - "Supported by IITP grant funded by the Korea government (MSIT)."
+
+    Industry Experiences:
       - company: Data Mining Lab, KAIST AI
         position: Research Intern
         location: Daejeon, Republic of Korea
         start_date: 2021
         end_date: 2021
-        summary: "Dynamic stream triangle counting algorithms. Advisor: Kijung Shin"
+        summary: "Dynamic Stream Triangle Counting Algorithms. Advisor: Kijung Shin"
 
       - company: SK Hynix, Data Science Team
         position: Intern
         location: Republic of Korea
         start_date: 2020
         end_date: 2020
-        summary: "Discrimination of defective semiconductors using GNN"
+        summary: "Discrimination of Defective Semiconductors using GNN"
+
+      - company: SETsystem
+        position: Intern
+        location: Republic of Korea
+        start_date: 2019
+        end_date: 2019
+        summary: "Ship Detection: Differentiating True Lines from Noise using CNN"
 
     Awards:
       - title: KFAS Scholarship (Korea Foundation for Advanced Studies)
@@ -80,21 +119,21 @@ cv:
           - "POSTECH"
         date: 2022
         awarder: POSTECH
-        summary: "Excellence Award"
+        summary: "Excellence Award (~$400)"
 
       - title: UGRP (Undergraduate Group Research Program)
         authors:
           - "POSTECH"
         date: 2021
         awarder: POSTECH
-        summary: "Excellence Award"
+        summary: "Excellence Award (~$4,000)"
 
       - title: Presidential Science Scholarship
         authors:
           - "Republic of Korea"
         date: 2020
         awarder: Republic of Korea
-        summary: "Full Tuition (2020-2022)"
+        summary: "Full Tuition + Extra Fee (~$8,000) (2020-2022)"
 
       - title: Jigok Scholarship
         authors:
@@ -103,18 +142,7 @@ cv:
         awarder: POSTECH
         summary: "Full Tuition (2018-2020)"
 
-    Skills:
-      - name: Programming
-        level: Master
-        icon: fa-solid fa-code
-        keywords: "C/C++, Python (PyTorch), LaTeX, Julia, R, JavaScript"
-
-      - name: Languages
-        level: Master
-        icon: fa-solid fa-language
-        keywords: "Korean (native), English (fluent: IELTS 7.5)"
-
-    Volunteer:
+    Professional Service & Teaching:
       - company: Reviewer
         position: "AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
         location: Academic Service
@@ -122,13 +150,13 @@ cv:
         end_date: present
 
       - company: URP Teaching Assistant
-        position: "KAIST. Mentee: J.H. Lee. Excellence Award."
+        position: "KAIST. Mentee: J.H. Lee -> [C3]. Excellence Award."
         location: Daejeon, Republic of Korea
         start_date: 2023
         end_date: 2023
 
       - company: Lab Mentor
-        position: "KAIST. Mentee: S.B. Yoon"
+        position: "KAIST. Mentee: S.B. Yoon -> [J1]"
         location: Daejeon, Republic of Korea
         start_date: 2022
         end_date: 2023
@@ -138,3 +166,20 @@ cv:
         location: Pohang, Republic of Korea
         start_date: 2019
         end_date: 2021
+
+      - company: Educational Volunteering Mentor
+        position: "POSTECH Online Mentoring & Korea Scholarship Foundation Summer Camp"
+        location: Pohang, Republic of Korea
+        start_date: 2019
+        end_date: 2020
+
+    Skills:
+      - name: Programming
+        level: Master
+        icon: fa-solid fa-code
+        keywords: "C/C++, Python (DL: PyTorch), LaTeX, Julia, R, JavaScript"
+
+      - name: Languages
+        level: Master
+        icon: fa-solid fa-language
+        keywords: "Korean (native), English (fluent: IELTS Overall 7.5; TOEFL - S 24, W 23)"
