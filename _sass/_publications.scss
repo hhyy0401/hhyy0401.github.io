@@ -50,7 +50,7 @@
           display: inline-block;
           background-color: var(--global-theme-color);
           margin-bottom: 0.5rem;
-          color: var(--global-card-bg-color) !important;
+          color: white;
 
           a {
             color: white;
@@ -178,6 +178,21 @@
     }
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
+    }
+  }
+
+  .btn-sm {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--global-theme-color);
+    color: var(--global-theme-color);
+    background: transparent;
+    margin-right: 0.25rem;
+
+    &:hover {
+      background-color: var(--global-theme-color);
+      color: white;
     }
   }
 }

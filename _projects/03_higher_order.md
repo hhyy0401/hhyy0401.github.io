@@ -4,6 +4,9 @@ title: "Higher-Order Structures"
 description: "Algorithm, analysis, and application of higher-order structures [C1, J1, J2, J3]"
 importance: 3
 category: research
+date_range: "2022--2024"
+venue: "KAIST"
+github: "https://github.com/hhyy0401/SC3"
 ---
 
 **KAIST** | Mar. 2022 -- Feb. 2024

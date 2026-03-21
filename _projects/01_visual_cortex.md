@@ -4,6 +4,8 @@ title: "Visual Cortex Self-Organization"
 description: "fMRI-driven graph modeling of self-organization mechanisms in the visual cortex [P1, P2]"
 importance: 1
 category: research
+date_range: "2024--"
+venue: "Georgia Tech"
 ---
 
 **Georgia Tech** | Sep. 2024 -- Present
