@@ -38,6 +38,50 @@ cv:
         highlights:
           - "Summa cum laude. GPA 3.96/4.3, Major GPA 4.02/4.3 (ranked 1st)"
 
+    Research Experiences:
+      - company: EEG Analysis for Cognitive and Clinical Modeling
+        position: Graduate Research Assistant
+        location: Georgia Tech
+        start_date: 2024
+        end_date: present
+        highlights:
+          - "Drift-Diffusion Model (DDM) analysis of EEG signals for characterizing decision-making processes."
+          - "EEG-based disease prediction leveraging neural biomarkers and deep learning methods."
+
+      - company: fMRI-driven Graph Modeling of Visual Cortex
+        position: Graduate Research Assistant
+        location: Georgia Tech
+        start_date: 2024
+        end_date: present
+        highlights:
+          - "Develop graph generation methods using both AI-driven approaches and rule-based algorithms."
+          - "Design brain-inspired models by leveraging neural data visualization mechanisms [P1, P2]."
+
+      - company: Higher-Order Structures in Graphs
+        position: Graduate Research Assistant
+        location: KAIST
+        start_date: 2022
+        end_date: 2024
+        highlights:
+          - "Scalable algorithms for counting simplets, hypergraphlets, motifs [C1, J1, J2, J3]."
+
+      - company: GNN Null Model
+        position: Graduate Research Assistant
+        location: KAIST
+        start_date: 2023
+        end_date: 2023
+        highlights:
+          - "Null model maintaining performance rankings while anonymizing users' information."
+
+      - company: NAS Performance Prediction
+        position: Graduate Research Assistant
+        location: KAIST
+        start_date: 2022
+        end_date: 2023
+        highlights:
+          - "Flow-aware Graph Transformer for neural architecture performance prediction [C2]."
+          - "Software Copyrights (C-2022-055775, C-2023-047128). Patent: KR 10-2024-0047575."
+
     Industry Experiences:
       - company: Data Mining Lab, KAIST AI
         position: Research Intern
