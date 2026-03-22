@@ -43,18 +43,22 @@ a.btncv:hover {
  *****************************/
 
 p.location {
+  position: relative;
   font-size: 0.7rem;
   white-space: normal;
   padding-left: 1.6rem;
-  text-indent: -1.6rem;
+  text-indent: 0;
   margin-bottom: 0;
 }
 
 i.iconlocation {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.05rem;
   color: var(--global-theme-color);
   font-size: 0.8rem;
-  margin-left: 0.7rem;
-  margin-right: -0.2rem;
+  margin: 0;
+  padding: 0;
 }
 
 i.iconinstitution {
@@ -92,6 +96,11 @@ div.container-links {
   padding-top: 0;
   padding-bottom: 0.3rem;
   max-width: 110px;
+
+  .badge {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 }
 
 /* Reduce spacing between CV entries */
