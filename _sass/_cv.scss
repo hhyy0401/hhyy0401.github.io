@@ -252,3 +252,30 @@ ul.timeline li::before {
   left: 2px;
   top: -0.5rem;
 }
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .date-column {
+    max-width: 90px;
+
+    .badge {
+      font-size: 0.65rem !important;
+      min-width: 60px !important;
+    }
+  }
+
+  p.location {
+    font-size: 0.6rem;
+    padding-left: 1.2rem;
+    text-indent: 0;
+  }
+
+  i.iconlocation {
+    left: 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  h6.title {
+    font-size: 0.85rem;
+  }
+}
