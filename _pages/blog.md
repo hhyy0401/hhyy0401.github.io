@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
   [
     // USA
     ["San Francisco, CA", 37.77, -122.42], ["Los Angeles, CA", 34.05, -118.24],
-    ["Las Vegas, NV", 36.17, -115.14], ["Zion NP", 37.30, -113.03],
-    ["Bryce Canyon", 37.59, -112.19], ["Grand Canyon", 36.11, -112.11],
-    ["Antelope Canyon", 36.86, -111.37], ["Horseshoe Bend", 36.88, -111.51],
+    ["Las Vegas, NV", 36.17, -115.14], ["Zion NP, UT", 37.30, -113.03],
+    ["Bryce Canyon, UT", 37.59, -112.19], ["Grand Canyon, AZ", 36.11, -112.11],
+    ["Antelope Canyon, AZ", 36.86, -111.37], ["Horseshoe Bend, AZ", 36.88, -111.51],
     ["Houston, TX", 29.76, -95.37], ["Austin, TX", 30.27, -97.74],
     ["Boston, MA", 42.36, -71.06], ["New York, NY", 40.71, -74.01],
     ["Washington, DC", 38.91, -77.04], ["Chattanooga, TN", 35.05, -85.31],
@@ -82,39 +82,40 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Miami, FL", 25.76, -80.19], ["Chicago, IL", 41.88, -87.63],
     ["Urbana-Champaign, IL", 40.11, -88.21],
     // Mexico
-    ["Cancun", 21.16, -86.85],
+    ["Cancun, Mexico", 21.16, -86.85],
     // Japan
-    ["Tokyo", 35.68, 139.69], ["Osaka", 34.69, 135.50], ["Kyoto", 35.01, 135.77],
+    ["Tokyo, Japan", 35.68, 139.69], ["Osaka, Japan", 34.69, 135.50], ["Kyoto, Japan", 35.01, 135.77],
     // Netherlands
-    ["Amsterdam", 52.37, 4.90], ["Haarlem", 52.38, 4.64], ["Utrecht", 52.09, 5.12],
-    ["The Hague", 52.08, 4.30], ["Delft", 52.01, 4.36], ["Alkmaar", 52.63, 4.75],
-    ["Zaanse Schans", 52.47, 4.77],
+    ["Amsterdam, Netherlands", 52.37, 4.90], ["Haarlem, Netherlands", 52.38, 4.64], ["Utrecht, Netherlands", 52.09, 5.12],
+    ["The Hague, Netherlands", 52.08, 4.30], ["Delft, Netherlands", 52.01, 4.36], ["Alkmaar, Netherlands", 52.63, 4.75],
+    ["Zaanse Schans, Netherlands", 52.47, 4.77],
     // France
-    ["Paris", 48.86, 2.35],
+    ["Paris, France", 48.86, 2.35],
     // Spain
-    ["Madrid", 40.42, -3.70], ["Barcelona", 41.39, 2.17],
-    ["Granada", 37.18, -3.60], ["Seville", 37.39, -5.98],
+    ["Madrid, Spain", 40.42, -3.70], ["Barcelona, Spain", 41.39, 2.17],
+    ["Granada, Spain", 37.18, -3.60], ["Seville, Spain", 37.39, -5.98],
     // China
-    ["Shanghai", 31.23, 121.47], ["Huangshan", 30.13, 118.17],
+    ["Shanghai, China", 31.23, 121.47], ["Huangshan, China", 30.13, 118.17],
     // Malaysia
-    ["Kota Kinabalu", 5.98, 116.07],
+    ["Kota Kinabalu, Malaysia", 5.98, 116.07],
     // Australia
-    ["Sydney", -33.87, 151.21],
+    ["Sydney, Australia", -33.87, 151.21],
     // Hungary
-    ["Budapest", 47.50, 19.04],
+    ["Budapest, Hungary", 47.50, 19.04],
     // Czech Republic
-    ["Prague", 50.08, 14.44],
+    ["Prague, Czech Republic", 50.08, 14.44],
     // Austria
-    ["Vienna", 48.21, 16.37], ["Salzburg", 47.81, 13.05],
+    ["Vienna, Austria", 48.21, 16.37], ["Salzburg, Austria", 47.81, 13.05],
     // Germany
-    ["Berlin", 52.52, 13.41], ["Munich", 48.14, 11.58],
+    ["Berlin, Germany", 52.52, 13.41], ["Munich, Germany", 48.14, 11.58],
+    ["Dresden, Germany", 51.05, 13.74],
     // Switzerland
-    ["Mount Rigi", 47.06, 8.48],
+    ["Mount Rigi, Switzerland", 47.06, 8.48],
     // Slovakia
-    ["Bratislava", 48.15, 17.11],
+    ["Bratislava, Slovakia", 48.15, 17.11],
     // South Korea
-    ["Seoul", 37.57, 126.98], ["Daejeon", 36.35, 127.38],
-    ["Pohang", 36.02, 129.37], ["Yeosu", 34.74, 127.66]
+    ["Seoul, South Korea", 37.57, 126.98], ["Daejeon, South Korea", 36.35, 127.38],
+    ["Pohang, South Korea", 36.02, 129.37], ["Yeosu, South Korea", 34.74, 127.66]
   ].forEach(function (c) {
     L.marker([c[1], c[2]], { icon: pin }).addTo(map).bindTooltip(c[0], { direction: "top" });
   });
