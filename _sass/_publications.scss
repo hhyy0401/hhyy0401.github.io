@@ -224,11 +224,16 @@ html[data-theme="dark"] {
 @media (max-width: 576px) {
   .publications {
     h2.bibliography {
-      margin-bottom: -1.4rem;
+      margin-bottom: 0.3rem;
+      text-align: left;
 
       span {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
+    }
+
+    ol.bibliography {
+      padding-top: 0.3rem;
     }
 
     ol.bibliography li {
