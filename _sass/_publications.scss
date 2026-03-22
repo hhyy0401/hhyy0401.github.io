@@ -27,7 +27,7 @@
     float: right;
     color: var(--global-divider-color);
     border: none;
-    padding: 0.5rem 0 0 0;
+    padding: 0;
     margin: 1.5rem 0 0 1rem;
     line-height: 1.4;
   }
@@ -35,7 +35,7 @@
   ol.bibliography {
     list-style: none;
     border-top: 1px solid var(--global-divider-color);
-    padding: 0.5rem 0 0 0;
+    padding: 1rem 0 0 0;
     margin-top: 1.5rem;
 
     li {
@@ -51,9 +51,11 @@
 
       .abbr {
         margin-bottom: 0.2rem;
-        padding-right: 0.15rem;
-        min-width: 2.5rem;
-        text-align: left;
+        padding-right: 0.25rem;
+        width: 2.8rem;
+        min-width: 2.8rem;
+        max-width: 2.8rem;
+        text-align: right;
 
         .pub-label {
           display: inline-block;
