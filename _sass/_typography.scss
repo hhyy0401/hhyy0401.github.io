@@ -140,3 +140,23 @@ blockquote {
     }
   }
 }
+
+/* Custom details/summary toggle */
+details summary {
+  cursor: pointer;
+  list-style: none;
+
+  &::before {
+    content: "♪ ";
+    color: var(--global-theme-color);
+    font-weight: bold;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+details[open] summary::before {
+  content: "♫ ";
+}

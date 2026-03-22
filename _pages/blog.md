@@ -134,10 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 I'm a passionate baseball fan who follows both Korean and American baseball.
 
-In the **KBO**, I root for the **Kia Tigers** - my hometown team that I've supported since childhood.
+In the **KBO**, I root for the **Kia Tigers** 🐯 — my hometown team that I've supported since childhood.
 
 In the **MLB**, living in Atlanta made it natural to become a **Braves** fan.
-I love the unique vibe and style of the Atlanta Braves — especially the Tomahawk Chop!
+I love the unique vibe and style of the Atlanta Braves — especially the Tomahawk Chop! 🪓
 
 </div>
 </div>
@@ -160,6 +160,8 @@ performing with my favorite people in my favorite ensemble.
 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JQYK1McKo9o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+<br>
+
 #### 🎶 Instruments
 
 - **Oboe / English Horn** (from 2007, high level, active amateur guest player)
@@ -167,9 +169,9 @@ performing with my favorite people in my favorite ensemble.
 
 #### 💜 Favorite Pieces
 
-**Symphonies**: Dvorak No. 9 (2nd mvt), Sibelius No. 2, Mahler No. 3 (6th mvt), Mahler No. 6 (2nd mvt), R. Strauss *Eine Alpensinfonie*, Tchaikovsky No. 6 (1st mvt), Holst *The Planets*
+🎼 **Symphonies**: Dvorak No. 9 (2nd mvt), Sibelius No. 2, Mahler No. 3 (6th mvt), Mahler No. 6 (2nd mvt), R. Strauss *Eine Alpensinfonie*, Tchaikovsky No. 6 (1st mvt), Holst *The Planets*
 
-**Concertos**: Beethoven "Emperor" (2nd mvt), Chopin Piano Concerto No. 1 & 2 (2nd mvt)
+🎹 **Concertos**: Beethoven "Emperor" (2nd mvt), Chopin Piano Concerto No. 1 & 2 (2nd mvt)
 
 <details>
 <summary><strong>Performance History: 2011 European Tour (1st Oboe)</strong></summary>
