@@ -17,9 +17,13 @@
           {% endcapture %}
 
           {% if start_date != '' %}
-            {% assign startDate = start_date | split: '-' | first %}
-            {% assign endDate = end_date | split: '-' | first | default: 'Present' %}
-            {% assign date = startDate | append: ' - ' | append: endDate %}
+            {% assign startDate = start_date | split: '-' | first | strip %}
+            {% assign endDate = end_date | split: '-' | first | default: 'Present' | strip %}
+            {% if startDate == endDate %}
+              {% assign date = startDate %}
+            {% else %}
+              {% assign date = startDate | append: ' - ' | append: endDate %}
+            {% endif %}
           {% else %}
             {% assign date = null %}
           {% endif %}
