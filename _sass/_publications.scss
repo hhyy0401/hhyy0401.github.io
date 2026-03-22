@@ -59,7 +59,7 @@
           display: inline-block;
           font-weight: bold;
           font-size: 0.75rem;
-          color: black;
+          color: white;
           white-space: nowrap;
           background-color: var(--global-theme-color);
           border-radius: 0.3rem;
@@ -210,4 +210,10 @@
 .citation,
 .citation-number {
   color: var(--global-theme-color);
+}
+
+html[data-theme="dark"] {
+  .pub-label {
+    color: black !important;
+  }
 }
