@@ -68,8 +68,10 @@
           white-space: nowrap;
           background-color: var(--global-theme-color);
           border-radius: 0.3rem;
-          padding: 0.2rem 0.45rem;
+          padding: 0.2rem 0;
           text-align: center;
+          width: 2.2rem;
+          min-width: 2.2rem;
         }
 
         .award {
