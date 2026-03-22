@@ -180,28 +180,60 @@ html.transition *:after {
 nav[data-toggle="toc"] {
   top: 5rem;
 
+  .nav {
+    border-left: 2px solid var(--global-theme-color);
+    padding-left: 0;
+  }
+
   .nav .nav > li > a {
     font-size: 0.75rem;
+  }
+
+  .nav > li {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--global-theme-color);
+      transition: all 0.2s ease;
+    }
+
+    &:hover::before {
+      width: 14px;
+      height: 14px;
+      left: -8px;
+    }
   }
 
   .nav > li > a {
     color: var(--global-text-color);
     font-size: 0.75rem;
+    padding-left: 1rem;
+    border-left: none;
 
     &:hover {
-      color: var(--global-hover-color);
-      border-left-color: var(--global-hover-color);
+      color: var(--global-theme-color);
+      border-left: none;
+      text-decoration: none;
     }
   }
 
   .nav-link.active {
     color: var(--global-theme-color);
-    border-left-color: var(--global-theme-color);
+    border-left: none;
     font-size: 0.75rem;
+    font-weight: bold;
 
     &:hover {
       color: var(--global-hover-color);
-      border-left-color: var(--global-hover-color);
+      border-left: none;
     }
   }
 }
