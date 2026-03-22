@@ -11,7 +11,8 @@ profile:
   image: prof_pic.jpg
   image_circular: false
   more_info: >
-    <p>Atlanta, GA, United States</p>
+    <p>13th Floor, CODA Building</p>
+    <p>756 W Peachtree St NW, Atlanta, GA 30308</p>
     <p>hkim3239@gatech.edu</p>
 
 selected_papers: true
