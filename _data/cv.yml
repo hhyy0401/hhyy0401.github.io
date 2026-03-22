@@ -179,7 +179,7 @@ cv:
         start_date: 2019
         end_date: 2021
         highlights:
-          - "Applied Linear Algebra, Analysis I, Programming and Problem Solving (7 semesters)"
+          - 'Applied Linear Algebra, Analysis I, Programming and Problem Solving (7 semesters). <a href="https://github.com/hhyy0401/MathMaterials" target="_blank"><i class="fa-brands fa-github"></i></a>'
 
       - company: ""
         position: "Educational Volunteering Mentor"

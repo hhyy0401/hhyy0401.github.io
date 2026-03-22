@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /blog/
+permalink: /life/
 title: life
 nav: true
 nav_order: 5
