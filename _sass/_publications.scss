@@ -63,6 +63,7 @@
           font-family: 'Handlee', cursive;
           font-weight: 900;
           font-size: 0.85rem;
+          -webkit-text-stroke: 0.3px currentColor;
           color: white;
           white-space: nowrap;
           background-color: var(--global-theme-color);
