@@ -187,7 +187,7 @@ nav[data-toggle="toc"] {
   }
 
   .nav .nav > li > a {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .nav > li {
@@ -215,7 +215,7 @@ nav[data-toggle="toc"] {
 
   .nav > li > a {
     color: var(--global-text-color);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     padding-left: 1rem;
     border-left: none;
 
@@ -229,7 +229,7 @@ nav[data-toggle="toc"] {
   .nav-link.active {
     color: var(--global-theme-color);
     border-left: none;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: bold;
 
     &:hover {
