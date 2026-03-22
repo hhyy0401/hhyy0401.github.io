@@ -61,7 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
     maxZoom: 18
   }).addTo(map);
 
-  var style = { radius: 5, color: "#44cfba", fillColor: "#44cfba", fillOpacity: 0.8, weight: 2 };
+  var pin = L.divIcon({
+    html: '<i class="fa-solid fa-location-dot" style="color:#44cfba; font-size:1.2rem; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3));"></i>',
+    iconSize: [20, 20],
+    iconAnchor: [10, 20],
+    tooltipAnchor: [0, -16],
+    className: ''
+  });
 
   [
     // USA
@@ -110,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Seoul", 37.57, 126.98], ["Daejeon", 36.35, 127.38],
     ["Pohang", 36.02, 129.37], ["Yeosu", 34.74, 127.66]
   ].forEach(function (c) {
-    L.circleMarker([c[1], c[2]], style).addTo(map).bindTooltip(c[0], { direction: "top", offset: [0, -5] });
+    L.marker([c[1], c[2]], { icon: pin }).addTo(map).bindTooltip(c[0], { direction: "top" });
   });
 });
 </script>
