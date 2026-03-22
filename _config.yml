@@ -450,7 +450,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:300,400,500,700&display=swap"
+      fonts: "https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lora:400,400i,700|Roboto:300,400,500,700&display=swap"
   highlightjs:
     integrity:
       css:
