@@ -39,7 +39,7 @@ So far I've visited **16 countries** across 4 continents.
 I enjoy the vast nature and the unique culture and history of each country.
 
 **Countries visited** (most recent first):
-🇺🇸 USA, 🇲🇽 Mexico (Cancun), 🇯🇵 Japan, 🇳🇱 Netherlands, 🇫🇷 France, 🇪🇸 Spain, 🇨🇳 China (Shanghai),
+🇺🇸 USA, 🇲🇽 Mexico, 🇯🇵 Japan, 🇳🇱 Netherlands, 🇫🇷 France, 🇪🇸 Spain, 🇨🇳 China,
 🇲🇾 Malaysia, 🇦🇺 Australia, 🇭🇺 Hungary, 🇨🇿 Czech Republic, 🇦🇹 Austria, 🇩🇪 Germany, 🇨🇭 Switzerland, 🇸🇰 Slovakia, 🇰🇷 South Korea.
 
 </div>
@@ -61,22 +61,56 @@ document.addEventListener("DOMContentLoaded", function () {
     maxZoom: 18
   }).addTo(map);
 
-  var pin = L.icon({
-    iconUrl: "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/images/marker-icon.png",
-    iconRetinaUrl: "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-    shadowUrl: "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/images/marker-shadow.png",
-    iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
-  });
+  var style = { radius: 5, color: "#44cfba", fillColor: "#44cfba", fillOpacity: 0.8, weight: 2 };
 
   [
-    ["USA", 37.09, -95.71], ["Mexico (Cancun)", 21.16, -86.85], ["Japan", 36.20, 138.25],
-    ["Netherlands", 52.13, 5.29], ["France", 46.23, 2.21], ["Spain", 40.46, -3.75],
-    ["China (Shanghai)", 31.23, 121.47], ["Malaysia", 4.21, 101.98], ["Australia", -25.27, 133.78],
-    ["Hungary", 47.16, 19.50], ["Czech Republic", 49.82, 15.47], ["Austria", 47.52, 14.55],
-    ["Germany", 51.17, 10.45], ["Switzerland", 46.82, 8.23], ["Slovakia", 48.67, 19.70],
-    ["South Korea", 35.91, 127.77]
+    // USA
+    ["San Francisco, CA", 37.77, -122.42], ["Los Angeles, CA", 34.05, -118.24],
+    ["Las Vegas, NV", 36.17, -115.14], ["Zion NP", 37.30, -113.03],
+    ["Bryce Canyon", 37.59, -112.19], ["Grand Canyon", 36.11, -112.11],
+    ["Antelope Canyon", 36.86, -111.37], ["Horseshoe Bend", 36.88, -111.51],
+    ["Houston, TX", 29.76, -95.37], ["Austin, TX", 30.27, -97.74],
+    ["Boston, MA", 42.36, -71.06], ["New York, NY", 40.71, -74.01],
+    ["Washington, DC", 38.91, -77.04], ["Chattanooga, TN", 35.05, -85.31],
+    ["Atlanta, GA", 33.75, -84.39], ["Panama City Beach, FL", 30.18, -85.80],
+    ["Miami, FL", 25.76, -80.19], ["Chicago, IL", 41.88, -87.63],
+    ["Urbana-Champaign, IL", 40.11, -88.21],
+    // Mexico
+    ["Cancun", 21.16, -86.85],
+    // Japan
+    ["Tokyo", 35.68, 139.69], ["Osaka", 34.69, 135.50], ["Kyoto", 35.01, 135.77],
+    // Netherlands
+    ["Amsterdam", 52.37, 4.90], ["Haarlem", 52.38, 4.64], ["Utrecht", 52.09, 5.12],
+    ["The Hague", 52.08, 4.30], ["Delft", 52.01, 4.36], ["Alkmaar", 52.63, 4.75],
+    ["Zaanse Schans", 52.47, 4.77],
+    // France
+    ["Paris", 48.86, 2.35],
+    // Spain
+    ["Madrid", 40.42, -3.70], ["Barcelona", 41.39, 2.17],
+    ["Granada", 37.18, -3.60], ["Seville", 37.39, -5.98],
+    // China
+    ["Shanghai", 31.23, 121.47], ["Huangshan", 30.13, 118.17],
+    // Malaysia
+    ["Kota Kinabalu", 5.98, 116.07],
+    // Australia
+    ["Sydney", -33.87, 151.21],
+    // Hungary
+    ["Budapest", 47.50, 19.04],
+    // Czech Republic
+    ["Prague", 50.08, 14.44],
+    // Austria
+    ["Vienna", 48.21, 16.37], ["Salzburg", 47.81, 13.05],
+    // Germany
+    ["Berlin", 52.52, 13.41], ["Munich", 48.14, 11.58],
+    // Switzerland
+    ["Mount Rigi", 47.06, 8.48],
+    // Slovakia
+    ["Bratislava", 48.15, 17.11],
+    // South Korea
+    ["Seoul", 37.57, 126.98], ["Daejeon", 36.35, 127.38],
+    ["Pohang", 36.02, 129.37], ["Yeosu", 34.74, 127.66]
   ].forEach(function (c) {
-    L.marker([c[1], c[2]], { icon: pin }).addTo(map).bindPopup("<b>" + c[0] + "</b>");
+    L.circleMarker([c[1], c[2]], style).addTo(map).bindTooltip(c[0], { direction: "top", offset: [0, -5] });
   });
 });
 </script>
