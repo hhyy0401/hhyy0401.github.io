@@ -4,16 +4,14 @@
 
 @use "variables" as v;
 
-h1, h2, h3, h4, h5, h6 {
+h4, h5, h6 {
   font-family: 'Lora', Georgia, serif;
 }
 
+h1, h2, h3,
 .post-title,
-h1.post-title,
-h2,
-h3,
 .card-title {
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Gloria Hallelujah', cursive !important;
 }
 
 p,
