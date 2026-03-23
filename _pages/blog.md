@@ -164,7 +164,7 @@ performing with my favorite people in my favorite ensemble.
 
 #### 🎶 Instruments
 
-𝄞 **Oboe / English Horn** (from 2007, high level, active amateur guest player)
+<span style="font-size: 1.4rem;">𝄞</span> **Oboe / English Horn** (from 2007, high level, active amateur guest player)
 
 🎻 **Viola** (from 2018, intermediate)
 
