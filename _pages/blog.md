@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Yeosu, South Korea", 34.74, 127.66], ["Jeonju, South Korea", 35.82, 127.15],
     ["Pohang, South Korea", 36.02, 129.37], ["Ulsan, South Korea", 35.54, 129.31],
     ["Daejeon, South Korea", 36.35, 127.38], ["Seoul, South Korea", 37.57, 126.98],
+    ["Seosan, South Korea", 36.78, 126.45],
     ["Atlanta, GA", 33.75, -84.39]
   ];
 
@@ -119,8 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Vienna, Austria", 48.21, 16.37], ["Salzburg, Austria", 47.81, 13.05],
     ["Berlin, Germany", 52.52, 13.41], ["Munich, Germany", 48.14, 11.58],
     ["Dresden, Germany", 51.05, 13.74],
-    ["Bratislava, Slovakia", 48.15, 17.11],
-    ["Seosan, South Korea", 36.78, 126.45]
+    ["Bratislava, Slovakia", 48.15, 17.11]
   ];
 
   var livedLayer = L.layerGroup();
