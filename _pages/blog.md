@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var legend = L.control({ position: "bottomright" });
   legend.onAdd = function () {
     var div = L.DomUtil.create("div", "legend");
-    div.style.cssText = "background:white; padding:8px 12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.2); font-size:0.75rem; line-height:2; cursor:pointer; user-select:none;";
+    div.style.cssText = "background:white; padding:8px 12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.2); font-family:'Handlee',cursive; font-size:0.9rem; font-weight:bold; line-height:2; cursor:pointer; user-select:none;";
     var items = [
       { color: "#ffb6c1", label: "Lived", layer: livedLayer },
       { color: "#44cfba", label: "Visited", layer: visitedLayer },
