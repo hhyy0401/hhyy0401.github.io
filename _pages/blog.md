@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Boston, MA", 42.36, -71.06], ["New York, NY", 40.71, -74.01],
     ["Washington, DC", 38.91, -77.04], ["Chattanooga, TN", 35.05, -85.31],
     ["Atlanta, GA", 33.75, -84.39], ["Panama City Beach, FL", 30.18, -85.80],
-    ["Miami, FL", 25.76, -80.19], ["Chicago, IL", 41.88, -87.63],
+    ["Miami, FL", 25.76, -80.19], ["Fort Lauderdale, FL", 26.12, -80.14],
+    ["Everglades, FL", 25.75, -80.94], ["Chicago, IL", 41.88, -87.63],
     ["Urbana-Champaign, IL", 40.11, -88.21],
     // Mexico
     ["Cancun, Mexico", 21.16, -86.85],
@@ -115,7 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Bratislava, Slovakia", 48.15, 17.11],
     // South Korea
     ["Seoul, South Korea", 37.57, 126.98], ["Daejeon, South Korea", 36.35, 127.38],
-    ["Pohang, South Korea", 36.02, 129.37], ["Yeosu, South Korea", 34.74, 127.66]
+    ["Pohang, South Korea", 36.02, 129.37], ["Yeosu, South Korea", 34.74, 127.66],
+    ["Seosan, South Korea", 36.78, 126.45], ["Jeonju, South Korea", 35.82, 127.15],
+    ["Jeju Island, South Korea", 33.49, 126.53]
   ].forEach(function (c) {
     L.marker([c[1], c[2]], { icon: pin }).addTo(map).bindTooltip(c[0], { direction: "top" });
   });
