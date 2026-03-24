@@ -71,8 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   [
     // USA
-    ["San Francisco, CA", 37.77, -122.42], ["Palo Alto, CA", 37.44, -122.14],
-    ["Napa, CA", 38.30, -122.30], ["Big Sur, CA", 36.27, -121.81], ["Los Angeles, CA", 34.05, -118.24],
+    ["San Francisco, CA", 37.77, -122.42], ["Berkeley, CA", 37.87, -122.27],
+    ["Sausalito, CA", 37.86, -122.49], ["Tiburon, CA", 37.87, -122.46],
+    ["Palo Alto, CA", 37.44, -122.14], ["Napa, CA", 38.30, -122.30],
+    ["Yosemite NP, CA", 37.75, -119.59], ["Big Sur, CA", 36.27, -121.81],
+    ["Los Angeles, CA", 34.05, -118.24],
     ["Las Vegas, NV", 36.17, -115.14], ["Zion NP, UT", 37.30, -113.03],
     ["Bryce Canyon, UT", 37.59, -112.19], ["Grand Canyon, AZ", 36.11, -112.11],
     ["Antelope Canyon, AZ", 36.86, -111.37], ["Horseshoe Bend, AZ", 36.88, -111.51],
