@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   var mint = makePin("#44cfba");
-  var pink = makePin("#ffb6c1");
+  var pink = makePin("#FFDBE6");
   var lavender = makePin("#d0bfff");
 
   // Lived (pink)
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var div = L.DomUtil.create("div", "legend");
     div.style.cssText = "background:white; padding:8px 12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.2); font-family:'Handlee',cursive; font-size:0.9rem; font-weight:bold; line-height:2; cursor:pointer; user-select:none;";
     var items = [
-      { color: "#ffb6c1", label: "Lived", layer: livedLayer },
+      { color: "#FFDBE6", label: "Lived", layer: livedLayer },
       { color: "#44cfba", label: "Visited", layer: visitedLayer },
       { color: "#d0bfff", label: "Nature", layer: natureLayer }
     ];
