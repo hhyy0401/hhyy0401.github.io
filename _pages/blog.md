@@ -63,13 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function makePin(color) {
     return L.divIcon({
-      html: '<i class="fa-solid fa-location-dot" style="color:' + color + '; font-size:1.2rem; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3));"></i>',
+      html: '<i class="fa-solid fa-location-dot" style="color:' + color + '; font-size:1.2rem; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.12));"></i>',
       iconSize: [20, 20], iconAnchor: [10, 20], tooltipAnchor: [0, -16], className: ''
     });
   }
   var mint = makePin("#44cfba");
-  var pink = makePin("#f4a4b8");
-  var lavender = makePin("#b5a8d5");
+  var pink = makePin("#ffb6c1");
+  var lavender = makePin("#d0bfff");
 
   // Lived (pink)
   var lived = [
@@ -133,9 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var div = L.DomUtil.create("div", "legend");
     div.style.cssText = "background:white; padding:8px 12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.2); font-size:0.75rem; line-height:1.8;";
     div.innerHTML =
-      '<i class="fa-solid fa-location-dot" style="color:#f4a4b8;"></i> Lived<br>' +
+      '<i class="fa-solid fa-location-dot" style="color:#ffb6c1;"></i> Lived<br>' +
       '<i class="fa-solid fa-location-dot" style="color:#44cfba;"></i> Visited<br>' +
-      '<i class="fa-solid fa-location-dot" style="color:#b5a8d5;"></i> Nature';
+      '<i class="fa-solid fa-location-dot" style="color:#d0bfff;"></i> Nature';
     return div;
   };
   legend.addTo(map);
