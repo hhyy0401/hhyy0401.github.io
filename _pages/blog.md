@@ -40,7 +40,7 @@ I enjoy the vast nature and the unique culture and history of each country.
 
 **Countries visited** (most recent first):
 🇺🇸 USA, 🇲🇽 Mexico, 🇯🇵 Japan, 🇳🇱 Netherlands, 🇫🇷 France, 🇪🇸 Spain, 🇨🇳 China,
-🇲🇾 Malaysia, 🇦🇺 Australia, 🇭🇺 Hungary, 🇨🇿 Czech Republic, 🇦🇹 Austria, 🇩🇪 Germany, 🇨🇭 Switzerland, 🇸🇰 Slovakia, 🇰🇷 South Korea.
+🇲🇾 Malaysia, 🇦🇺 Australia, 🇦🇹 Austria, 🇨🇿 Czech Republic, 🇨🇭 Switzerland, 🇩🇪 Germany, 🇭🇺 Hungary, 🇸🇰 Slovakia, 🇰🇷 South Korea.
 
 </div>
 <div class="col-sm-4 mt-3 mt-md-0">
