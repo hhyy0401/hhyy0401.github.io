@@ -61,73 +61,84 @@ document.addEventListener("DOMContentLoaded", function () {
     maxZoom: 18
   }).addTo(map);
 
-  var pin = L.divIcon({
-    html: '<i class="fa-solid fa-location-dot" style="color:#44cfba; font-size:1.2rem; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3));"></i>',
-    iconSize: [20, 20],
-    iconAnchor: [10, 20],
-    tooltipAnchor: [0, -16],
-    className: ''
-  });
+  function makePin(color) {
+    return L.divIcon({
+      html: '<i class="fa-solid fa-location-dot" style="color:' + color + '; font-size:1.2rem; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3));"></i>',
+      iconSize: [20, 20], iconAnchor: [10, 20], tooltipAnchor: [0, -16], className: ''
+    });
+  }
+  var mint = makePin("#44cfba");
+  var pink = makePin("#f4a4b8");
+  var lavender = makePin("#b5a8d5");
 
-  [
-    // USA
+  // Lived (pink)
+  var lived = [
+    ["Yeosu, South Korea", 34.74, 127.66], ["Jeonju, South Korea", 35.82, 127.15],
+    ["Pohang, South Korea", 36.02, 129.37], ["Ulsan, South Korea", 35.54, 129.31],
+    ["Daejeon, South Korea", 36.35, 127.38], ["Seoul, South Korea", 37.57, 126.98],
+    ["Atlanta, GA", 33.75, -84.39]
+  ];
+
+  // Nature / National Parks (lavender)
+  var nature = [
+    ["Yosemite, CA", 37.75, -119.59], ["Big Sur, CA", 36.27, -121.81],
+    ["Zion, UT", 37.30, -113.03], ["Bryce Canyon, UT", 37.59, -112.19],
+    ["Grand Canyon, AZ", 36.11, -112.11], ["Antelope Canyon, AZ", 36.86, -111.37],
+    ["Horseshoe Bend, AZ", 36.88, -111.51], ["Everglades, FL", 25.75, -80.94],
+    ["Huangshan, China", 30.13, 118.17], ["Mount Rigi, Switzerland", 47.06, 8.48],
+    ["Jeju Island, South Korea", 33.49, 126.53]
+  ];
+
+  // Visited (mint) - everything else
+  var visited = [
     ["San Francisco, CA", 37.77, -122.42], ["Berkeley, CA", 37.87, -122.27],
     ["Sausalito, CA", 37.86, -122.49], ["Tiburon, CA", 37.87, -122.46],
     ["Palo Alto, CA", 37.44, -122.14], ["Napa, CA", 38.30, -122.30],
-    ["Yosemite NP, CA", 37.75, -119.59], ["Big Sur, CA", 36.27, -121.81],
     ["Los Angeles, CA", 34.05, -118.24],
-    ["Las Vegas, NV", 36.17, -115.14], ["Zion NP, UT", 37.30, -113.03],
-    ["Bryce Canyon, UT", 37.59, -112.19], ["Grand Canyon, AZ", 36.11, -112.11],
-    ["Antelope Canyon, AZ", 36.86, -111.37], ["Horseshoe Bend, AZ", 36.88, -111.51],
+    ["Las Vegas, NV", 36.17, -115.14],
     ["Houston, TX", 29.76, -95.37], ["Austin, TX", 30.27, -97.74],
     ["Boston, MA", 42.36, -71.06], ["New York, NY", 40.71, -74.01],
     ["Washington, DC", 38.91, -77.04], ["Chattanooga, TN", 35.05, -85.31],
-    ["Atlanta, GA", 33.75, -84.39], ["Athens, GA", 33.96, -83.38],
+    ["Athens, GA", 33.96, -83.38],
     ["Panama City Beach, FL", 30.18, -85.80],
     ["Miami, FL", 25.76, -80.19], ["Fort Lauderdale, FL", 26.12, -80.14],
-    ["Everglades, FL", 25.75, -80.94], ["Chicago, IL", 41.88, -87.63],
-    ["Urbana-Champaign, IL", 40.11, -88.21],
-    // Mexico
+    ["Chicago, IL", 41.88, -87.63], ["Urbana-Champaign, IL", 40.11, -88.21],
     ["Cancun, Mexico", 21.16, -86.85],
-    // Japan
     ["Tokyo, Japan", 35.68, 139.69], ["Osaka, Japan", 34.69, 135.50], ["Kyoto, Japan", 35.01, 135.77],
-    // Netherlands
     ["Amsterdam, Netherlands", 52.37, 4.90], ["Haarlem, Netherlands", 52.38, 4.64], ["Utrecht, Netherlands", 52.09, 5.12],
     ["The Hague, Netherlands", 52.08, 4.30], ["Delft, Netherlands", 52.01, 4.36], ["Alkmaar, Netherlands", 52.63, 4.75],
     ["Zaanse Schans, Netherlands", 52.47, 4.77],
-    // France
     ["Paris, France", 48.86, 2.35],
-    // Spain
     ["Madrid, Spain", 40.42, -3.70], ["Barcelona, Spain", 41.39, 2.17],
     ["Granada, Spain", 37.18, -3.60], ["Seville, Spain", 37.39, -5.98],
-    // China
-    ["Shanghai, China", 31.23, 121.47], ["Huangshan, China", 30.13, 118.17],
-    // Malaysia
+    ["Shanghai, China", 31.23, 121.47],
     ["Kota Kinabalu, Malaysia", 5.98, 116.07],
-    // Australia
     ["Sydney, Australia", -33.87, 151.21],
-    // Hungary
     ["Budapest, Hungary", 47.50, 19.04],
-    // Czech Republic
     ["Prague, Czech Republic", 50.08, 14.44],
-    // Austria
     ["Vienna, Austria", 48.21, 16.37], ["Salzburg, Austria", 47.81, 13.05],
-    // Germany
     ["Berlin, Germany", 52.52, 13.41], ["Munich, Germany", 48.14, 11.58],
     ["Dresden, Germany", 51.05, 13.74],
-    // Switzerland
-    ["Mount Rigi, Switzerland", 47.06, 8.48],
-    // Slovakia
     ["Bratislava, Slovakia", 48.15, 17.11],
-    // South Korea
-    ["Seoul, South Korea", 37.57, 126.98], ["Daejeon, South Korea", 36.35, 127.38],
-    ["Pohang, South Korea", 36.02, 129.37], ["Yeosu, South Korea", 34.74, 127.66],
-    ["Seosan, South Korea", 36.78, 126.45], ["Jeonju, South Korea", 35.82, 127.15],
-    ["Jeju Island, South Korea", 33.49, 126.53],
-    ["Ulsan, South Korea", 35.54, 129.31]
-  ].forEach(function (c) {
-    L.marker([c[1], c[2]], { icon: pin }).addTo(map).bindTooltip(c[0], { direction: "top" });
-  });
+    ["Seosan, South Korea", 36.78, 126.45]
+  ];
+
+  visited.forEach(function (c) { L.marker([c[1], c[2]], { icon: mint }).addTo(map).bindTooltip(c[0], { direction: "top" }); });
+  lived.forEach(function (c) { L.marker([c[1], c[2]], { icon: pink }).addTo(map).bindTooltip(c[0], { direction: "top" }); });
+  nature.forEach(function (c) { L.marker([c[1], c[2]], { icon: lavender }).addTo(map).bindTooltip(c[0], { direction: "top" }); });
+
+  // Legend
+  var legend = L.control({ position: "bottomright" });
+  legend.onAdd = function () {
+    var div = L.DomUtil.create("div", "legend");
+    div.style.cssText = "background:white; padding:8px 12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.2); font-size:0.75rem; line-height:1.8;";
+    div.innerHTML =
+      '<i class="fa-solid fa-location-dot" style="color:#f4a4b8;"></i> Lived<br>' +
+      '<i class="fa-solid fa-location-dot" style="color:#44cfba;"></i> Visited<br>' +
+      '<i class="fa-solid fa-location-dot" style="color:#b5a8d5;"></i> Nature';
+    return div;
+  };
+  legend.addTo(map);
 });
 </script>
 
