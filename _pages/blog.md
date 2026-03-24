@@ -123,19 +123,43 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Seosan, South Korea", 36.78, 126.45]
   ];
 
-  visited.forEach(function (c) { L.marker([c[1], c[2]], { icon: mint }).addTo(map).bindTooltip(c[0], { direction: "top" }); });
-  lived.forEach(function (c) { L.marker([c[1], c[2]], { icon: pink }).addTo(map).bindTooltip(c[0], { direction: "top" }); });
-  nature.forEach(function (c) { L.marker([c[1], c[2]], { icon: lavender }).addTo(map).bindTooltip(c[0], { direction: "top" }); });
+  var livedLayer = L.layerGroup();
+  var visitedLayer = L.layerGroup();
+  var natureLayer = L.layerGroup();
 
-  // Legend
+  visited.forEach(function (c) { L.marker([c[1], c[2]], { icon: mint }).bindTooltip(c[0], { direction: "top" }).addTo(visitedLayer); });
+  lived.forEach(function (c) { L.marker([c[1], c[2]], { icon: pink }).bindTooltip(c[0], { direction: "top" }).addTo(livedLayer); });
+  nature.forEach(function (c) { L.marker([c[1], c[2]], { icon: lavender }).bindTooltip(c[0], { direction: "top" }).addTo(natureLayer); });
+
+  livedLayer.addTo(map);
+  visitedLayer.addTo(map);
+  natureLayer.addTo(map);
+
+  // Legend with toggle
   var legend = L.control({ position: "bottomright" });
   legend.onAdd = function () {
     var div = L.DomUtil.create("div", "legend");
-    div.style.cssText = "background:white; padding:8px 12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.2); font-size:0.75rem; line-height:1.8;";
-    div.innerHTML =
-      '<i class="fa-solid fa-location-dot" style="color:#ffb6c1;"></i> Lived<br>' +
-      '<i class="fa-solid fa-location-dot" style="color:#44cfba;"></i> Visited<br>' +
-      '<i class="fa-solid fa-location-dot" style="color:#d0bfff;"></i> Nature';
+    div.style.cssText = "background:white; padding:8px 12px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.2); font-size:0.75rem; line-height:2; cursor:pointer; user-select:none;";
+    var items = [
+      { color: "#ffb6c1", label: "Lived", layer: livedLayer },
+      { color: "#44cfba", label: "Visited", layer: visitedLayer },
+      { color: "#d0bfff", label: "Nature", layer: natureLayer }
+    ];
+    items.forEach(function (item) {
+      var row = L.DomUtil.create("div", "", div);
+      row.innerHTML = '<i class="fa-solid fa-location-dot" style="color:' + item.color + ';"></i> ' + item.label;
+      row.style.cssText = "transition: opacity 0.2s;";
+      row.addEventListener("click", function (e) {
+        L.DomEvent.stopPropagation(e);
+        if (map.hasLayer(item.layer)) {
+          map.removeLayer(item.layer);
+          row.style.opacity = "0.35";
+        } else {
+          map.addLayer(item.layer);
+          row.style.opacity = "1";
+        }
+      });
+    });
     return div;
   };
   legend.addTo(map);
