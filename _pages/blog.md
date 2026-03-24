@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Boston, MA", 42.36, -71.06], ["New York, NY", 40.71, -74.01],
     ["Washington, DC", 38.91, -77.04], ["Chattanooga, TN", 35.05, -85.31],
     ["Athens, GA", 33.96, -83.38],
-    ["Panama City Beach, FL", 30.18, -85.80],
+    ["Panama City Beach, FL", 30.18, -85.80], ["Rosemary Beach, FL", 30.28, -86.01],
     ["Miami, FL", 25.76, -80.19], ["Fort Lauderdale, FL", 26.12, -80.14],
     ["Chicago, IL", 41.88, -87.63], ["Urbana-Champaign, IL", 40.11, -88.21],
     ["Cancun, Mexico", 21.16, -86.85],
