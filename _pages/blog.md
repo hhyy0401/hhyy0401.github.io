@@ -118,7 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Seoul, South Korea", 37.57, 126.98], ["Daejeon, South Korea", 36.35, 127.38],
     ["Pohang, South Korea", 36.02, 129.37], ["Yeosu, South Korea", 34.74, 127.66],
     ["Seosan, South Korea", 36.78, 126.45], ["Jeonju, South Korea", 35.82, 127.15],
-    ["Jeju Island, South Korea", 33.49, 126.53]
+    ["Jeju Island, South Korea", 33.49, 126.53],
+    ["Ulsan, South Korea", 35.54, 129.31]
   ].forEach(function (c) {
     L.marker([c[1], c[2]], { icon: pin }).addTo(map).bindTooltip(c[0], { direction: "top" });
   });
