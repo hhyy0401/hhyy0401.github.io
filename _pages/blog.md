@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Athens, GA", 33.96, -83.38],
     ["Panama City Beach, FL", 30.18, -85.80], ["Rosemary Beach, FL", 30.28, -86.01],
     ["Miami, FL", 25.76, -80.19], ["Fort Lauderdale, FL", 26.12, -80.14],
+    ["West Palm Beach, FL", 26.72, -80.05], ["Key Largo, FL", 25.09, -80.45],
     ["Chicago, IL", 41.88, -87.63], ["Urbana-Champaign, IL", 40.11, -88.21],
     ["Cancun, Mexico", 21.16, -86.85],
     ["Tokyo, Japan", 35.68, 139.69], ["Osaka, Japan", 34.69, 135.50], ["Kyoto, Japan", 35.01, 135.77],
