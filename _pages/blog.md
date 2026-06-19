@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Palo Alto, CA", 37.44, -122.14], ["Napa, CA", 38.30, -122.30],
     ["Los Angeles, CA", 34.05, -118.24],
     ["Las Vegas, NV", 36.17, -115.14],
+    ["Seattle, WA", 47.61, -122.33],
     ["Houston, TX", 29.76, -95.37], ["Austin, TX", 30.27, -97.74],
     ["Boston, MA", 42.36, -71.06], ["New York, NY", 40.71, -74.01],
     ["Washington, DC", 38.91, -77.04], ["Chattanooga, TN", 35.05, -85.31],
