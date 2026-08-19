@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Zion, UT", 37.30, -113.03], ["Bryce Canyon, UT", 37.59, -112.19],
     ["Grand Canyon, AZ", 36.11, -112.11], ["Antelope Canyon, AZ", 36.86, -111.37],
     ["Horseshoe Bend, AZ", 36.88, -111.51], ["Everglades, FL", 25.75, -80.94],
+    ["Mount Rainier, WA", 46.85, -121.76],
     ["Huangshan, China", 30.13, 118.17], ["Mount Rigi, Switzerland", 47.06, 8.48],
     ["Jeju Island, South Korea", 33.49, 126.53]
   ];
@@ -97,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Palo Alto, CA", 37.44, -122.14], ["Napa, CA", 38.30, -122.30],
     ["Los Angeles, CA", 34.05, -118.24],
     ["Las Vegas, NV", 36.17, -115.14],
-    ["Seattle, WA", 47.61, -122.33],
+    ["Seattle, WA", 47.61, -122.33], ["Portland, OR", 45.52, -122.68],
     ["Houston, TX", 29.76, -95.37], ["Austin, TX", 30.27, -97.74],
     ["Boston, MA", 42.36, -71.06], ["New York, NY", 40.71, -74.01],
     ["Washington, DC", 38.91, -77.04], ["Chattanooga, TN", 35.05, -85.31],
