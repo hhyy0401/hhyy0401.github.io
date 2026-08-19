@@ -15,6 +15,14 @@ nav_order: 2
 
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --query @*[presentation!=poster] %}
+
+</div>
+
+## Conference Presentations & Posters
+
+<div class="publications">
+
+{% bibliography --query @*[presentation=poster] %}
 
 </div>
