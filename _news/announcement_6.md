@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Passed the Ph.D. qualifying exam at **Georgia Institute of Technology**.
+Passed the **CSE Ph.D. qualifying exam** at **Georgia Institute of Technology**.
