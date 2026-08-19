@@ -48,7 +48,7 @@ cv:
         end_date: present
         highlights:
           - "Drift-Diffusion Model (DDM) analysis of EEG signals for characterizing decision-making processes."
-          - "EEG-based disease prediction leveraging neural biomarkers and deep learning methods."
+          - 'EEG-based disease prediction leveraging neural biomarkers and deep learning methods. <a href="/publications/#kim2026hybrain" class="cv-cite">C4</a>'
 
       - company: fMRI-driven Graph Modeling of Self-Organization Mechanisms in the Visual Cortex
         position: ""
@@ -155,7 +155,7 @@ cv:
         start_date: 2025
         end_date: present
         highlights:
-          - "AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
+          - "CIKM 2026, AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
 
       - company: ""
         position: "URP Teaching Assistant"
