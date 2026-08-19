@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper **HyBrain: Spatiotemporal Hyperedges for EEG Seizure Detection and Prediction** accepted at **CIKM 2026**.
+Paper **HyBrain**, on spatiotemporal hyperedges for EEG seizure detection and prediction, accepted at **CIKM 2026**.
