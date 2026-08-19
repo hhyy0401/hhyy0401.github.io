@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My first-authored paper is accepted at **CIKM 2026**.
+I had my first-authored paper accepted at **CIKM 2026**.

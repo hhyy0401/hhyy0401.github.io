@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented a poster at **CCN 2026** (Cognitive Computational Neuroscience) in New York City, Aug. 3–6.
+I presented a poster at **CCN 2026** (Cognitive Computational Neuroscience) in New York City, Aug. 3–6.

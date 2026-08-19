@@ -19,7 +19,7 @@ nav_order: 2
 
 </div>
 
-## Conference Presentations & Posters
+## conference presentations & posters
 {:.mt-5}
 
 <div class="publications">
