@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One paper, **HyBrain**, on spatiotemporal hyperedges for EEG seizure detection and prediction, is accepted at **CIKM 2026**.
+My first-authored paper is accepted at **CIKM 2026**.
