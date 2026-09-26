@@ -1,0 +1,1666 @@
+---
+layout: null
+permalink: /music/
+title: music
+nav: true
+nav_order: 6
+description: Concert Atlas
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Hyunju Kim's concert record: orchestras, programmes, composers and stages since 2007.">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none !important}
+</style>
+<title>Hyunju's Concert Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&family=Karla:ital,wght@0,400..700;1,400&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Handlee&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#fffefc; --surface:#ffffff; --surface-2:#faf8f5;
+  --ink:#141210; --ink-2:#403c38; --muted:#7c7671;
+  --line:rgba(20,18,16,.14); --line-2:rgba(20,18,16,.07);
+  --accent:#44cfba; --link:#0d8f7c; --qty:#0e7c6c; --qty-soft:#e6f7f3;
+  --g1:#2a78d6; --g2:#eb6834; --g3:#1baf7a; --g4:#eda100; --g5:#e87ba4; --g6:#008300; --g7:#4a3aa7;
+  --c1:#2a78d6; --c2:#eb6834; --c3:#4a3aa7; --c4:#eda100; --c5:#e87ba4; --c6:#008300;
+  --tint:14%; --tint-g:6%; --tint-card:7%;
+  --sans:"Karla","Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --serif:"Fraunces","Gowun Batang",Georgia,"Apple SD Gothic Neo",serif;
+  --script:"Handlee","Fraunces",cursive;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#1a1917; --surface:#211f1d; --surface-2:#282523;
+    --ink:#efece7; --ink-2:#c6c1bb; --muted:#928c86;
+    --line:#403c38; --line-2:#2e2b28;
+    --accent:#66f0d2; --link:#66f0d2; --qty:#4fd3bd; --qty-soft:#1f2c2a;
+    --g1:#3987e5; --g2:#d95926; --g3:#199e70; --g4:#c98500; --g5:#d55181; --g6:#008300; --g7:#9085e9;
+    --c1:#3987e5; --c2:#d95926; --c3:#9085e9; --c4:#c98500; --c5:#d55181; --c6:#008300;
+    --tint:22%; --tint-g:11%; --tint-card:13%;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#1a1917; --surface:#211f1d; --surface-2:#282523;
+  --ink:#efece7; --ink-2:#c6c1bb; --muted:#928c86;
+  --line:#403c38; --line-2:#2e2b28;
+  --accent:#66f0d2; --link:#66f0d2; --qty:#4fd3bd; --qty-soft:#1f2c2a;
+  --g1:#3987e5; --g2:#d95926; --g3:#199e70; --g4:#c98500; --g5:#d55181; --g6:#008300; --g7:#9085e9;
+  --c1:#3987e5; --c2:#d95926; --c3:#9085e9; --c4:#c98500; --c5:#d55181; --c6:#008300;
+  --tint:22%; --tint-g:11%; --tint-card:13%;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);
+  font-size:16px; font-weight:400; line-height:1.68; -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; text-wrap:balance; font-weight:600}
+a{color:var(--link); text-decoration:none; border-bottom:1px solid color-mix(in srgb, var(--accent) 60%, transparent)}
+a:hover{color:var(--ink); border-bottom-color:var(--ink)}
+.wrap{max-width:900px; margin:0 auto; padding-inline:22px; padding-block:0 64px}
+html[lang="ko"] body{line-height:1.74; word-break:keep-all}
+html[lang="ko"] h1, html[lang="ko"] h2, html[lang="ko"] h3,
+html[lang="ko"] .ens, html[lang="ko"] .tl-yr, html[lang="ko"] .dek{letter-spacing:-.02em}
+html[lang="ko"] .prog .ttl{font-size:15.5px}
+html[lang="ko"] .bio, html[lang="ko"] .secsub{letter-spacing:-.005em}
+html[lang="ko"] .kicker, html[lang="ko"] .blockhead, html[lang="ko"] .region,
+html[lang="ko"] .flab, html[lang="ko"] .subhead{letter-spacing:.02em}
+.emo{font-style:normal; font-size:.95em; margin-right:.35em;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+
+/* contents */
+.toc{position:fixed; top:calc(env(safe-area-inset-top,0px) + 132px); left:calc(50% + 464px);
+  width:152px; z-index:20; padding-left:13px; border-left:2px solid var(--line)}
+.toc .tt{font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--muted);
+  margin-bottom:7px}
+.toc a{display:block; padding:4px 0; font-size:13px; line-height:1.3; color:var(--muted); border:0}
+.toc a:hover{color:var(--link)}
+.toc a .tn{font-family:var(--serif); font-size:11px; margin-right:7px; font-variant-numeric:tabular-nums}
+.toc a.on{color:var(--ink); font-weight:600}
+.toc a.on .tn{color:var(--accent)}
+.toc-inline{display:none; gap:6px; flex-wrap:wrap; margin-top:22px}
+.toc-inline a{font-size:12.5px; padding:3px 12px; border:1px solid var(--line); border-radius:999px;
+  color:var(--ink-2); background:var(--surface)}
+.toc-inline a .tn{color:var(--muted); margin-right:6px; font-family:var(--serif); font-size:11px}
+@media (max-width:1250px){.toc{display:none} .toc-inline{display:flex}}
+
+/* colour ribbon */
+.ribbon{display:flex; height:3px}
+.ribbon i{flex:1}
+
+/* navbar, mirroring the research site */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:40; background:var(--bg);
+  border-bottom:1px solid var(--line-2)}
+.nav-in{max-width:900px; margin:0 auto; padding-inline:22px; padding-block:12px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+.brand{font-family:var(--script); font-size:23px; color:var(--ink); border:0; line-height:1}
+.brand:hover{color:var(--link)}
+.navlinks{display:flex; gap:15px; margin-left:auto; align-items:center; flex-wrap:wrap}
+.navlinks a{font-size:15px; color:var(--ink-2); border:0}
+.navlinks a:hover{color:var(--link)}
+.navlinks .here{font-size:15px; color:var(--ink); font-weight:600; border-bottom:2px solid var(--accent); padding-bottom:1px}
+.langsw{display:flex; margin-left:4px; border:1px solid var(--line); border-radius:4px; overflow:hidden}
+.langsw button{font:inherit; font-size:13px; padding:3px 10px; border:0; cursor:pointer;
+  background:var(--surface); color:var(--muted)}
+.langsw button[aria-pressed="true"]{background:var(--ink); color:var(--bg)}
+.langsw button:focus-visible{outline:2px solid var(--link); outline-offset:-2px}
+
+/* hero */
+.hero{padding-block:48px 30px}
+.kicker{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.hero h1{font-family:var(--serif); font-weight:600; font-size:clamp(40px,7.5vw,62px); line-height:1.02;
+  letter-spacing:-.02em; margin-top:12px; font-variation-settings:"opsz" 120, "SOFT" 20}
+.dek{font-family:var(--serif); font-size:20px; color:var(--ink-2); margin-top:14px; font-style:italic}
+.bio{max-width:62ch; margin-top:20px; color:var(--ink-2); font-size:16.5px}
+.tags{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px}
+.tag{font-size:13.5px; padding:4px 12px; border:1px solid var(--line); border-radius:999px; color:var(--ink-2);
+  background:var(--surface)}
+.tag.on{border-color:var(--accent); color:var(--qty); background:var(--qty-soft)}
+
+.stats{display:grid; grid-template-columns:repeat(6,1fr); margin-top:32px;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.stat{padding:16px 10px 15px; border-left:1px solid var(--line-2); border-top:3px solid transparent}
+.stat:first-child{border-left:0; padding-left:0}
+.stat b{display:block; font-family:var(--serif); font-weight:600; font-size:clamp(26px,3.8vw,34px);
+  line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+.stat span{display:block; margin-top:8px; font-size:12.5px; color:var(--muted); line-height:1.4}
+@media (max-width:780px){.stats{grid-template-columns:repeat(3,1fr)}
+  .stat{border-left:1px solid var(--line-2)}
+  .stat:nth-child(3n+1){border-left:0; padding-left:0}}
+
+/* sections */
+section{padding-block:44px 0}
+.sechead{margin-bottom:18px}
+.sechead{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; padding-bottom:8px;
+  border-bottom:1px solid var(--line)}
+.sechead h2{font-family:var(--serif); font-size:28px; font-weight:600; letter-spacing:-.015em;
+  font-variation-settings:"opsz" 60, "SOFT" 20}
+.sechead .n{font-family:var(--serif); font-size:14px; color:var(--accent); font-variant-numeric:tabular-nums}
+.sechead .note{font-size:13px; color:var(--muted); margin-left:auto}
+.secsub{color:var(--ink-2); font-size:15.5px; max-width:68ch; margin:16px 0 20px}
+.blockhead{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+  font-size:12.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted);
+  margin:38px 0 4px; padding-bottom:6px; border-bottom:1px solid var(--line)}
+.blockhead .note{margin-left:auto; text-transform:none; letter-spacing:0; font-size:12.5px}
+
+/* orchestras, on a year rail */
+.timeline{position:relative; padding-left:30px}
+.timeline::before{content:""; position:absolute; left:10px; top:16px; bottom:16px; width:2px;
+  background:var(--line); border-radius:1px}
+.tl-era{position:relative}
+.tl-head{display:flex; align-items:baseline; gap:11px; flex-wrap:wrap; padding:13px 0 11px;
+  border-bottom:1px solid var(--line-2)}
+.tl-dot{position:absolute; left:-30px; top:14px; width:21px; height:21px; border-radius:50%;
+  border:0; padding:0; cursor:pointer; color:#fff; font:inherit; font-size:14px; font-weight:700;
+  line-height:19px; text-align:center; box-shadow:0 0 0 3px var(--bg)}
+.tl-dot[aria-expanded="false"]{background:var(--bg) !important; box-shadow:0 0 0 3px var(--bg)}
+.tl-dot:focus-visible{outline:2px solid var(--link); outline-offset:3px}
+.tl-dot:hover{filter:brightness(1.12); transform:scale(1.1)}
+.tl-dot{transition:transform .16s ease, filter .16s ease, color .2s ease}
+.tl-yr{font-family:var(--serif); font-size:19px; font-weight:600; font-variant-numeric:tabular-nums;
+  letter-spacing:-.01em}
+.tl-nm{font-size:14.5px; color:var(--ink-2)}
+.tl-ct{font-size:12.5px; color:var(--muted); margin-left:auto; font-variant-numeric:tabular-nums}
+.tl-body{padding:10px 0 20px; overflow:hidden;
+  transition:max-height .4s cubic-bezier(.4,0,.2,1), opacity .3s ease}
+.tl-body[hidden]{display:none}
+.ens-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(372px,1fr)); gap:0 26px}
+.catlegend{display:flex; flex-wrap:wrap; gap:6px 16px; list-style:none; margin:0 0 16px; padding:0}
+.catlegend li{display:flex; align-items:center; gap:7px; font-size:13px; color:var(--ink-2)}
+.catlegend .sw{width:10px; height:10px; border-radius:3px; flex:none}
+.catlegend b{font-family:var(--serif); font-weight:600; font-variant-numeric:tabular-nums}
+.ens-row{display:flex; flex-wrap:wrap; align-items:baseline; gap:3px 7px;
+  padding:6px 8px 6px 0; border-bottom:1px solid var(--line-2); border-radius:4px;
+  transition:background .16s ease, padding-left .16s ease}
+.ens-row:hover{background:var(--surface-2); padding-left:7px}
+.ens-row .en{font-size:15px; font-weight:600; color:var(--ink); line-height:1.4}
+.ens-row .aff{font-size:12.5px; color:var(--muted)}
+.ens-row .cpill{font-size:10px; font-weight:600; padding:1px 7px; border-radius:999px;
+  position:relative; top:-1px; white-space:nowrap}
+.ens-row .eg{font-size:10px; font-weight:600; border-radius:999px; padding:1px 7px;
+  position:relative; top:-1px; white-space:nowrap;
+  color:color-mix(in srgb, var(--g4) 72%, var(--ink));
+  background:color-mix(in srgb, var(--g4) 17%, var(--surface));
+  border:1px solid color-mix(in srgb, var(--g4) 46%, transparent)}
+.ens-row .ec{font-family:var(--serif); font-size:16px; font-weight:600; color:var(--qty);
+  font-variant-numeric:tabular-nums; margin-left:auto; padding-left:8px}
+
+.subhead{display:flex; align-items:baseline; gap:8px; font-size:11px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--muted); margin:16px 0 9px; padding-bottom:4px;
+  border-bottom:1px solid var(--line-2)}
+.tl-body > .subhead:first-child{margin-top:2px}
+
+/* cities */
+.cities{display:flex; flex-direction:column; gap:7px}
+.city{display:grid; grid-template-columns:minmax(100px,132px) 1fr auto; gap:14px; align-items:center}
+.city .cl{font-size:14.5px; color:var(--ink-2); text-align:right}
+.city .ct{position:relative; height:3px; background:var(--line-2); border-radius:2px}
+.city .cf{position:absolute; left:0; top:-2px; height:7px; border-radius:3px}
+.city .cd{position:absolute; top:-5px; width:13px; height:13px; border-radius:50%;
+  box-shadow:0 0 0 2px var(--bg); transition:transform .18s ease}
+.city:hover .cd{transform:scale(1.35)}
+.city .cv{font-size:13.5px; color:var(--ink-2); font-variant-numeric:tabular-nums; min-width:1.8em; text-align:right}
+.region{display:flex; align-items:baseline; gap:8px; font-size:12.5px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--muted); margin:18px 0 9px}
+.region .rb{width:20px; height:3px; border-radius:2px; align-self:center}
+.region:first-child{margin-top:4px}
+
+/* treemap */
+.seg{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px}
+.seg button{font:inherit; font-size:13.5px; padding:4px 13px; border-radius:999px; cursor:pointer;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink-2)}
+.seg button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.seg button:focus-visible{outline:2px solid var(--link); outline-offset:1px}
+.scrollx{overflow-x:auto; padding-bottom:4px}
+.tm{position:relative; min-width:700px; height:560px}
+.tmg{position:absolute; border-radius:5px; border:1px solid var(--line-2)}
+.tmg > .gbar{position:absolute; left:0; right:0; top:0; height:3px; border-radius:5px 5px 0 0}
+.tmg > .gl{position:absolute; top:7px; left:9px; right:9px; font-size:12px; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--ink-2); white-space:nowrap; overflow:hidden}
+.tmc{position:absolute; border-radius:3px; overflow:hidden; cursor:default;
+  transition:filter .15s ease}
+.tmc:hover{outline:2px solid var(--ink); outline-offset:-2px; filter:brightness(1.04)}
+.tmc .cn{position:absolute; top:5px; left:8px; right:6px; bottom:20px; font-weight:500; color:var(--ink);
+  line-height:1.16; overflow:hidden; overflow-wrap:break-word; letter-spacing:-.005em}
+.tmc.short .cn{bottom:3px; right:26px}
+.tmc.short .cv{bottom:auto; top:50%; transform:translateY(-50%); font-size:13px}
+.tmc .cv{position:absolute; bottom:4px; right:8px; font-family:var(--serif); font-size:17px; font-weight:600;
+  color:var(--ink); font-variant-numeric:tabular-nums; line-height:1}
+.tmc .cy{position:absolute; bottom:5px; left:8px; font-size:11.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums; line-height:1}
+
+/* chronicle */
+.filters{margin-bottom:10px}
+.fgroup{display:flex; gap:7px 6px; align-items:center; flex-wrap:wrap; padding:5px 0}
+.fgroup + .fgroup{border-top:1px solid var(--line-2)}
+.flab{font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted);
+  width:104px; flex:none}
+@media (max-width:560px){.flab{width:100%}}
+.filters button{font:inherit; font-size:13.5px; padding:4px 12px; border-radius:999px; cursor:pointer;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink-2)}
+.filters button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.filters button:focus-visible{outline:2px solid var(--link); outline-offset:1px}
+.entry{border-top:1px solid var(--line-2); padding:18px 0; display:grid;
+  grid-template-columns:minmax(160px,228px) 1fr; gap:26px; scroll-margin-top:80px}
+.entry:first-child{border-top:1px solid var(--line)}
+.entry .ens{font-family:var(--serif); font-size:19px; font-weight:600; line-height:1.28; letter-spacing:-.01em}
+.entry .aff{font-size:13px; color:var(--ink-2); margin-top:3px}
+.entry .date{font-size:13px; color:var(--muted); margin-top:5px; font-variant-numeric:tabular-nums}
+.entry .hall{font-size:13.5px; color:var(--muted); margin-top:3px}
+.chairs{display:flex; flex-wrap:wrap; gap:4px 5px; align-items:center; margin-top:9px}
+.chairline{display:contents}
+.chip{font-size:11px; font-weight:600; padding:2px 9px; border-radius:999px; color:#fff;
+  white-space:nowrap}
+.chip.reg{background:transparent}
+.prog{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px}
+.prog li{font-size:15.5px; line-height:1.5}
+.prog .cmp{font-weight:600}
+.prog .ttl{font-family:var(--serif); font-size:16px; color:var(--ink-2)}
+.prog .nte{font-size:12.5px; color:var(--muted)}
+.prog .sep{color:var(--muted); padding:0 6px}
+@media (max-width:660px){.entry{grid-template-columns:1fr; gap:12px}}
+
+/* full chronicle head */
+.chronhead{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:46px 0 0;
+  padding-bottom:11px; border-bottom:2px solid var(--line)}
+.chronhead h3{font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-.015em;
+  cursor:pointer; white-space:nowrap}
+.chronhead h3:hover{color:var(--link)}
+.chronhead .sfield{margin-left:auto; flex:0 1 330px; min-width:170px; padding:5px 13px}
+.chronbar{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:13px 0 4px}
+#chron-panel{overflow:hidden; transition:max-height .42s cubic-bezier(.4,0,.2,1), opacity .3s ease}
+.chron-inner{margin:14px 0 0 12px; padding-left:20px; border-left:2px solid var(--line)}
+@keyframes slideOut{
+  from{opacity:0; transform:translateX(-22px)}
+  to{opacity:1; transform:none}
+}
+#chron-list.anim > .erahead, #chron-list.anim > .entry{
+  animation:slideOut .4s cubic-bezier(.22,1,.36,1) both}
+@media (max-width:560px){.chron-inner{margin-left:0; padding-left:13px}}
+.chronbar .note{margin-left:auto; font-size:12.5px; color:var(--muted); white-space:nowrap}
+.sfield{display:flex; align-items:center; gap:8px; padding:7px 14px;
+  border:1px solid var(--line); border-radius:999px; background:var(--surface)}
+.sfield:focus-within{border-color:var(--accent); box-shadow:0 0 0 3px var(--qty-soft)}
+.sfield input{flex:1; min-width:0; border:0; outline:0; background:transparent; color:var(--ink);
+  font:inherit; font-size:14.5px}
+.sfield input::placeholder{color:var(--muted)}
+.expander{flex:none; display:flex; align-items:center; gap:7px; font:inherit; font-size:13.5px;
+  padding:5px 15px; border-radius:999px; cursor:pointer; white-space:nowrap;
+  border:1px solid var(--ink); background:var(--ink); color:var(--bg)}
+.expander .ecar{font-size:11px; display:inline-block; transition:transform .18s ease}
+.expander[aria-expanded="true"] .ecar{transform:rotate(180deg)}
+.expander:focus-visible{outline:2px solid var(--link); outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  .expander .ecar, .tmc, .tl-body, .tl-dot, .ens-row, .city .cd,
+  #chron-panel{transition:none}
+  #chron-list.anim > .erahead, #chron-list.anim > .entry{animation:none}
+}
+.nohits{padding:22px 0; color:var(--muted); font-size:14.5px}
+.erahead{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin:26px 0 0;
+  padding-bottom:6px; border-bottom:2px solid var(--line)}
+.erahead .eh-yr{font-family:var(--serif); font-size:18px; font-weight:600;
+  font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+.erahead .eh-nm{font-size:14px; color:var(--ink-2)}
+.erahead .eh-ct{font-size:12.5px; color:var(--muted); margin-left:auto; font-variant-numeric:tabular-nums}
+
+/* favourites */
+.favgrid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:22px}
+@media (max-width:700px){.favgrid{grid-template-columns:1fr}}
+.favcol{padding:18px 20px 8px; border-radius:8px; border:1px solid var(--line-2)}
+.favgrid h3{font-family:var(--serif); font-size:17px; font-weight:600; color:var(--ink); letter-spacing:0;
+  text-transform:none; padding-bottom:8px; border-bottom:1px solid var(--line-2)}
+.favc{display:grid; grid-template-columns:minmax(84px,106px) 1fr; gap:12px; padding:11px 0;
+  border-bottom:1px solid var(--line-2); align-items:start}
+.favcol .favc:last-child{border-bottom:0}
+.favc .fc{display:flex; gap:7px; align-items:baseline; font-size:15px; font-weight:600; line-height:1.35}
+.favc .fc i{width:8px; height:8px; border-radius:2px; flex:none; margin-top:.45em}
+.favc ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px}
+.favc li{font-family:var(--serif); font-size:15.5px; color:var(--ink-2); display:flex; gap:9px; align-items:baseline}
+.favc .fp{margin-left:auto; flex:none; font-family:var(--sans); font-size:11px; color:var(--qty);
+  border:1px solid var(--accent); border-radius:999px; padding:0 7px; white-space:nowrap}
+
+#tip{position:fixed; z-index:60; pointer-events:none; max-width:330px; opacity:0; transition:opacity .1s;
+  background:var(--ink); color:var(--bg); border-radius:6px; padding:10px 12px; font-size:13px; line-height:1.5;
+  box-shadow:0 8px 26px -12px rgba(0,0,0,.55)}
+#tip b{display:block; font-size:14px; font-weight:600}
+#tip .sub{opacity:.68; display:block; margin-bottom:6px; font-size:12px}
+#tip ol{margin:0; padding:0; list-style:none}
+#tip ol li{display:flex; gap:12px; justify-content:space-between}
+#tip ol li em{font-style:normal; opacity:.6; font-variant-numeric:tabular-nums}
+
+footer{margin-top:56px; padding:22px 0 0; border-top:1px solid var(--line); font-size:13.5px;
+  color:var(--muted); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav class="toc" id="toc" aria-label="Contents">
+  <div class="tt" data-en="Contents" data-ko="목차"></div>
+</nav>
+<div class="ribbon" aria-hidden="true">
+  <i style="background:var(--g1)"></i><i style="background:var(--g2)"></i><i style="background:var(--g3)"></i>
+  <i style="background:var(--g4)"></i><i style="background:var(--g5)"></i><i style="background:var(--g6)"></i>
+  <i style="background:var(--g7)"></i>
+</div>
+<div class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/">Hyunju Kim</a>
+    <nav class="navlinks">
+      <a href="/">about</a>
+      <a href="/publications/">publications</a>
+      <a href="/cv/">CV</a>
+      <a href="/life/">life</a>
+      <span class="here"><i class="emo">🎵</i>music</span>
+      <span class="langsw" role="group" aria-label="Language">
+        <button id="btn-en" type="button" aria-pressed="true">EN</button>
+        <button id="btn-ko" type="button" aria-pressed="false">한국어</button>
+      </span>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker" data-en="Hyunju Kim &middot; music" data-ko="김현주 &middot; 음악"></div>
+    <h1 data-en="Concert Atlas" data-ko="Concert Atlas"></h1>
+    <p class="bio" data-en="I play oboe outside the lab. I toured Europe with a school orchestra in 2011 and played the Musikverein, the Rudolfinum and the Mozarteum, and took a gold medal at the Honam Arts Festival at thirteen. Since then I have kept a seat in university and amateur orchestras, mostly as principal oboe and often as a guest, with two solo appearances along the way. I moved to Atlanta in 2026 and now play with the Georgia Tech Symphony Orchestra."
+       data-ko="I play oboe outside the lab. I toured Europe with a school orchestra in 2011 and played the Musikverein, the Rudolfinum and the Mozarteum, and took a gold medal at the Honam Arts Festival at thirteen. Since then I have kept a seat in university and amateur orchestras, mostly as principal oboe and often as a guest, with two solo appearances along the way. I moved to Atlanta in 2026 and now play with the Georgia Tech Symphony Orchestra."></p>
+    <div class="tags">
+      <span class="tag on" data-en="&#127926; Oboe &amp; English horn, since 2007" data-ko="&#127926; 오보에·잉글리시 호른 (2007~)"></span>
+      <span class="tag" data-en="&#127931; Viola, since 2018" data-ko="&#127931; 비올라 (2018~)"></span>
+      <span class="tag" data-en="&#127941; Gold medal, Honam Arts Festival, 2007" data-ko="&#127941; 호남예술제 금상 (2007)"></span>
+    </div>
+    <div class="stats" id="stats"></div>
+    <nav class="toc-inline" id="toc-inline" aria-label="Contents"></nav>
+  </header>
+
+  <section id="record">
+    <div class="sechead">
+      <span class="n">01</span>
+      <h2 data-en="&#127931; The record" data-ko="&#127931; 연주 기록"></h2>
+      <span class="note" id="rec-note"></span>
+    </div>
+    <ul class="catlegend" id="cat-legend"></ul>
+    <div id="rec-list"></div>
+
+    <div class="chronhead">
+      <h3 id="chron-title" data-en="&#128220; Full chronicle" data-ko="&#128220; 전체 연주 기록"></h3>
+      <label class="sfield">
+        <i class="emo" aria-hidden="true">&#128269;</i>
+        <input id="chron-q" type="search" autocomplete="off"
+               data-en-ph="Search composer, work, hall"
+               data-ko-ph="작곡가 · 곡 · 홀 검색">
+      </label>
+    </div>
+    <div class="chronbar">
+      <button id="chron-toggle" type="button" class="expander" aria-expanded="false">
+        <span class="etxt"></span><span class="ecar" aria-hidden="true">&#9662;</span>
+      </button>
+      <span class="note" id="chron-note"></span>
+    </div>
+    <div id="chron-panel" hidden>
+      <div class="chron-inner">
+        <div class="filters" id="chron-filters"></div>
+        <div id="chron-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="composers">
+    <div class="sechead">
+      <span class="n">02</span>
+      <h2 data-en="&#127932; Composers on the stand" data-ko="&#127932; 연주한 작곡가"></h2>
+      <span class="note" id="comp-note"></span>
+    </div>
+    <div class="seg" id="comp-seg"></div>
+    <div class="scrollx"><div class="tm" id="treemap"></div></div>
+  </section>
+
+  <section id="where">
+    <div class="sechead">
+      <span class="n">03</span>
+      <h2 data-en="&#128205; Stages and halls" data-ko="&#128205; 무대와 홀"></h2>
+      <span class="note" id="where-note"></span>
+    </div>
+    <div id="city-list"></div>
+  </section>
+
+  <section id="favorites">
+    <div class="sechead">
+      <span class="n">04</span>
+      <h2 data-en="&#11088; Favourites" data-ko="&#11088; 좋아하는 곡"></h2>
+    </div>
+    <div class="favgrid" id="favs"></div>
+  </section>
+
+  <footer>
+    <span data-en="&#127911; Hyunju Kim &middot; Atlanta, GA" data-ko="&#127911; 김현주 &middot; 애틀랜타"></span>
+    <span data-en="Updated September 2026" data-ko="2026년 9월 기준"></span>
+  </footer>
+</div>
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+/* ------------------------------------------------------------------ data */
+const P = {
+  Ob1:{en:"Oboe 1", ko:"오보에 1", s:"Ob 1",  v:"--c1"},
+  Ob2:{en:"Oboe 2", ko:"오보에 2", s:"Ob 2",  v:"--c2"},
+  Ob3:{en:"Oboe 3", ko:"오보에 3", s:"Ob 3",  v:"--c3"},
+  EH: {en:"English horn", ko:"잉글리시 호른", s:"Eng. H", v:"--c4", tx:"#000"},
+  Va: {en:"Viola",  ko:"비올라",   s:"Viola", v:"--c5", tx:"#000"},
+  Cd: {en:"Conducting", ko:"지휘",  s:"Cond.", v:"--c6"}
+};
+const PORDER = ["Ob1","Ob2","Ob3","EH","Va","Cd"];
+
+const C = {
+  beethoven:{en:"Beethoven",ko:"베토벤"},      tchaikovsky:{en:"Tchaikovsky",ko:"차이콥스키"},
+  dvorak:{en:"Dvořák",ko:"드보르자크"},         sibelius:{en:"Sibelius",ko:"시벨리우스"},
+  brahms:{en:"Brahms",ko:"브람스"},             mozart:{en:"Mozart",ko:"모차르트"},
+  schubert:{en:"Schubert",ko:"슈베르트"},       suppe:{en:"Suppé",ko:"주페"},
+  schumann:{en:"Schumann",ko:"슈만"},
+  ravel:{en:"Ravel",ko:"라벨"},                 prokofiev:{en:"Prokofiev",ko:"프로코피예프"},
+  rachmaninoff:{en:"Rachmaninoff",ko:"라흐마니노프"}, mahler:{en:"Mahler",ko:"말러"},
+  debussy:{en:"Debussy",ko:"드뷔시"},           grieg:{en:"Grieg",ko:"그리그"},
+  borodin:{en:"Borodin",ko:"보로딘"},           wagner:{en:"Wagner",ko:"바그너"},
+  bizet:{en:"Bizet",ko:"비제"},                 sarasate:{en:"Sarasate",ko:"사라사테"},
+  glinka:{en:"Glinka",ko:"글린카"},             verdi:{en:"Verdi",ko:"베르디"},
+  strauss1:{en:"J. Strauss I",ko:"요한 슈트라우스 1세"}, strauss2:{en:"J. Strauss II",ko:"요한 슈트라우스 2세"},
+  morricone:{en:"Morricone",ko:"모리코네"},     saintsaens:{en:"Saint-Saëns",ko:"생상스"},
+  haydn:{en:"Haydn",ko:"하이든"},               elgar:{en:"Elgar",ko:"엘가"},
+  rietz:{en:"Rietz",ko:"리츠"},                 marquez:{en:"Márquez",ko:"마르케스"},
+  gliere:{en:"Glière",ko:"글리에르"},           gregson:{en:"Gregson-Williams",ko:"그렉슨윌리엄스"},
+  holst:{en:"Holst",ko:"홀스트"},               bruch:{en:"Bruch",ko:"브루흐"},
+  mussorgsky:{en:"Mussorgsky / Ravel",ko:"무소륵스키 / 라벨"}, mendelssohn:{en:"Mendelssohn",ko:"멘델스존"},
+  krommer:{en:"Krommer",ko:"크로머"},           chaminade:{en:"Chaminade",ko:"샤미나드"},
+  reinecke:{en:"Reinecke",ko:"라이네케"},       smetana:{en:"Smetana",ko:"스메타나"},
+  shostakovich:{en:"Shostakovich",ko:"쇼스타코비치"}, hisaishi:{en:"Hisaishi",ko:"히사이시 조"},
+  barnett:{en:"Carol Barnett",ko:"캐롤 바넷"}
+};
+
+/* w(composer, english title, korean title, english note, korean note) */
+const w = (c,en,ko,ne,nk)=>({c,en,ko,ne:ne||"",nk:nk||""});
+
+const ERAS = [
+  {id:"e1", yr:"2011",      en:"European tour",   ko:"유럽 순회연주"},
+  {id:"e2", yr:"2012–2014", en:"Middle school",   ko:"중학교 시절"},
+  {id:"e3", yr:"2018–2021", en:"University, Pohang", ko:"대학 시절, 포항"},
+  {id:"e4", yr:"2022–2025", en:"Seoul",           ko:"서울"},
+  {id:"e5", yr:"2026–",     en:"Atlanta",         ko:"애틀랜타"}
+];
+
+const SHOWS = [
+/* ---- 2011 European tour ---- */
+{e:"e1", g:false, parts:["Ob1"],
+ ens:{en:"Yeodo Elementary School Orchestra", ko:"여도초등학교 오케스트라"},
+ hall:{en:"Musikverein · Rudolfinum, Dvořák Hall · Mozarteum, Großer Saal · Slovak Radio Hall · WTC Patria Hall · Lukaskirche · Jeonnam Student Culture Center",
+       ko:"무지크페라인 · 루돌피눔 드보르자크홀 · 모차르테움 대강당 · 슬로바키아 라디오홀 · WTC 파트리아홀 · 루카스키르헤 · 전라남도학생교육문화회관"},
+ date:{en:"2011", ko:"2011년"},
+ prog:[
+  w("wagner","Rienzi Overture","리엔치 서곡"),
+  w("sarasate","Zigeunerweisen","치고이너바이젠"),
+  w("dvorak","Symphony No. 9 “From the New World”","교향곡 9번 ‘신세계로부터’"),
+  w("glinka","Ruslan and Lyudmila Overture","루슬란과 루드밀라 서곡")]},
+
+/* ---- 2012–2014 middle school ---- */
+{e:"e2", g:false, parts:["Ob1"],
+ ens:{en:"Yeosu Gifted Youth Orchestra", ko:"여수영재오케스트라"},
+ hall:{en:"GS Caltex Yeulmaru, Yeosu", ko:"여수 예울마루"},
+ prog:[
+  w("suppe","Light Cavalry Overture","경기병 서곡"),
+  w("suppe","Poet and Peasant Overture","시인과 농부 서곡")]},
+{e:"e2", g:false, parts:["Ob1"],
+ ens:{en:"Yeodo Elementary & Middle School Orchestra", ko:"여도초·여도중 연합 오케스트라"},
+ hall:{en:"Seongnam Arts Center", ko:"성남아트센터"},
+ prog:[
+  w("verdi","Nabucco Overture","나부코 서곡"),
+  w("schubert","Symphony No. 8 “Unfinished”","교향곡 8번 ‘미완성’")]},
+{e:"e2", g:false, parts:["Ob1"],
+ ens:{en:"Yeosu Gifted Youth Orchestra", ko:"여수영재오케스트라"},
+ hall:{en:"GS Caltex Yeulmaru, Yeosu", ko:"여수 예울마루"},
+ prog:[
+  w("suppe","Poet and Peasant Overture","시인과 농부 서곡"),
+  w("sibelius","Finlandia","핀란디아")]},
+{e:"e2", g:false, parts:["Ob1"],
+ ens:{en:"Yeodo Middle School Orchestra", ko:"여도중학교 오케스트라"},
+ hall:{en:"Yeosu Maritime Park", ko:"여수 해양공원"},
+ prog:[
+  w("strauss1","Radetzky March","라데츠키 행진곡"),
+  w("bizet","Carmen Overture","카르멘 서곡"),
+  w("morricone","Gabriel's Oboe","가브리엘의 오보에","soloist","협연")]},
+
+/* ---- 2018–2021 POSTECH ---- */
+{e:"e3", g:true, parts:["Ob1"],
+ ens:{en:"Ulsan Opus One", ko:"울산 오퍼스원"},
+ prog:[w("saintsaens","Bacchanale from Samson et Dalila","‘삼손과 데릴라’ 중 바카날레")]},
+{e:"e3", g:false, parts:["Ob1"],
+ ens:{en:"POSTECH Orchestra", ko:"포항공대 오케스트라"},
+ prog:[
+  w("beethoven","Symphony No. 7","교향곡 7번"),
+  w("schubert","Symphony No. 5","교향곡 5번")]},
+{e:"e3", g:false, parts:["Ob1"],
+ ens:{en:"POSTECH Orchestra", ko:"포항공대 오케스트라"},
+ prog:[w("tchaikovsky","Waltz of the Flowers from The Nutcracker","‘호두까기 인형’ 중 꽃의 왈츠")]},
+{e:"e3", g:false, parts:["Va"],
+ ens:{en:"Hanullim", ko:"한울림"},
+ prog:[
+  w("tchaikovsky","Waltz of the Flowers from The Nutcracker","‘호두까기 인형’ 중 꽃의 왈츠"),
+  w("rachmaninoff","Piano Concerto No. 2","피아노 협주곡 2번","arr.","편곡")]},
+{e:"e3", g:false, parts:["Ob1"],
+ ens:{en:"POSTECH Orchestra", ko:"포항공대 오케스트라"},
+ prog:[
+  w("schubert","Rosamunde Overture","로자문데 서곡"),
+  w("haydn","Symphony No. 45 “Farewell”","교향곡 45번 ‘고별’","IV","4악장"),
+  w("tchaikovsky","Symphony No. 5","교향곡 5번")]},
+{e:"e3", g:false, parts:["Ob1","Va"],
+ ens:{en:"Hanullim", ko:"한울림"},
+ prog:[
+  w("strauss2","Voices of Spring","봄의 소리 왈츠"),
+  w("debussy","Clair de lune","달빛"),
+  w("elgar","Pomp and Circumstance March No. 1","위풍당당 행진곡 1번"),
+  w("rietz","Oboe Concerto in F minor","오보에 협주곡 f단조","I, soloist","1악장, 협연")]},
+{e:"e3", g:true, parts:["Ob1"],
+ ens:{en:"Handong Global University Orchestra", ko:"한동대학교 오케스트라"},
+ prog:[
+  w("beethoven","Egmont Overture","에그몬트 서곡"),
+  w("schubert","Symphony No. 8 “Unfinished”","교향곡 8번 ‘미완성’")]},
+{e:"e3", g:false, parts:["Ob1"],
+ ens:{en:"AOU “Shall We Dance?”", ko:"AOU ‘쉘 위 댄스’"},
+ prog:[
+  w("tchaikovsky","The Nutcracker Suite","호두까기 인형 모음곡"),
+  w("rachmaninoff","Symphonic Dances","교향적 무곡"),
+  w("marquez","Danzón No. 2","단손 2번")]},
+{e:"e3", g:false, parts:["Cd"],
+ ens:{en:"Hanullim", ko:"한울림"},
+ prog:[
+  w("gliere","Horn Concerto","호른 협주곡","II","2악장"),
+  w("gregson","The Chronicles of Narnia","나니아 연대기")]},
+
+/* ---- 2022–2025 Seoul ---- */
+{e:"e4", g:true, parts:["Ob2"],
+ ens:{en:"University of Seoul Cantabile", ko:"서울시립대 칸타빌레"},
+ hall:{en:"Goyang Aram Nuri Arts Center", ko:"고양아람누리 음악당"},
+ prog:[
+  w("holst","“Jupiter” from The Planets","‘행성’ 중 목성"),
+  w("bruch","Violin Concerto No. 1","바이올린 협주곡 1번"),
+  w("tchaikovsky","Symphony No. 5","교향곡 5번")]},
+{e:"e4", g:true, parts:["Ob2","EH"],
+ ens:{en:"Sogang University ACES", ko:"서강대 ACES"},
+ hall:{en:"Gangbuk Culture & Arts Center", ko:"강북문화예술회관"},
+ prog:[
+  w("tchaikovsky","The Nutcracker Suite","호두까기 인형 모음곡"),
+  w("tchaikovsky","Marche slave","슬라브 행진곡"),
+  w("saintsaens","Danse macabre","죽음의 무도")]},
+{e:"e4", g:false, parts:["Va"],
+ ens:{en:"AOU “Monomyth”", ko:"AOU ‘모노미스’"},
+ hall:{en:"Seongnam Arts Center", ko:"성남아트센터"},
+ prog:[
+  w("borodin","Polovtsian Dances from Prince Igor","‘이고르 공’ 중 폴로베츠인의 춤"),
+  w("dvorak","A Hero's Song","영웅의 노래"),
+  w("borodin","Symphony No. 2","교향곡 2번")]},
+{e:"e4", g:false, parts:["Ob1"],
+ ens:{en:"HUFS Hufsphil", ko:"한국외대 후스필"},
+ hall:{en:"Goyang Aram Nuri Arts Center", ko:"고양아람누리 음악당"},
+ prog:[
+  w("sibelius","Violin Concerto","바이올린 협주곡"),
+  w("sibelius","Symphony No. 2","교향곡 2번")]},
+{e:"e4", g:false, parts:["Ob3","EH"],
+ ens:{en:"Apoco", ko:"Apoco"},
+ hall:{en:"Seongnam Arts Center", ko:"성남아트센터"},
+ prog:[w("mahler","Symphony No. 5","교향곡 5번")]},
+{e:"e4", g:true, parts:["Ob1","EH"],
+ ens:{en:"Hanullim", ko:"한울림"},
+ hall:{en:"POSTECH Auditorium", ko:"포항공대 대강당"},
+ prog:[
+  w("haydn","Symphony No. 100 “Military”","교향곡 100번 ‘군대’"),
+  w("marquez","Danzón No. 2","단손 2번"),
+  w("schumann","Cello Concerto","첼로 협주곡","III","3악장"),
+  w("mussorgsky","Pictures at an Exhibition","전람회의 그림","excerpts","발췌")]},
+{e:"e4", g:true, parts:["Ob1","Ob2"],
+ ens:{en:"Dongguk University OPUS", ko:"동국대 OPUS"},
+ hall:{en:"Sowol Art Hall", ko:"소월아트홀"},
+ prog:[
+  w("mendelssohn","A Midsummer Night's Dream","한여름 밤의 꿈","excerpts","발췌"),
+  w("krommer","Clarinet Concerto","클라리넷 협주곡","I","1악장"),
+  w("beethoven","Symphony No. 6 “Pastoral”","교향곡 6번 ‘전원’","Ob 1","Ob1")]},
+{e:"e4", g:true, parts:["Ob1","EH"],
+ ens:{en:"Sogang University ACES", ko:"서강대 ACES"},
+ hall:{en:"Chugye University Concert Hall", ko:"추계예술대학교 콘서트홀"},
+ prog:[
+  w("mozart","Le nozze di Figaro Overture","‘피가로의 결혼’ 서곡"),
+  w("tchaikovsky","Swan Lake: Scene and Waltz","‘백조의 호수’ 중 정경·왈츠"),
+  w("chaminade","Flute Concertino","플루트 콘체르티노"),
+  w("sarasate","Zigeunerweisen","치고이너바이젠"),
+  w("sibelius","Finlandia","핀란디아"),
+  w("dvorak","Symphony No. 9 “From the New World”","교향곡 9번 ‘신세계로부터’","II: Ob 2 + Eng. H","2악장: Ob2 + Eng.H")]},
+{e:"e4", g:true, parts:["Ob2"],
+ ens:{en:"Smile Healing Forte", ko:"스마일 힐링포르테"},
+ hall:{en:"Gwacheon Citizens' Hall", ko:"과천시민회관"},
+ prog:[
+  w("beethoven","Piano Concerto No. 5 “Emperor”","피아노 협주곡 5번 ‘황제’"),
+  w("brahms","Symphony No. 2","교향곡 2번")]},
+{e:"e4", g:true, parts:["Ob1","Ob2"],
+ ens:{en:"Sookmyung SPHO", ko:"숙명여대 약대 SPHO"},
+ hall:{en:"Bucheon Citizens' Hall", ko:"부천시민회관"},
+ prog:[
+  w("suppe","Poet and Peasant Overture","시인과 농부 서곡"),
+  w("strauss2","The Blue Danube","아름답고 푸른 도나우"),
+  w("beethoven","Symphony No. 5","교향곡 5번","Ob 1","Ob1")]},
+{e:"e4", g:true, parts:["Ob2"],
+ ens:{en:"Sungkyunkwan University SKKUO", ko:"성균관대 SKKUO"},
+ hall:{en:"Anyang Arts Center", ko:"안양아트센터"},
+ prog:[
+  w("beethoven","The Ruins of Athens Overture","‘아테네의 폐허’ 서곡"),
+  w("reinecke","Flute Concerto","플루트 협주곡"),
+  w("beethoven","Symphony No. 7","교향곡 7번")]},
+{e:"e4", g:false, parts:["Ob1"],
+ ens:{en:"Chung-Ang University Rubato", ko:"중앙대 루바토"},
+ hall:{en:"Mapo Arts Center", ko:"마포아트센터"},
+ prog:[
+  w("tchaikovsky","Romeo and Juliet Fantasy Overture","로미오와 줄리엣 환상 서곡"),
+  w("tchaikovsky","Violin Concerto","바이올린 협주곡"),
+  w("tchaikovsky","Symphony No. 6 “Pathétique”","교향곡 6번 ‘비창’")]},
+{e:"e4", g:true, parts:["Ob1","Ob2"],
+ ens:{en:"Kwangwoon University DaKAPO", ko:"광운대 다카포"},
+ hall:{en:"Seongnam Artrium", ko:"성남아트리움"},
+ prog:[
+  w("suppe","Poet and Peasant Overture","시인과 농부 서곡"),
+  w("tchaikovsky","The Nutcracker Suite","호두까기 인형 모음곡","excerpts","발췌"),
+  w("rachmaninoff","Symphony No. 2","교향곡 2번","Ob 1","Ob1")]},
+{e:"e4", g:false, parts:["Ob1"],
+ ens:{en:"Apoco", ko:"Apoco"},
+ hall:{en:"Seongnam Arts Center", ko:"성남아트센터"},
+ prog:[
+  w("ravel","La Valse","라 발스"),
+  w("prokofiev","Symphony No. 5","교향곡 5번")]},
+{e:"e4", g:false, parts:["Ob1"],
+ ens:{en:"Sogang University ACES", ko:"서강대 ACES"},
+ hall:{en:"Chugye University Concert Hall", ko:"추계예술대학교 콘서트홀"},
+ prog:[
+  w("sibelius","Finlandia","핀란디아","with chorus","합창"),
+  w("tchaikovsky","1812 Overture","1812 서곡","with chorus","합창"),
+  w("beethoven","Symphony No. 9 “Choral”","교향곡 9번 ‘합창’")]},
+{e:"e4", g:false, parts:["Ob1"],
+ ens:{en:"CHAOS", ko:"CHAOS"},
+ hall:{en:"Buk-Seoul Dream Forest Arts Center", ko:"북서울꿈의숲 아트센터"},
+ prog:[
+  w("ravel","Pavane pour une infante défunte","죽은 왕녀를 위한 파반느"),
+  w("prokofiev","Symphony No. 1 “Classical”","교향곡 1번 ‘고전’"),
+  w("mozart","Symphony No. 41 “Jupiter”","교향곡 41번 ‘주피터’"),
+  w("mozart","Le nozze di Figaro Overture","‘피가로의 결혼’ 서곡"),
+  w("holst","“Jupiter” from The Planets","‘행성’ 중 목성","excerpt","발췌")]},
+{e:"e4", g:true, parts:["Ob2"],
+ ens:{en:"KUMO", ko:"KUMO"},
+ hall:{en:"Kwanglim Arts Center, Jangcheon Hall", ko:"광림아트센터 장천홀"},
+ prog:[
+  w("beethoven","Egmont Overture","에그몬트 서곡"),
+  w("grieg","Peer Gynt Suite","페르귄트 모음곡","excerpts","발췌"),
+  w("beethoven","Symphony No. 7","교향곡 7번")]},
+{e:"e4", g:true, parts:["Ob2"],
+ ens:{en:"HUFS Hufsphil", ko:"한국외대 후스필"},
+ hall:{en:"Seoul Arts Center Doam Hall", ko:"서울아트센터 도암홀"},
+ prog:[
+  w("brahms","Tragic Overture","비극적 서곡"),
+  w("mendelssohn","Violin Concerto","바이올린 협주곡"),
+  w("tchaikovsky","Symphony No. 5","교향곡 5번")]},
+{e:"e4", g:true, parts:["Ob1"],
+ ens:{en:"Ewha ESAOS", ko:"이화여대 ESAOS"},
+ hall:{en:"Ewha Womans University Grand Auditorium", ko:"이화여자대학교 대강당"},
+ prog:[
+  w("grieg","Peer Gynt Suite","페르귄트 모음곡","excerpts","발췌"),
+  w("smetana","Vltava from Má vlast","‘나의 조국’ 중 몰다우"),
+  w("tchaikovsky","Symphony No. 6 “Pathétique”","교향곡 6번 ‘비창’")]},
+{e:"e4", g:false, parts:["Ob1"],
+ ens:{en:"KAMPh", ko:"KAMPh"},
+ hall:{en:"Icheon Arts Hall", ko:"이천아트홀"},
+ prog:[
+  w("shostakovich","Festive Overture","축전 서곡"),
+  w("tchaikovsky","Fatum","운명"),
+  w("shostakovich","Symphony No. 5","교향곡 5번"),
+  w("wagner","Lohengrin, Act III Prelude","‘로엔그린’ 3막 전주곡")]},
+{e:"e4", g:false, parts:["Ob3","EH"],
+ ens:{en:"AOU “Finale”", ko:"AOU ‘피날레’"},
+ hall:{en:"Bucheon Arts Center", ko:"부천아트센터"},
+ prog:[
+  w("bizet","Carmen Suite No. 1","카르멘 모음곡 1번","Eng. H","Eng.H"),
+  w("mahler","Symphony No. 1 “Titan”","교향곡 1번 ‘거인’")]},
+{e:"e4", g:false, parts:["Ob1","Ob2","EH"],
+ ens:{en:"CHAOS", ko:"CHAOS"},
+ hall:{en:"Buk-Seoul Dream Forest Arts Center", ko:"북서울꿈의숲 아트센터"},
+ prog:[
+  w("debussy","Clair de lune","달빛","arr.","편곡"),
+  w("borodin","Nocturne from String Quartet No. 2","현악 4중주 2번 중 녹턴","arr.","편곡"),
+  w("debussy","Petite Suite","작은 모음곡"),
+  w("beethoven","Symphony No. 2","교향곡 2번"),
+  w("elgar","Salut d'amour","사랑의 인사","arr.","편곡"),
+  w("hisaishi","Spirited Away","센과 치히로의 행방불명")]},
+{e:"e4", g:true, parts:["Ob1"],
+ ens:{en:"Ewha ESAOS", ko:"이화여대 ESAOS"},
+ hall:{en:"Ewha Womans University Grand Auditorium", ko:"이화여자대학교 대강당"},
+ prog:[
+  w("brahms","Piano Concerto No. 1","피아노 협주곡 1번"),
+  w("brahms","Symphony No. 1","교향곡 1번")]},
+
+/* ---- 2026– Atlanta ---- */
+{e:"e5", g:false, parts:["Ob1","Ob2"],
+ ens:{en:"Georgia Tech Symphony Orchestra", ko:"조지아텍 심포니 오케스트라"},
+ hall:{en:"Ferst Center for the Arts, Atlanta", ko:"퍼스트 센터 (애틀랜타)"},
+ date:{en:"24 September 2026 · “Oh Julietta!” · cond. Chaowen Ting",
+       ko:"2026년 9월 24일 · ‘Oh Julietta!’ · 지휘 팅 차오웬"},
+ prog:[
+  w("tchaikovsky","Romeo and Juliet Fantasy Overture","로미오와 줄리엣 환상 서곡","Ob 1","1부, Ob1"),
+  w("barnett","“Juliet” from Will's Ladies","‘윌의 여인들’ 중 줄리엣","mvt. II, mezzo-soprano Xiaohan Chen","2악장, 메조소프라노 Xiaohan Chen"),
+  w("prokofiev","Romeo and Juliet Suite No. 2, Op. 64ter","로미오와 줄리엣 모음곡 2번","Ob 2","2부, Ob2")]}
+];
+
+const EU_HALLS = [
+  {en:"Musikverein", ko:"무지크페라인", cty:{en:"Vienna",ko:"빈"}, eu:true},
+  {en:"Rudolfinum, Dvořák Hall", ko:"루돌피눔 드보르자크홀", cty:{en:"Prague",ko:"프라하"}, eu:true},
+  {en:"Mozarteum, Großer Saal", ko:"모차르테움 대강당", cty:{en:"Salzburg",ko:"잘츠부르크"}, eu:true},
+  {en:"Slovak Radio Hall", ko:"슬로바키아 라디오홀", cty:{en:"Bratislava",ko:"브라티슬라바"}, eu:true},
+  {en:"World Trade Center, Patria Hall", ko:"WTC 파트리아홀", cty:{en:"Bratislava",ko:"브라티슬라바"}, eu:true},
+  {en:"Lukaskirche", ko:"루카스키르헤", cty:{en:"Europe tour",ko:"유럽 순회"}, eu:true},
+  {en:"Jeonnam Student Culture Center", ko:"전라남도학생교육문화회관", cty:{en:"Yeosu",ko:"여수"}, eu:true}
+];
+
+
+
+/* ---- composers added for the favourites list only ---- */
+C.kalinnikov = {en:"Kalinnikov", ko:"칼리니코프"};
+C.chopin     = {en:"Chopin", ko:"쇼팽"};
+C.rstrauss   = {en:"R. Strauss", ko:"R. 슈트라우스"};
+C.vw         = {en:"Vaughan Williams", ko:"본 윌리엄스"};
+
+/* ---- national traditions, for grouping the composer map ---- */
+const SCH = {
+  ga:{en:"German & Austrian", ko:"독일·오스트리아"},
+  ru:{en:"Russian",           ko:"러시아"},
+  fr:{en:"French",            ko:"프랑스"},
+  cz:{en:"Czech",             ko:"체코"},
+  nd:{en:"Nordic",            ko:"북유럽"},
+  gb:{en:"British",           ko:"영국"},
+  xx:{en:"Elsewhere",         ko:"그 외"}
+};
+/* b = born, d = died (null = living), s = tradition */
+const PER = {
+  cl:{en:"Classical",                    ko:"고전"},
+  ro:{en:"Romantic",                     ko:"낭만주의"},
+  lr:{en:"Late Romantic & Impressionist", ko:"후기 낭만·인상주의"},
+  mo:{en:"20th–21st century",            ko:"20–21세기"}
+};
+const M = {
+  haydn:{b:1732,d:1809,s:"ga",p:"cl"},        mozart:{b:1756,d:1791,s:"ga",p:"cl"},
+  krommer:{b:1759,d:1831,s:"cz",p:"cl",sh:{en:"Kromm.",ko:"크로머"}},      beethoven:{b:1770,d:1827,s:"ga",p:"cl"},
+  schubert:{b:1797,d:1828,s:"ga",p:"ro"},     glinka:{b:1804,d:1857,s:"ru",p:"ro"},
+  strauss1:{b:1804,d:1849,s:"ga",p:"ro",sh:{en:"Strauss I",ko:"슈트라우스 1세"}},     mendelssohn:{b:1809,d:1847,s:"ga",p:"ro",sh:{en:"Mendelssohn",ko:"멘델스존"}},
+  schumann:{b:1810,d:1856,s:"ga",p:"ro"},     rietz:{b:1812,d:1877,s:"ga",p:"ro"},
+  wagner:{b:1813,d:1883,s:"ga",p:"ro"},       verdi:{b:1813,d:1901,s:"xx",p:"ro"},
+  suppe:{b:1819,d:1895,s:"ga",p:"ro"},        smetana:{b:1824,d:1884,s:"cz",p:"ro"},
+  reinecke:{b:1824,d:1910,s:"ga",p:"ro"},     strauss2:{b:1825,d:1899,s:"ga",p:"ro",sh:{en:"Strauss II",ko:"슈트라우스 2세"}},
+  borodin:{b:1833,d:1887,s:"ru",p:"ro"},      brahms:{b:1833,d:1897,s:"ga",p:"ro"},
+  saintsaens:{b:1835,d:1921,s:"fr",p:"ro"},   bizet:{b:1838,d:1875,s:"fr",p:"ro"},
+  bruch:{b:1838,d:1920,s:"ga",p:"ro"},        tchaikovsky:{b:1840,d:1893,s:"ru",p:"ro"},
+  mussorgsky:{b:1839,d:1881,s:"ru",p:"ro",sh:{en:"Mussorgsky",ko:"무소륵스키"}},
+  dvorak:{b:1841,d:1904,s:"cz",p:"ro"},       grieg:{b:1843,d:1907,s:"nd",p:"ro"},
+  sarasate:{b:1844,d:1908,s:"xx",p:"ro"},     elgar:{b:1857,d:1934,s:"gb",p:"lr"},
+  chaminade:{b:1857,d:1944,s:"fr",p:"lr"},    mahler:{b:1860,d:1911,s:"ga",p:"lr"},
+  debussy:{b:1862,d:1918,s:"fr",p:"lr"},      sibelius:{b:1865,d:1957,s:"nd",p:"lr"},
+  rachmaninoff:{b:1873,d:1943,s:"ru",p:"lr",sh:{en:"Rachman.",ko:"라흐마니노프"}}, holst:{b:1874,d:1934,s:"gb",p:"lr"},
+  ravel:{b:1875,d:1937,s:"fr",p:"lr"},        gliere:{b:1875,d:1956,s:"ru",p:"lr"},
+  prokofiev:{b:1891,d:1953,s:"ru",p:"mo"},    shostakovich:{b:1906,d:1975,s:"ru",p:"mo",sh:{en:"Shostak.",ko:"쇼스타코비치"}},
+  morricone:{b:1928,d:2020,s:"xx",p:"mo"},    barnett:{b:1949,d:null,s:"xx",p:"mo",sh:{en:"Barnett",ko:"바넷"}},
+  marquez:{b:1950,d:null,s:"xx",p:"mo"},      hisaishi:{b:1950,d:null,s:"xx",p:"mo"},
+  gregson:{b:1964,d:null,s:"gb",p:"mo",sh:{en:"Gregson-W.",ko:"그렉슨윌리엄스"}}
+};
+
+
+/* ---- city per concert, in the order of SHOWS ---- */
+const CITY = {
+  seoul:{en:"Seoul",ko:"서울",r:"metro"},     seongnam:{en:"Seongnam",ko:"성남",r:"metro"},
+  goyang:{en:"Goyang",ko:"고양",r:"metro"},   bucheon:{en:"Bucheon",ko:"부천",r:"metro"},
+  gwacheon:{en:"Gwacheon",ko:"과천",r:"metro"}, anyang:{en:"Anyang",ko:"안양",r:"metro"},
+  icheon:{en:"Icheon",ko:"이천",r:"metro"},   pohang:{en:"Pohang",ko:"포항",r:"korea"},
+  yeosu:{en:"Yeosu",ko:"여수",r:"korea"},     ulsan:{en:"Ulsan",ko:"울산",r:"korea"},
+  atlanta:{en:"Atlanta",ko:"애틀랜타",r:"us"},
+  vienna:{en:"Vienna",ko:"빈",r:"eu"},       prague:{en:"Prague",ko:"프라하",r:"eu"},
+  salzburg:{en:"Salzburg",ko:"잘츠부르크",r:"eu"}, bratislava:{en:"Bratislava",ko:"브라티슬라바",r:"eu"}
+};
+const REGORDER = ["metro","korea","eu","us"];
+const REG = {
+  metro:{en:"Seoul metropolitan area", ko:"서울·수도권"},
+  korea:{en:"Elsewhere in Korea",      ko:"그 외 국내"},
+  us:{en:"United States",              ko:"미국"},
+  eu:{en:"Europe, 2011 tour",           ko:"유럽 · 2011 순회연주"}
+};
+["",
+ "yeosu","seongnam","yeosu","yeosu",
+ "ulsan","pohang","pohang","pohang","pohang","pohang","pohang","","pohang",
+ "goyang","seoul","seongnam","goyang","seongnam","pohang","seoul","seoul","gwacheon","bucheon",
+ "anyang","seoul","seongnam","seongnam","seoul","seoul","seoul","seoul","seoul","icheon",
+ "bucheon","seoul","seoul",
+ "atlanta"].forEach((c,i)=>{ if(SHOWS[i]) SHOWS[i].city = c; });
+/* the 2011 tour played one programme in each of seven halls */
+SHOWS[0].cities = ["yeosu","bratislava","bratislava","","prague","vienna","salzburg"];
+
+/* ---- 2011 tour, in the order the halls were recorded ---- */
+const TOUR = [
+  {city:{en:"Yeosu",ko:"여수"}, hall:{en:"Jeonnam Student Culture Center",ko:"전라남도학생교육문화회관"}},
+  {city:{en:"Bratislava",ko:"브라티슬라바"}, hall:{en:"Slovak Radio Hall",ko:"슬로바키아 라디오홀"}},
+  {city:{en:"Bratislava",ko:"브라티슬라바"}, hall:{en:"World Trade Center, Patria Hall",ko:"WTC 파트리아홀"}},
+  {city:{en:"city not recorded",ko:"도시 미기록"}, hall:{en:"Lukaskirche",ko:"루카스키르헤"}},
+  {city:{en:"Prague",ko:"프라하"}, hall:{en:"Rudolfinum, Dvořák Hall",ko:"루돌피눔 드보르자크홀"}},
+  {city:{en:"Vienna",ko:"빈"}, hall:{en:"Musikverein",ko:"무지크페라인"}},
+  {city:{en:"Salzburg",ko:"잘츠부르크"}, hall:{en:"Mozarteum, Großer Saal",ko:"모차르테움 대강당"}}
+];
+
+/* ---- favourites. p:1 played in full, p:2 played in part ---- */
+const FAV = [
+ {t:{en:"Symphonies & orchestral works", ko:"교향곡·관현악"}, items:[
+  {c:"beethoven", en:"Symphony No. 3 “Eroica”", ko:"교향곡 3번 ‘영웅’"},
+  {c:"beethoven", en:"Symphony No. 6 “Pastoral”", ko:"교향곡 6번 ‘전원’", p:1},
+  {c:"beethoven", en:"Symphony No. 9 “Choral”", ko:"교향곡 9번 ‘합창’", p:1},
+  {c:"brahms",    en:"Symphony No. 1", ko:"교향곡 1번", p:1},
+  {c:"dvorak",    en:"Symphony No. 9 “From the New World”", ko:"교향곡 9번 ‘신세계로부터’", p:1},
+  {c:"holst",     en:"The Planets", ko:"행성", p:2},
+  {c:"kalinnikov",en:"Symphony No. 2", ko:"교향곡 2번"},
+  {c:"mahler",    en:"Symphony No. 3", ko:"교향곡 3번"},
+  {c:"mahler",    en:"Symphony No. 6 “Tragic”", ko:"교향곡 6번 ‘비극적’"},
+  {c:"mahler",    en:"Symphony No. 9", ko:"교향곡 9번"},
+  {c:"sibelius",  en:"Symphony No. 2", ko:"교향곡 2번", p:1},
+  {c:"rstrauss",  en:"An Alpine Symphony", ko:"알프스 교향곡"},
+  {c:"tchaikovsky",en:"Symphony No. 6 “Pathétique”", ko:"교향곡 6번 ‘비창’", p:1},
+  {c:"vw",        en:"Symphony No. 2 “A London Symphony”", ko:"교향곡 2번 ‘런던’"}
+ ]},
+ {t:{en:"Concertos", ko:"협주곡"}, items:[
+  {c:"beethoven", en:"Piano Concerto No. 5 “Emperor”", ko:"피아노 협주곡 5번 ‘황제’", p:1},
+  {c:"chopin",    en:"Piano Concerto", ko:"피아노 협주곡"},
+  {c:"dvorak",    en:"Cello Concerto", ko:"첼로 협주곡"},
+  {c:"sibelius",  en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
+  {c:"tchaikovsky",en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
+  {c:"vw",        en:"Oboe Concerto", ko:"오보에 협주곡"}
+ ]}
+];
+
+/* ---- the orchestras, by their own names ---- */
+const CAT = {
+  youth:{en:"youth",          ko:"청소년", v:"--g5"},
+  uni:  {en:"university",     ko:"대학",   v:"--g1"},
+  work: {en:"community",      ko:"직장인", v:"--g3"}
+};
+const ORCH = {
+  yeodo_e:  {name:{en:"Yeodo Elementary School Orchestra", ko:"Yeodo Elementary School Orchestra"}, sn:{en:"Yeodo Elementary", ko:"Yeodo Elementary"}, cat:"youth"},
+  yeodo_em: {name:{en:"Yeodo Elementary & Middle School Orchestra", ko:"Yeodo Elementary & Middle School Orchestra"}, sn:{en:"Yeodo Elem. & Middle", ko:"Yeodo Elem. & Middle"}, cat:"youth"},
+  yeodo_m:  {name:{en:"Yeodo Middle School Orchestra", ko:"Yeodo Middle School Orchestra"}, sn:{en:"Yeodo Middle", ko:"Yeodo Middle"}, cat:"youth"},
+  yeosu_g:  {name:{en:"Yeosu Gifted Youth Orchestra", ko:"Yeosu Gifted Youth Orchestra"}, sn:{en:"Yeosu Gifted Youth", ko:"Yeosu Gifted Youth"}, cat:"youth"},
+  opusone:  {name:{en:"Opus One", ko:"Opus One"}, aff:{en:"Ulsan", ko:"울산"}, cat:"youth"},
+  apoco:    {name:{en:"Apoco", ko:"Apoco"}, cat:"work"},
+  chaos:    {name:{en:"CHAOS", ko:"CHAOS"}, cat:"work"},
+  kamph:    {name:{en:"KAMPh", ko:"KAMPh"}, cat:"work"},
+  postech:  {name:{en:"POSTECH Orchestra", ko:"POSTECH Orchestra"}, cat:"uni"},
+  hanullim: {name:{en:"Hanullim", ko:"Hanullim"}, aff:{en:"POSTECH", ko:"포스텍"}, cat:"uni"},
+  handong:  {name:{en:"Handong Global University Orchestra", ko:"Handong Global University Orchestra"}, sn:{en:"Handong Orchestra", ko:"Handong Orchestra"}, cat:"uni"},
+  aou:      {name:{en:"AOU", ko:"AOU"}, aff:{en:"Amateur Orchestra Union", ko:"대학 오케 연합"}, cat:"uni"},
+  aces:     {name:{en:"ACES", ko:"ACES"}, aff:{en:"Sogang", ko:"서강대"}, cat:"uni"},
+  cantabile:{name:{en:"Cantabile", ko:"Cantabile"}, aff:{en:"Univ. of Seoul", ko:"서울시립대"}, cat:"uni"},
+  hufsphil: {name:{en:"Hufsphil", ko:"Hufsphil"}, aff:{en:"HUFS", ko:"한국외대"}, cat:"uni"},
+  opus:     {name:{en:"OPUS", ko:"OPUS"}, aff:{en:"Dongguk", ko:"동국대"}, cat:"youth"},
+  esaos:    {name:{en:"ESAOS", ko:"ESAOS"}, aff:{en:"Ewha", ko:"이화여대"}, cat:"uni"},
+  rubato:   {name:{en:"Rubato", ko:"Rubato"}, aff:{en:"Chung-Ang", ko:"중앙대"}, cat:"uni"},
+  dakapo:   {name:{en:"DaKAPO", ko:"DaKAPO"}, aff:{en:"Kwangwoon", ko:"광운대"}, cat:"uni"},
+  skkuo:    {name:{en:"SKKUO", ko:"SKKUO"}, aff:{en:"Sungkyunkwan", ko:"성균관대"}, cat:"uni"},
+  kumo:     {name:{en:"KUMO", ko:"KUMO"}, aff:{en:"Korea Univ., Medicine", ko:"고려대 의대"}, cat:"uni"},
+  spho:     {name:{en:"SPHO", ko:"SPHO"}, aff:{en:"Sookmyung, Pharmacy", ko:"숙명여대 약대"}, cat:"uni"},
+  smile:    {name:{en:"Smile Healing Forte", ko:"Smile Healing Forte"}, aff:{en:"medical schools", ko:"의대 연합"}, cat:"uni"},
+  gtso:     {name:{en:"Georgia Tech Symphony Orchestra", ko:"Georgia Tech Symphony Orchestra"}, sn:{en:"Georgia Tech Symphony", ko:"Georgia Tech Symphony"}, cat:"uni"}
+};
+["yeodo_e",
+ "yeosu_g","yeodo_em","yeosu_g","yeodo_m",
+ "opusone","postech","postech","hanullim","postech","hanullim","handong","aou","hanullim",
+ "cantabile","aces","aou","hufsphil","apoco","hanullim","opus","aces","smile","spho",
+ "skkuo","rubato","dakapo","apoco","aces","chaos","kumo","hufsphil","esaos","kamph",
+ "aou","chaos","esaos",
+ "gtso"].forEach((k,i)=>{ if(SHOWS[i]) SHOWS[i].eid = k; });
+/* the three AOU programmes carried their own titles */
+SHOWS[12].pt = {en:"Shall We Dance?", ko:"쉘 위 댄스"};
+SHOWS[16].pt = {en:"Monomyth", ko:"모노미스"};
+SHOWS[34].pt = {en:"Finale", ko:"피날레"};
+
+/* the Pohang years list no hall; POSTECH's own orchestras played the campus auditorium */
+SHOWS.forEach(s=>{
+  if (!s.hall && (s.eid === "postech" || s.eid === "hanullim"))
+    s.hall = {en:"POSTECH Auditorium", ko:"포항공대 대강당"};
+});
+
+/* spellings people actually type when searching */
+const ALIAS = {
+  tchaikovsky:"차이코프스키 차이콥스키 tschaikowsky chaikovsky",
+  dvorak:"드보르작 드보락 dvorak antonin",
+  prokofiev:"프로코피에프 프로코피에브",
+  rachmaninoff:"라흐마니노프 라프마니노프 rachmaninov",
+  mussorgsky:"무소르그스키 무소르스키 무스로그스키",
+  saintsaens:"생상 생상스 saint saens",
+  strauss1:"스트라우스 요한 슈트라우스",
+  strauss2:"스트라우스 요한 슈트라우스",
+  rstrauss:"리하르트 슈트라우스 스트라우스",
+  suppe:"수페 주페 suppe",
+  hisaishi:"히사이시 조 joe hisaishi",
+  mendelssohn:"멘델스죤 멘델스존",
+  gregson:"그렉슨 윌리엄스 harry",
+  schumann:"슈만 로베르트",
+  barnett:"캐롤 바넷"
+};
+
+</script>
+<script>
+/* ---------------------------------------------------------------- render */
+const $ = s => document.querySelector(s);
+const el = (t,c,x) => { const n=document.createElement(t); if(c) n.className=c; if(x!=null) n.textContent=x; return n; };
+let L = "en";
+try { const v = localStorage.getItem("hj-lang"); if (v==="ko"||v==="en") L=v; } catch(e){}
+const T = o => o ? (o[L] || o.en) : "";
+const KO = () => L==="ko";
+const uniq = a => [...new Set(a.filter(Boolean))];
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+/* hue per national tradition, per period, per region */
+const HUE_S = {ga:"--g1", ru:"--g2", fr:"--g3", cz:"--g4", nd:"--g5", gb:"--g6", xx:"--g7"};
+const HUE_P = {cl:"--g1", ro:"--g2", lr:"--g3", mo:"--g4"};
+const HUE_R = {metro:"--g1", korea:"--g3", eu:"--g7", us:"--g2"};
+const hue = v => "var(" + v + ")";
+const tint = (v,pct) => "color-mix(in srgb, var("+v+") "+pct+", var(--surface))";
+
+/* ---- derived ---- */
+const allWorks = SHOWS.flatMap(s=>s.prog);
+const composerCount = {};
+allWorks.forEach(x=>{ composerCount[x.c] = (composerCount[x.c]||0)+1; });
+const composerRank = Object.entries(composerCount)
+  .sort((a,b)=> b[1]-a[1] || C[a[0]].en.localeCompare(C[b[0]].en));
+const worksBy = {};
+allWorks.forEach(x=>{
+  const m = worksBy[x.c] = worksBy[x.c] || {};
+  const k = x.en;
+  (m[k] = m[k] || {n:0, w:x}).n++;
+});
+const hallCount = TOUR.length +
+  uniq(SHOWS.filter(s=>!s.cities).map(s=> s.hall && s.hall.en)).length;
+const cityCount = (()=>{
+  const m = {}; let miss = 0;
+  SHOWS.forEach(s=> (s.cities || [s.city]).forEach(c=> c ? m[c]=(m[c]||0)+1 : miss++));
+  return {m, miss, total: Object.values(m).reduce((a,b)=>a+b,0)};
+})();
+
+const STATS = [
+  {v:19, en:"years playing", ko:"년간 연주"},
+  {v:SHOWS.length, en:"concerts", ko:"공연"},
+  {v:Object.keys(ORCH).length, en:"orchestras", ko:"오케스트라"},
+  {v:hallCount, en:"halls", ko:"홀"},
+  {v:allWorks.length, en:"works played", ko:"연주한 곡"},
+  {v:composerRank.length, en:"composers", ko:"작곡가"}
+];
+const STAT_HUE = ["--g1","--g2","--g3","--g4","--g5","--g7"];
+const STAT_EMO = ["🕰️","🎫","🏫","🏛️","🎵","🖋️"];
+const REG_EMO  = {metro:"🏙️", korea:"⛰️", eu:"✈️", us:"🍑"};
+const FAV_EMO  = ["🎼","🎹"];
+const ERA_EMO  = {e1:"✈️", e2:"🎒", e3:"🎓", e4:"🏙️", e5:"🍑"};
+const ERA_HUE  = {e1:"--g7", e2:"--g5", e3:"--g4", e4:"--g1", e5:"--g2"};
+const AREA = {
+  kr:{en:"Korea", ko:"한국", v:"--g3"},
+  eu:{en:"Europe", ko:"유럽", v:"--g7"},
+  us:{en:"United States", ko:"미국", v:"--g2"}
+};
+function areasOf(s){
+  const set = new Set();
+  (s.cities || [s.city]).forEach(c=>{
+    const rg = c && CITY[c] && CITY[c].r;
+    if (rg==="metro" || rg==="korea") set.add("kr");
+    else if (rg==="eu") set.add("eu");
+    else if (rg==="us") set.add("us");
+  });
+  return [...set];
+}
+const softChip = (node, v) => {
+  node.style.color = "color-mix(in srgb, var("+v+") 72%, var(--ink))";
+  node.style.background = "color-mix(in srgb, var("+v+") 17%, var(--surface))";
+  node.style.border = "1px solid color-mix(in srgb, var("+v+") 46%, transparent)";
+};
+
+/* ---- tooltip ---- */
+const tip = $("#tip"); let tipOn = false;
+function showTip(html, x, y){
+  tip.innerHTML = html; tip.style.opacity = "1"; tipOn = true;
+  const r = tip.getBoundingClientRect();
+  let left = x + 14, top = y + 16;
+  if (left + r.width > innerWidth - 8) left = Math.max(8, x - r.width - 14);
+  if (top + r.height > innerHeight - 8) top = Math.max(8, y - r.height - 16);
+  tip.style.left = left+"px"; tip.style.top = top+"px";
+}
+function hideTip(){ if(tipOn){ tip.style.opacity="0"; tipOn=false; } }
+function hover(node, html){
+  node.addEventListener("mouseenter", e=> showTip(html(), e.clientX, e.clientY));
+  node.addEventListener("mousemove",  e=> showTip(html(), e.clientX, e.clientY));
+  node.addEventListener("mouseleave", hideTip);
+}
+addEventListener("scroll", hideTip, {passive:true});
+
+/* ---- header numbers ---- */
+function buildStats(){
+  const box = $("#stats"); box.innerHTML = "";
+  STATS.forEach((s,i)=>{
+    const d = el("div","stat");
+    d.style.borderTopColor = hue(STAT_HUE[i]);
+    d.appendChild(el("b",null,String(s.v)));
+    const lab = el("span");
+    const e = el("i","emo",STAT_EMO[i]);
+    lab.appendChild(e); lab.appendChild(document.createTextNode(T(s)));
+    d.appendChild(lab);
+    box.appendChild(d);
+  });
+}
+
+/* ---- orchestras, grouped on a year rail ---- */
+const OPEN = {};
+ERAS.forEach(e=> OPEN[e.id] = true);
+function buildCatLegend(){
+  const ul = $("#cat-legend"); ul.innerHTML = "";
+  const n = {}; Object.values(ORCH).forEach(o=> n[o.cat] = (n[o.cat]||0)+1);
+  ["uni","work","youth"].forEach(k=>{
+    if(!n[k]) return;
+    const li = el("li");
+    const sw = el("span","sw"); sw.style.background = hue(CAT[k].v);
+    li.appendChild(sw);
+    li.appendChild(el("b",null,String(n[k])));
+    li.appendChild(el("span",null,T(CAT[k])));
+    ul.appendChild(li);
+  });
+}
+/* ---- stages by city ---- */
+function buildCities(){
+  const box = $("#city-list"); box.innerHTML = "";
+  const max = Math.max(...Object.values(cityCount.m));
+  REGORDER.forEach(r=>{
+    const rows = Object.entries(cityCount.m)
+      .filter(([k])=> CITY[k] && CITY[k].r===r)
+      .sort((a,b)=> b[1]-a[1]);
+    if(!rows.length) return;
+    const total = rows.reduce((a,b)=>a+b[1],0);
+    const h = el("div","region");
+    const bar = el("span","rb"); bar.style.background = hue(HUE_R[r]);
+    h.appendChild(bar);
+    h.appendChild(el("i","emo", REG_EMO[r] || ""));
+    h.appendChild(el("span",null, T(REG[r]) + "  ·  " + total));
+    box.appendChild(h);
+    const list = el("div","cities");
+    rows.forEach(([k,n])=>{
+      const row = el("div","city");
+      row.appendChild(el("div","cl", T(CITY[k])));
+      const trk = el("div","ct");
+      const fil = el("div","cf");
+      fil.style.width = (n/max*100)+"%"; fil.style.background = hue(HUE_R[r]);
+      const dot = el("div","cd");
+      dot.style.left = "calc("+(n/max*100)+"% - 6px)"; dot.style.background = hue(HUE_R[r]);
+      trk.appendChild(fil); trk.appendChild(dot);
+      row.appendChild(trk);
+      row.appendChild(el("div","cv", String(n)));
+      hover(row, ()=>{
+        const halls = [];
+        SHOWS.forEach(s=>{
+          if (s.cities){ s.cities.forEach((c,i)=>{ if(c===k && TOUR[i]) halls.push(T(TOUR[i].hall)); }); }
+          else if (s.city===k && s.hall) halls.push(T(s.hall));
+        });
+        return "<b>"+esc(T(CITY[k]))+"</b><span class='sub'>"+n+(KO()?"회 무대":n===1?" stage":" stages")+"</span>"
+          + "<ol>"+uniq(halls).map(x=>"<li>"+esc(x)+"</li>").join("")+"</ol>";
+      });
+      list.appendChild(row);
+    });
+    box.appendChild(list);
+  });
+  $("#where-note").textContent = KO()
+    ? cityCount.total + "개 무대 · " + hallCount + "개 홀"
+    : cityCount.total + " stages · " + hallCount + " halls";
+}
+
+/* ---- chronicle ---- */
+function progLine(x){
+  const li = el("li");
+  const m = M[x.c];
+  const cmp = el("span","cmp", T(C[x.c]));
+  if (m) cmp.style.color = hue(HUE_S[m.s]);
+  li.appendChild(cmp);
+  li.appendChild(el("span","sep","·"));
+  li.appendChild(el("span","ttl", KO() ? x.ko : x.en));
+  const n = KO() ? x.nk : x.ne;
+  if (n){ li.appendChild(document.createTextNode(" ")); li.appendChild(el("span","nte","("+n+")")); }
+  return li;
+}
+const FQ = {part:"all", area:"all", seat:"all"};
+function buildFilters(){
+  const box = $("#chron-filters"); box.innerHTML = "";
+  const groups = [
+    {key:"part", lab:{en:"Instrument", ko:"악기"},
+     opts:[{k:"all", en:"All", ko:"전체"}].concat(PORDER.map(p=>({k:p, en:P[p].s, ko:P[p].s})))},
+    {key:"area", lab:{en:"Where", ko:"지역"},
+     opts:[{k:"all", en:"All", ko:"전체"},
+           {k:"kr", en:"Korea", ko:"한국"},
+           {k:"eu", en:"Europe", ko:"유럽"},
+           {k:"us", en:"United States", ko:"미국"}]},
+    {key:"seat", lab:{en:"Seat", ko:"구분"},
+     opts:[{k:"all", en:"All", ko:"전체"},
+           {k:"guest", en:"Guest", ko:"객원"},
+           {k:"own", en:"My own", ko:"소속"}]}
+  ];
+  groups.forEach(g=>{
+    const row = el("div","fgroup");
+    row.appendChild(el("span","flab", T(g.lab)));
+    g.opts.forEach(o=>{
+      const b = el("button",null,T(o));
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(FQ[g.key]===o.k));
+      b.addEventListener("click", ()=>{ FQ[g.key]=o.k; buildFilters(); buildChronicle(); });
+      row.appendChild(b);
+    });
+    box.appendChild(row);
+  });
+}
+const OPENC = {};
+ERAS.forEach(e=> OPENC[e.id] = true);
+
+function setFold(body, open){
+  if (reduced()){ body.hidden = !open; body.style.maxHeight = ""; body.style.opacity = ""; return; }
+  const done = e => {
+    if (e.propertyName !== "max-height") return;
+    body.removeEventListener("transitionend", done);
+    if (open) body.style.maxHeight = "none";
+    else { body.hidden = true; body.style.maxHeight = ""; }
+  };
+  body.addEventListener("transitionend", done);
+  if (open){
+    body.hidden = false;
+    body.style.maxHeight = "0px"; body.style.opacity = "0";
+    const h = body.scrollHeight;
+    requestAnimationFrame(()=>{ body.style.maxHeight = h + "px"; body.style.opacity = "1"; });
+  } else {
+    body.style.maxHeight = body.scrollHeight + "px";
+    requestAnimationFrame(()=>{ body.style.maxHeight = "0px"; body.style.opacity = "0"; });
+  }
+}
+
+function eraHead(era, count, body){
+  const wrap = el("div","tl-era");
+  const dot = el("button","tl-dot", OPENC[era.id] ? "−" : "+");
+  dot.type = "button";
+  dot.style.background = hue(ERA_HUE[era.id]);
+  dot.style.boxShadow = "0 0 0 3px var(--bg), inset 0 0 0 2px " + hue(ERA_HUE[era.id]);
+  dot.style.color = OPENC[era.id] ? "#fff" : hue(ERA_HUE[era.id]);
+  dot.setAttribute("aria-expanded", String(!!OPENC[era.id]));
+  dot.setAttribute("aria-label", era.yr);
+  const head = el("div","tl-head");
+  head.appendChild(el("span","tl-yr", era.yr));
+  const nm = el("span","tl-nm");
+  nm.appendChild(el("i","emo", ERA_EMO[era.id] || ""));
+  nm.appendChild(document.createTextNode(T(era)));
+  head.appendChild(nm);
+  head.appendChild(el("span","tl-ct", count));
+  dot.addEventListener("click", ()=>{
+    OPENC[era.id] = !OPENC[era.id];
+    setFold(body, OPENC[era.id]);
+    dot.textContent = OPENC[era.id] ? "−" : "+";
+    dot.style.color = OPENC[era.id] ? "#fff" : hue(ERA_HUE[era.id]);
+    dot.setAttribute("aria-expanded", String(!!OPENC[era.id]));
+  });
+  wrap.appendChild(dot); wrap.appendChild(head); wrap.appendChild(body);
+  return wrap;
+}
+
+/* what we played together, condensed */
+function worksSummary(shows, cap){
+  const m = {};
+  shows.forEach(s=> s.prog.forEach(x=>{
+    const k = x.c + "|" + x.en;
+    (m[k] = m[k] || {n:0, x}).n++;
+  }));
+  const all = Object.values(m).sort((a,b)=> b.n-a.n || a.x.en.localeCompare(b.x.en));
+  const shown = all.slice(0, cap);
+  return "<ol>" + shown.map(it=>
+      "<li><span>" + esc(T(C[it.x.c])) + " · " + esc(KO() ? it.x.ko : it.x.en) + "</span>"
+      + (it.n > 1 ? "<em>×" + it.n + "</em>" : "") + "</li>").join("")
+    + (all.length > cap
+        ? "<li><em>" + (KO() ? "외 " + (all.length-cap) + "곡" : "and " + (all.length-cap) + " more") + "</em></li>"
+        : "") + "</ol>";
+}
+
+function orchRow(eid, shows, yr){
+  const o = ORCH[eid];
+  const n = shows.length;
+  const guest = shows.filter(s=>s.g).length;
+  const row = el("div","ens-row");
+  row.appendChild(el("span","en", T(o.sn || o.name)));
+  const cp = el("span","cpill", T(CAT[o.cat]));
+  softChip(cp, CAT[o.cat].v);
+  row.appendChild(cp);
+  if (guest) row.appendChild(el("span","eg", KO() ? "객원" : "guest"));
+  if (o.aff) row.appendChild(el("span","aff", T(o.aff)));
+  row.appendChild(el("span","ec", String(n)));
+  hover(row, ()=> "<b>" + esc(T(o.name)) + "</b><span class='sub'>" + yr + " · "
+    + n + (KO()?"회":n===1?" concert":" concerts")
+    + (guest ? " · " + guest + (KO()?"회 객원":" as guest") : "") + "</span>"
+    + worksSummary(shows, 7));
+  return row;
+}
+
+function buildRecord(){
+  const box = $("#rec-list"); box.innerHTML = "";
+  const rail = el("div","timeline");
+  box.appendChild(rail);
+  ERAS.slice().reverse().forEach(era=>{
+    const mine = SHOWS.filter(s=>s.e===era.id);
+    if(!mine.length) return;
+    const m = {};
+    mine.forEach(s=> (m[s.eid] = m[s.eid] || []).push(s));
+    const list = Object.entries(m).sort((a,b)=>
+      b[1].length-a[1].length || T(ORCH[a[0]].name).localeCompare(T(ORCH[b[0]].name)));
+    const body = el("div","tl-body");
+    body.hidden = !OPENC[era.id];
+    const grid = el("div","ens-grid");
+    list.forEach(([eid, shows])=> grid.appendChild(orchRow(eid, shows, era.yr)));
+    body.appendChild(grid);
+    rail.appendChild(eraHead(era, KO()
+      ? "오케스트라 " + list.length + "곳 · " + mine.length + "회"
+      : list.length + (list.length===1?" orchestra · ":" orchestras · ") + mine.length
+        + (mine.length===1?" concert":" concerts"), body));
+  });
+  $("#rec-note").textContent = KO()
+    ? "오케스트라 " + Object.keys(ORCH).length + "곳 · 공연 " + SHOWS.length + "회"
+    : Object.keys(ORCH).length + " orchestras · " + SHOWS.length + " concerts";
+}
+
+/* ---- full chronicle: search, filters, every programme ---- */
+function entryCard(s, i){
+  const d = el("div","entry"); d.id = "show-"+i;
+  const who = el("div","who");
+  const orc = ORCH[s.eid] || {name:s.ens};
+  who.appendChild(el("div","ens", T(orc.name) + (s.pt ? " · “" + T(s.pt) + "”" : "")));
+  if (orc.aff) who.appendChild(el("div","aff", T(orc.aff)));
+  if (s.date) who.appendChild(el("div","date", T(s.date)));
+  const city = (!s.cities && s.city && CITY[s.city]) ? T(CITY[s.city]) : "";
+  who.appendChild(el("div","hall", s.hall ? T(s.hall) + (city ? " · " + city : "")
+    : (city ? city + (KO() ? " · 장소 기록 없음" : " · venue not recorded")
+            : (KO() ? "장소 기록 없음" : "venue not recorded"))));
+  const chairs = el("div","chairs");
+  s.parts.forEach(p=>{
+    const c = el("span","chip", P[p].s);
+    c.style.background = hue(P[p].v);
+    if (P[p].tx) c.style.color = P[p].tx;
+    chairs.appendChild(c);
+  });
+  areasOf(s).forEach(a=>{
+    const c = el("span","chip reg", T(AREA[a]));
+    c.style.color = "color-mix(in srgb, var("+AREA[a].v+") 74%, var(--ink))";
+    c.style.border = "1px solid color-mix(in srgb, var("+AREA[a].v+") 52%, transparent)";
+    chairs.appendChild(c);
+  });
+  if (s.g){
+    const seat = el("span","chip seat", KO() ? "객원" : "Guest");
+    softChip(seat, "--g4");
+    chairs.appendChild(seat);
+  }
+  who.appendChild(chairs);
+  d.appendChild(who);
+  const ul = el("ul","prog");
+  s.prog.forEach(x=> ul.appendChild(progLine(x)));
+  d.appendChild(ul);
+  return d;
+}
+
+const norm = s => String(s||"").toLowerCase().replace(/[\s·.,'"“”‘’\-()]/g,"");
+function haystack(s){
+  if (s._h) return s._h;
+  const bits = [];
+  const push = o => { if(o){ bits.push(o.en); bits.push(o.ko); } };
+  const orc = ORCH[s.eid];
+  if (orc){ push(orc.name); push(orc.sn); push(orc.aff); bits.push(T(CAT[orc.cat]), CAT[orc.cat].ko, CAT[orc.cat].en); }
+  push(s.hall); push(s.pt); push(s.date);
+  const era = ERAS.find(e=>e.id===s.e);
+  if (era){ bits.push(era.yr); push(era); }
+  (s.cities || [s.city]).forEach(c=>{ if(c && CITY[c]) push(CITY[c]); });
+  s.parts.forEach(p=> bits.push(P[p].s, P[p].en, P[p].ko));
+  s.prog.forEach(x=>{
+    bits.push(C[x.c].en, C[x.c].ko, x.en, x.ko, ALIAS[x.c] || "");
+    const m = M[x.c];
+    if (m){ if(m.s) push(SCH[m.s]); if(m.p) push(PER[m.p]); }
+  });
+  if (s.g) bits.push("guest","객원");
+  s._h = norm(bits.filter(Boolean).join(" "));
+  return s._h;
+}
+
+let chronOpen = false, chronQ = "", chronVisible = false, animateItems = false;
+function slidePanel(open){
+  const p = $("#chron-panel");
+  if (reduced()){ p.hidden = !open; p.style.maxHeight = ""; return; }
+  const done = e => {
+    if (e.propertyName !== "max-height") return;
+    p.removeEventListener("transitionend", done);
+    if (open) p.style.maxHeight = "none";
+    else { p.hidden = true; p.style.maxHeight = ""; }
+  };
+  p.addEventListener("transitionend", done);
+  if (open){
+    p.hidden = false;
+    p.style.maxHeight = "0px";
+    const h = p.scrollHeight;
+    requestAnimationFrame(()=>{ p.style.maxHeight = h + "px"; });
+  } else {
+    p.style.maxHeight = p.scrollHeight + "px";
+    requestAnimationFrame(()=>{ p.style.maxHeight = "0px"; });
+  }
+}
+function buildChronicle(){
+  const panel = $("#chron-panel"), box = $("#chron-list"), btn = $("#chron-toggle");
+  const q = norm(chronQ);
+  const rows = SHOWS.map((s,i)=>({s,i})).reverse().filter(o=>{
+    const s = o.s;
+    if (FQ.part !== "all" && !s.parts.includes(FQ.part)) return false;
+    if (FQ.area !== "all" && !areasOf(s).includes(FQ.area)) return false;
+    if (FQ.seat === "guest" && !s.g) return false;
+    if (FQ.seat === "own"   &&  s.g) return false;
+    if (q && haystack(s).indexOf(q) < 0) return false;
+    return true;
+  });
+  const show = chronOpen || !!q;
+  btn.setAttribute("aria-expanded", String(show));
+  btn.querySelector(".etxt").textContent = show
+    ? (KO() ? "접기" : "Collapse")
+    : (KO() ? "펼치기" : "Expand");
+  $("#chron-note").textContent = q || FQ.part!=="all" || FQ.area!=="all" || FQ.seat!=="all"
+    ? (KO() ? rows.length + "개 찾음" : rows.length + (rows.length===1?" match":" matches"))
+    : (KO() ? "프로그램 " + SHOWS.length + "개" : SHOWS.length + " programmes");
+  if (!show){
+    if (chronVisible){ chronVisible = false; slidePanel(false); }
+    return;
+  }
+  box.innerHTML = "";
+  if (!rows.length){
+    if (!chronVisible){ chronVisible = true; slidePanel(true); } else panel.hidden = false;
+    box.appendChild(el("div","nohits", KO()
+      ? "찾는 프로그램이 없습니다. 차이코프스키, 말러, 핀란디아, 무지크페라인처럼 검색해 보세요."
+      : "Nothing matches. Try: Tchaikovsky, Mahler, Finlandia, Musikverein"));
+    return;
+  }
+  ERAS.slice().reverse().forEach(era=>{
+    const mine = rows.filter(o=>o.s.e===era.id);
+    if(!mine.length) return;
+    const h = el("div","erahead");
+    h.appendChild(el("span","eh-yr", era.yr));
+    const nm = el("span","eh-nm");
+    nm.appendChild(el("i","emo", ERA_EMO[era.id] || ""));
+    nm.appendChild(document.createTextNode(T(era)));
+    h.appendChild(nm);
+    h.appendChild(el("span","eh-ct", KO() ? mine.length + "개"
+      : mine.length + (mine.length===1?" programme":" programmes")));
+    box.appendChild(h);
+    mine.forEach(o=> box.appendChild(entryCard(o.s, o.i)));
+  });
+  if (!chronVisible){ chronVisible = true; slidePanel(true); }
+  else panel.hidden = false;
+  if (animateItems && !reduced()){
+    animateItems = false;
+    const items = box.querySelectorAll(":scope > .erahead, :scope > .entry");
+    box.classList.add("anim");
+    items.forEach((n,idx)=> n.style.animationDelay = Math.min(idx*28, 560) + "ms");
+    setTimeout(()=>{
+      box.classList.remove("anim");
+      items.forEach(n=> n.style.animationDelay = "");
+    }, 1200);
+  }
+}
+
+/* ---- squarified treemap ---- */
+function squarify(items, x, y, w, h){
+  const out = []; const rest = items.slice();
+  let total = rest.reduce((a,b)=>a+b.v,0);
+  let rx=x, ry=y, rw=w, rh=h;
+  while(rest.length){
+    if(rw<=0.5 || rh<=0.5 || total<=0){ rest.forEach(c=>out.push({d:c,x:rx,y:ry,w:0,h:0})); break; }
+    const horiz = rw >= rh;
+    const side  = horiz ? rh : rw;
+    const scale = (rw*rh)/total;
+    let row=[], sum=0, best=Infinity;
+    while(rest.length){
+      const cand = row.concat([rest[0]]);
+      const s2 = sum + rest[0].v;
+      const len = Math.max(1e-6, s2*scale/side);
+      let worst = 0;
+      for(const c of cand){
+        const l = Math.max(1e-6, c.v*scale/len);
+        worst = Math.max(worst, len/l, l/len);
+      }
+      if(row.length===0 || worst<=best){ best=worst; row=cand; sum=s2; rest.shift(); }
+      else break;
+    }
+    const len = Math.max(1e-6, sum*scale/side);
+    let off = 0;
+    row.forEach(c=>{
+      const l = c.v*scale/len;
+      if(horiz) out.push({d:c, x:rx, y:ry+off, w:len, h:l});
+      else      out.push({d:c, x:rx+off, y:ry, w:l, h:len});
+      off += l;
+    });
+    if(horiz){ rx+=len; rw-=len; } else { ry+=len; rh-=len; }
+    total -= sum;
+  }
+  return out;
+}
+
+/* pick the largest size at which the label still fits its box */
+function fitSize(text, w, h){
+  const avail = Math.max(10, w - 15);
+  const maxH  = Math.max(10, h - (h >= 40 ? 24 : 6));
+  const longest = text.split(/[\s·\/-]+/).reduce((a,b)=> b.length > a.length ? b : a, "");
+  for (let fs = 14.5; fs >= 7; fs -= 0.5){
+    const cw = fs * 0.66;
+    if (longest.length * cw > avail) continue;
+    const lines = Math.max(1, Math.ceil(text.length * cw / avail));
+    if (lines * fs * 1.16 <= maxH) return fs;
+  }
+  return 0;
+}
+
+let groupBy = "s";                     /* "s" tradition, "p" period */
+const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function buildSeg(){
+  const box = $("#comp-seg"); box.innerHTML = "";
+  [{k:"s", en:"By tradition", ko:"나라별"}, {k:"p", en:"By period", ko:"시대별"}].forEach(o=>{
+    const b = el("button",null,T(o));
+    b.type = "button";
+    b.setAttribute("aria-pressed", String(groupBy===o.k));
+    b.addEventListener("click", ()=>{ groupBy=o.k; buildSeg(); buildTreemap(); });
+    box.appendChild(b);
+  });
+}
+
+function buildTreemap(){
+  const box = $("#treemap"); box.innerHTML = "";
+  const W = Math.max(700, box.getBoundingClientRect().width || 700);
+  const H = 560;
+  const DICT = groupBy==="s" ? SCH : PER;
+  const HUES = groupBy==="s" ? HUE_S : HUE_P;
+  const ORDER = groupBy==="s" ? null : ["cl","ro","lr","mo"];
+  const bag = {};
+  composerRank.forEach(([k,n])=>{
+    const g = (M[k] && M[k][groupBy]) || "xx";
+    (bag[g] = bag[g] || []).push({k, v:n});
+  });
+  let groups = Object.keys(bag).map(g=>({
+    g, v: bag[g].reduce((a,b)=>a+b.v,0), kids: bag[g]
+  }));
+  groups = ORDER ? groups.sort((a,b)=> ORDER.indexOf(a.g)-ORDER.indexOf(b.g))
+                 : groups.sort((a,b)=> b.v-a.v);
+  squarify(groups, 0, 0, W, H).forEach(g=>{
+    const gk = g.d.g;
+    const hv = HUES[gk] || "--g7";
+    const G = el("div","tmg");
+    G.style.cssText = `left:${g.x+1}px; top:${g.y+1}px; width:${g.w-2}px; height:${g.h-2}px;`
+      + `background:${tint(hv,"var(--tint-g)")}; border-color:${"color-mix(in srgb, var("+hv+") 34%, transparent)"}`;
+    const gb = el("div","gbar"); gb.style.background = hue(hv);
+    G.appendChild(gb);
+    G.appendChild(el("div","gl", T(DICT[gk]) + " · " + g.d.v));
+    box.appendChild(G);
+    const px = 6, pt = 32;
+    squarify(g.d.kids, g.x+1+px, g.y+1+pt, Math.max(2,g.w-2-px*2), Math.max(2,g.h-2-pt-px))
+      .forEach(c=>{
+        const k = c.d.k, n = c.d.v, m = M[k] || {};
+        const N = el("div","tmc");
+        N.style.cssText = `left:${c.x+1}px; top:${c.y+1}px; width:${Math.max(0,c.w-2)}px; height:${Math.max(0,c.h-2)}px;`
+          + `background:${tint(hv,"var(--tint)")}; box-shadow:inset 0 0 0 1px color-mix(in srgb, var(${hv}) 40%, transparent)`;
+        const short = c.h < 40;
+        if (short) N.classList.add("short");
+        const label = m.sh ? T(m.sh) : T(C[k]);
+        const fs = fitSize(label, short ? c.w - 22 : c.w, c.h);
+        if (fs){
+          const cn = el("div","cn", label);
+          cn.style.fontSize = fs + "px";
+          N.appendChild(cn);
+        }
+        if (c.w >= 24 && c.h >= 20) N.appendChild(el("div","cv", String(n)));
+        if (c.w >= 88 && c.h >= 58 && m.b) N.appendChild(el("div","cy", m.b + "–" + (m.d || "")));
+        hover(N, ()=>{
+          const items = Object.values(worksBy[k] || {}).sort((a,b)=> b.n-a.n || a.w.en.localeCompare(b.w.en));
+          const shown = items.slice(0,9);
+          const more = items.length - shown.length;
+          return "<b>"+esc(T(C[k]))+"</b><span class='sub'>"
+            + (m.b ? m.b + "–" + (m.d || (KO()?"현재":"present")) + " &middot; " : "")
+            + esc(m.s ? T(SCH[m.s]) : "") + " &middot; " + esc(m.p ? T(PER[m.p]) : "") + "</span><ol>"
+            + shown.map(it=> "<li><span>"+esc(KO()?it.w.ko:it.w.en)+"</span>"
+                + (it.n>1 ? "<em>×"+it.n+"</em>" : "") + "</li>").join("")
+            + (more>0 ? "<li><em>"+(KO()? "외 "+more+"곡" : "and "+more+" more")+"</em></li>" : "")
+            + "</ol>";
+        });
+        box.appendChild(N);
+      });
+  });
+  $("#comp-note").textContent = KO()
+    ? "작곡가 " + composerRank.length + "명 · " + allWorks.length + "곡"
+    : composerRank.length + " composers · " + allWorks.length + " works";
+}
+
+/* ---- favourites, grouped by composer ---- */
+function buildFavs(){
+  const box = $("#favs"); box.innerHTML = "";
+  FAV.forEach((g,gi)=>{
+    const d = el("div","favcol");
+    d.style.background = "color-mix(in srgb, var(--g" + (gi===0 ? 1 : 5) + ") var(--tint-card), var(--surface))";
+    const h3 = el("h3");
+    h3.appendChild(el("i","emo", FAV_EMO[gi] || ""));
+    h3.appendChild(document.createTextNode(T(g.t)));
+    d.appendChild(h3);
+    const order = [];
+    const byC = {};
+    g.items.forEach(it=>{ if(!byC[it.c]){ byC[it.c]=[]; order.push(it.c); } byC[it.c].push(it); });
+    order.sort((a,b)=> C[a].en.localeCompare(C[b].en));
+    order.forEach(ck=>{
+      const m = M[ck] || {};
+      const hv = HUE_S[m.s] || "--g7";
+      const row = el("div","favc");
+      const nm = el("div","fc");
+      const dot = el("i"); dot.style.background = hue(hv);
+      nm.appendChild(dot);
+      nm.appendChild(el("span",null,T(C[ck])));
+      row.appendChild(nm);
+      const ul = el("ul");
+      byC[ck].forEach(it=>{
+        const li = el("li");
+        li.appendChild(el("span",null, KO() ? it.ko : it.en));
+        if (it.p) li.appendChild(el("span","fp",
+          it.p===1 ? (KO()?"✓ 연주":"✓ played") : (KO()?"✓ 일부":"✓ in part")));
+        ul.appendChild(li);
+      });
+      row.appendChild(ul);
+      d.appendChild(row);
+    });
+    box.appendChild(d);
+  });
+}
+
+/* ---- contents ---- */
+const TOC = [
+  {id:"record",    n:"01", en:"The record",  ko:"연주 기록"},
+  {id:"composers", n:"02", en:"Composers",    ko:"작곡가"},
+  {id:"where",     n:"03", en:"Stages",       ko:"무대"},
+  {id:"favorites", n:"04", en:"Favourites",   ko:"좋아하는 곡"}
+];
+let spy = null;
+function buildToc(){
+  const side = $("#toc"), inline = $("#toc-inline");
+  side.querySelectorAll("a").forEach(a=>a.remove());
+  inline.innerHTML = "";
+  TOC.forEach(t=>{
+    [side, inline].forEach(host=>{
+      const a = el("a");
+      a.href = "#" + t.id;
+      a.dataset.sec = t.id;
+      a.appendChild(el("span","tn", t.n));
+      a.appendChild(document.createTextNode(T(t)));
+      host.appendChild(a);
+    });
+  });
+  if (spy) spy.disconnect();
+  spy = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting) return;
+      document.querySelectorAll("#toc a").forEach(a=>
+        a.classList.toggle("on", a.dataset.sec === en.target.id));
+    });
+  }, {rootMargin:"-25% 0px -65% 0px"});
+  TOC.forEach(t=>{ const s = document.getElementById(t.id); if(s) spy.observe(s); });
+}
+
+/* ---- language ---- */
+function applyStatic(){
+  document.documentElement.lang = KO() ? "ko" : "en";
+  document.querySelectorAll("[data-en]").forEach(n=>{
+    n.innerHTML = n.getAttribute("data-"+L) || n.getAttribute("data-en");
+  });
+  document.querySelectorAll("[data-en-ph]").forEach(n=>{
+    n.placeholder = n.getAttribute("data-"+L+"-ph") || n.getAttribute("data-en-ph");
+  });
+  $("#btn-en").setAttribute("aria-pressed", String(!KO()));
+  $("#btn-ko").setAttribute("aria-pressed", String(KO()));
+}
+function renderAll(){
+  applyStatic();
+  buildStats(); buildCatLegend(); buildRecord();
+  buildSeg(); buildTreemap();
+  buildCities(); buildFavs();
+  buildFilters(); buildChronicle();
+  buildToc();
+}
+function setLang(v){
+  L = v;
+  try { localStorage.setItem("hj-lang", v); } catch(e){}
+  hideTip(); renderAll();
+}
+$("#chron-q").addEventListener("input", e=>{ chronQ = e.target.value; buildChronicle(); });
+$("#chron-toggle").addEventListener("click", ()=>{
+  const visible = chronOpen || !!norm(chronQ);
+  if (visible){ chronOpen = false; chronQ = ""; $("#chron-q").value = ""; }
+  else { chronOpen = true; animateItems = true; }
+  buildChronicle();
+  if (chronOpen) $("#chron-panel").scrollIntoView({behavior:"smooth", block:"start"});
+});
+$("#chron-title").addEventListener("click", ()=> $("#chron-toggle").click());
+$("#btn-en").addEventListener("click", ()=>setLang("en"));
+$("#btn-ko").addEventListener("click", ()=>setLang("ko"));
+let rt;
+addEventListener("resize", ()=>{ clearTimeout(rt); rt = setTimeout(buildTreemap, 160); });
+renderAll();
+
+</script>
+</body>
+</html>

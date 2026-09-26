@@ -292,4 +292,4 @@ performing with my favorite people in my favorite ensemble.
 </div>
 </details>
 
-For my full music profile (every orchestra, programme and composer, with favourites), visit my [Concert Atlas](https://claude.ai/artifact/MgNc3tZFxjpb4j6evWK5CH).
+For my full music profile (every orchestra, programme and composer, with favourites), see my [Concert Atlas](/music/).
