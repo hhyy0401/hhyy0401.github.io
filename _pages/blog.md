@@ -216,9 +216,16 @@ performing with my favorite people in my favorite ensemble.
 
 #### 🎶 Instruments
 
+<div class="instrument-list" markdown="1">
 <span style="font-size: 1.4rem;">𝄞</span> **Oboe / English Horn** (from 2007, high level, active amateur guest player)
 
 🎻 **Viola** (from 2018, intermediate)
+</div>
+
+<style>
+.instrument-list p { margin-bottom: 0.2rem; line-height: 1.5; }
+.instrument-list p:last-child { margin-bottom: 0; }
+</style>
 
 <details>
 <summary><strong>Performance History: 2011 European Tour (1st Oboe)</strong></summary>
