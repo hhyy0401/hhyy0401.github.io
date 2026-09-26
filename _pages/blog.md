@@ -215,12 +215,6 @@ performing with my favorite people in my favorite ensemble.
 
 🎻 **Viola** (from 2018, intermediate)
 
-#### 💜 Favorite Pieces
-
-🎼 **Symphonies**: Dvorak No. 9 (2nd mvt), Sibelius No. 2, Mahler No. 3 (6th mvt), Mahler No. 6 (2nd mvt), R. Strauss *Eine Alpensinfonie*, Tchaikovsky No. 6 (1st mvt), Holst *The Planets*
-
-🎹 **Concertos**: Beethoven "Emperor" (2nd mvt), Chopin Piano Concerto No. 1 & 2 (2nd mvt)
-
 <details>
 <summary><strong>Performance History: 2011 European Tour (1st Oboe)</strong></summary>
 <div markdown="1">
@@ -298,4 +292,4 @@ performing with my favorite people in my favorite ensemble.
 </div>
 </details>
 
-For my full music profile, visit my [Notion page](https://hyunju-music.notion.site/Hyunju-s-Music-Profile-7dfe265521ac4470842a21739ce5ff18).
+For my full music profile (every orchestra, programme and composer, with favourites), visit my [Concert Atlas](https://claude.ai/artifact/MgNc3tZFxjpb4j6evWK5CH).
