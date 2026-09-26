@@ -50,15 +50,20 @@ I enjoy the vast nature and the unique culture and history of each country.
 
 <div id="travel-map" style="width: 100%; height: 420px; border-radius: 12px; overflow: hidden; margin: 0.5rem 0;"></div>
 
+<style>
+#travel-map .leaflet-tile-pane { filter: saturate(0.5) brightness(1.06) contrast(0.94); }
+#travel-map .leaflet-container { background: #eef2f4; }
+</style>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var map = L.map("travel-map", { scrollWheelZoom: false }).setView([25, 20], 2);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-    maxZoom: 18
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
   }).addTo(map);
 
   function makePin(color) {
