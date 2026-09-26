@@ -225,6 +225,7 @@ performing with my favorite people in my favorite ensemble.
 <style>
 .instrument-list p { margin-bottom: 0.2rem; line-height: 1.5; }
 .instrument-list p:last-child { margin-bottom: 0; }
+.instrument-list { margin-bottom: 1.9rem; }
 </style>
 
 <details>
