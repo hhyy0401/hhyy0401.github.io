@@ -13,7 +13,6 @@ description: Concert Atlas
 <meta name="description" content="Hyunju Kim's concert record: orchestras, programmes, composers and stages since 2007.">
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <style>
-:root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
 img{max-width:100%}
 [hidden]{display:none !important}
 </style>
@@ -77,7 +76,9 @@ html[lang="ko"] .flab, html[lang="ko"] .subhead{letter-spacing:.02em}
 /* contents */
 .shell{display:grid; grid-template-columns:176px minmax(0,900px) 176px;
   justify-content:center; align-items:start}
-.toc{position:sticky; top:calc(env(safe-area-inset-top,0px) + 88px); margin-top:214px;
+/* no env() inside calc(): the site's CSS minifier reads the hyphens in
+   safe-area-inset-top as subtraction and voids the whole declaration */
+.toc{position:sticky; top:88px; margin-top:214px;
   width:150px; justify-self:end; z-index:20; padding-left:13px; border-left:2px solid var(--line);
   max-height:calc(100vh - 140px); overflow-y:auto}
 .toc .tt{font-size:10.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--muted);
