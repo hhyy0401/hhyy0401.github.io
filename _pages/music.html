@@ -318,8 +318,9 @@ section{padding-block:44px 0}
 .erahead .eh-ct{font-size:12.5px; color:var(--muted); margin-left:auto; font-variant-numeric:tabular-nums}
 
 /* favourites */
-.favgrid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:22px}
-@media (max-width:700px){.favgrid{grid-template-columns:1fr}}
+.favgrid{columns:2; column-gap:18px; margin-top:22px}
+.favcol{break-inside:avoid; margin-bottom:18px}
+@media (max-width:700px){.favgrid{columns:1}}
 .favcol{padding:18px 20px 8px; border-radius:8px; border:1px solid var(--line-2)}
 .favgrid h3{font-family:var(--serif); font-size:17px; font-weight:600; color:var(--ink); letter-spacing:0;
   text-transform:none; padding-bottom:8px; border-bottom:1px solid var(--line-2)}
@@ -882,6 +883,8 @@ const FAV = [
   {c:"mahler",    en:"Symphony No. 6 “Tragic”", ko:"교향곡 6번 ‘비극적’"},
   {c:"mahler",    en:"Symphony No. 9", ko:"교향곡 9번"},
   {c:"sibelius",  en:"Symphony No. 2", ko:"교향곡 2번", p:1},
+  {c:"sibelius",  en:"Symphony No. 5", ko:"교향곡 5번"},
+  {c:"sibelius",  en:"Symphony No. 6", ko:"교향곡 6번"},
   {c:"rstrauss",  en:"An Alpine Symphony", ko:"알프스 교향곡"},
   {c:"tchaikovsky",en:"Symphony No. 6 “Pathétique”", ko:"교향곡 6번 ‘비창’", p:1},
   {c:"vw",        en:"Symphony No. 2 “A London Symphony”", ko:"교향곡 2번 ‘런던’"}
@@ -893,6 +896,11 @@ const FAV = [
   {c:"sibelius",  en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
   {c:"tchaikovsky",en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
   {c:"vw",        en:"Oboe Concerto", ko:"오보에 협주곡"}
+ ]},
+ {t:{en:"Overtures & suites", ko:"서곡·모음곡"}, items:[
+  {c:"sibelius",  en:"Finlandia", ko:"핀란디아", p:1},
+  {c:"sibelius",  en:"Lemminkäinen Suite", ko:"레민카이넨 모음곡"},
+  {c:"tchaikovsky",en:"Swan Lake", ko:"백조의 호수", p:2}
  ]}
 ];
 
@@ -1015,7 +1023,7 @@ const STATS = [
 const STAT_HUE = ["--g1","--g2","--g3","--g4","--g5","--g7"];
 const STAT_EMO = ["🕰️","🎫","🏫","🏛️","🎵","🖋️"];
 const REG_EMO  = {metro:"🏙️", korea:"⛰️", eu:"✈️", us:"🍑"};
-const FAV_EMO  = ["🎼","🎹"];
+const FAV_EMO  = ["🎼","🎹","🎭"];
 const ERA_EMO  = {e1:"✈️", e2:"🎒", e3:"🎓", e4:"🏙️", e5:"🍑"};
 const ERA_HUE  = {e1:"--g7", e2:"--g5", e3:"--g4", e4:"--g1", e5:"--g2"};
 const AREA = {
@@ -1564,7 +1572,7 @@ function buildFavs(){
   const box = $("#favs"); box.innerHTML = "";
   FAV.forEach((g,gi)=>{
     const d = el("div","favcol");
-    d.style.background = "color-mix(in srgb, var(--g" + (gi===0 ? 1 : 5) + ") var(--tint-card), var(--surface))";
+    d.style.background = "color-mix(in srgb, var(--g" + [1,5,3][gi % 3] + ") var(--tint-card), var(--surface))";
     const h3 = el("h3");
     h3.appendChild(el("i","emo", FAV_EMO[gi] || ""));
     h3.appendChild(document.createTextNode(T(g.t)));
