@@ -331,7 +331,11 @@ section{padding-block:44px 0}
 .favc .fc i{width:8px; height:8px; border-radius:2px; flex:none; margin-top:.45em}
 .favc ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px}
 .favc li{font-family:var(--serif); font-size:15.5px; color:var(--ink-2); display:flex; gap:9px; align-items:baseline}
-.favc .fe{flex:none; font-family:var(--sans); font-size:11.5px; color:var(--muted); white-space:nowrap}
+.favc .ft-t{font-family:var(--serif)}
+.favc .fe{font-style:normal; font-family:var(--sans); font-size:11.5px; color:var(--muted); white-space:nowrap}
+.favc .fx{font-style:normal; font-family:var(--sans); font-size:10px; font-weight:600;
+  padding:1px 7px; border-radius:999px; white-space:nowrap; position:relative; top:-1px}
+.axlegend{margin:16px 0 4px}
 .favc .fp{margin-left:auto; flex:none; font-family:var(--sans); font-size:11px; color:var(--qty);
   border:1px solid var(--accent); border-radius:999px; padding:0 7px; white-space:nowrap}
 
@@ -447,6 +451,7 @@ footer{margin-top:56px; padding:22px 0 0; border-top:1px solid var(--line); font
       <span class="n">04</span>
       <h2 data-en="&#11088; Favourites" data-ko="&#11088; 좋아하는 곡"></h2>
     </div>
+    <ul class="catlegend axlegend" id="ax-legend"></ul>
     <div class="favgrid" id="favs"></div>
   </section>
 
@@ -874,45 +879,55 @@ const TOUR = [
 ];
 
 /* ---- favourites. p:1 played in full, p:2 played in part ---- */
+/* the four things I keep coming back to; a piece can carry none or several */
+const AX = {
+  de:{en:"German Romantic",     ko:"독일 낭만",   s:{en:"German", ko:"독일"},   v:"--g1"},
+  fa:{en:"Fantasy",             ko:"환상",        s:{en:"Fantasy",ko:"환상"},   v:"--g5"},
+  ob:{en:"Oboe & English horn", ko:"오보에·잉혼", s:{en:"Oboe",   ko:"오보에"}, v:"--g2"},
+  sl:{en:"Slow movement",       ko:"느린 악장",   s:{en:"Slow",   ko:"느린악장"},v:"--g3"}
+};
+const AXORDER = ["de","fa","ob","sl"];
+
 const FAV = [
  {t:{en:"Symphonies & orchestral works", ko:"교향곡·관현악"}, items:[
-  {c:"beethoven", en:"Symphony No. 3 “Eroica”", ko:"교향곡 3번 ‘영웅’"},
-  {c:"beethoven", en:"Symphony No. 6 “Pastoral”", ko:"교향곡 6번 ‘전원’", p:1},
-  {c:"beethoven", en:"Symphony No. 9 “Choral”", ko:"교향곡 9번 ‘합창’", p:1},
-  {c:"brahms",    en:"Symphony No. 1", ko:"교향곡 1번", p:1, e:{en:"esp. II", ko:"특히 2악장"}},
-  {c:"dvorak",    en:"Symphony No. 9 “From the New World”", ko:"교향곡 9번 ‘신세계로부터’", p:1, e:{en:"esp. II", ko:"특히 2악장"}},
-  {c:"holst",     en:"The Planets", ko:"행성", p:2, e:{en:"esp. Jupiter", ko:"특히 목성"}},
+  {c:"beethoven", en:"Symphony No. 3 “Eroica”", ko:"교향곡 3번 ‘영웅’", x:["de"]},
+  {c:"beethoven", en:"Symphony No. 6 “Pastoral”", ko:"교향곡 6번 ‘전원’", p:1, x:["de"]},
+  {c:"beethoven", en:"Symphony No. 9 “Choral”", ko:"교향곡 9번 ‘합창’", p:1, x:["de"]},
+  {c:"brahms",    en:"Symphony No. 1", ko:"교향곡 1번", p:1, e:{en:"esp. II", ko:"특히 2악장"}, x:["de","sl"]},
+  {c:"dvorak",    en:"Symphony No. 9 “From the New World”", ko:"교향곡 9번 ‘신세계로부터’", p:1, e:{en:"esp. II", ko:"특히 2악장"}, x:["ob","sl"]},
+  {c:"holst",     en:"The Planets", ko:"행성", p:2, e:{en:"esp. Jupiter", ko:"특히 목성"}, x:["fa"]},
   {c:"kalinnikov",en:"Symphony No. 1", ko:"교향곡 1번"},
   {c:"kalinnikov",en:"Symphony No. 2", ko:"교향곡 2번"},
-  {c:"mahler",    en:"Symphony No. 3", ko:"교향곡 3번", e:{en:"esp. VI", ko:"특히 6악장"}},
-  {c:"mahler",    en:"Symphony No. 6 “Tragic”", ko:"교향곡 6번 ‘비극적’", e:{en:"esp. II", ko:"특히 2악장"}},
-  {c:"mahler",    en:"Symphony No. 9", ko:"교향곡 9번"},
-  {c:"sibelius",  en:"Symphony No. 2", ko:"교향곡 2번", p:1},
-  {c:"sibelius",  en:"Symphony No. 5", ko:"교향곡 5번"},
-  {c:"sibelius",  en:"Symphony No. 6", ko:"교향곡 6번"},
-  {c:"rstrauss",  en:"An Alpine Symphony", ko:"알프스 교향곡"},
+  {c:"mahler",    en:"Symphony No. 3", ko:"교향곡 3번", e:{en:"esp. VI", ko:"특히 6악장"}, x:["de","sl"]},
+  {c:"mahler",    en:"Symphony No. 6 “Tragic”", ko:"교향곡 6번 ‘비극적’", e:{en:"esp. II", ko:"특히 2악장"}, x:["de","sl"]},
+  {c:"mahler",    en:"Symphony No. 9", ko:"교향곡 9번", x:["de","sl"]},
+  {c:"sibelius",  en:"Symphony No. 2", ko:"교향곡 2번", p:1, x:["fa"]},
+  {c:"sibelius",  en:"Symphony No. 5", ko:"교향곡 5번", x:["fa"]},
+  {c:"sibelius",  en:"Symphony No. 6", ko:"교향곡 6번", x:["fa"]},
+  {c:"rstrauss",  en:"An Alpine Symphony", ko:"알프스 교향곡", x:["de","fa"]},
   {c:"tchaikovsky",en:"Symphony No. 6 “Pathétique”", ko:"교향곡 6번 ‘비창’", p:1, e:{en:"esp. I", ko:"특히 1악장"}},
-  {c:"vw",        en:"Symphony No. 2 “A London Symphony”", ko:"교향곡 2번 ‘런던’"},
-  {c:"vw",        en:"Symphony No. 5", ko:"교향곡 5번"}
+  {c:"vw",        en:"Symphony No. 2 “A London Symphony”", ko:"교향곡 2번 ‘런던’", x:["fa"]},
+  {c:"vw",        en:"Symphony No. 5", ko:"교향곡 5번", x:["fa"]}
  ]},
  {t:{en:"Concertos", ko:"협주곡"}, items:[
-  {c:"beethoven", en:"Piano Concerto No. 5 “Emperor”", ko:"피아노 협주곡 5번 ‘황제’", p:1, e:{en:"esp. II", ko:"특히 2악장"}},
-  {c:"chopin",    en:"Piano Concerto No. 1", ko:"피아노 협주곡 1번", e:{en:"esp. II", ko:"특히 2악장"}},
+  {c:"beethoven", en:"Piano Concerto No. 5 “Emperor”", ko:"피아노 협주곡 5번 ‘황제’", p:1, e:{en:"esp. II", ko:"특히 2악장"}, x:["de","sl"]},
+  {c:"chopin",    en:"Piano Concerto No. 1", ko:"피아노 협주곡 1번", e:{en:"esp. II", ko:"특히 2악장"}, x:["sl"]},
   {c:"dvorak",    en:"Cello Concerto", ko:"첼로 협주곡"},
-  {c:"rstrauss",  en:"Oboe Concerto", ko:"오보에 협주곡"},
+  {c:"rstrauss",  en:"Oboe Concerto", ko:"오보에 협주곡", x:["de","ob"]},
   {c:"saintsaens",en:"Violin Concerto No. 3", ko:"바이올린 협주곡 3번"},
-  {c:"sibelius",  en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
+  {c:"sibelius",  en:"Violin Concerto", ko:"바이올린 협주곡", p:1, x:["fa"]},
   {c:"tchaikovsky",en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
-  {c:"vw",        en:"Oboe Concerto", ko:"오보에 협주곡"}
+  {c:"vw",        en:"Oboe Concerto", ko:"오보에 협주곡", x:["fa","ob"]}
  ]},
  {t:{en:"Overtures, suites & short works", ko:"서곡·모음곡·소품"}, items:[
-  {c:"ravel",     en:"Pavane pour une infante défunte (orchestral)", ko:"죽은 왕녀를 위한 파반느 (관현악)", p:1},
-  {c:"sibelius",  en:"Finlandia", ko:"핀란디아", p:1},
-  {c:"sibelius",  en:"Lemminkäinen Suite", ko:"레민카이넨 모음곡"},
-  {c:"sibelius",  en:"The Swan of Tuonela (from the Lemminkäinen Suite)", ko:"투오넬라의 백조 (레민카이넨 모음곡 중)"},
-  {c:"tchaikovsky",en:"Swan Lake", ko:"백조의 호수", p:2}
+  {c:"ravel",     en:"Pavane pour une infante défunte (orchestral)", ko:"죽은 왕녀를 위한 파반느 (관현악)", p:1, x:["sl"]},
+  {c:"sibelius",  en:"Finlandia", ko:"핀란디아", p:1, x:["fa"]},
+  {c:"sibelius",  en:"Lemminkäinen Suite", ko:"레민카이넨 모음곡", x:["fa"]},
+  {c:"sibelius",  en:"The Swan of Tuonela (from the Lemminkäinen Suite)", ko:"투오넬라의 백조 (레민카이넨 모음곡 중)", x:["fa","ob","sl"]},
+  {c:"tchaikovsky",en:"Swan Lake", ko:"백조의 호수", p:2, x:["fa"]}
  ]}
 ];
+
 
 /* ---- the orchestras, by their own names ---- */
 const CAT = {
@@ -1578,6 +1593,16 @@ function buildTreemap(){
 }
 
 /* ---- favourites, grouped by composer ---- */
+function buildAxLegend(){
+  const ul = $("#ax-legend"); ul.innerHTML = "";
+  AXORDER.forEach(k=>{
+    const li = el("li");
+    const sw = el("span","sw"); sw.style.background = hue(AX[k].v);
+    li.appendChild(sw);
+    li.appendChild(el("span",null, T(AX[k])));
+    ul.appendChild(li);
+  });
+}
 function buildFavs(){
   const box = $("#favs"); box.innerHTML = "";
   FAV.forEach((g,gi)=>{
@@ -1603,8 +1628,21 @@ function buildFavs(){
       const ul = el("ul");
       byC[ck].forEach(it=>{
         const li = el("li");
-        li.appendChild(el("span",null, KO() ? it.ko : it.en));
-        if (it.e) li.appendChild(el("span","fe", T(it.e)));
+        const ttl = el("span","ft-t", KO() ? it.ko : it.en);
+        if (it.e){
+          ttl.appendChild(document.createTextNode(" "));
+          ttl.appendChild(el("i","fe", T(it.e)));
+        }
+        (it.x || []).forEach(k=>{
+          ttl.appendChild(document.createTextNode(" "));
+          const tag = el("i","fx", T(AX[k].s));
+          tag.title = T(AX[k]);
+          tag.style.color = "color-mix(in srgb, var(" + AX[k].v + ") 76%, var(--ink))";
+          tag.style.background = "color-mix(in srgb, var(" + AX[k].v + ") 15%, var(--surface))";
+          tag.style.border = "1px solid color-mix(in srgb, var(" + AX[k].v + ") 45%, transparent)";
+          ttl.appendChild(tag);
+        });
+        li.appendChild(ttl);
         if (it.p) li.appendChild(el("span","fp",
           it.p===1 ? (KO()?"✓ 연주":"✓ played") : (KO()?"✓ 일부":"✓ in part")));
         ul.appendChild(li);
@@ -1665,7 +1703,7 @@ function renderAll(){
   applyStatic();
   buildStats(); buildCatLegend(); buildRecord();
   buildSeg(); buildTreemap();
-  buildCities(); buildFavs();
+  buildCities(); buildAxLegend(); buildFavs();
   buildFilters(); buildChronicle();
   buildToc();
 }
