@@ -826,7 +826,10 @@ const M = {
   prokofiev:{b:1891,d:1953,s:"ru",p:"mo"},    shostakovich:{b:1906,d:1975,s:"ru",p:"mo",sh:{en:"Shostak.",ko:"쇼스타코비치"}},
   morricone:{b:1928,d:2020,s:"xx",p:"mo"},    barnett:{b:1949,d:null,s:"xx",p:"mo",sh:{en:"Barnett",ko:"바넷"}},
   marquez:{b:1950,d:null,s:"xx",p:"mo"},      hisaishi:{b:1950,d:null,s:"xx",p:"mo"},
-  gregson:{b:1964,d:null,s:"gb",p:"mo",sh:{en:"Gregson-W.",ko:"그렉슨윌리엄스"}}
+  gregson:{b:1964,d:null,s:"gb",p:"mo",sh:{en:"Gregson-W.",ko:"그렉슨윌리엄스"}},
+  /* favourites only, never on a programme of mine */
+  rstrauss:{b:1864,d:1949,s:"ga",p:"lr"},   vw:{b:1872,d:1958,s:"gb",p:"lr"},
+  kalinnikov:{b:1866,d:1901,s:"ru",p:"lr"}, chopin:{b:1810,d:1849,s:"xx",p:"ro"}
 };
 
 
@@ -878,6 +881,7 @@ const FAV = [
   {c:"brahms",    en:"Symphony No. 1", ko:"교향곡 1번", p:1},
   {c:"dvorak",    en:"Symphony No. 9 “From the New World”", ko:"교향곡 9번 ‘신세계로부터’", p:1},
   {c:"holst",     en:"The Planets", ko:"행성", p:2},
+  {c:"kalinnikov",en:"Symphony No. 1", ko:"교향곡 1번"},
   {c:"kalinnikov",en:"Symphony No. 2", ko:"교향곡 2번"},
   {c:"mahler",    en:"Symphony No. 3", ko:"교향곡 3번"},
   {c:"mahler",    en:"Symphony No. 6 “Tragic”", ko:"교향곡 6번 ‘비극적’"},
@@ -887,19 +891,23 @@ const FAV = [
   {c:"sibelius",  en:"Symphony No. 6", ko:"교향곡 6번"},
   {c:"rstrauss",  en:"An Alpine Symphony", ko:"알프스 교향곡"},
   {c:"tchaikovsky",en:"Symphony No. 6 “Pathétique”", ko:"교향곡 6번 ‘비창’", p:1},
-  {c:"vw",        en:"Symphony No. 2 “A London Symphony”", ko:"교향곡 2번 ‘런던’"}
+  {c:"vw",        en:"Symphony No. 2 “A London Symphony”", ko:"교향곡 2번 ‘런던’"},
+  {c:"vw",        en:"Symphony No. 5", ko:"교향곡 5번"}
  ]},
  {t:{en:"Concertos", ko:"협주곡"}, items:[
   {c:"beethoven", en:"Piano Concerto No. 5 “Emperor”", ko:"피아노 협주곡 5번 ‘황제’", p:1},
   {c:"chopin",    en:"Piano Concerto", ko:"피아노 협주곡"},
   {c:"dvorak",    en:"Cello Concerto", ko:"첼로 협주곡"},
+  {c:"rstrauss",  en:"Oboe Concerto", ko:"오보에 협주곡"},
   {c:"sibelius",  en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
   {c:"tchaikovsky",en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
   {c:"vw",        en:"Oboe Concerto", ko:"오보에 협주곡"}
  ]},
- {t:{en:"Overtures & suites", ko:"서곡·모음곡"}, items:[
+ {t:{en:"Overtures, suites & short works", ko:"서곡·모음곡·소품"}, items:[
+  {c:"ravel",     en:"Pavane pour une infante défunte (orchestral)", ko:"죽은 왕녀를 위한 파반느 (관현악)", p:1},
   {c:"sibelius",  en:"Finlandia", ko:"핀란디아", p:1},
   {c:"sibelius",  en:"Lemminkäinen Suite", ko:"레민카이넨 모음곡"},
+  {c:"sibelius",  en:"The Swan of Tuonela (from the Lemminkäinen Suite)", ko:"투오넬라의 백조 (레민카이넨 모음곡 중)"},
   {c:"tchaikovsky",en:"Swan Lake", ko:"백조의 호수", p:2}
  ]}
 ];
