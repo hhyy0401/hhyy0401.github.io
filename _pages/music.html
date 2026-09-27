@@ -328,16 +328,18 @@ section{padding-block:44px 0}
   border-bottom:1px solid var(--line-2); align-items:start}
 .favcol .favc:last-child{border-bottom:0}
 .favc .fc{display:flex; gap:7px; align-items:baseline; font-size:15px; font-weight:600; line-height:1.35}
-.favc .fc i{width:8px; height:8px; border-radius:2px; flex:none; margin-top:.45em}
-.favc ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px}
-.favc li{font-family:var(--serif); font-size:15.5px; color:var(--ink-2); display:flex; gap:9px; align-items:baseline}
+.favc ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
+.favc li{font-family:var(--serif); font-size:15.5px; color:var(--ink-2);
+  display:grid; grid-template-columns:13px 1fr; gap:7px; align-items:baseline}
+.favc .fk{font-family:var(--sans); font-size:12px; color:var(--qty); line-height:1.45}
+.favc .fk.part{color:var(--muted)}
 .favc .ft-t{font-family:var(--serif)}
 .favc .fe{font-style:normal; font-family:var(--sans); font-size:11.5px; color:var(--muted); white-space:nowrap}
 .favc .fx{font-style:normal; font-family:var(--sans); font-size:10px; font-weight:600;
-  padding:1px 7px; border-radius:999px; white-space:nowrap; position:relative; top:-1px}
+  margin-left:5px; padding:1px 7px; border-radius:999px; white-space:nowrap;
+  position:relative; top:-1px}
 .axlegend{margin:16px 0 4px}
-.favc .fp{margin-left:auto; flex:none; font-family:var(--sans); font-size:11px; color:var(--qty);
-  border:1px solid var(--accent); border-radius:999px; padding:0 7px; white-space:nowrap}
+
 
 #tip{position:fixed; z-index:60; pointer-events:none; max-width:330px; opacity:0; transition:opacity .1s;
   background:var(--ink); color:var(--bg); border-radius:6px; padding:10px 12px; font-size:13px; line-height:1.5;
@@ -1617,17 +1619,15 @@ function buildFavs(){
     g.items.forEach(it=>{ if(!byC[it.c]){ byC[it.c]=[]; order.push(it.c); } byC[it.c].push(it); });
     order.sort((a,b)=> C[a].en.localeCompare(C[b].en));
     order.forEach(ck=>{
-      const m = M[ck] || {};
-      const hv = HUE_S[m.s] || "--g7";
       const row = el("div","favc");
       const nm = el("div","fc");
-      const dot = el("i"); dot.style.background = hue(hv);
-      nm.appendChild(dot);
       nm.appendChild(el("span",null,T(C[ck])));
       row.appendChild(nm);
       const ul = el("ul");
       byC[ck].forEach(it=>{
         const li = el("li");
+        li.appendChild(el("span","fk", it.p ? "✓" : ""));
+        if (it.p === 2) li.querySelector(".fk").classList.add("part");
         const ttl = el("span","ft-t", KO() ? it.ko : it.en);
         if (it.e){
           ttl.appendChild(document.createTextNode(" "));
@@ -1642,9 +1642,16 @@ function buildFavs(){
           tag.style.border = "1px solid color-mix(in srgb, var(" + AX[k].v + ") 45%, transparent)";
           ttl.appendChild(tag);
         });
+        if (it.p){
+          ttl.appendChild(document.createTextNode(" "));
+          const badge = el("i","fx fxp",
+            it.p===1 ? (KO()?"연주":"played") : (KO()?"일부 연주":"in part"));
+          badge.style.color = "color-mix(in srgb, var(--qty) 82%, var(--ink))";
+          badge.style.background = "color-mix(in srgb, var(--qty) 13%, var(--surface))";
+          badge.style.border = "1px solid color-mix(in srgb, var(--accent) 70%, transparent)";
+          ttl.appendChild(badge);
+        }
         li.appendChild(ttl);
-        if (it.p) li.appendChild(el("span","fp",
-          it.p===1 ? (KO()?"✓ 연주":"✓ played") : (KO()?"✓ 일부":"✓ in part")));
         ul.appendChild(li);
       });
       row.appendChild(ul);
