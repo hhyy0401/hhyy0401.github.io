@@ -331,6 +331,7 @@ section{padding-block:44px 0}
 .favc .fc i{width:8px; height:8px; border-radius:2px; flex:none; margin-top:.45em}
 .favc ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px}
 .favc li{font-family:var(--serif); font-size:15.5px; color:var(--ink-2); display:flex; gap:9px; align-items:baseline}
+.favc .fe{flex:none; font-family:var(--sans); font-size:11.5px; color:var(--muted); white-space:nowrap}
 .favc .fp{margin-left:auto; flex:none; font-family:var(--sans); font-size:11px; color:var(--qty);
   border:1px solid var(--accent); border-radius:999px; padding:0 7px; white-space:nowrap}
 
@@ -878,25 +879,25 @@ const FAV = [
   {c:"beethoven", en:"Symphony No. 3 “Eroica”", ko:"교향곡 3번 ‘영웅’"},
   {c:"beethoven", en:"Symphony No. 6 “Pastoral”", ko:"교향곡 6번 ‘전원’", p:1},
   {c:"beethoven", en:"Symphony No. 9 “Choral”", ko:"교향곡 9번 ‘합창’", p:1},
-  {c:"brahms",    en:"Symphony No. 1", ko:"교향곡 1번", p:1},
-  {c:"dvorak",    en:"Symphony No. 9 “From the New World”", ko:"교향곡 9번 ‘신세계로부터’", p:1},
-  {c:"holst",     en:"The Planets", ko:"행성", p:2},
+  {c:"brahms",    en:"Symphony No. 1", ko:"교향곡 1번", p:1, e:{en:"esp. II", ko:"특히 2악장"}},
+  {c:"dvorak",    en:"Symphony No. 9 “From the New World”", ko:"교향곡 9번 ‘신세계로부터’", p:1, e:{en:"esp. II", ko:"특히 2악장"}},
+  {c:"holst",     en:"The Planets", ko:"행성", p:2, e:{en:"esp. Jupiter", ko:"특히 목성"}},
   {c:"kalinnikov",en:"Symphony No. 1", ko:"교향곡 1번"},
   {c:"kalinnikov",en:"Symphony No. 2", ko:"교향곡 2번"},
-  {c:"mahler",    en:"Symphony No. 3", ko:"교향곡 3번"},
-  {c:"mahler",    en:"Symphony No. 6 “Tragic”", ko:"교향곡 6번 ‘비극적’"},
+  {c:"mahler",    en:"Symphony No. 3", ko:"교향곡 3번", e:{en:"esp. VI", ko:"특히 6악장"}},
+  {c:"mahler",    en:"Symphony No. 6 “Tragic”", ko:"교향곡 6번 ‘비극적’", e:{en:"esp. II", ko:"특히 2악장"}},
   {c:"mahler",    en:"Symphony No. 9", ko:"교향곡 9번"},
   {c:"sibelius",  en:"Symphony No. 2", ko:"교향곡 2번", p:1},
   {c:"sibelius",  en:"Symphony No. 5", ko:"교향곡 5번"},
   {c:"sibelius",  en:"Symphony No. 6", ko:"교향곡 6번"},
   {c:"rstrauss",  en:"An Alpine Symphony", ko:"알프스 교향곡"},
-  {c:"tchaikovsky",en:"Symphony No. 6 “Pathétique”", ko:"교향곡 6번 ‘비창’", p:1},
+  {c:"tchaikovsky",en:"Symphony No. 6 “Pathétique”", ko:"교향곡 6번 ‘비창’", p:1, e:{en:"esp. I", ko:"특히 1악장"}},
   {c:"vw",        en:"Symphony No. 2 “A London Symphony”", ko:"교향곡 2번 ‘런던’"},
   {c:"vw",        en:"Symphony No. 5", ko:"교향곡 5번"}
  ]},
  {t:{en:"Concertos", ko:"협주곡"}, items:[
-  {c:"beethoven", en:"Piano Concerto No. 5 “Emperor”", ko:"피아노 협주곡 5번 ‘황제’", p:1},
-  {c:"chopin",    en:"Piano Concerto", ko:"피아노 협주곡"},
+  {c:"beethoven", en:"Piano Concerto No. 5 “Emperor”", ko:"피아노 협주곡 5번 ‘황제’", p:1, e:{en:"esp. II", ko:"특히 2악장"}},
+  {c:"chopin",    en:"Piano Concerto No. 1", ko:"피아노 협주곡 1번", e:{en:"esp. II", ko:"특히 2악장"}},
   {c:"dvorak",    en:"Cello Concerto", ko:"첼로 협주곡"},
   {c:"rstrauss",  en:"Oboe Concerto", ko:"오보에 협주곡"},
   {c:"sibelius",  en:"Violin Concerto", ko:"바이올린 협주곡", p:1},
@@ -1602,6 +1603,7 @@ function buildFavs(){
       byC[ck].forEach(it=>{
         const li = el("li");
         li.appendChild(el("span",null, KO() ? it.ko : it.en));
+        if (it.e) li.appendChild(el("span","fe", T(it.e)));
         if (it.p) li.appendChild(el("span","fp",
           it.p===1 ? (KO()?"✓ 연주":"✓ played") : (KO()?"✓ 일부":"✓ in part")));
         ul.appendChild(li);
