@@ -331,7 +331,7 @@ section{padding-block:44px 0}
 .favc ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
 .favc li{font-family:var(--serif); font-size:15.5px; color:var(--ink-2);
   display:grid; grid-template-columns:16px 1fr; gap:11px; align-items:baseline}
-.favc .fk{font-family:var(--sans); font-size:15px; font-weight:700; color:var(--qty);
+.favc .fk{font-family:var(--sans); font-size:15px; font-weight:700; color:var(--g7);
   line-height:1.3; letter-spacing:0}
 .favc .fk.part{color:var(--muted)}
 .favc .ft-t{font-family:var(--serif)}
@@ -340,6 +340,9 @@ section{padding-block:44px 0}
   margin-left:5px; padding:1px 7px; border-radius:999px; white-space:nowrap;
   position:relative; top:-1px}
 .axlegend{margin:16px 0 4px}
+.axlegend .lgk{font-family:var(--sans); font-size:14px; font-weight:700; color:var(--g7); line-height:1}
+.axlegend .lgk.part{color:var(--muted)}
+.axlegend li.gap{margin-left:6px; padding-left:18px; border-left:1px solid var(--line)}
 
 
 #tip{position:fixed; z-index:60; pointer-events:none; max-width:330px; opacity:0; transition:opacity .1s;
@@ -1605,6 +1608,13 @@ function buildAxLegend(){
     li.appendChild(el("span",null, T(AX[k])));
     ul.appendChild(li);
   });
+  [["", KO() ? "연주" : "played"], ["part", KO() ? "일부 연주" : "played in part"]]
+    .forEach(([cls, label], i)=>{
+      const li = el("li", i === 0 ? "gap" : null);
+      li.appendChild(el("span", "lgk" + (cls ? " " + cls : ""), "\u2714\uFE0E"));
+      li.appendChild(el("span", null, label));
+      ul.appendChild(li);
+    });
 }
 function buildFavs(){
   const box = $("#favs"); box.innerHTML = "";
@@ -1647,9 +1657,9 @@ function buildFavs(){
           ttl.appendChild(document.createTextNode(" "));
           const badge = el("i","fx fxp",
             it.p===1 ? (KO()?"연주":"played") : (KO()?"일부 연주":"in part"));
-          badge.style.color = "color-mix(in srgb, var(--qty) 82%, var(--ink))";
-          badge.style.background = "color-mix(in srgb, var(--qty) 13%, var(--surface))";
-          badge.style.border = "1px solid color-mix(in srgb, var(--accent) 70%, transparent)";
+          badge.style.color = "color-mix(in srgb, var(--g7) 80%, var(--ink))";
+          badge.style.background = "color-mix(in srgb, var(--g7) 14%, var(--surface))";
+          badge.style.border = "1px solid color-mix(in srgb, var(--g7) 45%, transparent)";
           ttl.appendChild(badge);
         }
         li.appendChild(ttl);
