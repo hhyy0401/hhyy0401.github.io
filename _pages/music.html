@@ -1654,10 +1654,9 @@ function buildFavs(){
           tag.style.border = "1px solid color-mix(in srgb, var(" + AX[k].v + ") 45%, transparent)";
           ttl.appendChild(tag);
         });
-        if (it.p){
+        if (it.p === 2){
           ttl.appendChild(document.createTextNode(" "));
-          const badge = el("i","fx fxp",
-            it.p===1 ? (KO()?"연주":"played") : (KO()?"일부 연주":"in part"));
+          const badge = el("i","fx fxp", KO() ? "일부 연주" : "in part");
           badge.style.color = "color-mix(in srgb, var(--g7) 80%, var(--ink))";
           badge.style.background = "color-mix(in srgb, var(--g7) 14%, var(--surface))";
           badge.style.border = "1px solid color-mix(in srgb, var(--g7) 45%, transparent)";
