@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ["The Hague, Netherlands", 52.08, 4.30], ["Delft, Netherlands", 52.01, 4.36], ["Alkmaar, Netherlands", 52.63, 4.75],
     ["Zaanse Schans, Netherlands", 52.47, 4.77],
     ["Paris, France", 48.86, 2.35],
+    ["Rome, Italy", 41.90, 12.50], ["Florence, Italy", 43.77, 11.26],
     ["Madrid, Spain", 40.42, -3.70], ["Barcelona, Spain", 41.39, 2.17],
     ["Granada, Spain", 37.18, -3.60], ["Seville, Spain", 37.39, -5.98],
     ["Shanghai, China", 31.23, 121.47],

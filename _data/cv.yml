@@ -57,7 +57,7 @@ cv:
         end_date: present
         highlights:
           - "Develop graph generation methods using both AI-driven approaches and rule-based algorithms."
-          - 'Design brain-inspired models by leveraging neural data visualization mechanisms. <a href="/publications/#kim2026geometric_constraints" class="cv-cite">P1</a> <a href="/publications/#kim2026geometric_fc" class="cv-cite">P2</a>'
+          - 'Design brain-inspired models by leveraging neural data visualization mechanisms. <a href="/publications/#kim2026geometric_constraints" class="cv-cite">J4</a> <a href="/publications/#kim2026geometric_fc" class="cv-cite">P1</a>'
 
       - company: Algorithm, Analysis, and Application of Higher-Order Structures
         position: ""
@@ -108,6 +108,14 @@ cv:
         end_date: 2019
 
     Awards & Honors:
+      - company: "ML@GT Student Conference, 1st Place Poster Award"
+        position: ""
+        location: "Georgia Tech"
+        start_date: 2026
+        end_date: 2026
+        highlights:
+          - 'For "Spatiotemporal Hyperedges for EEG Seizure Detection and Prediction" (Oct. 2026), voted by attendees. <a href="/publications/#kim2026hybrain" class="cv-cite">C4</a>'
+
       - company: ACM SIGIR Student Travel Grant
         position: ""
         location: "ACM SIGIR"
