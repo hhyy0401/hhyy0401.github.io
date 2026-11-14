@@ -35,11 +35,11 @@ Growing up in Yeosu, a beautiful coastal city in southern Korea, I loved cycling
 <div class="col-sm-8 mt-3 mt-md-0" markdown="1">
 
 I love travelling and exploring new cultures, food, and landscapes.
-So far I've visited **16 countries** across 4 continents.
+So far I've visited **17 countries** across 4 continents.
 I enjoy the vast nature and the unique culture and history of each country.
 
 **Countries visited** (most recent first):
-🇺🇸 USA, 🇲🇽 Mexico, 🇯🇵 Japan, 🇳🇱 Netherlands, 🇫🇷 France, 🇪🇸 Spain, 🇨🇳 China,
+🇺🇸 USA, 🇮🇹 Italy, 🇲🇽 Mexico, 🇯🇵 Japan, 🇳🇱 Netherlands, 🇫🇷 France, 🇪🇸 Spain, 🇨🇳 China,
 🇲🇾 Malaysia, 🇦🇺 Australia, 🇦🇹 Austria, 🇨🇿 Czech Republic, 🇨🇭 Switzerland, 🇩🇪 Germany, 🇭🇺 Hungary, 🇸🇰 Slovakia, 🇰🇷 South Korea.
 
 </div>
