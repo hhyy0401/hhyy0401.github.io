@@ -206,7 +206,7 @@ layout: default
               {% elsif section_title == 'References' %}
                 {% assign entries = section_entries %}
                 {% include cv/references.liquid %}
-              {% elsif section_title contains 'Experience' or section_title contains 'Service' or section_title == 'Miscellaneous' %}
+              {% elsif section_title contains 'Experience' or section_title contains 'Service' or section_title == 'Miscellaneous' or section_title == 'Internships' or section_title contains 'Patents' %}
                 {% assign entries = section_entries %}
                 {% include cv/experience.liquid %}
               {% else %}

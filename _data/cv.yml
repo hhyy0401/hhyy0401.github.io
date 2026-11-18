@@ -17,9 +17,10 @@ cv:
         area: Computational Science & Engineering
         studyType: Ph.D. Student
         start_date: 2024
-        end_date: present
+        end_date: 2029
         highlights:
           - "Advisor: Nabil Imam"
+          - "Expected graduation: May 2029"
 
       - institution: KAIST (Korea Advanced Institute of Science and Technology)
         location: "Daejeon\nKorea"
@@ -41,40 +42,32 @@ cv:
           - "GPA 3.96/4.3, Major GPA 4.02/4.3 (ranked 1st)"
 
     Research Experiences:
-      - company: Self-Organization of Higher Visual Areas on the Cortical Surface
+      - company: Geometric Modeling of Visual Cortex Development from fMRI
         position: ""
         location: Georgia Tech
         start_date: 2024-09
         end_date: present
         highlights:
-          - 'Developmental principles of extrastriate map formation on the macaque cortical surface via rule-based growth modeling. <a href="/publications/#kim2026geometric_constraints" class="cv-cite">J4</a>'
-          - 'Functional connectivity prediction on folded cortical surfaces via geometric deep learning. <a href="/publications/#kim2026geometric_fc" class="cv-cite">P1</a>'
-          - "Extension to human visual cortex with two retinotopic anchors, V1 and MT."
+          - 'Modeled how cortical geometry constrains the self-organization of retinotopic maps in primate extrastriate cortex. <a href="/publications/#kim2026geometric_constraints" class="cv-cite">J4</a>'
+          - 'Developed geometric deep learning on folded cortical surfaces to predict functional connectivity. <a href="/publications/#kim2026geometric_fc" class="cv-cite">P1</a>'
 
-      - company: Hypergraph Modeling of EEG for Seizure Detection and Prediction
+      - company: Higher-Order Wiring Structure of the Drosophila Connectome
+        position: ""
+        location: Georgia Tech
+        start_date: 2025
+        end_date: present
+        highlights:
+          - 'Found that enriched closed circuit motifs in the fly brain are built on same-type, partner-sharing neuron pairs. <a href="/publications/#kim2026wiring_motifs" class="cv-cite">P2</a>'
+          - "Showed that polyadic synapses carry neurotransmitter-specific wiring invisible to pairwise connectomes (ongoing)."
+
+      - company: EEG Analysis for Cognitive and Clinical Modeling
         position: ""
         location: Georgia Tech
         start_date: 2024-09
         end_date: present
         highlights:
-          - 'Spatiotemporal hyperedge modeling of multichannel EEG for seizure detection and prediction. <a href="/publications/#kim2026hybrain" class="cv-cite">C4</a>'
-
-      - company: Wiring Motifs across Functional Systems of the Fruit Fly Brain
-        position: ""
-        location: Georgia Tech
-        start_date: 2026-04
-        end_date: present
-        highlights:
-          - "Wiring principles of neural circuits in the whole-brain fly connectome."
-          - 'Scalable motif counting against a hierarchy of null models, revealing closed circuit motifs beyond degree, reciprocity, and neuropil constraints. <a href="/publications/#kim2026wiring_motifs" class="cv-cite">P2</a>'
-
-      - company: Shared Early Sensory Coding across Modalities for Brain-Inspired Learning
-        position: ""
-        location: Georgia Tech
-        start_date: 2026-07
-        end_date: present
-        highlights:
-          - "Cross-modal transfer of early sensory filters, revealing that visual filters transfer to spatially structured senses (touch, audition) but not to chemical senses (smell, taste)."
+          - 'Spatiotemporal hypergraph learning for EEG seizure detection and prediction. <a href="/publications/#kim2026hybrain" class="cv-cite">C4</a>'
+          - "Drift-Diffusion Model (DDM) analysis of EEG signals for characterizing decision-making processes."
 
       - company: Algorithm, Analysis, and Application of Higher-Order Structures
         position: ""
@@ -82,20 +75,34 @@ cv:
         start_date: 2022-03
         end_date: 2024-02
         highlights:
-          - "Scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs) in simplicial complexes, hypergraphs, and directed hypergraphs."
-          - 'Sampling-based estimation methods with provable accuracy guarantees. <a href="/publications/#kim2023sc3" class="cv-cite">C1</a> <a href="/publications/#lee2023hypergraph_motifs" class="cv-cite">J1</a> <a href="/publications/#kim2024simplet_sampling" class="cv-cite">J2</a> <a href="/publications/#moon2026hypergraphlets" class="cv-cite">J3</a> <a href="https://github.com/hhyy0401/SC3" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/CODA" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/simplet_counting" target="_blank"><i class="fa-brands fa-github"></i></a>'
+          - "Designed scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs) in simplicial complexes, hypergraphs, and directed hypergraphs."
+          - 'Developed sampling-based estimation methods with provable accuracy guarantees. <a href="/publications/#kim2023sc3" class="cv-cite">C1</a> <a href="/publications/#lee2023hypergraph_motifs" class="cv-cite">J1</a> <a href="/publications/#kim2024simplet_sampling" class="cv-cite">J2</a> <a href="/publications/#moon2026hypergraphlets" class="cv-cite">J3</a> <a href="https://github.com/hhyy0401/SC3" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/CODA" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/simplet_counting" target="_blank"><i class="fa-brands fa-github"></i></a>'
 
-      - company: Neural Architecture Performance Prediction with Graph Transformers
+      - company: Performance Prediction of Architectures using Semi-Supervised Learning
         position: ""
         location: KAIST
         start_date: 2022-04
         end_date: 2023-12
         highlights:
-          - 'Neural architecture performance prediction method using a flow-aware Graph Transformer.'
-          - 'Registered two South Korea Copyrights for Software (C-2022-055775, C-2023-047128). <a href="https://github.com/hhyy0401/NAS_logit_ensemble" target="_blank"><i class="fa-brands fa-github"></i></a> Patent granted: KR <span style="white-space:nowrap;">10‑2980260</span> (application KR <span style="white-space:nowrap;">10‑2024‑0047575</span>). <a href="/publications/#hwang2024flowerformer" class="cv-cite">C2</a>'
+          - 'Neural architecture performance prediction method using a flow-aware Graph Transformer. <a href="/publications/#hwang2024flowerformer" class="cv-cite">C2</a> <a href="https://github.com/hhyy0401/NAS_logit_ensemble" target="_blank"><i class="fa-brands fa-github"></i></a>'
           - "Supported by IITP grant funded by the Korea government (MSIT)."
 
-    Industry Experiences:
+    Patents & Software Copyrights:
+      - company: "Patent: Neural architecture performance prediction"
+        position: ""
+        location: "Korea"
+        highlights:
+          - 'KR <span style="white-space:nowrap;">10‑2980260</span> (granted; Appl. No. <span style="white-space:nowrap;">10‑2024‑0047575</span>). <a href="/publications/#hwang2024flowerformer" class="cv-cite">C2</a>'
+
+      - company: "Software Copyrights (South Korea)"
+        position: ""
+        location: "Korea"
+        start_date: 2022
+        end_date: 2023
+        highlights:
+          - "C-2022-055775, C-2023-047128"
+
+    Internships:
       - company: Dynamic Stream Triangle Counting Algorithms
         position: "Data Mining Lab, KAIST AI"
         location: "Seoul\nKorea"
@@ -149,13 +156,13 @@ cv:
         highlights:
           - "Field of Computer Science"
 
-      - company: The PROUD POSTECHIAN MEMBER with the Highest Honor
+      - company: Proud POSTECHIAN Member, Highest Honor
         position: ""
         location: "POSTECH"
         start_date: 2022
         end_date: 2022
         highlights:
-          - "Excellence Award (~$400)"
+          - "Excellence Award"
 
       - company: UGRP (Undergraduate Group Research Program)
         position: ""
@@ -188,7 +195,7 @@ cv:
         start_date: 2025
         end_date: present
         highlights:
-          - "AAAI 2027, CIKM 2026, AAAI 2026 (Main, AI Alignment Track), KDD 2026 (AI for Science Track)"
+          - "AAAI 2027, CIKM 2026, KDD 2026 (AI for Science Track), AAAI 2026 (Main & AI Alignment Track)"
 
       - company: ""
         position: "Head Teaching Assistant"
@@ -277,13 +284,18 @@ cv:
         start_date: 2007
         end_date: present
         highlights:
-          - "Oboist of the Georgia Tech Symphony Orchestra. Guest player of several university orchestras (e.g., Sogang Univ., Sungkyunkwan Univ., Medical School Union, etc.). Principal oboe player of Yeodo Elementary School Orchestra European tour for promoting International Exposition Yeosu Korea 2012 (Venues: Musikverein, Mozarteum Grosser Saal, Slovak Radio Hall, World Trade Center Patria Hall, Rudolfinum Dvorak Hall, Lukaskirche). 9th Online Supporters, i.e., certified influencers, of Seoul Philharmonic Orchestra for promoting concerts."
+          - "Guest player of several university orchestras (e.g., Sogang Univ., Sungkyunkwan Univ., Medical School Union, etc.). Principal oboe player of Yeodo Elementary School Orchestra European tour for promoting International Exposition Yeosu Korea 2012 (Venues: Musikverein, Mozarteum Grosser Saal, Slovak Radio Hall, World Trade Center Patria Hall, Rudolfinum Dvorak Hall, Lukaskirche). 9th Online Supporters, i.e., certified influencers, of Seoul Philharmonic Orchestra for promoting concerts."
 
     Skills:
       - name: Programming
         level: Master
         icon: fa-solid fa-code
-        keywords: "C/C++, Python (DL: PyTorch), LaTeX, Julia, R, JavaScript"
+        keywords: "Python (PyTorch, PyTorch Geometric), C/C++ (multithreaded graph algorithms at 10M+ scale), Julia, R"
+
+      - name: Neural Data
+        level: Master
+        icon: fa-solid fa-brain
+        keywords: "EEG (MNE-Python), fMRI & cortical surfaces (nibabel), connectomes (hemibrain/neuPrint, FlyWire)"
 
       - name: Languages
         level: Master
