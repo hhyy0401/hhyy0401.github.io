@@ -1004,7 +1004,8 @@ const ORCH = {
   kumo:     {name:{en:"KUMO", ko:"KUMO"}, aff:{en:"Korea Univ., Medicine", ko:"고려대 의대"}, cat:"uni"},
   spho:     {name:{en:"SPHO", ko:"SPHO"}, aff:{en:"Sookmyung, Pharmacy", ko:"숙명여대 약대"}, cat:"uni"},
   smile:    {name:{en:"Smile Healing Forte", ko:"Smile Healing Forte"}, aff:{en:"medical schools", ko:"의대 연합"}, cat:"uni"},
-  gtso:     {name:{en:"Georgia Tech Symphony Orchestra", ko:"Georgia Tech Symphony Orchestra"}, sn:{en:"Georgia Tech Symphony", ko:"Georgia Tech Symphony"}, cat:"uni"}
+  gtso:     {name:{en:"Georgia Tech Symphony Orchestra", ko:"Georgia Tech Symphony Orchestra"}, sn:{en:"Georgia Tech Symphony", ko:"Georgia Tech Symphony"}, cat:"uni"},
+  gtco:     {name:{en:"Georgia Tech Concert Orchestra", ko:"Georgia Tech Concert Orchestra"}, sn:{en:"Georgia Tech Concert", ko:"Georgia Tech Concert"}, cat:"uni"}
 };
 ["yeodo_e",
  "yeosu_g","yeodo_em","yeosu_g","yeodo_m",
@@ -1012,7 +1013,7 @@ const ORCH = {
  "cantabile","aces","aou","hufsphil","apoco","hanullim","opus","aces","smile","spho",
  "skkuo","rubato","dakapo","apoco","aces","chaos","kumo","hufsphil","esaos","kamph",
  "aou","chaos","esaos",
- "gtso"].forEach((k,i)=>{ if(SHOWS[i]) SHOWS[i].eid = k; });
+ "gtso","gtco","gtso","gtco"].forEach((k,i)=>{ if(SHOWS[i]) SHOWS[i].eid = k; });
 /* the three AOU programmes carried their own titles */
 SHOWS[12].pt = {en:"Shall We Dance?", ko:"쉘 위 댄스"};
 SHOWS[16].pt = {en:"Monomyth", ko:"모노미스"};
