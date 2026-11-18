@@ -463,7 +463,7 @@ footer{margin-top:56px; padding:22px 0 0; border-top:1px solid var(--line); font
 
   <footer>
     <span data-en="&#127911; Hyunju Kim &middot; Atlanta, GA" data-ko="&#127911; 김현주 &middot; 애틀랜타"></span>
-    <span data-en="Updated September 2026" data-ko="2026년 9월 기준"></span>
+    <span data-en="Updated November 2026" data-ko="2026년 11월 기준"></span>
   </footer>
 </div>
 </div>
@@ -503,7 +503,11 @@ const C = {
   krommer:{en:"Krommer",ko:"크로머"},           chaminade:{en:"Chaminade",ko:"샤미나드"},
   reinecke:{en:"Reinecke",ko:"라이네케"},       smetana:{en:"Smetana",ko:"스메타나"},
   shostakovich:{en:"Shostakovich",ko:"쇼스타코비치"}, hisaishi:{en:"Hisaishi",ko:"히사이시 조"},
-  barnett:{en:"Carol Barnett",ko:"캐롤 바넷"}
+  barnett:{en:"Carol Barnett",ko:"캐롤 바넷"},
+  roussanova:{en:"Elena Roussanova",ko:"엘레나 루사노바"}, badelt:{en:"Badelt / Zimmer",ko:"바델트 / 치머"},
+  zimmer:{en:"Zimmer",ko:"한스 치머"},          vangelis:{en:"Vangelis",ko:"반젤리스"},
+  shore:{en:"Shore",ko:"하워드 쇼어"},          kamen:{en:"Kamen",ko:"마이클 케이먼"},
+  silvestri:{en:"Silvestri",ko:"앨런 실베스트리"}
 };
 
 /* w(composer, english title, korean title, english note, korean note) */
@@ -778,7 +782,37 @@ const SHOWS = [
  prog:[
   w("tchaikovsky","Romeo and Juliet Fantasy Overture","로미오와 줄리엣 환상 서곡","Ob 1","1부, Ob1"),
   w("barnett","“Juliet” from Will's Ladies","‘윌의 여인들’ 중 줄리엣","mvt. II, mezzo-soprano Xiaohan Chen","2악장, 메조소프라노 Xiaohan Chen"),
-  w("prokofiev","Romeo and Juliet Suite No. 2, Op. 64ter","로미오와 줄리엣 모음곡 2번","Ob 2","2부, Ob2")]}
+  w("prokofiev","Romeo and Juliet Suite No. 2, Op. 64ter","로미오와 줄리엣 모음곡 2번","Ob 2","2부, Ob2")]},
+{e:"e5", g:true, parts:["Ob2"],
+ ens:{en:"Georgia Tech Concert Orchestra", ko:"조지아텍 콘서트 오케스트라"},
+ hall:{en:"Ferst Center for the Arts, Atlanta", ko:"퍼스트 센터 (애틀랜타)"},
+ date:{en:"12 October 2026 · “A Night of Overtures” · cond. Timothy Verville",
+       ko:"2026년 10월 12일 · ‘A Night of Overtures’ · 지휘 티모시 버빌"},
+ prog:[
+  w("glinka","Ruslan and Lyudmila Overture","루슬란과 루드밀라 서곡"),
+  w("brahms","Academic Festival Overture, Op. 80","대학 축전 서곡"),
+  w("beethoven","Coriolan Overture, Op. 62","코리올란 서곡")]},
+{e:"e5", g:false, parts:["Ob1","Ob2","EH"],
+ ens:{en:"Georgia Tech Symphony Orchestra", ko:"조지아텍 심포니 오케스트라"},
+ hall:{en:"Ferst Center for the Arts, Atlanta", ko:"퍼스트 센터 (애틀랜타)"},
+ date:{en:"16 November 2026 · “GTSO with Amarilis Dueñas”",
+       ko:"2026년 11월 16일 · ‘GTSO with Amarilis Dueñas’"},
+ prog:[
+  w("roussanova","“Moving Forward” from Moments of Arrival","‘Moments of Arrival’ 중 Moving Forward","Ob 2","Ob2"),
+  w("mozart","Piano Concerto No. 20 in D minor, K. 466, mvt. I","피아노 협주곡 20번 1악장","Ob 1, piano Ling-Ju Lai","Ob1, 피아노 Ling-Ju Lai"),
+  w("tchaikovsky","Variations on a Rococo Theme, Op. 33","로코코 주제에 의한 변주곡","Ob 1, cello Amarilis Dueñas","Ob1, 첼로 아마릴리스 두에냐스"),
+  w("tchaikovsky","The Sleeping Beauty Suite, Op. 66a","잠자는 숲속의 미녀 모음곡","Eng. H","Eng.H")]},
+{e:"e5", g:true, parts:["Ob2"],
+ ens:{en:"Georgia Tech Concert Orchestra", ko:"조지아텍 콘서트 오케스트라"},
+ hall:{en:"Ferst Center for the Arts, Atlanta", ko:"퍼스트 센터 (애틀랜타)"},
+ date:{en:"18 November 2026", ko:"2026년 11월 18일"},
+ prog:[
+  w("badelt","Medley from Pirates of the Caribbean","캐리비안의 해적 메들리"),
+  w("zimmer","Themes from Pearl Harbor","진주만 테마"),
+  w("vangelis","“Chariots of Fire” from Chariots of Fire","‘불의 전차’ 중 Chariots of Fire"),
+  w("shore","Symphonic Suite from The Lord of the Rings","반지의 제왕 교향 모음곡"),
+  w("kamen","Selections from Robin Hood: Prince of Thieves","로빈 후드 발췌"),
+  w("silvestri","Concert Suite from The Polar Express","폴라 익스프레스 모음곡")]}
 ];
 
 const EU_HALLS = [
