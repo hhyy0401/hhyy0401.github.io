@@ -41,49 +41,58 @@ cv:
           - "GPA 3.96/4.3, Major GPA 4.02/4.3 (ranked 1st)"
 
     Research Experiences:
-      - company: EEG Analysis for Cognitive and Clinical Modeling
+      - company: Self-Organization of Higher Visual Areas on the Cortical Surface
         position: ""
         location: Georgia Tech
-        start_date: 2024
+        start_date: 2024-09
         end_date: present
         highlights:
-          - "Drift-Diffusion Model (DDM) analysis of EEG signals for characterizing decision-making processes."
-          - 'EEG-based disease prediction leveraging neural biomarkers and deep learning methods. <a href="/publications/#kim2026hybrain" class="cv-cite">C4</a>'
+          - 'Developmental principles of extrastriate map formation on the macaque cortical surface via rule-based growth modeling. <a href="/publications/#kim2026geometric_constraints" class="cv-cite">J4</a>'
+          - 'Functional connectivity prediction on folded cortical surfaces via geometric deep learning. <a href="/publications/#kim2026geometric_fc" class="cv-cite">P1</a>'
+          - "Extension to human visual cortex with two retinotopic anchors, V1 and MT."
 
-      - company: fMRI-driven Graph Modeling of Self-Organization Mechanisms in the Visual Cortex
+      - company: Hypergraph Modeling of EEG for Seizure Detection and Prediction
         position: ""
         location: Georgia Tech
-        start_date: 2024
+        start_date: 2024-09
         end_date: present
         highlights:
-          - "Develop graph generation methods using both AI-driven approaches and rule-based algorithms."
-          - 'Design brain-inspired models by leveraging neural data visualization mechanisms. <a href="/publications/#kim2026geometric_constraints" class="cv-cite">J4</a> <a href="/publications/#kim2026geometric_fc" class="cv-cite">P1</a>'
+          - 'Spatiotemporal hyperedge modeling of multichannel EEG for seizure detection and prediction. <a href="/publications/#kim2026hybrain" class="cv-cite">C4</a>'
+
+      - company: Wiring Motifs across Functional Systems of the Fruit Fly Brain
+        position: ""
+        location: Georgia Tech
+        start_date: 2026-04
+        end_date: present
+        highlights:
+          - "Wiring principles of neural circuits in the whole-brain fly connectome."
+          - 'Scalable motif counting against a hierarchy of null models, revealing closed circuit motifs beyond degree, reciprocity, and neuropil constraints. <a href="/publications/#kim2026wiring_motifs" class="cv-cite">P2</a>'
+
+      - company: Shared Early Sensory Coding across Modalities for Brain-Inspired Learning
+        position: ""
+        location: Georgia Tech
+        start_date: 2026-07
+        end_date: present
+        highlights:
+          - "Cross-modal transfer of early sensory filters, revealing that visual filters transfer to spatially structured senses (touch, audition) but not to chemical senses (smell, taste)."
 
       - company: Algorithm, Analysis, and Application of Higher-Order Structures
         position: ""
         location: KAIST
-        start_date: 2022
-        end_date: 2024
+        start_date: 2022-03
+        end_date: 2024-02
         highlights:
-          - "Designed scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs) in simplicial complexes, hypergraphs, and directed hypergraphs."
-          - 'Developed sampling-based estimation methods with provable accuracy guarantees. <a href="/publications/#kim2023sc3" class="cv-cite">C1</a> <a href="/publications/#lee2023hypergraph_motifs" class="cv-cite">J1</a> <a href="/publications/#kim2024simplet_sampling" class="cv-cite">J2</a> <a href="/publications/#moon2026hypergraphlets" class="cv-cite">J3</a> <a href="https://github.com/hhyy0401/SC3" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/CODA" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/simplet_counting" target="_blank"><i class="fa-brands fa-github"></i></a>'
+          - "Scalable algorithms for counting and characterizing higher-order structures (simplets, hypergraphlets, motifs) in simplicial complexes, hypergraphs, and directed hypergraphs."
+          - 'Sampling-based estimation methods with provable accuracy guarantees. <a href="/publications/#kim2023sc3" class="cv-cite">C1</a> <a href="/publications/#lee2023hypergraph_motifs" class="cv-cite">J1</a> <a href="/publications/#kim2024simplet_sampling" class="cv-cite">J2</a> <a href="/publications/#moon2026hypergraphlets" class="cv-cite">J3</a> <a href="https://github.com/hhyy0401/SC3" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/CODA" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://github.com/hhyy0401/simplet_counting" target="_blank"><i class="fa-brands fa-github"></i></a>'
 
-      - company: Development of a Null Model for GNN Incorporating Node Features
+      - company: Neural Architecture Performance Prediction with Graph Transformers
         position: ""
         location: KAIST
-        start_date: 2023
-        end_date: 2023
+        start_date: 2022-04
+        end_date: 2023-12
         highlights:
-          - "Developed a null model maintaining performance rankings aligned with the original network while anonymizing users' information."
-
-      - company: Performance Prediction of Architectures using Semi-Supervised Learning
-        position: ""
-        location: KAIST
-        start_date: 2022
-        end_date: 2023
-        highlights:
-          - 'Neural architecture performance prediction method using flow-aware Graph Transformer.'
-          - 'Registered two Korea Copyrights for Software (C-2022-055775, C-2023-047128). <a href="https://github.com/hhyy0401/NAS_logit_ensemble" target="_blank"><i class="fa-brands fa-github"></i></a> Patent registered: KR <span style="white-space:nowrap;">10‑2980260</span> (application KR <span style="white-space:nowrap;">10‑2024‑0047575</span>). <a href="/publications/#hwang2024flowerformer" class="cv-cite">C2</a>'
+          - 'Neural architecture performance prediction method using a flow-aware Graph Transformer.'
+          - 'Registered two South Korea Copyrights for Software (C-2022-055775, C-2023-047128). <a href="https://github.com/hhyy0401/NAS_logit_ensemble" target="_blank"><i class="fa-brands fa-github"></i></a> Patent granted: KR <span style="white-space:nowrap;">10‑2980260</span> (application KR <span style="white-space:nowrap;">10‑2024‑0047575</span>). <a href="/publications/#hwang2024flowerformer" class="cv-cite">C2</a>'
           - "Supported by IITP grant funded by the Korea government (MSIT)."
 
     Industry Experiences:
@@ -179,7 +188,7 @@ cv:
         start_date: 2025
         end_date: present
         highlights:
-          - "AAAI 2027, CIKM 2026, AAAI 2026, AAAI 2026 (AI Alignment Track), KDD 2026 (AI for Science Track)"
+          - "AAAI 2027, CIKM 2026, AAAI 2026 (Main, AI Alignment Track), KDD 2026 (AI for Science Track)"
 
       - company: ""
         position: "Head Teaching Assistant"
@@ -244,7 +253,7 @@ cv:
         start_date: 2021-09
         end_date: 2021-10
         highlights:
-          - "Korean I-Corps program for supporting preliminary startups. Development of a Personalized Restaurant and Cafe Recommendation Web Service."
+          - "Korean I-Corps program for supporting preliminary startups. Title: Development of a Personalized Restaurant and Cafe Recommendation Web Service."
 
       - company: Winner of POSTECH-KAIST Science War
         position: ""
@@ -260,7 +269,7 @@ cv:
         start_date: 2020-02
         end_date: 2021-12
         highlights:
-          - "The student council of the Department of Mathematics (Head of Academic Affairs & Public Relations). Orchestra club HanUlRim (President & Conductor, Feb. 2020 - Dec. 2020)."
+          - "The student council of the Department of Mathematics (Head of Academic Affairs & Public Relations). Orchestra club ‘HanUlRim’ (President & Conductor, Feb. 2020 – Dec. 2020)."
 
       - company: Amateur Oboist & Classical Music Enthusiast
         position: ""
@@ -268,7 +277,7 @@ cv:
         start_date: 2007
         end_date: present
         highlights:
-          - "Guest player of several university orchestras (e.g., Sogang Univ., Sungkyunkwan Univ., Medical School Union, etc.). Principal oboe player of Yeodo Elementary School Orchestra European tour for promoting International Exposition Yeosu Korea 2012 (Venues: Musikverein, Mozarteum Grosser Saal, Slovak Radio Hall, World Trade Center Patria Hall, Rudolfinum Dvorak Hall, Lukaskirche). 9th Online Supporters of Seoul Philharmonic Orchestra."
+          - "Oboist of the Georgia Tech Symphony Orchestra. Guest player of several university orchestras (e.g., Sogang Univ., Sungkyunkwan Univ., Medical School Union, etc.). Principal oboe player of Yeodo Elementary School Orchestra European tour for promoting International Exposition Yeosu Korea 2012 (Venues: Musikverein, Mozarteum Grosser Saal, Slovak Radio Hall, World Trade Center Patria Hall, Rudolfinum Dvorak Hall, Lukaskirche). 9th Online Supporters, i.e., certified influencers, of Seoul Philharmonic Orchestra for promoting concerts."
 
     Skills:
       - name: Programming
@@ -279,4 +288,4 @@ cv:
       - name: Languages
         level: Master
         icon: fa-solid fa-language
-        keywords: "Korean (native), English (fluent)"
+        keywords: "Korean (native), English (fluent: IELTS Overall 7.5)"
